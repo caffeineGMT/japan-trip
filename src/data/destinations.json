@@ -1,102 +1,2302 @@
 [
-  {"slug": "tokyo", "name": "Tokyo", "country": "Japan", "continent": "Asia", "lat": 35.6762, "lng": 139.6503, "keywords": ["tokyo trip planner", "tokyo itinerary", "tokyo travel guide"], "unsplashQuery": "tokyo japan", "wikiPageId": "Tokyo"},
-  {"slug": "kyoto", "name": "Kyoto", "country": "Japan", "continent": "Asia", "lat": 35.0116, "lng": 135.7681, "keywords": ["kyoto trip planner", "kyoto temples", "kyoto cherry blossom"], "unsplashQuery": "kyoto japan", "wikiPageId": "Kyoto"},
-  {"slug": "osaka", "name": "Osaka", "country": "Japan", "continent": "Asia", "lat": 34.6937, "lng": 135.5023, "keywords": ["osaka trip planner", "osaka food", "osaka castle"], "unsplashQuery": "osaka japan", "wikiPageId": "Osaka"},
-  {"slug": "paris", "name": "Paris", "country": "France", "continent": "Europe", "lat": 48.8566, "lng": 2.3522, "keywords": ["paris trip planner", "paris itinerary", "eiffel tower"], "unsplashQuery": "paris france", "wikiPageId": "Paris"},
-  {"slug": "london", "name": "London", "country": "United Kingdom", "continent": "Europe", "lat": 51.5074, "lng": -0.1278, "keywords": ["london trip planner", "london attractions", "london travel"], "unsplashQuery": "london uk", "wikiPageId": "London"},
-  {"slug": "new-york", "name": "New York", "country": "USA", "continent": "North America", "lat": 40.7128, "lng": -74.0060, "keywords": ["new york trip planner", "nyc itinerary", "manhattan guide"], "unsplashQuery": "new york city", "wikiPageId": "New_York_City"},
-  {"slug": "rome", "name": "Rome", "country": "Italy", "continent": "Europe", "lat": 41.9028, "lng": 12.4964, "keywords": ["rome trip planner", "rome colosseum", "vatican guide"], "unsplashQuery": "rome italy", "wikiPageId": "Rome"},
-  {"slug": "barcelona", "name": "Barcelona", "country": "Spain", "continent": "Europe", "lat": 41.3851, "lng": 2.1734, "keywords": ["barcelona trip planner", "sagrada familia", "barcelona beach"], "unsplashQuery": "barcelona spain", "wikiPageId": "Barcelona"},
-  {"slug": "amsterdam", "name": "Amsterdam", "country": "Netherlands", "continent": "Europe", "lat": 52.3676, "lng": 4.9041, "keywords": ["amsterdam trip planner", "amsterdam canals", "netherlands travel"], "unsplashQuery": "amsterdam netherlands", "wikiPageId": "Amsterdam"},
-  {"slug": "dubai", "name": "Dubai", "country": "UAE", "continent": "Asia", "lat": 25.2048, "lng": 55.2708, "keywords": ["dubai trip planner", "burj khalifa", "dubai attractions"], "unsplashQuery": "dubai uae", "wikiPageId": "Dubai"},
-  {"slug": "singapore", "name": "Singapore", "country": "Singapore", "continent": "Asia", "lat": 1.3521, "lng": 103.8198, "keywords": ["singapore trip planner", "singapore itinerary", "gardens by the bay"], "unsplashQuery": "singapore", "wikiPageId": "Singapore"},
-  {"slug": "bangkok", "name": "Bangkok", "country": "Thailand", "continent": "Asia", "lat": 13.7563, "lng": 100.5018, "keywords": ["bangkok trip planner", "bangkok temples", "thailand travel"], "unsplashQuery": "bangkok thailand", "wikiPageId": "Bangkok"},
-  {"slug": "istanbul", "name": "Istanbul", "country": "Turkey", "continent": "Europe", "lat": 41.0082, "lng": 28.9784, "keywords": ["istanbul trip planner", "hagia sophia", "turkey travel"], "unsplashQuery": "istanbul turkey", "wikiPageId": "Istanbul"},
-  {"slug": "sydney", "name": "Sydney", "country": "Australia", "continent": "Oceania", "lat": -33.8688, "lng": 151.2093, "keywords": ["sydney trip planner", "sydney opera house", "australia travel"], "unsplashQuery": "sydney australia", "wikiPageId": "Sydney"},
-  {"slug": "hong-kong", "name": "Hong Kong", "country": "Hong Kong", "continent": "Asia", "lat": 22.3193, "lng": 114.1694, "keywords": ["hong kong trip planner", "hong kong itinerary", "victoria peak"], "unsplashQuery": "hong kong", "wikiPageId": "Hong_Kong"},
-  {"slug": "seoul", "name": "Seoul", "country": "South Korea", "continent": "Asia", "lat": 37.5665, "lng": 126.9780, "keywords": ["seoul trip planner", "seoul korea", "seoul attractions"], "unsplashQuery": "seoul korea", "wikiPageId": "Seoul"},
-  {"slug": "bali", "name": "Bali", "country": "Indonesia", "continent": "Asia", "lat": -8.3405, "lng": 115.0920, "keywords": ["bali trip planner", "bali beaches", "ubud rice terraces"], "unsplashQuery": "bali indonesia", "wikiPageId": "Bali"},
-  {"slug": "lisbon", "name": "Lisbon", "country": "Portugal", "continent": "Europe", "lat": 38.7223, "lng": -9.1393, "keywords": ["lisbon trip planner", "lisbon portugal", "lisbon trams"], "unsplashQuery": "lisbon portugal", "wikiPageId": "Lisbon"},
-  {"slug": "prague", "name": "Prague", "country": "Czech Republic", "continent": "Europe", "lat": 50.0755, "lng": 14.4378, "keywords": ["prague trip planner", "prague castle", "czech republic"], "unsplashQuery": "prague czech", "wikiPageId": "Prague"},
-  {"slug": "vienna", "name": "Vienna", "country": "Austria", "continent": "Europe", "lat": 48.2082, "lng": 16.3738, "keywords": ["vienna trip planner", "vienna austria", "schonbrunn palace"], "unsplashQuery": "vienna austria", "wikiPageId": "Vienna"},
-  {"slug": "berlin", "name": "Berlin", "country": "Germany", "continent": "Europe", "lat": 52.5200, "lng": 13.4050, "keywords": ["berlin trip planner", "berlin wall", "germany travel"], "unsplashQuery": "berlin germany", "wikiPageId": "Berlin"},
-  {"slug": "venice", "name": "Venice", "country": "Italy", "continent": "Europe", "lat": 45.4408, "lng": 12.3155, "keywords": ["venice trip planner", "venice canals", "gondola rides"], "unsplashQuery": "venice italy", "wikiPageId": "Venice"},
-  {"slug": "florence", "name": "Florence", "country": "Italy", "continent": "Europe", "lat": 43.7696, "lng": 11.2558, "keywords": ["florence trip planner", "florence italy", "uffizi gallery"], "unsplashQuery": "florence italy", "wikiPageId": "Florence"},
-  {"slug": "santorini", "name": "Santorini", "country": "Greece", "continent": "Europe", "lat": 36.3932, "lng": 25.4615, "keywords": ["santorini trip planner", "santorini greece", "oia sunset"], "unsplashQuery": "santorini greece", "wikiPageId": "Santorini"},
-  {"slug": "athens", "name": "Athens", "country": "Greece", "continent": "Europe", "lat": 37.9838, "lng": 23.7275, "keywords": ["athens trip planner", "athens greece", "acropolis"], "unsplashQuery": "athens greece", "wikiPageId": "Athens"},
-  {"slug": "reykjavik", "name": "Reykjavik", "country": "Iceland", "continent": "Europe", "lat": 64.1466, "lng": -21.9426, "keywords": ["reykjavik trip planner", "iceland travel", "northern lights"], "unsplashQuery": "reykjavik iceland", "wikiPageId": "Reykjavik"},
-  {"slug": "marrakech", "name": "Marrakech", "country": "Morocco", "continent": "Africa", "lat": 31.6295, "lng": -7.9811, "keywords": ["marrakech trip planner", "morocco travel", "marrakech souks"], "unsplashQuery": "marrakech morocco", "wikiPageId": "Marrakesh"},
-  {"slug": "cairo", "name": "Cairo", "country": "Egypt", "continent": "Africa", "lat": 30.0444, "lng": 31.2357, "keywords": ["cairo trip planner", "pyramids giza", "egypt travel"], "unsplashQuery": "cairo egypt", "wikiPageId": "Cairo"},
-  {"slug": "cape-town", "name": "Cape Town", "country": "South Africa", "continent": "Africa", "lat": -33.9249, "lng": 18.4241, "keywords": ["cape town trip planner", "table mountain", "south africa"], "unsplashQuery": "cape town south africa", "wikiPageId": "Cape_Town"},
-  {"slug": "rio-de-janeiro", "name": "Rio de Janeiro", "country": "Brazil", "continent": "South America", "lat": -22.9068, "lng": -43.1729, "keywords": ["rio trip planner", "christ redeemer", "copacabana beach"], "unsplashQuery": "rio de janeiro brazil", "wikiPageId": "Rio_de_Janeiro"},
-  {"slug": "buenos-aires", "name": "Buenos Aires", "country": "Argentina", "continent": "South America", "lat": -34.6037, "lng": -58.3816, "keywords": ["buenos aires trip planner", "argentina travel", "tango"], "unsplashQuery": "buenos aires argentina", "wikiPageId": "Buenos_Aires"},
-  {"slug": "cusco", "name": "Cusco", "country": "Peru", "continent": "South America", "lat": -13.5319, "lng": -71.9675, "keywords": ["cusco trip planner", "machu picchu", "peru travel"], "unsplashQuery": "cusco peru", "wikiPageId": "Cusco"},
-  {"slug": "mexico-city", "name": "Mexico City", "country": "Mexico", "continent": "North America", "lat": 19.4326, "lng": -99.1332, "keywords": ["mexico city trip planner", "cdmx guide", "teotihuacan"], "unsplashQuery": "mexico city", "wikiPageId": "Mexico_City"},
-  {"slug": "havana", "name": "Havana", "country": "Cuba", "continent": "North America", "lat": 23.1136, "lng": -82.3666, "keywords": ["havana trip planner", "cuba travel", "old havana"], "unsplashQuery": "havana cuba", "wikiPageId": "Havana"},
-  {"slug": "vancouver", "name": "Vancouver", "country": "Canada", "continent": "North America", "lat": 49.2827, "lng": -123.1207, "keywords": ["vancouver trip planner", "canada travel", "stanley park"], "unsplashQuery": "vancouver canada", "wikiPageId": "Vancouver"},
-  {"slug": "toronto", "name": "Toronto", "country": "Canada", "continent": "North America", "lat": 43.6532, "lng": -79.3832, "keywords": ["toronto trip planner", "cn tower", "canada travel"], "unsplashQuery": "toronto canada", "wikiPageId": "Toronto"},
-  {"slug": "san-francisco", "name": "San Francisco", "country": "USA", "continent": "North America", "lat": 37.7749, "lng": -122.4194, "keywords": ["san francisco trip planner", "golden gate bridge", "sf guide"], "unsplashQuery": "san francisco", "wikiPageId": "San_Francisco"},
-  {"slug": "los-angeles", "name": "Los Angeles", "country": "USA", "continent": "North America", "lat": 34.0522, "lng": -118.2437, "keywords": ["los angeles trip planner", "la attractions", "hollywood"], "unsplashQuery": "los angeles", "wikiPageId": "Los_Angeles"},
-  {"slug": "miami", "name": "Miami", "country": "USA", "continent": "North America", "lat": 25.7617, "lng": -80.1918, "keywords": ["miami trip planner", "miami beach", "south beach"], "unsplashQuery": "miami florida", "wikiPageId": "Miami"},
-  {"slug": "las-vegas", "name": "Las Vegas", "country": "USA", "continent": "North America", "lat": 36.1699, "lng": -115.1398, "keywords": ["las vegas trip planner", "vegas strip", "las vegas shows"], "unsplashQuery": "las vegas", "wikiPageId": "Las_Vegas"},
-  {"slug": "chicago", "name": "Chicago", "country": "USA", "continent": "North America", "lat": 41.8781, "lng": -87.6298, "keywords": ["chicago trip planner", "chicago architecture", "millennium park"], "unsplashQuery": "chicago", "wikiPageId": "Chicago"},
-  {"slug": "boston", "name": "Boston", "country": "USA", "continent": "North America", "lat": 42.3601, "lng": -71.0589, "keywords": ["boston trip planner", "freedom trail", "boston travel"], "unsplashQuery": "boston massachusetts", "wikiPageId": "Boston"},
-  {"slug": "seattle", "name": "Seattle", "country": "USA", "continent": "North America", "lat": 47.6062, "lng": -122.3321, "keywords": ["seattle trip planner", "space needle", "pike place market"], "unsplashQuery": "seattle washington", "wikiPageId": "Seattle"},
-  {"slug": "austin", "name": "Austin", "country": "USA", "continent": "North America", "lat": 30.2672, "lng": -97.7431, "keywords": ["austin trip planner", "austin texas", "live music"], "unsplashQuery": "austin texas", "wikiPageId": "Austin,_Texas"},
-  {"slug": "nashville", "name": "Nashville", "country": "USA", "continent": "North America", "lat": 36.1627, "lng": -86.7816, "keywords": ["nashville trip planner", "country music", "nashville tennessee"], "unsplashQuery": "nashville tennessee", "wikiPageId": "Nashville,_Tennessee"},
-  {"slug": "new-orleans", "name": "New Orleans", "country": "USA", "continent": "North America", "lat": 29.9511, "lng": -90.0715, "keywords": ["new orleans trip planner", "french quarter", "mardi gras"], "unsplashQuery": "new orleans", "wikiPageId": "New_Orleans"},
-  {"slug": "washington-dc", "name": "Washington DC", "country": "USA", "continent": "North America", "lat": 38.9072, "lng": -77.0369, "keywords": ["washington dc trip planner", "dc monuments", "smithsonian"], "unsplashQuery": "washington dc", "wikiPageId": "Washington,_D.C."},
-  {"slug": "edinburgh", "name": "Edinburgh", "country": "United Kingdom", "continent": "Europe", "lat": 55.9533, "lng": -3.1883, "keywords": ["edinburgh trip planner", "edinburgh castle", "scotland travel"], "unsplashQuery": "edinburgh scotland", "wikiPageId": "Edinburgh"},
-  {"slug": "dublin", "name": "Dublin", "country": "Ireland", "continent": "Europe", "lat": 53.3498, "lng": -6.2603, "keywords": ["dublin trip planner", "ireland travel", "temple bar"], "unsplashQuery": "dublin ireland", "wikiPageId": "Dublin"},
-  {"slug": "copenhagen", "name": "Copenhagen", "country": "Denmark", "continent": "Europe", "lat": 55.6761, "lng": 12.5683, "keywords": ["copenhagen trip planner", "denmark travel", "nyhavn"], "unsplashQuery": "copenhagen denmark", "wikiPageId": "Copenhagen"},
-  {"slug": "stockholm", "name": "Stockholm", "country": "Sweden", "continent": "Europe", "lat": 59.3293, "lng": 18.0686, "keywords": ["stockholm trip planner", "sweden travel", "gamla stan"], "unsplashQuery": "stockholm sweden", "wikiPageId": "Stockholm"},
-  {"slug": "oslo", "name": "Oslo", "country": "Norway", "continent": "Europe", "lat": 59.9139, "lng": 10.7522, "keywords": ["oslo trip planner", "norway travel", "oslo fjords"], "unsplashQuery": "oslo norway", "wikiPageId": "Oslo"},
-  {"slug": "helsinki", "name": "Helsinki", "country": "Finland", "continent": "Europe", "lat": 60.1699, "lng": 24.9384, "keywords": ["helsinki trip planner", "finland travel", "helsinki cathedral"], "unsplashQuery": "helsinki finland", "wikiPageId": "Helsinki"},
-  {"slug": "warsaw", "name": "Warsaw", "country": "Poland", "continent": "Europe", "lat": 52.2297, "lng": 21.0122, "keywords": ["warsaw trip planner", "poland travel", "warsaw old town"], "unsplashQuery": "warsaw poland", "wikiPageId": "Warsaw"},
-  {"slug": "budapest", "name": "Budapest", "country": "Hungary", "continent": "Europe", "lat": 47.4979, "lng": 19.0402, "keywords": ["budapest trip planner", "hungary travel", "thermal baths"], "unsplashQuery": "budapest hungary", "wikiPageId": "Budapest"},
-  {"slug": "krakow", "name": "Krakow", "country": "Poland", "continent": "Europe", "lat": 50.0647, "lng": 19.9450, "keywords": ["krakow trip planner", "poland travel", "wawel castle"], "unsplashQuery": "krakow poland", "wikiPageId": "Krakow"},
-  {"slug": "zurich", "name": "Zurich", "country": "Switzerland", "continent": "Europe", "lat": 47.3769, "lng": 8.5417, "keywords": ["zurich trip planner", "switzerland travel", "lake zurich"], "unsplashQuery": "zurich switzerland", "wikiPageId": "Zurich"},
-  {"slug": "brussels", "name": "Brussels", "country": "Belgium", "continent": "Europe", "lat": 50.8503, "lng": 4.3517, "keywords": ["brussels trip planner", "belgium travel", "grand place"], "unsplashQuery": "brussels belgium", "wikiPageId": "Brussels"},
-  {"slug": "milan", "name": "Milan", "country": "Italy", "continent": "Europe", "lat": 45.4642, "lng": 9.1900, "keywords": ["milan trip planner", "italy fashion", "duomo milan"], "unsplashQuery": "milan italy", "wikiPageId": "Milan"},
-  {"slug": "naples", "name": "Naples", "country": "Italy", "continent": "Europe", "lat": 40.8518, "lng": 14.2681, "keywords": ["naples trip planner", "pompeii", "amalfi coast"], "unsplashQuery": "naples italy", "wikiPageId": "Naples"},
-  {"slug": "seville", "name": "Seville", "country": "Spain", "continent": "Europe", "lat": 37.3891, "lng": -5.9845, "keywords": ["seville trip planner", "spain travel", "alcazar seville"], "unsplashQuery": "seville spain", "wikiPageId": "Seville"},
-  {"slug": "madrid", "name": "Madrid", "country": "Spain", "continent": "Europe", "lat": 40.4168, "lng": -3.7038, "keywords": ["madrid trip planner", "spain capital", "prado museum"], "unsplashQuery": "madrid spain", "wikiPageId": "Madrid"},
-  {"slug": "valencia", "name": "Valencia", "country": "Spain", "continent": "Europe", "lat": 39.4699, "lng": -0.3763, "keywords": ["valencia trip planner", "spain travel", "city of arts"], "unsplashQuery": "valencia spain", "wikiPageId": "Valencia"},
-  {"slug": "munich", "name": "Munich", "country": "Germany", "continent": "Europe", "lat": 48.1351, "lng": 11.5820, "keywords": ["munich trip planner", "oktoberfest", "germany travel"], "unsplashQuery": "munich germany", "wikiPageId": "Munich"},
-  {"slug": "frankfurt", "name": "Frankfurt", "country": "Germany", "continent": "Europe", "lat": 50.1109, "lng": 8.6821, "keywords": ["frankfurt trip planner", "germany travel", "romerberg"], "unsplashQuery": "frankfurt germany", "wikiPageId": "Frankfurt"},
-  {"slug": "hamburg", "name": "Hamburg", "country": "Germany", "continent": "Europe", "lat": 53.5511, "lng": 9.9937, "keywords": ["hamburg trip planner", "germany travel", "miniatur wunderland"], "unsplashQuery": "hamburg germany", "wikiPageId": "Hamburg"},
-  {"slug": "lyon", "name": "Lyon", "country": "France", "continent": "Europe", "lat": 45.7640, "lng": 4.8357, "keywords": ["lyon trip planner", "france gastronomy", "lyon old town"], "unsplashQuery": "lyon france", "wikiPageId": "Lyon"},
-  {"slug": "marseille", "name": "Marseille", "country": "France", "continent": "Europe", "lat": 43.2965, "lng": 5.3698, "keywords": ["marseille trip planner", "provence france", "calanques"], "unsplashQuery": "marseille france", "wikiPageId": "Marseille"},
-  {"slug": "nice", "name": "Nice", "country": "France", "continent": "Europe", "lat": 43.7102, "lng": 7.2620, "keywords": ["nice trip planner", "french riviera", "cote d azur"], "unsplashQuery": "nice france", "wikiPageId": "Nice"},
-  {"slug": "bordeaux", "name": "Bordeaux", "country": "France", "continent": "Europe", "lat": 44.8378, "lng": -0.5792, "keywords": ["bordeaux trip planner", "france wine", "bordeaux vineyards"], "unsplashQuery": "bordeaux france", "wikiPageId": "Bordeaux"},
-  {"slug": "porto", "name": "Porto", "country": "Portugal", "continent": "Europe", "lat": 41.1579, "lng": -8.6291, "keywords": ["porto trip planner", "portugal wine", "douro valley"], "unsplashQuery": "porto portugal", "wikiPageId": "Porto"},
-  {"slug": "phuket", "name": "Phuket", "country": "Thailand", "continent": "Asia", "lat": 7.8804, "lng": 98.3923, "keywords": ["phuket trip planner", "thailand beaches", "patong beach"], "unsplashQuery": "phuket thailand", "wikiPageId": "Phuket_Province"},
-  {"slug": "chiang-mai", "name": "Chiang Mai", "country": "Thailand", "continent": "Asia", "lat": 18.7883, "lng": 98.9853, "keywords": ["chiang mai trip planner", "thailand temples", "elephant sanctuary"], "unsplashQuery": "chiang mai thailand", "wikiPageId": "Chiang_Mai"},
-  {"slug": "hanoi", "name": "Hanoi", "country": "Vietnam", "continent": "Asia", "lat": 21.0285, "lng": 105.8542, "keywords": ["hanoi trip planner", "vietnam travel", "old quarter"], "unsplashQuery": "hanoi vietnam", "wikiPageId": "Hanoi"},
-  {"slug": "ho-chi-minh-city", "name": "Ho Chi Minh City", "country": "Vietnam", "continent": "Asia", "lat": 10.8231, "lng": 106.6297, "keywords": ["saigon trip planner", "vietnam travel", "war museum"], "unsplashQuery": "ho chi minh city vietnam", "wikiPageId": "Ho_Chi_Minh_City"},
-  {"slug": "siem-reap", "name": "Siem Reap", "country": "Cambodia", "continent": "Asia", "lat": 13.3671, "lng": 103.8448, "keywords": ["siem reap trip planner", "angkor wat", "cambodia temples"], "unsplashQuery": "siem reap cambodia", "wikiPageId": "Siem_Reap"},
-  {"slug": "kuala-lumpur", "name": "Kuala Lumpur", "country": "Malaysia", "continent": "Asia", "lat": 3.1390, "lng": 101.6869, "keywords": ["kuala lumpur trip planner", "petronas towers", "malaysia travel"], "unsplashQuery": "kuala lumpur malaysia", "wikiPageId": "Kuala_Lumpur"},
-  {"slug": "jakarta", "name": "Jakarta", "country": "Indonesia", "continent": "Asia", "lat": -6.2088, "lng": 106.8456, "keywords": ["jakarta trip planner", "indonesia capital", "jakarta attractions"], "unsplashQuery": "jakarta indonesia", "wikiPageId": "Jakarta"},
-  {"slug": "manila", "name": "Manila", "country": "Philippines", "continent": "Asia", "lat": 14.5995, "lng": 120.9842, "keywords": ["manila trip planner", "philippines travel", "intramuros"], "unsplashQuery": "manila philippines", "wikiPageId": "Manila"},
-  {"slug": "taipei", "name": "Taipei", "country": "Taiwan", "continent": "Asia", "lat": 25.0330, "lng": 121.5654, "keywords": ["taipei trip planner", "taiwan travel", "taipei 101"], "unsplashQuery": "taipei taiwan", "wikiPageId": "Taipei"},
-  {"slug": "shanghai", "name": "Shanghai", "country": "China", "continent": "Asia", "lat": 31.2304, "lng": 121.4737, "keywords": ["shanghai trip planner", "china travel", "the bund"], "unsplashQuery": "shanghai china", "wikiPageId": "Shanghai"},
-  {"slug": "beijing", "name": "Beijing", "country": "China", "continent": "Asia", "lat": 39.9042, "lng": 116.4074, "keywords": ["beijing trip planner", "great wall china", "forbidden city"], "unsplashQuery": "beijing china", "wikiPageId": "Beijing"},
-  {"slug": "delhi", "name": "Delhi", "country": "India", "continent": "Asia", "lat": 28.7041, "lng": 77.1025, "keywords": ["delhi trip planner", "india capital", "red fort"], "unsplashQuery": "delhi india", "wikiPageId": "Delhi"},
-  {"slug": "mumbai", "name": "Mumbai", "country": "India", "continent": "Asia", "lat": 19.0760, "lng": 72.8777, "keywords": ["mumbai trip planner", "bollywood", "gateway of india"], "unsplashQuery": "mumbai india", "wikiPageId": "Mumbai"},
-  {"slug": "jaipur", "name": "Jaipur", "country": "India", "continent": "Asia", "lat": 26.9124, "lng": 75.7873, "keywords": ["jaipur trip planner", "pink city", "rajasthan india"], "unsplashQuery": "jaipur india", "wikiPageId": "Jaipur"},
-  {"slug": "agra", "name": "Agra", "country": "India", "continent": "Asia", "lat": 27.1767, "lng": 78.0081, "keywords": ["agra trip planner", "taj mahal", "india travel"], "unsplashQuery": "agra india", "wikiPageId": "Agra"},
-  {"slug": "kathmandu", "name": "Kathmandu", "country": "Nepal", "continent": "Asia", "lat": 27.7172, "lng": 85.3240, "keywords": ["kathmandu trip planner", "nepal travel", "himalayan trek"], "unsplashQuery": "kathmandu nepal", "wikiPageId": "Kathmandu"},
-  {"slug": "colombo", "name": "Colombo", "country": "Sri Lanka", "continent": "Asia", "lat": 6.9271, "lng": 79.8612, "keywords": ["colombo trip planner", "sri lanka travel", "colombo attractions"], "unsplashQuery": "colombo sri lanka", "wikiPageId": "Colombo"},
-  {"slug": "maldives", "name": "Maldives", "country": "Maldives", "continent": "Asia", "lat": 3.2028, "lng": 73.2207, "keywords": ["maldives trip planner", "maldives resort", "island paradise"], "unsplashQuery": "maldives", "wikiPageId": "Maldives"},
-  {"slug": "dubai-marina", "name": "Dubai Marina", "country": "UAE", "continent": "Asia", "lat": 25.0772, "lng": 55.1379, "keywords": ["dubai marina", "uae travel", "luxury yacht"], "unsplashQuery": "dubai marina", "wikiPageId": "Dubai_Marina"},
-  {"slug": "abu-dhabi", "name": "Abu Dhabi", "country": "UAE", "continent": "Asia", "lat": 24.4539, "lng": 54.3773, "keywords": ["abu dhabi trip planner", "sheikh zayed mosque", "uae capital"], "unsplashQuery": "abu dhabi", "wikiPageId": "Abu_Dhabi"},
-  {"slug": "jerusalem", "name": "Jerusalem", "country": "Israel", "continent": "Asia", "lat": 31.7683, "lng": 35.2137, "keywords": ["jerusalem trip planner", "holy city", "israel travel"], "unsplashQuery": "jerusalem israel", "wikiPageId": "Jerusalem"},
-  {"slug": "tel-aviv", "name": "Tel Aviv", "country": "Israel", "continent": "Asia", "lat": 32.0853, "lng": 34.7818, "keywords": ["tel aviv trip planner", "israel beaches", "tel aviv nightlife"], "unsplashQuery": "tel aviv israel", "wikiPageId": "Tel_Aviv"},
-  {"slug": "doha", "name": "Doha", "country": "Qatar", "continent": "Asia", "lat": 25.2854, "lng": 51.5310, "keywords": ["doha trip planner", "qatar travel", "souq waqif"], "unsplashQuery": "doha qatar", "wikiPageId": "Doha"},
-  {"slug": "muscat", "name": "Muscat", "country": "Oman", "continent": "Asia", "lat": 23.5880, "lng": 58.3829, "keywords": ["muscat trip planner", "oman travel", "sultan qaboos mosque"], "unsplashQuery": "muscat oman", "wikiPageId": "Muscat,_Oman"},
-  {"slug": "melbourne", "name": "Melbourne", "country": "Australia", "continent": "Oceania", "lat": -37.8136, "lng": 144.9631, "keywords": ["melbourne trip planner", "australia culture", "great ocean road"], "unsplashQuery": "melbourne australia", "wikiPageId": "Melbourne"},
-  {"slug": "brisbane", "name": "Brisbane", "country": "Australia", "continent": "Oceania", "lat": -27.4698, "lng": 153.0251, "keywords": ["brisbane trip planner", "australia travel", "south bank"], "unsplashQuery": "brisbane australia", "wikiPageId": "Brisbane"},
-  {"slug": "auckland", "name": "Auckland", "country": "New Zealand", "continent": "Oceania", "lat": -36.8485, "lng": 174.7633, "keywords": ["auckland trip planner", "new zealand travel", "sky tower"], "unsplashQuery": "auckland new zealand", "wikiPageId": "Auckland"},
-  {"slug": "queenstown", "name": "Queenstown", "country": "New Zealand", "continent": "Oceania", "lat": -45.0312, "lng": 168.6626, "keywords": ["queenstown trip planner", "new zealand adventure", "milford sound"], "unsplashQuery": "queenstown new zealand", "wikiPageId": "Queenstown,_New_Zealand"},
-  {"slug": "fiji", "name": "Fiji", "country": "Fiji", "continent": "Oceania", "lat": -17.7134, "lng": 178.0650, "keywords": ["fiji trip planner", "fiji islands", "tropical paradise"], "unsplashQuery": "fiji islands", "wikiPageId": "Fiji"}
+  {
+    "slug": "tokyo",
+    "name": "Tokyo",
+    "country": "Japan",
+    "continent": "Asia",
+    "lat": 35.6762,
+    "lng": 139.6503,
+    "keywords": [
+      "tokyo trip planner",
+      "tokyo itinerary",
+      "tokyo travel guide"
+    ],
+    "unsplashQuery": "tokyo japan",
+    "wikiPageId": "Tokyo",
+    "image": null,
+    "wikipedia": {
+      "title": "Tokyo",
+      "extract": "Tokyo, officially the Tokyo Metropolis, is the capital and most populous city of Japan. With a population of over 14 million in the city proper in 2023, it is one of the most populous urban areas in the world. The Greater Tokyo Area, which includes Tokyo and parts of six neighboring prefectures, is the most populous metropolitan area in the world, with 41 million residents as of 2024.",
+      "description": "Capital and most populous city in Japan",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/330px-Skyscrapers_of_Shinjuku_2009_January.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Tokyo"
+    }
+  },
+  {
+    "slug": "kyoto",
+    "name": "Kyoto",
+    "country": "Japan",
+    "continent": "Asia",
+    "lat": 35.0116,
+    "lng": 135.7681,
+    "keywords": [
+      "kyoto trip planner",
+      "kyoto temples",
+      "kyoto cherry blossom"
+    ],
+    "unsplashQuery": "kyoto japan",
+    "wikiPageId": "Kyoto",
+    "image": null,
+    "wikipedia": {
+      "title": "Kyoto",
+      "extract": "Kyoto, officially Kyoto City , is the capital city of Kyoto Prefecture in the Kansai region of Japan's largest and most populous island of Honshu. As of 2020, the city had a population of 1.46 million, making it the ninth-most populous city in Japan. More than half (56.8%) of Kyoto Prefecture's population resides in the city. The city is the cultural anchor of the substantially larger Greater Kyoto, a metropolitan statistical area (MSA) home to a census-estimated 3.8 million people. It is also part of the even larger Keihanshin metropolitan area, along with Osaka and Kobe.",
+      "description": "City in the Kansai region of Japan",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Kiyomizu.jpg/330px-Kiyomizu.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kyoto"
+    }
+  },
+  {
+    "slug": "osaka",
+    "name": "Osaka",
+    "country": "Japan",
+    "continent": "Asia",
+    "lat": 34.6937,
+    "lng": 135.5023,
+    "keywords": [
+      "osaka trip planner",
+      "osaka food",
+      "osaka castle"
+    ],
+    "unsplashQuery": "osaka japan",
+    "wikiPageId": "Osaka",
+    "image": null,
+    "wikipedia": {
+      "title": "Osaka",
+      "extract": "Osaka  is a designated city in the Kansai region of Honshu in Japan. It is the capital of and most populous city in Osaka Prefecture, and the third-most populous city in Japan, following the special wards of Tokyo and Yokohama. With an estimated population of 2,816,247 as of October 1, 2025 and a population density of about 12,505 people per square kilometer, it is the largest component of the Keihanshin Metropolitan Area, the second-largest metropolitan area in Japan and the 10th-largest urban area in the world with more than 19 million inhabitants.",
+      "description": "Designated city in Kansai, Japan",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/330px-Osaka_Castle_03bs3200.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Osaka"
+    }
+  },
+  {
+    "slug": "paris",
+    "name": "Paris",
+    "country": "France",
+    "continent": "Europe",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "keywords": [
+      "paris trip planner",
+      "paris itinerary",
+      "eiffel tower"
+    ],
+    "unsplashQuery": "paris france",
+    "wikiPageId": "Paris",
+    "image": null,
+    "wikipedia": {
+      "title": "Paris",
+      "extract": "Paris is the capital and largest city of France, with an estimated city population of 2.04 million in an area of 105.4 km2 (40.7 sq mi), and a metropolitan population of 13.2 million as of January 2026. Located on the river Seine in the centre of the Île-de-France region, it is the largest metropolitan area and fourth-most populous city in the European Union (EU). Nicknamed the \"City of Light\", partly because of its role in the Age of Enlightenment, Paris has been one of the world's major centres of finance, diplomacy, commerce, culture, fashion, and gastronomy since the 17th century.",
+      "description": "Capital and largest city of France",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/330px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Paris"
+    }
+  },
+  {
+    "slug": "london",
+    "name": "London",
+    "country": "United Kingdom",
+    "continent": "Europe",
+    "lat": 51.5074,
+    "lng": -0.1278,
+    "keywords": [
+      "london trip planner",
+      "london attractions",
+      "london travel"
+    ],
+    "unsplashQuery": "london uk",
+    "wikiPageId": "London",
+    "image": null,
+    "wikipedia": {
+      "title": "London",
+      "extract": "London is the capital and largest city of both England and the United Kingdom, with a population of 9.1 million people in 2024. Its wider metropolitan area is the largest in Western Europe, with a population of 15.1 million. London stands on the River Thames in southeast England, at the head of a 50-mile (80 km) tidal estuary down to the North Sea, and has been a major settlement for nearly 2,000 years. Its ancient core and financial centre, the City of London, was founded by the Romans as Londinium and has retained its medieval boundaries. The City of Westminster, to the west of the City of London, for centuries has been as the site of the national government and parliament. London grew rapidly in the 19th century, becoming the world's largest city at the time. Since the 19th century the name \"London\" has referred to the metropolis around the City of London, historically split among the counties of Middlesex, Essex, Surrey, Kent and Hertfordshire. Since 1965 it has largely comprised the administrative area of Greater London, governed by 33 local authorities and the Greater London Authority.",
+      "description": "Capital of England and the United Kingdom",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/330px-London_Skyline_%28125508655%29.jpeg",
+      "pageUrl": "https://en.wikipedia.org/wiki/London"
+    }
+  },
+  {
+    "slug": "new-york",
+    "name": "New York",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 40.7128,
+    "lng": -74.006,
+    "keywords": [
+      "new york trip planner",
+      "nyc itinerary",
+      "manhattan guide"
+    ],
+    "unsplashQuery": "new york city",
+    "wikiPageId": "New_York_City",
+    "image": null,
+    "wikipedia": {
+      "title": "New York City",
+      "extract": "New York, often called New York City (NYC), is the most populous city in the United States. It is located at the southern tip of New York State on New York Harbor, one of the world's largest natural harbors. The city comprises five boroughs, each coextensive with its respective county. It is the geographical and demographic center of both the Northeast megalopolis and the New York metropolitan area, the largest metropolitan area in the United States by both population and urban area. New York is a global center of finance and commerce, culture, technology, entertainment and media, academics and scientific output, the arts and fashion, and, as home to the headquarters of the United Nations, international diplomacy.",
+      "description": "Most populous city in the United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/330px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/New_York_City"
+    }
+  },
+  {
+    "slug": "rome",
+    "name": "Rome",
+    "country": "Italy",
+    "continent": "Europe",
+    "lat": 41.9028,
+    "lng": 12.4964,
+    "keywords": [
+      "rome trip planner",
+      "rome colosseum",
+      "vatican guide"
+    ],
+    "unsplashQuery": "rome italy",
+    "wikiPageId": "Rome",
+    "image": null,
+    "wikipedia": {
+      "title": "Rome",
+      "extract": "Rome is the capital city and most populated comune (municipality) of Italy. It is also the administrative centre of the Lazio region and of the Metropolitan City of Rome. A special comune named Roma Capitale with a population of 2.7 million in an area of 1,287.36 km2 (497.1 mi2), Rome is the third most populous city in the European Union by population within city limits. The Metropolitan City of Rome Capital, with a population of 4.2 million, is the most populous metropolitan city in Italy. Its metropolitan area is the third-most populous within Italy. Rome is located in the central-western portion of the Italian Peninsula, within Lazio (Latium), along the shores of the Tiber Valley. Vatican City is an independent country inside the city boundaries of Rome, the only existing example of a country within a city. Rome is often referred to as the \"City of Seven Hills\" due to its geography, and also as the \"Eternal City\". Rome is generally considered to be one of the cradles of Western civilization and Western Christian culture, and the centre of the Catholic Church.",
+      "description": "Capital and largest city of Italy",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg/330px-Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Rome"
+    }
+  },
+  {
+    "slug": "barcelona",
+    "name": "Barcelona",
+    "country": "Spain",
+    "continent": "Europe",
+    "lat": 41.3851,
+    "lng": 2.1734,
+    "keywords": [
+      "barcelona trip planner",
+      "sagrada familia",
+      "barcelona beach"
+    ],
+    "unsplashQuery": "barcelona spain",
+    "wikiPageId": "Barcelona",
+    "image": null,
+    "wikipedia": {
+      "title": "Barcelona",
+      "extract": "Barcelona is a city on the northeastern coast of Spain. It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain. With a population of 1.7 million within city limits, its urban area extends to numerous neighbouring municipalities within the province of Barcelona and is home to around 5.7 million people, making it the fifth most populous urban area of the European Union after Paris, the Ruhr area, Madrid and Milan. It is one of the largest metropolises on the Mediterranean Sea, located on the coast between the mouths of the rivers Llobregat and Besòs, bounded to the west by the Serra de Collserola mountain range.",
+      "description": "City in Catalonia, Spain",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Aerial_view_of_Barcelona%2C_Spain_%2851227309370%29_edited.jpg/330px-Aerial_view_of_Barcelona%2C_Spain_%2851227309370%29_edited.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Barcelona"
+    }
+  },
+  {
+    "slug": "amsterdam",
+    "name": "Amsterdam",
+    "country": "Netherlands",
+    "continent": "Europe",
+    "lat": 52.3676,
+    "lng": 4.9041,
+    "keywords": [
+      "amsterdam trip planner",
+      "amsterdam canals",
+      "netherlands travel"
+    ],
+    "unsplashQuery": "amsterdam netherlands",
+    "wikiPageId": "Amsterdam",
+    "image": null,
+    "wikipedia": {
+      "title": "Amsterdam",
+      "extract": "Amsterdam is the capital and largest city of the Netherlands. It has a population of 933,680 in June 2024 within the city proper, 1,457,018 in the urban area and 2,480,394 in the metropolitan area. Located in the Dutch province of North Holland, Amsterdam is colloquially referred to as the \"Venice of the North\", for its large number of canals, now a UNESCO World Heritage Site.",
+      "description": "Capital and largest city of the Netherlands",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png/330px-Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png",
+      "pageUrl": "https://en.wikipedia.org/wiki/Amsterdam"
+    }
+  },
+  {
+    "slug": "dubai",
+    "name": "Dubai",
+    "country": "UAE",
+    "continent": "Asia",
+    "lat": 25.2048,
+    "lng": 55.2708,
+    "keywords": [
+      "dubai trip planner",
+      "burj khalifa",
+      "dubai attractions"
+    ],
+    "unsplashQuery": "dubai uae",
+    "wikiPageId": "Dubai",
+    "image": null,
+    "wikipedia": {
+      "title": "Dubai",
+      "extract": "Dubai is the most populous city in the United Arab Emirates and the capital of the Emirate of Dubai. It is on a creek on the southeastern coast of the Persian Gulf. As of 2025, its population stands at 4 million, 92% of whom are expatriates. The wider urban area includes Sharjah and has a population of 5 million people as of 2023, while the Dubai–Sharjah–Ajman metropolitan area has a population of 6 million people.",
+      "description": "City in the United Arab Emirates",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Burj_Khalifa_2021.jpg/330px-Burj_Khalifa_2021.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Dubai"
+    }
+  },
+  {
+    "slug": "singapore",
+    "name": "Singapore",
+    "country": "Singapore",
+    "continent": "Asia",
+    "lat": 1.3521,
+    "lng": 103.8198,
+    "keywords": [
+      "singapore trip planner",
+      "singapore itinerary",
+      "gardens by the bay"
+    ],
+    "unsplashQuery": "singapore",
+    "wikiPageId": "Singapore",
+    "image": null,
+    "wikipedia": {
+      "title": "Singapore",
+      "extract": "Singapore, officially the Republic of Singapore, is an island country and city-state in Southeast Asia. Its territory comprises a main island, over 60 satellite islands and islets, and one outlying islet. The country is about one degree of latitude north of the equator, off the southern tip of the Malay Peninsula, bordering the Strait of Malacca to the west, the Singapore Strait to the south along with the Riau Islands in Indonesia, the South China Sea to the east and the Straits of Johor along with the State of Johor in Malaysia to the north.",
+      "description": "Island country in Southeast Asia",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/330px-Flag_of_Singapore.svg.png",
+      "pageUrl": "https://en.wikipedia.org/wiki/Singapore"
+    }
+  },
+  {
+    "slug": "bangkok",
+    "name": "Bangkok",
+    "country": "Thailand",
+    "continent": "Asia",
+    "lat": 13.7563,
+    "lng": 100.5018,
+    "keywords": [
+      "bangkok trip planner",
+      "bangkok temples",
+      "thailand travel"
+    ],
+    "unsplashQuery": "bangkok thailand",
+    "wikiPageId": "Bangkok",
+    "image": null,
+    "wikipedia": {
+      "title": "Bangkok",
+      "extract": "Bangkok, officially known in Thai as Krung Thep Maha Nakhon and colloquially as Krung Thep, is the capital and most populous city of Thailand. The city occupies 1,568.7 square kilometres (605.7 sq mi) in the Chao Phraya River delta in central Thailand and has an estimated population of 11.4 million people as of 2024, 15.9% of the country's population. Over 17.4 million people live within the surrounding Bangkok Metropolitan Region as of the 2021 estimate, making Bangkok a megacity and an extreme primate city, dwarfing Thailand's other urban centres in both size and importance to the national economy.",
+      "description": "Capital and largest city of Thailand",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bangkok_Montage_2024_2.jpg/330px-Bangkok_Montage_2024_2.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Bangkok"
+    }
+  },
+  {
+    "slug": "istanbul",
+    "name": "Istanbul",
+    "country": "Turkey",
+    "continent": "Europe",
+    "lat": 41.0082,
+    "lng": 28.9784,
+    "keywords": [
+      "istanbul trip planner",
+      "hagia sophia",
+      "turkey travel"
+    ],
+    "unsplashQuery": "istanbul turkey",
+    "wikiPageId": "Istanbul",
+    "image": null,
+    "wikipedia": {
+      "title": "Istanbul",
+      "extract": "Istanbul is the largest city in Turkey, constituting the country's economic, cultural, and historical center. With a population of over 15 million, it is home to 18% of the population of Turkey. Istanbul is among the largest cities in Europe and in the world by population. It is a city on two continents; about two-thirds of its population live in Europe and the rest in Asia. Istanbul straddles the Bosphorus – one of the world's busiest waterways – in northwestern Turkey, between the Sea of Marmara and the Black Sea. Its area of 5,461 square kilometers (2,109 mi2) is coterminous with Istanbul Province.",
+      "description": "Largest city in Turkey",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Historical_peninsula_and_modern_skyline_of_Istanbul.jpg/330px-Historical_peninsula_and_modern_skyline_of_Istanbul.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Istanbul"
+    }
+  },
+  {
+    "slug": "sydney",
+    "name": "Sydney",
+    "country": "Australia",
+    "continent": "Oceania",
+    "lat": -33.8688,
+    "lng": 151.2093,
+    "keywords": [
+      "sydney trip planner",
+      "sydney opera house",
+      "australia travel"
+    ],
+    "unsplashQuery": "sydney australia",
+    "wikiPageId": "Sydney",
+    "image": null,
+    "wikipedia": {
+      "title": "Sydney",
+      "extract": "Sydney is the capital city of the state of New South Wales, and is the most populous city in Australia. Located on Australia's east coast, the metropolis surrounds Sydney Harbour and extends about 80 kilometres (50 mi) from the Pacific Ocean in the east to the Blue Mountains in the west, and about 80 kilometres (50 mi) from Ku-ring-gai Chase National Park and the Hawkesbury River in the north and north-west, to the Royal National Park and Macarthur in the south and south-west. Greater Sydney consists of 658 suburbs, spread across 33 local government areas. Residents of the city are colloquially known as \"Sydneysiders\". The estimated population in June 2024 was 5,557,233, which is about 66% of the state's population. The city's nicknames include the Emerald City and the Harbour City.",
+      "description": "Capital city of New South Wales, Australia",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg/330px-Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Sydney"
+    }
+  },
+  {
+    "slug": "hong-kong",
+    "name": "Hong Kong",
+    "country": "Hong Kong",
+    "continent": "Asia",
+    "lat": 22.3193,
+    "lng": 114.1694,
+    "keywords": [
+      "hong kong trip planner",
+      "hong kong itinerary",
+      "victoria peak"
+    ],
+    "unsplashQuery": "hong kong",
+    "wikiPageId": "Hong_Kong",
+    "image": null,
+    "wikipedia": {
+      "title": "Hong Kong",
+      "extract": "Hong Kong is a special administrative region of China. Situated on China's southern coast just south of Shenzhen, it consists of Hong Kong Island, Kowloon, and the New Territories. With 7.5 million residents in a 1,114-square-kilometre (430 sq mi) territory, Hong Kong is the fourth-most densely populated region in the world.",
+      "description": "Special administrative region of China",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Flag_of_Hong_Kong.svg/330px-Flag_of_Hong_Kong.svg.png",
+      "pageUrl": "https://en.wikipedia.org/wiki/Hong_Kong"
+    }
+  },
+  {
+    "slug": "seoul",
+    "name": "Seoul",
+    "country": "South Korea",
+    "continent": "Asia",
+    "lat": 37.5665,
+    "lng": 126.978,
+    "keywords": [
+      "seoul trip planner",
+      "seoul korea",
+      "seoul attractions"
+    ],
+    "unsplashQuery": "seoul korea",
+    "wikiPageId": "Seoul",
+    "image": null,
+    "wikipedia": {
+      "title": "Seoul",
+      "extract": "Seoul, officially Seoul Special Metropolitan City, is the capital and largest city of South Korea, and the largest city in the whole of Korea. The broader Seoul Metropolitan Area, encompassing Seoul, Gyeonggi Province and Incheon, emerged as the world's sixth largest metropolitan economy in 2022, behind New York, Tokyo, Los Angeles, Paris, and London, and hosts more than half of South Korea's population. Although Seoul's population peaked at over 10 million, it has gradually decreased since 2014, standing at about 9.6 million residents as of 2024. Seoul is the seat of the South Korean government.",
+      "description": "Capital and largest city of South Korea",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg/330px-%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Seoul"
+    }
+  },
+  {
+    "slug": "bali",
+    "name": "Bali",
+    "country": "Indonesia",
+    "continent": "Asia",
+    "lat": -8.3405,
+    "lng": 115.092,
+    "keywords": [
+      "bali trip planner",
+      "bali beaches",
+      "ubud rice terraces"
+    ],
+    "unsplashQuery": "bali indonesia",
+    "wikiPageId": "Bali",
+    "image": null,
+    "wikipedia": {
+      "title": "Bali",
+      "extract": "Bali is an Indonesian island and province and the westernmost of the Lesser Sunda Islands. East of Java and west of Lombok, the province includes the island of Bali and a few smaller offshore islands, notably Nusa Penida, Nusa Lembongan, and Nusa Ceningan to the southeast. The provincial capital, Denpasar, is the most populous city in the Lesser Sunda Islands and the second-largest, after Makassar, in Eastern Indonesia. The Denpasar metropolitan area is the extended metropolitan area around Denpasar. The upland town of Ubud in Greater Denpasar is considered as Bali's cultural centre. The province is Indonesia's main tourist destination, with a significant rise in tourism since the 1980s, and has become the country's area of overtourism. Tourism-related business makes up 80% of the Bali economy.",
+      "description": "Province in Lesser Sunda Islands, Indonesia",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Bali_in_Indonesia_%28special_marker%29.svg/330px-Bali_in_Indonesia_%28special_marker%29.svg.png",
+      "pageUrl": "https://en.wikipedia.org/wiki/Bali"
+    }
+  },
+  {
+    "slug": "lisbon",
+    "name": "Lisbon",
+    "country": "Portugal",
+    "continent": "Europe",
+    "lat": 38.7223,
+    "lng": -9.1393,
+    "keywords": [
+      "lisbon trip planner",
+      "lisbon portugal",
+      "lisbon trams"
+    ],
+    "unsplashQuery": "lisbon portugal",
+    "wikiPageId": "Lisbon",
+    "image": null,
+    "wikipedia": {
+      "title": "Lisbon",
+      "extract": "Lisbon is the capital and most populous city of Portugal, with an estimated population of 575,739 as of 2024, within its administrative limits and 3,028,000 within the metropolis, as of 2025. Lisbon is mainland Europe's westernmost capital city, and the only one along the Atlantic coast, the others being on islands. The city lies in the western portion of the Iberian Peninsula, on the northern shore of the River Tagus. The western portion of its metro area, the Portuguese Riviera, hosts the westernmost point of Continental Europe, culminating at Cabo da Roca.",
+      "description": "Capital and largest city of Portugal",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Lisboa_-_Portugal_%2852597836992%29.jpg/330px-Lisboa_-_Portugal_%2852597836992%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Lisbon"
+    }
+  },
+  {
+    "slug": "prague",
+    "name": "Prague",
+    "country": "Czech Republic",
+    "continent": "Europe",
+    "lat": 50.0755,
+    "lng": 14.4378,
+    "keywords": [
+      "prague trip planner",
+      "prague castle",
+      "czech republic"
+    ],
+    "unsplashQuery": "prague czech",
+    "wikiPageId": "Prague",
+    "image": null,
+    "wikipedia": {
+      "title": "Prague",
+      "extract": "Prague is the capital and largest city of the Czech Republic and the historical capital of Bohemia. Prague, located on the Vltava River, has a population of about 1.4 million, while its metropolitan area is home to approximately 2.3 million people.",
+      "description": "Capital and largest city of the Czech Republic",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Prague_%286365119737%29.jpg/330px-Prague_%286365119737%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Prague"
+    }
+  },
+  {
+    "slug": "vienna",
+    "name": "Vienna",
+    "country": "Austria",
+    "continent": "Europe",
+    "lat": 48.2082,
+    "lng": 16.3738,
+    "keywords": [
+      "vienna trip planner",
+      "vienna austria",
+      "schonbrunn palace"
+    ],
+    "unsplashQuery": "vienna austria",
+    "wikiPageId": "Vienna",
+    "image": null,
+    "wikipedia": {
+      "title": "Vienna",
+      "extract": "Vienna is the capital, most populous city, and one of the nine states of Austria. It is Austria's primate city, with just over two million inhabitants. Its larger metropolitan area has a population of nearly 2.9 million, representing nearly one-third of the country's population. Vienna is the cultural, economic, and political centre of the country, the fifth-largest city by population in the European Union, and the most populous of the cities on the river Danube.",
+      "description": "Capital and largest city of Austria",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/330px-Schoenbrunn_philharmoniker_2012.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Vienna"
+    }
+  },
+  {
+    "slug": "berlin",
+    "name": "Berlin",
+    "country": "Germany",
+    "continent": "Europe",
+    "lat": 52.52,
+    "lng": 13.405,
+    "keywords": [
+      "berlin trip planner",
+      "berlin wall",
+      "germany travel"
+    ],
+    "unsplashQuery": "berlin germany",
+    "wikiPageId": "Berlin",
+    "image": null,
+    "wikipedia": {
+      "title": "Berlin",
+      "extract": "Berlin is the capital of Germany, as well as its largest city by both area and population. With 3.7 million inhabitants, it has the highest population within its city limits of any city in the European Union. The city is also one of the states of Germany, being the third-smallest state in the country by area. Berlin is surrounded by the state of Brandenburg, bordering Brandenburg's capital Potsdam to the southwest. The urban area of Berlin has a population of over 4.6 million, making it the most populous in Germany. The Berlin-Brandenburg capital region has around 6.2 million inhabitants and is Germany's second-largest metropolitan region after the Rhine-Ruhr region, as well as the fifth-biggest metropolitan region by GDP in the European Union.",
+      "description": "Capital and largest city of Germany",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Blue_Hour_in_Berlin.jpg/330px-Blue_Hour_in_Berlin.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Berlin"
+    }
+  },
+  {
+    "slug": "venice",
+    "name": "Venice",
+    "country": "Italy",
+    "continent": "Europe",
+    "lat": 45.4408,
+    "lng": 12.3155,
+    "keywords": [
+      "venice trip planner",
+      "venice canals",
+      "gondola rides"
+    ],
+    "unsplashQuery": "venice italy",
+    "wikiPageId": "Venice",
+    "image": null,
+    "wikipedia": {
+      "title": "Venice",
+      "extract": "Venice is a city in northeastern Italy and the capital of the region of Veneto. It is built on a group of 126 islands that are separated by expanses of open water and by canals; portions of the city are linked by 472 bridges.",
+      "description": "City in Veneto, Italy",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Venezia_aerial_view.jpg/330px-Venezia_aerial_view.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Venice"
+    }
+  },
+  {
+    "slug": "florence",
+    "name": "Florence",
+    "country": "Italy",
+    "continent": "Europe",
+    "lat": 43.7696,
+    "lng": 11.2558,
+    "keywords": [
+      "florence trip planner",
+      "florence italy",
+      "uffizi gallery"
+    ],
+    "unsplashQuery": "florence italy",
+    "wikiPageId": "Florence",
+    "image": null,
+    "wikipedia": {
+      "title": "Florence",
+      "extract": "Florence is the capital and most populous city of the Italian region of Tuscany, with 362,353 inhabitants as of 2025. It is also the capital of the eponymous metropolitan province, which counts 989,460 inhabitants.",
+      "description": "Largest city in Tuscany, Italy",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/FirenzeDec092023_01.jpg/330px-FirenzeDec092023_01.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Florence"
+    }
+  },
+  {
+    "slug": "santorini",
+    "name": "Santorini",
+    "country": "Greece",
+    "continent": "Europe",
+    "lat": 36.3932,
+    "lng": 25.4615,
+    "keywords": [
+      "santorini trip planner",
+      "santorini greece",
+      "oia sunset"
+    ],
+    "unsplashQuery": "santorini greece",
+    "wikiPageId": "Santorini",
+    "image": null,
+    "wikipedia": {
+      "title": "Santorini",
+      "extract": "Santorini, officially Thira or Thera, is a Greek island in the southern Aegean Sea, about 200 km (120 mi) southeast from the mainland. It is the largest island of a small, circular archipelago formed by the Santorini caldera. It is the southernmost member of the Cyclades group of islands, with an area of approximately 73 km2 (28 mi2) and a 2021 census population of 15,480. The municipality of Santorini includes the inhabited islands of Santorini and Therasia, and the uninhabited islands of Nea Kameni, Palaia Kameni, Aspronisi, Anydros, and Christiana. The total land area is 90 km2 (35 mi2). Santorini is part of the Thira regional unit.",
+      "description": "Greek island of the Cyclades in the Aegean Sea",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/2011_Dimos_Thiras.png/330px-2011_Dimos_Thiras.png",
+      "pageUrl": "https://en.wikipedia.org/wiki/Santorini"
+    }
+  },
+  {
+    "slug": "athens",
+    "name": "Athens",
+    "country": "Greece",
+    "continent": "Europe",
+    "lat": 37.9838,
+    "lng": 23.7275,
+    "keywords": [
+      "athens trip planner",
+      "athens greece",
+      "acropolis"
+    ],
+    "unsplashQuery": "athens greece",
+    "wikiPageId": "Athens",
+    "image": null,
+    "wikipedia": {
+      "title": "Athens",
+      "extract": "Athens is the capital and largest city of Greece. A significant coastal urban area in the Mediterranean, Athens is also the capital of the Attica region and is the southernmost capital on the European mainland. With its urban area's population numbering over 3.6 million, it is the eighth-largest urban area in the European Union (EU). The Municipality of Athens, which constitutes a small administrative unit of the entire urban area, had a population of 643,452 in 2021, within its official limits, and a land area of 38.96 square kilometres.",
+      "description": "Capital and largest city of Greece",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Monastiraki_Square_and_Acropolis_in_Athens_%2844149181684%29.jpg/330px-Monastiraki_Square_and_Acropolis_in_Athens_%2844149181684%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Athens"
+    }
+  },
+  {
+    "slug": "reykjavik",
+    "name": "Reykjavik",
+    "country": "Iceland",
+    "continent": "Europe",
+    "lat": 64.1466,
+    "lng": -21.9426,
+    "keywords": [
+      "reykjavik trip planner",
+      "iceland travel",
+      "northern lights"
+    ],
+    "unsplashQuery": "reykjavik iceland",
+    "wikiPageId": "Reykjavik",
+    "image": null,
+    "wikipedia": {
+      "title": "Reykjavík",
+      "extract": "Reykjavík is the capital and largest city of Iceland. It is located on the southern shore of the Faxaflói bay in southwest Iceland and has a latitude of 64°08′ N, making it the world's northernmost capital of a sovereign state. Reykjavík has a population of around 139,000 as of 2025, and the surrounding Capital Region has a population of around 249,000, constituting approximately 64% of Iceland's population.",
+      "description": "Capital and most populous city of Iceland",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Reykjav%C3%ADk%2C_view_from_Hallgr%C3%ADmskirkja_%282%29.jpg/330px-Reykjav%C3%ADk%2C_view_from_Hallgr%C3%ADmskirkja_%282%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Reykjav%C3%ADk"
+    }
+  },
+  {
+    "slug": "marrakech",
+    "name": "Marrakech",
+    "country": "Morocco",
+    "continent": "Africa",
+    "lat": 31.6295,
+    "lng": -7.9811,
+    "keywords": [
+      "marrakech trip planner",
+      "morocco travel",
+      "marrakech souks"
+    ],
+    "unsplashQuery": "marrakech morocco",
+    "wikiPageId": "Marrakesh",
+    "image": null,
+    "wikipedia": {
+      "title": "Marrakesh",
+      "extract": "Marrakesh or Marrakech is the fourth-largest city in Morocco. It is one of the four imperial cities of Morocco and is the capital of the Marrakesh-Safi region. The city lies west of the foothills of the Atlas Mountains.",
+      "description": "City in Marrakesh–Safi, Morocco",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Pavillon_Menarag%C3%A4rten.jpg/330px-Pavillon_Menarag%C3%A4rten.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Marrakesh"
+    }
+  },
+  {
+    "slug": "cairo",
+    "name": "Cairo",
+    "country": "Egypt",
+    "continent": "Africa",
+    "lat": 30.0444,
+    "lng": 31.2357,
+    "keywords": [
+      "cairo trip planner",
+      "pyramids giza",
+      "egypt travel"
+    ],
+    "unsplashQuery": "cairo egypt",
+    "wikiPageId": "Cairo",
+    "image": null,
+    "wikipedia": {
+      "title": "Cairo",
+      "extract": "Cairo is the capital and largest city of Egypt and the Cairo Governorate. It is home to more than 9.8 million people. It is also part of the largest urban agglomeration in Africa, the Arab world, and the Middle East. The Greater Cairo metropolitan area is one of the largest in the world by population with over 22 million people. Areas of what would become Cairo were inhabited from pre-dynastic and early-dynastic ancient Egypt c. 6000 years ago, as the Giza pyramid complex and the ancient cities of Memphis and Heliopolis are today within the city.",
+      "description": "Capital city of Egypt",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Cairo_Skyline_%282020%29.jpg/330px-Cairo_Skyline_%282020%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Cairo"
+    }
+  },
+  {
+    "slug": "cape-town",
+    "name": "Cape Town",
+    "country": "South Africa",
+    "continent": "Africa",
+    "lat": -33.9249,
+    "lng": 18.4241,
+    "keywords": [
+      "cape town trip planner",
+      "table mountain",
+      "south africa"
+    ],
+    "unsplashQuery": "cape town south africa",
+    "wikiPageId": "Cape_Town",
+    "image": null,
+    "wikipedia": {
+      "title": "Cape Town",
+      "extract": "Cape Town is the legislative capital of South Africa. It is the country's oldest city and the seat of the Parliament of South Africa. Cape Town is the country's second-largest city by population, after Johannesburg, and the largest city in the Western Cape. The city is part of the City of Cape Town metropolitan municipality.",
+      "description": "Legislative capital of South Africa",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Camps_bay_%2853460319478%29_%28cropped%29.jpg/330px-Camps_bay_%2853460319478%29_%28cropped%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Cape_Town"
+    }
+  },
+  {
+    "slug": "rio-de-janeiro",
+    "name": "Rio de Janeiro",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -22.9068,
+    "lng": -43.1729,
+    "keywords": [
+      "rio trip planner",
+      "christ redeemer",
+      "copacabana beach"
+    ],
+    "unsplashQuery": "rio de janeiro brazil",
+    "wikiPageId": "Rio_de_Janeiro",
+    "image": null,
+    "wikipedia": {
+      "title": "Rio de Janeiro",
+      "extract": "Rio de Janeiro, also known simply as Rio, is the capital of the state of Rio de Janeiro. It is the second-most-populous city in Brazil after São Paulo and the sixth-most-populous city in the Americas.",
+      "description": "Second-largest city in Brazil",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/330px-Cidade_Maravilhosa.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Rio_de_Janeiro"
+    }
+  },
+  {
+    "slug": "buenos-aires",
+    "name": "Buenos Aires",
+    "country": "Argentina",
+    "continent": "South America",
+    "lat": -34.6037,
+    "lng": -58.3816,
+    "keywords": [
+      "buenos aires trip planner",
+      "argentina travel",
+      "tango"
+    ],
+    "unsplashQuery": "buenos aires argentina",
+    "wikiPageId": "Buenos_Aires",
+    "image": null,
+    "wikipedia": {
+      "title": "Buenos Aires",
+      "extract": "Buenos Aires, officially the Autonomous City of Buenos Aires, is the capital and largest city of Argentina. It is located on the southwest of the Río de la Plata. Buenos Aires is classified as an Alpha− global city, according to the GaWC 2024 ranking. The city proper has a population of 3.1 million and its urban area has a population of 16.7 million, making it the 21st most populous metropolitan area in the world.",
+      "description": "Capital and most populous city of Argentina",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Avenida_9_de_Julio%2C_Buenos_Aires_%2840089810910%29.jpg/330px-Avenida_9_de_Julio%2C_Buenos_Aires_%2840089810910%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Buenos_Aires"
+    }
+  },
+  {
+    "slug": "cusco",
+    "name": "Cusco",
+    "country": "Peru",
+    "continent": "South America",
+    "lat": -13.5319,
+    "lng": -71.9675,
+    "keywords": [
+      "cusco trip planner",
+      "machu picchu",
+      "peru travel"
+    ],
+    "unsplashQuery": "cusco peru",
+    "wikiPageId": "Cusco",
+    "image": null,
+    "wikipedia": {
+      "title": "Cusco",
+      "extract": "Cusco or Cuzco is a city in southeastern Peru, near the Sacred Valley of the Andes mountain range, and the Huatanay and Urubamba rivers. It is the capital and largest city of the eponymous Cusco Province and Cusco Department. It has historically been one of the largest cultural, economic and political centers of Peru.",
+      "description": "City in Peru",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Vista_Calle_Suecia.jpg/330px-Vista_Calle_Suecia.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Cusco"
+    }
+  },
+  {
+    "slug": "mexico-city",
+    "name": "Mexico City",
+    "country": "Mexico",
+    "continent": "North America",
+    "lat": 19.4326,
+    "lng": -99.1332,
+    "keywords": [
+      "mexico city trip planner",
+      "cdmx guide",
+      "teotihuacan"
+    ],
+    "unsplashQuery": "mexico city",
+    "wikiPageId": "Mexico_City",
+    "image": null,
+    "wikipedia": {
+      "title": "Mexico City",
+      "extract": "Mexico City \nis the capital and largest city of Mexico, as well as the most populous city in North America. It is one of the most important cultural and financial centers in the world, and is classified as an Alpha world city according to the Globalization and World Cities Research Network (GaWC) 2024 ranking. Mexico City is located in the Valley of Mexico within the high Mexican central plateau, at an altitude of 2,240 meters. The city has 16 boroughs or demarcaciones territoriales, which are in turn divided into neighborhoods or colonias.",
+      "description": "Capital and most populous city of Mexico",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg/330px-Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Mexico_City"
+    }
+  },
+  {
+    "slug": "havana",
+    "name": "Havana",
+    "country": "Cuba",
+    "continent": "North America",
+    "lat": 23.1136,
+    "lng": -82.3666,
+    "keywords": [
+      "havana trip planner",
+      "cuba travel",
+      "old havana"
+    ],
+    "unsplashQuery": "havana cuba",
+    "wikiPageId": "Havana",
+    "image": null,
+    "wikipedia": {
+      "title": "Havana",
+      "extract": "Havana is the capital and largest city of Cuba. The heart of La Habana Province, Havana is the country's main port and commercial center. It is the most populous city, the largest by area, and the second-largest metropolitan area in the Caribbean region. The population in 2021 was 2,142,939 inhabitants, and its area is 728.26 km2 (281.18 sq mi) for the capital city and 8,475.57 km2 for the metropolitan zone. Its official population was 1,749,964 inhabitants in 2024.",
+      "description": "Capital and largest city of Cuba",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/DJI_0197_crp_wiki.jpg/330px-DJI_0197_crp_wiki.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Havana"
+    }
+  },
+  {
+    "slug": "vancouver",
+    "name": "Vancouver",
+    "country": "Canada",
+    "continent": "North America",
+    "lat": 49.2827,
+    "lng": -123.1207,
+    "keywords": [
+      "vancouver trip planner",
+      "canada travel",
+      "stanley park"
+    ],
+    "unsplashQuery": "vancouver canada",
+    "wikiPageId": "Vancouver",
+    "image": null,
+    "wikipedia": {
+      "title": "Vancouver",
+      "extract": "Vancouver is a major city in Western Canada, located in the Lower Mainland region of British Columbia. As the most populous city in the province, the 2021 Canadian census recorded 662,248 people in the city, up from 631,486 in 2016. The Metro Vancouver area had a population of 2.6 million in 2021, making it the third-largest metropolitan area in Canada. Greater Vancouver, along with the Fraser Valley, comprises the Lower Mainland with a regional population of over 3 million. Vancouver has the highest population density in Canada, with over 5,700 inhabitants per square kilometre (15,000/sq mi), and the fourth highest in North America.",
+      "description": "City in British Columbia, Canada",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Concord_Pacific_Master_Plan_Area.jpg/330px-Concord_Pacific_Master_Plan_Area.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Vancouver"
+    }
+  },
+  {
+    "slug": "toronto",
+    "name": "Toronto",
+    "country": "Canada",
+    "continent": "North America",
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "keywords": [
+      "toronto trip planner",
+      "cn tower",
+      "canada travel"
+    ],
+    "unsplashQuery": "toronto canada",
+    "wikiPageId": "Toronto",
+    "image": null,
+    "wikipedia": {
+      "title": "Toronto",
+      "extract": "Toronto is the most populous city in Canada and the capital city of the Canadian province of Ontario. With a population of 2,794,356 in 2021, the city is the fourth-most populous city in North America, after Mexico City, New York City, and Los Angeles. Toronto is the anchor of the Golden Horseshoe, an urban agglomeration surrounding the western end of Lake Ontario with an estimated population of 11,198,136 in 2025. As of 2025, the Toronto census metropolitan area had an estimated population of 7,106,379. Toronto is an international centre of business, finance, arts, sports, and culture, and is recognized as one of the most multicultural and cosmopolitan cities in the world.",
+      "description": "Most populous city in Canada",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Toronto_Skyline_viewed_from_Algonquin_Island_%2816-9_crop%29.jpg/330px-Toronto_Skyline_viewed_from_Algonquin_Island_%2816-9_crop%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Toronto"
+    }
+  },
+  {
+    "slug": "san-francisco",
+    "name": "San Francisco",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "keywords": [
+      "san francisco trip planner",
+      "golden gate bridge",
+      "sf guide"
+    ],
+    "unsplashQuery": "san francisco",
+    "wikiPageId": "San_Francisco",
+    "image": null,
+    "wikipedia": {
+      "title": "San Francisco",
+      "extract": "San Francisco, officially the City and County of San Francisco, is the fourth-most populous city in California and the 17th-most populous in the United States, with a population of 827,526 in 2024. Among U.S. cities with a population of 300,000 or more, San Francisco is ranked first by per capita income, second by population density, and sixth by aggregate income as of 2023. Some 4.6 million residents live in the city's metropolitan statistical area, which is the 13th-largest in the United States. Around 9.2 million live in the San Jose–San Francisco–Oakland combined statistical area, the fifth-largest in the United States.",
+      "description": "City and county in California, US",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/San_Francisco_Downtown_Aerial%2C_August_2025.jpg/330px-San_Francisco_Downtown_Aerial%2C_August_2025.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/San_Francisco"
+    }
+  },
+  {
+    "slug": "los-angeles",
+    "name": "Los Angeles",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "keywords": [
+      "los angeles trip planner",
+      "la attractions",
+      "hollywood"
+    ],
+    "unsplashQuery": "los angeles",
+    "wikiPageId": "Los_Angeles",
+    "image": null,
+    "wikipedia": {
+      "title": "Los Angeles",
+      "extract": "Los Angeles is the most populous city in the U.S. state of California, and the commercial, financial, and cultural center of Southern California. With an estimated 3.88 million residents within the city limits as of 2024, it is the second-most populous city in the United States, behind New York City, and the largest city in the Western United States. The city has an ethnically and culturally diverse population, and is the principal city of a metropolitan area of 12.9 million people (2024). Greater Los Angeles, a combined statistical area that includes the Los Angeles and Riverside–San Bernardino metropolitan areas, is a sprawling metropolis of over 18.5 million residents.",
+      "description": "Most populous city in California, U.S.",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hollywood_Sign_%28Zuschnitt%29.jpg/330px-Hollywood_Sign_%28Zuschnitt%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Los_Angeles"
+    }
+  },
+  {
+    "slug": "miami",
+    "name": "Miami",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 25.7617,
+    "lng": -80.1918,
+    "keywords": [
+      "miami trip planner",
+      "miami beach",
+      "south beach"
+    ],
+    "unsplashQuery": "miami florida",
+    "wikiPageId": "Miami",
+    "image": null,
+    "wikipedia": {
+      "title": "Miami",
+      "extract": "Miami is a coastal city in the U.S. state of Florida. It is the second-most populous city proper in Florida, with a population of 442,241 at the 2020 census. The Miami metropolitan area in South Florida has an estimated 6.46 million residents, ranking as the third-largest metropolitan area in the Southeast and sixth-largest metropolitan area in the United States. Miami has the third-largest skyline in the U.S. with over 300 high-rises, 70 of which exceed 491 ft (150 m). It is the county seat of Miami-Dade County.",
+      "description": "City in Florida, United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Villa_Vizcaya_20110228.jpg/330px-Villa_Vizcaya_20110228.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Miami"
+    }
+  },
+  {
+    "slug": "las-vegas",
+    "name": "Las Vegas",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 36.1699,
+    "lng": -115.1398,
+    "keywords": [
+      "las vegas trip planner",
+      "vegas strip",
+      "las vegas shows"
+    ],
+    "unsplashQuery": "las vegas",
+    "wikiPageId": "Las_Vegas",
+    "image": null,
+    "wikipedia": {
+      "title": "Las Vegas",
+      "extract": "Las Vegas, colloquially referred to as Vegas, is the most populous city in the U.S. state of Nevada and the seat of Clark County. It is the 24th-most populous city in the United States, with 641,903 residents at the 2020 census. The Las Vegas metropolitan area has an estimated 2.4 million residents and is the 29th-largest metropolitan area in the country. Las Vegas is an internationally renowned major resort city, known primarily for its gambling, shopping, fine dining, entertainment, and nightlife. Most of these venues are located in downtown Las Vegas or on the Las Vegas Strip, which is outside city limits in the unincorporated towns of Paradise and Winchester. The Las Vegas Valley serves as the leading financial, commercial, and cultural center in Nevada.",
+      "description": "Most populous city in Nevada, United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Las_Vegas_from_above_%2840064746644%29.jpg/330px-Las_Vegas_from_above_%2840064746644%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Las_Vegas"
+    }
+  },
+  {
+    "slug": "chicago",
+    "name": "Chicago",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 41.8781,
+    "lng": -87.6298,
+    "keywords": [
+      "chicago trip planner",
+      "chicago architecture",
+      "millennium park"
+    ],
+    "unsplashQuery": "chicago",
+    "wikiPageId": "Chicago",
+    "image": null,
+    "wikipedia": {
+      "title": "Chicago",
+      "extract": "Chicago is the most populous city in the U.S. state of Illinois and in the Midwestern United States. Located on the western shore of Lake Michigan, it is the third-most populous city in the United States, with a population of 2.74 million at the 2020 census. The Chicago metropolitan area has 9.41 million residents and is the third-largest metropolitan area in the country. Chicago is the seat of Cook County, the second-most populous county in the U.S.",
+      "description": "Most populous city in Illinois, United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Chicago_River_ferry_b.jpg/330px-Chicago_River_ferry_b.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Chicago"
+    }
+  },
+  {
+    "slug": "boston",
+    "name": "Boston",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 42.3601,
+    "lng": -71.0589,
+    "keywords": [
+      "boston trip planner",
+      "freedom trail",
+      "boston travel"
+    ],
+    "unsplashQuery": "boston massachusetts",
+    "wikiPageId": "Boston",
+    "image": null,
+    "wikipedia": {
+      "title": "Boston",
+      "extract": "Boston is the capital and most populous city of the U.S. state of Massachusetts. It serves as a cultural and financial center of New England, a region of the Northeastern United States. Boston has an area of 48.4 sq mi (125 km2) and a population of 675,647 as of the 2020 census, making it the third-most populous city in the Northeastern United States after New York City and Philadelphia. The larger Greater Boston metropolitan statistical area had a population of 4.9 million in 2023, making it the largest metropolitan area in New England and the eleventh-largest in the United States.",
+      "description": "Capital and largest city in Massachusetts, United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ISH_WC_Boston4.jpg/330px-ISH_WC_Boston4.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Boston"
+    }
+  },
+  {
+    "slug": "seattle",
+    "name": "Seattle",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 47.6062,
+    "lng": -122.3321,
+    "keywords": [
+      "seattle trip planner",
+      "space needle",
+      "pike place market"
+    ],
+    "unsplashQuery": "seattle washington",
+    "wikiPageId": "Seattle",
+    "image": null,
+    "wikipedia": {
+      "title": "Seattle",
+      "extract": "Seattle is the most populous city in the U.S. state of Washington and the Pacific Northwest region of North America. It is the 18th-most populous city in the United States with a population of 780,995 in 2024, while the Seattle metropolitan area at over 4.15 million residents is the 15th-most populous metropolitan area in the nation. The city is the county seat of King County, the most populous county in Washington. Seattle's growth rate of 21.1% between 2010 and 2020 made it one of the country's fastest-growing large cities.",
+      "description": "City in Washington, United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Seattle_Center_as_night_falls.jpg/330px-Seattle_Center_as_night_falls.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Seattle"
+    }
+  },
+  {
+    "slug": "austin",
+    "name": "Austin",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 30.2672,
+    "lng": -97.7431,
+    "keywords": [
+      "austin trip planner",
+      "austin texas",
+      "live music"
+    ],
+    "unsplashQuery": "austin texas",
+    "wikiPageId": "Austin,_Texas",
+    "image": null,
+    "wikipedia": {
+      "title": "Austin, Texas",
+      "extract": "Austin is the capital city of the U.S. state of Texas. With a population of 961,855 at the 2020 census, it is the 13th-most populous city in the U.S., fifth-most populous city in Texas, and second-most populous U.S. state capital, while the Austin metro area with an estimated 2.55 million residents is the 25th-largest metropolitan area in the nation. Austin is the county seat and most populous city of Travis County, with portions extending into Hays and Williamson counties. Incorporated on December 27, 1839, it has been one of the fastest-growing large cities in the United States since 2010.",
+      "description": "Capital city of Texas, United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Austin_Downtown_2024.jpg/330px-Austin_Downtown_2024.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Austin%2C_Texas"
+    }
+  },
+  {
+    "slug": "nashville",
+    "name": "Nashville",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 36.1627,
+    "lng": -86.7816,
+    "keywords": [
+      "nashville trip planner",
+      "country music",
+      "nashville tennessee"
+    ],
+    "unsplashQuery": "nashville tennessee",
+    "wikiPageId": "Nashville,_Tennessee",
+    "image": null,
+    "wikipedia": {
+      "title": "Nashville, Tennessee",
+      "extract": "Nashville is the capital and most populous city in the U.S. state of Tennessee. It is the seat of Davidson County in Middle Tennessee, located on the Cumberland River. It is the 21st-most populous city in the United States and fourth-most populous city in the Southeast, with a population of 689,447 at the 2020 census. The Nashville metropolitan area, with over 2.15 million people, is the 35th-largest metropolitan area in the country. Nashville is among the fastest-growing cities in the U.S.",
+      "description": "Capital and largest city of Tennessee, United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Nashville%2C_TN_skyline.jpg/330px-Nashville%2C_TN_skyline.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Nashville%2C_Tennessee"
+    }
+  },
+  {
+    "slug": "new-orleans",
+    "name": "New Orleans",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 29.9511,
+    "lng": -90.0715,
+    "keywords": [
+      "new orleans trip planner",
+      "french quarter",
+      "mardi gras"
+    ],
+    "unsplashQuery": "new orleans",
+    "wikiPageId": "New_Orleans",
+    "image": null,
+    "wikipedia": {
+      "title": "New Orleans",
+      "extract": "New Orleans is a consolidated city-parish located along the Mississippi River in the U.S. state of Louisiana. With a population of 383,997 at the 2020 census, New Orleans is the most populous city in Louisiana, the second-most populous in the Deep South after Atlanta, and the twelfth-most populous in the Southeastern United States; the New Orleans metropolitan area, with about 1 million residents, is the 59th-most populous metropolitan area in the United States. New Orleans serves as a major port and commercial hub for the broader Gulf Coast region. The city is coextensive with Orleans Parish.",
+      "description": "Consolidated city-parish in Louisiana, United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline_%28cropped%29.jpg/330px-New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline_%28cropped%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/New_Orleans"
+    }
+  },
+  {
+    "slug": "washington-dc",
+    "name": "Washington DC",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 38.9072,
+    "lng": -77.0369,
+    "keywords": [
+      "washington dc trip planner",
+      "dc monuments",
+      "smithsonian"
+    ],
+    "unsplashQuery": "washington dc",
+    "wikiPageId": "Washington,_D.C.",
+    "image": null,
+    "wikipedia": {
+      "title": "Washington, D.C.",
+      "extract": "Washington, D.C., officially the District of Columbia and commonly known as simply Washington or D.C., is the capital city and federal district of the United States. The city is on the Potomac River across from Virginia and shares land borders with Maryland to its north and east. It was named after George Washington, a Founding Father and the first president of the United States. The district is named for Columbia, the female personification of the nation, through which human form and attributes are applied to the United States.",
+      "description": "Federal capital district of the United States",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/12-07-13-washington-by-RalfR-08.jpg/330px-12-07-13-washington-by-RalfR-08.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Washington%2C_D.C."
+    }
+  },
+  {
+    "slug": "edinburgh",
+    "name": "Edinburgh",
+    "country": "United Kingdom",
+    "continent": "Europe",
+    "lat": 55.9533,
+    "lng": -3.1883,
+    "keywords": [
+      "edinburgh trip planner",
+      "edinburgh castle",
+      "scotland travel"
+    ],
+    "unsplashQuery": "edinburgh scotland",
+    "wikiPageId": "Edinburgh",
+    "image": null,
+    "wikipedia": {
+      "title": "Edinburgh",
+      "extract": "Edinburgh is the capital city of Scotland and one of its 32 council areas. It is located in southeast Scotland and is bounded to the north by the Firth of Forth and to the south by the Pentland Hills. Edinburgh had a population of\n506,520 in 2020, making it the second-most-populous city in Scotland and the seventh-most-populous in the United Kingdom. The wider metropolitan area had a population of 912,490 in the same year.",
+      "description": "Capital city of Scotland",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Skyline_of_Edinburgh.jpg/330px-Skyline_of_Edinburgh.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Edinburgh"
+    }
+  },
+  {
+    "slug": "dublin",
+    "name": "Dublin",
+    "country": "Ireland",
+    "continent": "Europe",
+    "lat": 53.3498,
+    "lng": -6.2603,
+    "keywords": [
+      "dublin trip planner",
+      "ireland travel",
+      "temple bar"
+    ],
+    "unsplashQuery": "dublin ireland",
+    "wikiPageId": "Dublin",
+    "image": null,
+    "wikipedia": {
+      "title": "Dublin",
+      "extract": "Dublin is the capital and largest city of Ireland. Situated on Dublin Bay at the mouth of the River Liffey, it is in the province of Leinster, and is bordered on the south by the Dublin Mountains, part of the Wicklow Mountains range. Dublin is the largest city by population on the island of Ireland; at the 2022 census, the city council area had a population of 592,713, while the city, including suburbs, had a population of 1,263,219, and County Dublin had a population of 1,501,500. Various definitions of a metropolitan Greater Dublin Area exist.",
+      "description": "Capital and largest city of Ireland",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Dublin_-_aerial_-_2025-07-07_01.jpg/330px-Dublin_-_aerial_-_2025-07-07_01.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Dublin"
+    }
+  },
+  {
+    "slug": "copenhagen",
+    "name": "Copenhagen",
+    "country": "Denmark",
+    "continent": "Europe",
+    "lat": 55.6761,
+    "lng": 12.5683,
+    "keywords": [
+      "copenhagen trip planner",
+      "denmark travel",
+      "nyhavn"
+    ],
+    "unsplashQuery": "copenhagen denmark",
+    "wikiPageId": "Copenhagen",
+    "image": null,
+    "wikipedia": {
+      "title": "Copenhagen",
+      "extract": "Copenhagen is the capital and most populous city of both the country of Denmark and the wider Kingdom of Denmark, with a population of 667,000 people in the municipality and 1.4 million in the urban area. The city is situated mainly on the island of Zealand (Sjælland), with a smaller part on the island of Amager. Copenhagen is separated from Malmö, Sweden, by the Øresund strait. The Øresund Bridge connects the two cities by rail and road.",
+      "description": "Capital and most populous city of Denmark",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/2018_-_Christiansborg_from_the_Marble_Bridge.jpg/330px-2018_-_Christiansborg_from_the_Marble_Bridge.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Copenhagen"
+    }
+  },
+  {
+    "slug": "stockholm",
+    "name": "Stockholm",
+    "country": "Sweden",
+    "continent": "Europe",
+    "lat": 59.3293,
+    "lng": 18.0686,
+    "keywords": [
+      "stockholm trip planner",
+      "sweden travel",
+      "gamla stan"
+    ],
+    "unsplashQuery": "stockholm sweden",
+    "wikiPageId": "Stockholm",
+    "image": null,
+    "wikipedia": {
+      "title": "Stockholm",
+      "extract": "Stockholm is the capital and most populous city of Sweden, as well as the largest urban area in the Nordic countries. Approximately 1 million people live in the municipality, with 1.6 million in the urban area, and 2.5 million in the metropolitan area. The city stretches across fourteen islands where Lake Mälaren flows into the Baltic Sea. Outside the city to the east, and along the coast, is the island chain of the Stockholm archipelago. The area has been settled since the Stone Age, in the 6th millennium BC, and was founded as a city in 1252 by Swedish statesman Birger Jarl. The city serves as the county seat of Stockholm County.",
+      "description": "Capital and most populous city of Sweden",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Royal_Dramatic_Theatre_Stockholm.jpg/330px-Royal_Dramatic_Theatre_Stockholm.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Stockholm"
+    }
+  },
+  {
+    "slug": "oslo",
+    "name": "Oslo",
+    "country": "Norway",
+    "continent": "Europe",
+    "lat": 59.9139,
+    "lng": 10.7522,
+    "keywords": [
+      "oslo trip planner",
+      "norway travel",
+      "oslo fjords"
+    ],
+    "unsplashQuery": "oslo norway",
+    "wikiPageId": "Oslo",
+    "image": null,
+    "wikipedia": {
+      "title": "Oslo",
+      "extract": "Oslo is the capital and most populous city of Norway. It constitutes both a county and a municipality. The municipality of Oslo had a population of 724,290 in 2025, while the city's greater urban area had a population of 1,110,887 in 2025, and the metropolitan area had an estimated population of 1,546,706 in 2021.",
+      "description": "Capital and most populous city of Norway",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Nationaltheatret_evening.jpg/330px-Nationaltheatret_evening.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Oslo"
+    }
+  },
+  {
+    "slug": "helsinki",
+    "name": "Helsinki",
+    "country": "Finland",
+    "continent": "Europe",
+    "lat": 60.1699,
+    "lng": 24.9384,
+    "keywords": [
+      "helsinki trip planner",
+      "finland travel",
+      "helsinki cathedral"
+    ],
+    "unsplashQuery": "helsinki finland",
+    "wikiPageId": "Helsinki",
+    "image": null,
+    "wikipedia": {
+      "title": "Helsinki",
+      "extract": "Helsinki is the capital and most populous city in Finland. It is on the shore of the Gulf of Finland and is the seat of southern Finland's Uusimaa region. About 690,000 people live in the municipality, with 1.3 million in the capital region and 1.6 million in the metropolitan area. As the most populous urban area in Finland, it is the country's most significant centre for politics, education, finance, culture, and research. Helsinki is 80 kilometres (50 mi) north of Tallinn, Estonia, 400 kilometres (250 mi) east of Stockholm, Sweden, and 300 kilometres (190 mi) west of Saint Petersburg, Russia.",
+      "description": "Capital and most populous city of Finland",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Suomenlinna_%28cropped%29.jpg/330px-Suomenlinna_%28cropped%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Helsinki"
+    }
+  },
+  {
+    "slug": "warsaw",
+    "name": "Warsaw",
+    "country": "Poland",
+    "continent": "Europe",
+    "lat": 52.2297,
+    "lng": 21.0122,
+    "keywords": [
+      "warsaw trip planner",
+      "poland travel",
+      "warsaw old town"
+    ],
+    "unsplashQuery": "warsaw poland",
+    "wikiPageId": "Warsaw",
+    "image": null,
+    "wikipedia": {
+      "title": "Warsaw",
+      "extract": "Warsaw, officially the Capital City of Warsaw, is the capital and largest city of Poland. The metropolis stands on the River Vistula in east-central Poland. Its population is officially estimated at 1.86 million residents within a greater metropolitan area of 3.27 million residents, which makes Warsaw the 6th most-populous city in the European Union. The city area measures 517 square kilometres and comprises 18 districts, while the metropolitan area covers 6,100 square kilometres. Warsaw is classified as an alpha global city, a major political, economic and cultural hub, and the country's seat of government. It is also the capital of the Masovian Voivodeship.",
+      "description": "Capital and largest city of Poland",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Aleja_Niepdleglosci_Warsaw_2022_aerial_%28cropped%29.jpg/330px-Aleja_Niepdleglosci_Warsaw_2022_aerial_%28cropped%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Warsaw"
+    }
+  },
+  {
+    "slug": "budapest",
+    "name": "Budapest",
+    "country": "Hungary",
+    "continent": "Europe",
+    "lat": 47.4979,
+    "lng": 19.0402,
+    "keywords": [
+      "budapest trip planner",
+      "hungary travel",
+      "thermal baths"
+    ],
+    "unsplashQuery": "budapest hungary",
+    "wikiPageId": "Budapest",
+    "image": null,
+    "wikipedia": {
+      "title": "Budapest",
+      "extract": "Budapest is the capital and most populous city of Hungary. It is Hungary's primate city with 1.7 million inhabitants and its greater metro area has a population of about 3.3 million, representing one-third of the country's population and producing above 40% of the country's economic output. Budapest is the political, economic, and cultural center of the country, among the ten largest cities in the European Union and the second largest urban area in Central and Eastern Europe. Budapest stands on the River Danube and is strategically located at the center of the Pannonian Basin, lying on ancient trade routes linking the hills of Transdanubia with the Great Plain.",
+      "description": "Capital and largest city of Hungary",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg/330px-View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Budapest"
+    }
+  },
+  {
+    "slug": "krakow",
+    "name": "Krakow",
+    "country": "Poland",
+    "continent": "Europe",
+    "lat": 50.0647,
+    "lng": 19.945,
+    "keywords": [
+      "krakow trip planner",
+      "poland travel",
+      "wawel castle"
+    ],
+    "unsplashQuery": "krakow poland",
+    "wikiPageId": "Krakow",
+    "image": null,
+    "wikipedia": {
+      "title": "Kraków",
+      "extract": "Kraków, officially the Royal Capital City of Kraków, is the second-largest and one of the oldest cities in Poland. Situated on the Vistula River in Lesser Poland Voivodeship, the city has a population of 804,237 (2023), with approximately 8 million additional people living within a 100 km (62 mi) radius. Kraków was the official capital of Poland until 1596 and has traditionally been one of the leading centres of Polish academic, cultural, and artistic life. Its Old Town was declared a UNESCO World Heritage Site in 1978, one of the world's first sites granted the status.",
+      "description": "City in Poland",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Krakow_Rynek_Glowny_panorama_2.jpg/330px-Krakow_Rynek_Glowny_panorama_2.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Krak%C3%B3w"
+    }
+  },
+  {
+    "slug": "zurich",
+    "name": "Zurich",
+    "country": "Switzerland",
+    "continent": "Europe",
+    "lat": 47.3769,
+    "lng": 8.5417,
+    "keywords": [
+      "zurich trip planner",
+      "switzerland travel",
+      "lake zurich"
+    ],
+    "unsplashQuery": "zurich switzerland",
+    "wikiPageId": "Zurich",
+    "image": null,
+    "wikipedia": {
+      "title": "Zurich",
+      "extract": "Zurich is the largest city in Switzerland and the capital of the canton of Zurich. It is in north-central Switzerland, at the northwestern tip of Lake Zurich. As of the end of 2024, the municipality had a population of 436,551, while the urban area was home to 1.45 million people (2020), while the Zurich metropolitan area had a total population of 2.1 million (2020). Zurich is a hub for railways, roads, and air traffic. Both Zurich Airport and Zurich's main railway station are the largest and busiest in the country.",
+      "description": "Largest city in Switzerland",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Altstadt_Z%C3%BCrich_2015.jpg/330px-Altstadt_Z%C3%BCrich_2015.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Zurich"
+    }
+  },
+  {
+    "slug": "brussels",
+    "name": "Brussels",
+    "country": "Belgium",
+    "continent": "Europe",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "keywords": [
+      "brussels trip planner",
+      "belgium travel",
+      "grand place"
+    ],
+    "unsplashQuery": "brussels belgium",
+    "wikiPageId": "Brussels",
+    "image": null,
+    "wikipedia": {
+      "title": "Brussels",
+      "extract": "Brussels, officially the Brussels-Capital Region, is a region of Belgium comprising 19 municipalities, including the City of Brussels, which is the capital of Belgium. The Brussels-Capital Region is located in the central portion of the country. It is a part of both the French Community of Belgium and the Flemish Community, and is separate from the Flemish Region (Flanders), within which it forms an enclave, and the Walloon Region (Wallonia), located less than 4 kilometres (2.5 mi) to the south.",
+      "description": "Federal region of Belgium including the capital",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Grand_Place_Bruselas_2.jpg/330px-Grand_Place_Bruselas_2.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Brussels"
+    }
+  },
+  {
+    "slug": "milan",
+    "name": "Milan",
+    "country": "Italy",
+    "continent": "Europe",
+    "lat": 45.4642,
+    "lng": 9.19,
+    "keywords": [
+      "milan trip planner",
+      "italy fashion",
+      "duomo milan"
+    ],
+    "unsplashQuery": "milan italy",
+    "wikiPageId": "Milan",
+    "image": null,
+    "wikipedia": {
+      "title": "Milan",
+      "extract": "Milan is the regional capital of Lombardy, in northern Italy, and the seat of the Metropolitan City of Milan. It is the second-most populous city in Italy after Rome, with a population of 1.36 million in 2025. The city's wider metropolitan area is the largest in Italy, and the fourth-largest in the European Union, with an estimated population of 6.1 million. Milan is considered Italy's economic capital, and its metropolitan area accounts for about 20% of the country's GDP.",
+      "description": "Second-largest city in Italy",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Milan_skyline_skyscrapers_of_Porta_Nuova_business_district_%28cropped%29.jpg/330px-Milan_skyline_skyscrapers_of_Porta_Nuova_business_district_%28cropped%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Milan"
+    }
+  },
+  {
+    "slug": "naples",
+    "name": "Naples",
+    "country": "Italy",
+    "continent": "Europe",
+    "lat": 40.8518,
+    "lng": 14.2681,
+    "keywords": [
+      "naples trip planner",
+      "pompeii",
+      "amalfi coast"
+    ],
+    "unsplashQuery": "naples italy",
+    "wikiPageId": "Naples",
+    "image": null,
+    "wikipedia": {
+      "title": "Naples",
+      "extract": "Naples is the regional capital of Campania, Italy. With a population of 908,082 within the city's administrative limits, it is the largest city in southern Italy and the third-largest city of Italy after Rome and Milan, while its province-level municipality is the third most populous metropolitan city in Italy with a population of 2,958,410 residents. Its metropolitan area, the seventh most populous in the European Union, stretches beyond the boundaries of the city wall for approximately 30 kilometres. Naples also plays a key role in international diplomacy, being home to NATO's Allied Joint Force Command Naples and the Parliamentary Assembly of the Mediterranean.",
+      "description": "Regional capital city of Campania, Italy",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Napoli_-_Maschio_Angioino_-_202209302342_3.jpg/330px-Napoli_-_Maschio_Angioino_-_202209302342_3.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Naples"
+    }
+  },
+  {
+    "slug": "seville",
+    "name": "Seville",
+    "country": "Spain",
+    "continent": "Europe",
+    "lat": 37.3891,
+    "lng": -5.9845,
+    "keywords": [
+      "seville trip planner",
+      "spain travel",
+      "alcazar seville"
+    ],
+    "unsplashQuery": "seville spain",
+    "wikiPageId": "Seville",
+    "image": null,
+    "wikipedia": {
+      "title": "Seville",
+      "extract": "Seville is the capital and largest city of the Spanish autonomous community of Andalusia and the province of Seville. It is situated on the lower reaches of the River Guadalquivir, in the southwest of the Iberian Peninsula.",
+      "description": "Capital and largest city of Andalusia and the province of Seville in Spain",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sevilla_Cathedral_-_Southeast.jpg/330px-Sevilla_Cathedral_-_Southeast.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Seville"
+    }
+  },
+  {
+    "slug": "madrid",
+    "name": "Madrid",
+    "country": "Spain",
+    "continent": "Europe",
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "keywords": [
+      "madrid trip planner",
+      "spain capital",
+      "prado museum"
+    ],
+    "unsplashQuery": "madrid spain",
+    "wikiPageId": "Madrid",
+    "image": null,
+    "wikipedia": {
+      "title": "Madrid",
+      "extract": "Madrid is the capital and most populous city of Spain. It had a population of over 3.4 million in the city proper in 2025, and a metropolitan area population of approximately 6.8 million. Madrid is the second-largest city in the European Union (EU), after Berlin, and its metropolitan area is the second-largest in the EU, after Paris. The municipality covers an area of 605.77 km2 (233.89 sq mi). Madrid lies on the River Manzanares in the central part of the Iberian Peninsula at about 660 m (2,170 ft) above mean sea level. The capital city of both Spain and the surrounding autonomous community of Madrid, it is the political, economic and cultural centre of the country.",
+      "description": "Capital and largest city of Spain",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Madrid_-_Sky_Bar_360%C2%BA_%28Hotel_Riu_Plaza_Espa%C3%B1a%29%2C_vistas_19.jpg/330px-Madrid_-_Sky_Bar_360%C2%BA_%28Hotel_Riu_Plaza_Espa%C3%B1a%29%2C_vistas_19.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Madrid"
+    }
+  },
+  {
+    "slug": "valencia",
+    "name": "Valencia",
+    "country": "Spain",
+    "continent": "Europe",
+    "lat": 39.4699,
+    "lng": -0.3763,
+    "keywords": [
+      "valencia trip planner",
+      "spain travel",
+      "city of arts"
+    ],
+    "unsplashQuery": "valencia spain",
+    "wikiPageId": "Valencia",
+    "image": null,
+    "wikipedia": {
+      "title": "Valencia",
+      "extract": "Valencia, officially València, is the capital of the province and autonomous community of the same name in Spain. It is located on the banks of the Turia, on the east coast of the Iberian Peninsula on the Mediterranean Sea. With a population of 824,340, it is the third-largest city in Spain. The urban area of Valencia has 1.6 million people while the metropolitan region has 2.5 million.",
+      "description": "Municipality in Spain",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Malvarrosa_Beach%2C_Valencia%2C_Spain_%2829812271043%29.jpg/330px-Malvarrosa_Beach%2C_Valencia%2C_Spain_%2829812271043%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Valencia"
+    }
+  },
+  {
+    "slug": "munich",
+    "name": "Munich",
+    "country": "Germany",
+    "continent": "Europe",
+    "lat": 48.1351,
+    "lng": 11.582,
+    "keywords": [
+      "munich trip planner",
+      "oktoberfest",
+      "germany travel"
+    ],
+    "unsplashQuery": "munich germany",
+    "wikiPageId": "Munich",
+    "image": null,
+    "wikipedia": {
+      "title": "Munich",
+      "extract": "Munich is the capital and most populous city of the German state of Bavaria. As of 30 November 2024, its population was 1,604,384, making it the third-largest city in Germany after Berlin and Hamburg. Munich is the largest city in Germany that is not a state of its own, and it ranks as the 11th-largest city in the European Union (EU). The metropolitan area has around 3 million inhabitants, and the broader Munich Metropolitan Region is home to about 6.2 million people. It is the third largest metropolitan region by GDP in the EU. Munich is located on the river Isar north of the Alps. It is the seat of the Upper Bavarian administrative region. With 4,500 people per km2, Munich is Germany's most densely populated municipality. It is also the second-largest city in the Bavarian dialect area after Vienna.",
+      "description": "Capital of Bavaria, Germany",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/330px-Stadtbild_M%C3%BCnchen.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Munich"
+    }
+  },
+  {
+    "slug": "frankfurt",
+    "name": "Frankfurt",
+    "country": "Germany",
+    "continent": "Europe",
+    "lat": 50.1109,
+    "lng": 8.6821,
+    "keywords": [
+      "frankfurt trip planner",
+      "germany travel",
+      "romerberg"
+    ],
+    "unsplashQuery": "frankfurt germany",
+    "wikiPageId": "Frankfurt",
+    "image": null,
+    "wikipedia": {
+      "title": "Frankfurt",
+      "extract": "Frankfurt am Main, usually shortened to Frankfurt, is the most populous city in the German state of Hesse. Its 778,589 inhabitants as of 2025 make it the fifth-most populous city in Germany. Located in the foreland of the Taunus on its namesake Main, the city forms a continuous conurbation with Offenbach am Main; its urban area has a population of over 2.7 million. Frankfurt is the heart of the larger Rhine-Main metropolitan region, which has a population of more than 5.8 million and is Germany's second-largest metropolitan region after the Rhine-Ruhr region. Home to the European Central Bank, the city serves as one of the four institutional seats of the European Union. Frankfurt is classified by the GaWC as an Alpha-rated world city.",
+      "description": "Largest city in Hesse, Germany",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Frankfurt_Main_August_2020_1.jpg/330px-Frankfurt_Main_August_2020_1.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Frankfurt"
+    }
+  },
+  {
+    "slug": "hamburg",
+    "name": "Hamburg",
+    "country": "Germany",
+    "continent": "Europe",
+    "lat": 53.5511,
+    "lng": 9.9937,
+    "keywords": [
+      "hamburg trip planner",
+      "germany travel",
+      "miniatur wunderland"
+    ],
+    "unsplashQuery": "hamburg germany",
+    "wikiPageId": "Hamburg",
+    "image": null,
+    "wikipedia": {
+      "title": "Hamburg",
+      "extract": "Hamburg, officially the Free and Hanseatic City of Hamburg, is the second-largest city in Germany after Berlin and seventh-largest city in the European Union, with a population of over 1.9 million. The Hamburg Metropolitan Region has a population of over 5.1 million and is the tenth-largest metropolitan region by GDP in the European Union. At the southern tip of the Jutland Peninsula, Hamburg stands on the branching River Elbe at the head of a 110 km (68 mi) estuary to the North Sea, at the confluence of the Alster and Bille. Hamburg is one of Germany's three city-states alongside Berlin and Bremen, and is surrounded by Schleswig-Holstein to the north and Lower Saxony to the south. The Port of Hamburg is Germany's largest and Europe's third-largest, after Rotterdam and Antwerp. The local dialect is a variant of Low Saxon.",
+      "description": "City and state in Germany",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hamburg%2C_Landungsbr%C3%BCcken_--_2016_--_3131-7.jpg/330px-Hamburg%2C_Landungsbr%C3%BCcken_--_2016_--_3131-7.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Hamburg"
+    }
+  },
+  {
+    "slug": "lyon",
+    "name": "Lyon",
+    "country": "France",
+    "continent": "Europe",
+    "lat": 45.764,
+    "lng": 4.8357,
+    "keywords": [
+      "lyon trip planner",
+      "france gastronomy",
+      "lyon old town"
+    ],
+    "unsplashQuery": "lyon france",
+    "wikiPageId": "Lyon",
+    "image": null,
+    "wikipedia": {
+      "title": "Lyon",
+      "extract": "Lyon is a city in France. It is located at the confluence of the rivers Rhône and Saône, to the northwest of the French Alps, 391 km (243 mi) southeast of Paris, 278 km (173 mi) north of Marseille, and 113 km (70 mi) southwest of Geneva, Switzerland.",
+      "description": "City in France",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Lyon-part-dieu-2023.jpg/330px-Lyon-part-dieu-2023.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Lyon"
+    }
+  },
+  {
+    "slug": "marseille",
+    "name": "Marseille",
+    "country": "France",
+    "continent": "Europe",
+    "lat": 43.2965,
+    "lng": 5.3698,
+    "keywords": [
+      "marseille trip planner",
+      "provence france",
+      "calanques"
+    ],
+    "unsplashQuery": "marseille france",
+    "wikiPageId": "Marseille",
+    "image": null,
+    "wikipedia": {
+      "title": "Marseille",
+      "extract": "Marseille is a city in southern France, the prefecture of the department of Bouches-du-Rhône and of the Provence-Alpes-Côte d'Azur region. Situated in the Provence region, it is located on the coast of the Mediterranean Sea, near the mouth of the Rhône river. Marseille is the second-most populous city proper in France, after Paris, with 886,040 inhabitants in 2023 over a municipal territory of 241 km2 (93 sq mi). Together with its suburbs and exurbs, the Marseille metropolitan area, which extends over 3,972 km2 (1,534 sq mi), had a population of 1,900,957 at the January 2022 census. The cities of Marseille, Aix-en-Provence, and 90 suburban municipalities have formed since 2016 the Aix-Marseille-Provence Metropolis, an indirectly elected metropolitan authority now in charge of wider metropolitan issues, with a population of 1,922,626 at the January 2022 census.",
+      "description": "City in southern France",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Notre-Dame_de_la_Garde_aerial_view_2020.jpeg/330px-Notre-Dame_de_la_Garde_aerial_view_2020.jpeg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Marseille"
+    }
+  },
+  {
+    "slug": "nice",
+    "name": "Nice",
+    "country": "France",
+    "continent": "Europe",
+    "lat": 43.7102,
+    "lng": 7.262,
+    "keywords": [
+      "nice trip planner",
+      "french riviera",
+      "cote d azur"
+    ],
+    "unsplashQuery": "nice france",
+    "wikiPageId": "Nice",
+    "image": null,
+    "wikipedia": {
+      "title": "Nice",
+      "extract": "Nice is a city located in the prefecture of the Alpes-Maritimes department in France. The Nice agglomeration extends beyond the administrative city limits, with a population of nearly one million over an area of approximately 744 km2 (287 sq mi) or about the size of Singapore. Located on the French Riviera, the southeastern coast of France on the Mediterranean Sea, at the foot of the French Alps, Nice is the second-largest French city on the Mediterranean coast and second-largest city in the Provence-Alpes-Côte d'Azur region after Marseille. It is approximately 13 kilometres (8 mi) from the principality of Monaco and 30 kilometres (19 mi) from the French–Italian border. Nice's airport serves as a gateway to the region.",
+      "description": "Prefecture of Alpes-Maritimes, Southern France",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Promenade_des_Anglais_Nice_IMG_1255.jpg/330px-Promenade_des_Anglais_Nice_IMG_1255.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Nice"
+    }
+  },
+  {
+    "slug": "bordeaux",
+    "name": "Bordeaux",
+    "country": "France",
+    "continent": "Europe",
+    "lat": 44.8378,
+    "lng": -0.5792,
+    "keywords": [
+      "bordeaux trip planner",
+      "france wine",
+      "bordeaux vineyards"
+    ],
+    "unsplashQuery": "bordeaux france",
+    "wikiPageId": "Bordeaux",
+    "image": null,
+    "wikipedia": {
+      "title": "Bordeaux",
+      "extract": "Bordeaux is a city on the river Garonne in the Gironde department, southwestern France. A port city, it is the capital of the Nouvelle-Aquitaine region, as well as the prefecture of the Gironde department. Its inhabitants are called \"Bordelais\" (masculine) or \"Bordelaises\" (feminine). The term \"Bordelais\" may also refer to the city and its surrounding region.",
+      "description": "Prefecture and commune in Nouvelle-Aquitaine, France",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Bordeaux_Place_de_la_Bourse_de_nuit.jpg/330px-Bordeaux_Place_de_la_Bourse_de_nuit.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Bordeaux"
+    }
+  },
+  {
+    "slug": "porto",
+    "name": "Porto",
+    "country": "Portugal",
+    "continent": "Europe",
+    "lat": 41.1579,
+    "lng": -8.6291,
+    "keywords": [
+      "porto trip planner",
+      "portugal wine",
+      "douro valley"
+    ],
+    "unsplashQuery": "porto portugal",
+    "wikiPageId": "Porto",
+    "image": null,
+    "wikipedia": {
+      "title": "Porto",
+      "extract": "Porto, officially the Ancient, Very Noble, Ever Loyal and Undefeated City of Porto, also known in English as Oporto, is the second largest city in Portugal, after Lisbon. It is the capital of the Porto District and one of the Iberian Peninsula's major urban areas. Porto city proper, which is the entire municipality of Porto, is small compared to its metropolitan area, with an estimated population of 252,687 people in a municipal area of 41.42 km2 (16 sq mi). As of 2025, the Porto metropolitan area has around 1.8 million people in an area of 2,395 km2 (925 sq mi), making it the second-largest urban area in Portugal. It is recognized as a global city with a Gamma + rating from the Globalization and World Cities Research Network.",
+      "description": "Municipality in North Portugal, Portugal",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Puente_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_13.JPG/330px-Puente_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_13.JPG",
+      "pageUrl": "https://en.wikipedia.org/wiki/Porto"
+    }
+  },
+  {
+    "slug": "phuket",
+    "name": "Phuket",
+    "country": "Thailand",
+    "continent": "Asia",
+    "lat": 7.8804,
+    "lng": 98.3923,
+    "keywords": [
+      "phuket trip planner",
+      "thailand beaches",
+      "patong beach"
+    ],
+    "unsplashQuery": "phuket thailand",
+    "wikiPageId": "Phuket_Province",
+    "image": null,
+    "wikipedia": {
+      "title": "Phuket province",
+      "extract": "Phuket is one of the southern provinces (changwat) of Thailand. It consists of the island of Phuket, the country's largest island, and another 32 smaller islands off its coast. Phuket lies off the west coast of mainland Thailand in the Andaman Sea. Phuket Island is connected by the Sarasin Bridge to Phang Nga province to the north. The next nearest province is Krabi, to the east across Phang Nga Bay.",
+      "description": "Province of Thailand",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Phuket_Aerial.jpg/330px-Phuket_Aerial.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Phuket_province"
+    }
+  },
+  {
+    "slug": "chiang-mai",
+    "name": "Chiang Mai",
+    "country": "Thailand",
+    "continent": "Asia",
+    "lat": 18.7883,
+    "lng": 98.9853,
+    "keywords": [
+      "chiang mai trip planner",
+      "thailand temples",
+      "elephant sanctuary"
+    ],
+    "unsplashQuery": "chiang mai thailand",
+    "wikiPageId": "Chiang_Mai",
+    "image": null,
+    "wikipedia": {
+      "title": "Chiang Mai",
+      "extract": "Chiang Mai is the largest city in northern Thailand, the capital of Chiang Mai province and the second-largest city in Thailand by urban population. It is 700 km (435 mi) north of Bangkok in a mountainous region called the Thai highlands, and has a population of approximately 127,000 within the city municipality and an urban population of about 1.2 million as of 2023.",
+      "description": "City in Thailand",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/0020-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%87%E0%B8%AB%E0%B9%8C%E0%B8%A7%E0%B8%A3%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3.jpg/330px-0020-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%87%E0%B8%AB%E0%B9%8C%E0%B8%A7%E0%B8%A3%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Chiang_Mai"
+    }
+  },
+  {
+    "slug": "hanoi",
+    "name": "Hanoi",
+    "country": "Vietnam",
+    "continent": "Asia",
+    "lat": 21.0285,
+    "lng": 105.8542,
+    "keywords": [
+      "hanoi trip planner",
+      "vietnam travel",
+      "old quarter"
+    ],
+    "unsplashQuery": "hanoi vietnam",
+    "wikiPageId": "Hanoi",
+    "image": null,
+    "wikipedia": {
+      "title": "Hanoi",
+      "extract": "Hanoi is the capital and second most populous municipality of Vietnam. It encompasses an area of 3,358.6 km2 (1,296.8 mi2), and as of 2025 has a population of 8,807,523. Hanoi had the second-highest gross regional domestic product of all Vietnamese provinces and municipalities at US$48 billion in 2023, behind Ho Chi Minh City. It hosts 78 foreign embassies, the headquarters of the Vietnam People's Army (VPA), its Vietnam National University system, and other governmental organizations. Hanoi has 18.7 million domestic and international visitors in 2022. It hosts the Imperial Citadel of Thăng Long, Ho Chi Minh Mausoleum, Hoàn Kiếm Lake, West Lake, and Ba Vì National Park near the outskirts of the municipality. Hanoi's urban area has architectural styles, including French colonial architecture, brutalist apartments and disorganized alleys and tube houses stemming from the city's growth in the 20th century.",
+      "description": "Capital municipality of Vietnam",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hanoi_skyline_with_Ba_Vi_Mountain.jpg/330px-Hanoi_skyline_with_Ba_Vi_Mountain.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Hanoi"
+    }
+  },
+  {
+    "slug": "ho-chi-minh-city",
+    "name": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "continent": "Asia",
+    "lat": 10.8231,
+    "lng": 106.6297,
+    "keywords": [
+      "saigon trip planner",
+      "vietnam travel",
+      "war museum"
+    ],
+    "unsplashQuery": "ho chi minh city vietnam",
+    "wikiPageId": "Ho_Chi_Minh_City",
+    "image": null,
+    "wikipedia": {
+      "title": "Ho Chi Minh City",
+      "extract": "Ho Chi Minh City, also known as Saigon, is the most populous city in Vietnam, with a population of more than 14 million in 2025. The city's geography is defined by rivers and canals, of which the largest is Saigon River. As the largest financial centre in Vietnam, Ho Chi Minh City has the largest gross regional domestic product out of all Vietnam provinces and municipalities, contributing around a quarter of the country's total GDP. Ho Chi Minh City's metropolitan area is ASEAN's 5th largest economy.",
+      "description": "Municipality in Vietnam",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Ho_Chi_Minh_City_panorama_2019_%28cropped2%29.jpg/330px-Ho_Chi_Minh_City_panorama_2019_%28cropped2%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City"
+    }
+  },
+  {
+    "slug": "siem-reap",
+    "name": "Siem Reap",
+    "country": "Cambodia",
+    "continent": "Asia",
+    "lat": 13.3671,
+    "lng": 103.8448,
+    "keywords": [
+      "siem reap trip planner",
+      "angkor wat",
+      "cambodia temples"
+    ],
+    "unsplashQuery": "siem reap cambodia",
+    "wikiPageId": "Siem_Reap",
+    "image": null,
+    "wikipedia": {
+      "title": "Siem Reap",
+      "extract": "Siem Reap is the second-largest city of Cambodia, as well as the capital and largest city of Siem Reap Province in northwestern Cambodia.",
+      "description": "City in Cambodia",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Front_porch_of_Wat_Damnak.jpg/330px-Front_porch_of_Wat_Damnak.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Siem_Reap"
+    }
+  },
+  {
+    "slug": "kuala-lumpur",
+    "name": "Kuala Lumpur",
+    "country": "Malaysia",
+    "continent": "Asia",
+    "lat": 3.139,
+    "lng": 101.6869,
+    "keywords": [
+      "kuala lumpur trip planner",
+      "petronas towers",
+      "malaysia travel"
+    ],
+    "unsplashQuery": "kuala lumpur malaysia",
+    "wikiPageId": "Kuala_Lumpur",
+    "image": null,
+    "wikipedia": {
+      "title": "Kuala Lumpur",
+      "extract": "Kuala Lumpur (KL), officially the Federal Territory of Kuala Lumpur, is the capital city and a federal territory of Malaysia. It is the most populous city in the country, covering an area of 243 km2 (94 sq mi) with a population of 2,075,600 as of 2024. Greater Kuala Lumpur, which itself includes the Klang Valley, is an urban agglomeration of 8.8 million people as of 2024. It is among the fastest growing metropolitan regions in Southeast Asia, in terms of both population and economic development.",
+      "description": "Capital of Malaysia",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bukit_Bintang_junction_in_2024_2.jpg/330px-Bukit_Bintang_junction_in_2024_2.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+    }
+  },
+  {
+    "slug": "jakarta",
+    "name": "Jakarta",
+    "country": "Indonesia",
+    "continent": "Asia",
+    "lat": -6.2088,
+    "lng": 106.8456,
+    "keywords": [
+      "jakarta trip planner",
+      "indonesia capital",
+      "jakarta attractions"
+    ],
+    "unsplashQuery": "jakarta indonesia",
+    "wikiPageId": "Jakarta",
+    "image": null,
+    "wikipedia": {
+      "title": "Jakarta",
+      "extract": "Jakarta, officially the Special Capital Region of Jakarta, is the de facto capital and largest city of Indonesia and an autonomous region with administrative status equivalent to a province. Located on the northwest coast of Java, the world’s most populous island, the city borders the provinces of West Java and Banten and faces the Java Sea to the north. Although Jakarta covers about 661.23 square kilometres, the wider Jakarta metropolitan area—commonly known as Greater Jakarta—is one of the largest urban agglomerations in the world. The city serves as Indonesia’s political, economic, and cultural centre and hosts numerous national institutions, corporate headquarters, and the secretariat of the Association of Southeast Asian Nations (ASEAN).",
+      "description": "Capital and largest city of Indonesia",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Bundaran_Hotel_Indonesia_%282025%29.jpg/330px-Bundaran_Hotel_Indonesia_%282025%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Jakarta"
+    }
+  },
+  {
+    "slug": "manila",
+    "name": "Manila",
+    "country": "Philippines",
+    "continent": "Asia",
+    "lat": 14.5995,
+    "lng": 120.9842,
+    "keywords": [
+      "manila trip planner",
+      "philippines travel",
+      "intramuros"
+    ],
+    "unsplashQuery": "manila philippines",
+    "wikiPageId": "Manila",
+    "image": null,
+    "wikipedia": {
+      "title": "Manila",
+      "extract": "Manila, officially the City of Manila, is the capital and second-most populous city of the Philippines after Quezon City. According to the 2024 census, it has a population of 1,902,590 people. Located on the eastern shore of Manila Bay on the island of Luzon, it is classified as a highly urbanized city. With 44,935 inhabitants per square kilometer (116,380/sq mi), Manila is one of the world's most densely populated cities proper.",
+      "description": "Capital of the Philippines",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Cityscape_of_Manila%2C_2025_%2801%29.jpg/330px-Cityscape_of_Manila%2C_2025_%2801%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Manila"
+    }
+  },
+  {
+    "slug": "taipei",
+    "name": "Taipei",
+    "country": "Taiwan",
+    "continent": "Asia",
+    "lat": 25.033,
+    "lng": 121.5654,
+    "keywords": [
+      "taipei trip planner",
+      "taiwan travel",
+      "taipei 101"
+    ],
+    "unsplashQuery": "taipei taiwan",
+    "wikiPageId": "Taipei",
+    "image": null,
+    "wikipedia": {
+      "title": "Taipei",
+      "extract": "Taipei, officially Taipei City, is the capital and a special municipality of Taiwan. Located in Northern Taiwan, Taipei City is an enclave of the municipality of New Taipei City that sits about 25 km (16 mi) southwest of the northern port city of Keelung. Most of the city rests on the Taipei Basin, an ancient lakebed. The basin is bounded by the relatively narrow valleys of the Keelung and Xindian rivers, which join to form the Tamsui River along the city's western border.",
+      "description": "Capital city of Taiwan",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Taipei_Skyline_2022.06.29.jpg/330px-Taipei_Skyline_2022.06.29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Taipei"
+    }
+  },
+  {
+    "slug": "shanghai",
+    "name": "Shanghai",
+    "country": "China",
+    "continent": "Asia",
+    "lat": 31.2304,
+    "lng": 121.4737,
+    "keywords": [
+      "shanghai trip planner",
+      "china travel",
+      "the bund"
+    ],
+    "unsplashQuery": "shanghai china",
+    "wikiPageId": "Shanghai",
+    "image": null,
+    "wikipedia": {
+      "title": "Shanghai",
+      "extract": "Shanghai is a direct-administered municipality and the most populous urban area in China. It has a population of 29,558,908 in the urban area as of 2025. The city is located on the Chinese shoreline on the southern estuary of the Yangtze River, with the Huangpu River bisecting the city. Shanghai is a global center for finance, business and economics, research, science and technology, manufacturing, transportation, tourism, and culture. The Port of Shanghai is the world's busiest container port. As of 2022, the Greater Shanghai metropolitan area was estimated to produce a gross metropolitan product (nominal) of nearly 13 trillion RMB.",
+      "description": "Municipality and largest city in China",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg/330px-Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Shanghai"
+    }
+  },
+  {
+    "slug": "beijing",
+    "name": "Beijing",
+    "country": "China",
+    "continent": "Asia",
+    "lat": 39.9042,
+    "lng": 116.4074,
+    "keywords": [
+      "beijing trip planner",
+      "great wall china",
+      "forbidden city"
+    ],
+    "unsplashQuery": "beijing china",
+    "wikiPageId": "Beijing",
+    "image": null,
+    "wikipedia": {
+      "title": "Beijing",
+      "extract": "Beijing, previously romanized as Peking, is the capital city of China. With more than 22 million residents, it is the world's most populous national capital city, as well as China's second largest city by urban area, after Shanghai. It is located in Northern China, and is governed as a municipality under the direct administration of the State Council with 16 urban districts. Beijing is mostly surrounded by Hebei Province and neighbors Tianjin to the southeast; together, the three divisions form the Jing-Jin-Ji cluster.",
+      "description": "Capital city of China",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Skyline_of_Beijing_CBD_from_the_southeast_%2820210907094201%29.jpg/330px-Skyline_of_Beijing_CBD_from_the_southeast_%2820210907094201%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Beijing"
+    }
+  },
+  {
+    "slug": "delhi",
+    "name": "Delhi",
+    "country": "India",
+    "continent": "Asia",
+    "lat": 28.7041,
+    "lng": 77.1025,
+    "keywords": [
+      "delhi trip planner",
+      "india capital",
+      "red fort"
+    ],
+    "unsplashQuery": "delhi india",
+    "wikiPageId": "Delhi",
+    "image": null,
+    "wikipedia": {
+      "title": "Delhi",
+      "extract": "Delhi, officially the National Capital Territory (NCT) of Delhi, is a megacity and a union territory of India containing New Delhi, the capital of India. Straddling the Yamuna river, but spread chiefly to the west, or beyond its right bank, Delhi shares borders with the state of Uttar Pradesh in the east and with the state of Haryana in the remaining directions. Delhi became a union territory on 1 November 1956 and the NCT in 1995. The NCT covers an area of 1,484 square kilometres (573 sq mi). According to the 2011 census, Delhi's city proper population was over 11 million, while the NCT's population was about 16.8 million.",
+      "description": "Megacity and union territory of India",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Jama_Masjid_2011.jpg/330px-Jama_Masjid_2011.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Delhi"
+    }
+  },
+  {
+    "slug": "mumbai",
+    "name": "Mumbai",
+    "country": "India",
+    "continent": "Asia",
+    "lat": 19.076,
+    "lng": 72.8777,
+    "keywords": [
+      "mumbai trip planner",
+      "bollywood",
+      "gateway of india"
+    ],
+    "unsplashQuery": "mumbai india",
+    "wikiPageId": "Mumbai",
+    "image": null,
+    "wikipedia": {
+      "title": "Mumbai",
+      "extract": "Mumbai, also known as Bombay, is the capital city of the Indian state of Maharashtra. Mumbai is the financial capital and the most populous city proper of India, with an estimated population of 12.5 million (1.25 crore). Mumbai is the centre of the Mumbai Metropolitan Region, which is among the most populous metropolitan areas in the world with a population of over 23 million. Mumbai lies on the Konkan coast on the west coast of India and has a deep natural harbour. In 2008, Mumbai was named a alpha world city. Mumbai has the highest number of billionaires out of any city in Asia.",
+      "description": "Capital of Maharashtra, India",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/%E0%A6%93%E0%A6%B0%E0%A6%B2%E0%A6%BF%E0%A6%B0_%E0%A6%97%E0%A6%97%E0%A6%A8%E0%A6%B0%E0%A7%88%E0%A6%96%E0%A6%BF%E0%A6%95_%E0%A6%A6%E0%A7%83%E0%A6%B6%E0%A7%8D%E0%A6%AF.jpg/330px-%E0%A6%93%E0%A6%B0%E0%A6%B2%E0%A6%BF%E0%A6%B0_%E0%A6%97%E0%A6%97%E0%A6%A8%E0%A6%B0%E0%A7%88%E0%A6%96%E0%A6%BF%E0%A6%95_%E0%A6%A6%E0%A7%83%E0%A6%B6%E0%A7%8D%E0%A6%AF.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Mumbai"
+    }
+  },
+  {
+    "slug": "jaipur",
+    "name": "Jaipur",
+    "country": "India",
+    "continent": "Asia",
+    "lat": 26.9124,
+    "lng": 75.7873,
+    "keywords": [
+      "jaipur trip planner",
+      "pink city",
+      "rajasthan india"
+    ],
+    "unsplashQuery": "jaipur india",
+    "wikiPageId": "Jaipur",
+    "image": null,
+    "wikipedia": {
+      "title": "Jaipur",
+      "extract": "Jaipur is the capital and the largest city of the north-western Indian state of Rajasthan. As of 2011, the city had a population of 3.1 million, making it the tenth most populous city in the country. Located 268 km from the national capital New Delhi, Jaipur is also known as the Pink City due to the dominant color scheme of its buildings in the old city.",
+      "description": "Capital of Rajasthan, India",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/330px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Jaipur"
+    }
+  },
+  {
+    "slug": "agra",
+    "name": "Agra",
+    "country": "India",
+    "continent": "Asia",
+    "lat": 27.1767,
+    "lng": 78.0081,
+    "keywords": [
+      "agra trip planner",
+      "taj mahal",
+      "india travel"
+    ],
+    "unsplashQuery": "agra india",
+    "wikiPageId": "Agra",
+    "image": null,
+    "wikipedia": {
+      "title": "Agra",
+      "extract": "Agra is a city on the banks of the Yamuna river in the Indian state of Uttar Pradesh, about 230 kilometres (140 mi) south-east of the national capital Delhi and 330 km west of the state capital Lucknow. It is also the part of Braj region. With a population of roughly 1.6 million, Agra is the fourth-most populous city in Uttar Pradesh and twenty-third most populous city in India.",
+      "description": "Metropolis in Uttar Pradesh, India",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Taj_Mahal%2C_Agra%2C_India.jpg/330px-Taj_Mahal%2C_Agra%2C_India.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Agra"
+    }
+  },
+  {
+    "slug": "kathmandu",
+    "name": "Kathmandu",
+    "country": "Nepal",
+    "continent": "Asia",
+    "lat": 27.7172,
+    "lng": 85.324,
+    "keywords": [
+      "kathmandu trip planner",
+      "nepal travel",
+      "himalayan trek"
+    ],
+    "unsplashQuery": "kathmandu nepal",
+    "wikiPageId": "Kathmandu",
+    "image": null,
+    "wikipedia": {
+      "title": "Kathmandu",
+      "extract": "Kathmandu is the capital and largest city of Nepal, situated in the central part of the country within the Kathmandu Valley. As per the 2021 Nepal census, it has a population of 845,767 residing in 105,649 households, with approximately 4 million people in the surrounding metropolitan area. The city stands at an elevation of 1,324 metres (4,344 ft) above sea level.",
+      "description": "Capital and largest city in Nepal",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kathmandu-Durbar_Square-06-Mahavishnu-Kuh-Vishnu-Pratapamalla-Jagannath-2007-gje.jpg/330px-Kathmandu-Durbar_Square-06-Mahavishnu-Kuh-Vishnu-Pratapamalla-Jagannath-2007-gje.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kathmandu"
+    }
+  },
+  {
+    "slug": "colombo",
+    "name": "Colombo",
+    "country": "Sri Lanka",
+    "continent": "Asia",
+    "lat": 6.9271,
+    "lng": 79.8612,
+    "keywords": [
+      "colombo trip planner",
+      "sri lanka travel",
+      "colombo attractions"
+    ],
+    "unsplashQuery": "colombo sri lanka",
+    "wikiPageId": "Colombo",
+    "image": null,
+    "wikipedia": {
+      "title": "Colombo",
+      "extract": "Colombo is the largest city of Sri Lanka by population and de facto commercial capital of Sri Lanka. The Colombo metropolitan area is estimated to have a population of 5.6 million, and 752,993 within the municipal limits. It is the financial centre of the island and a tourist destination. It is located on the west coast of the island. It is also the administrative capital of the Western Province and the district capital of Colombo District.",
+      "description": "Most populous city of Sri Lanka",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Colombo_city_skyline_at_night.png/330px-Colombo_city_skyline_at_night.png",
+      "pageUrl": "https://en.wikipedia.org/wiki/Colombo"
+    }
+  },
+  {
+    "slug": "maldives",
+    "name": "Maldives",
+    "country": "Maldives",
+    "continent": "Asia",
+    "lat": 3.2028,
+    "lng": 73.2207,
+    "keywords": [
+      "maldives trip planner",
+      "maldives resort",
+      "island paradise"
+    ],
+    "unsplashQuery": "maldives",
+    "wikiPageId": "Maldives",
+    "image": null,
+    "wikipedia": {
+      "title": "Maldives",
+      "extract": "Maldives, officially the Republic of Maldives, and historically known as the Maldive Islands, is an archipelagic country in South Asia, located in the eastern Arabian Sea, within the northern Indian Ocean. Maldives is southwest of Sri Lanka and India, about 750 kilometres from the Asian continent's mainland. Maldives' chain of 26 atolls stretches across the equator from Ihavandhippolhu Atoll in the north to Addu Atoll in the south.",
+      "description": "Island country in South Asia",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Maldives.svg/330px-Flag_of_Maldives.svg.png",
+      "pageUrl": "https://en.wikipedia.org/wiki/Maldives"
+    }
+  },
+  {
+    "slug": "dubai-marina",
+    "name": "Dubai Marina",
+    "country": "UAE",
+    "continent": "Asia",
+    "lat": 25.0772,
+    "lng": 55.1379,
+    "keywords": [
+      "dubai marina",
+      "uae travel",
+      "luxury yacht"
+    ],
+    "unsplashQuery": "dubai marina",
+    "wikiPageId": "Dubai_Marina",
+    "image": null,
+    "wikipedia": {
+      "title": "Dubai Marina",
+      "extract": "Dubai Marina, also known as Marsa Dubai, is a district in Dubai, United Arab Emirates. It is built around an artificially constructed canal along a 3-kilometre (2 mi) stretch of the Persian Gulf shoreline. In 2024 it had a population of 70,550.",
+      "description": "District in Dubai, United Arab Emirates",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Dubai_Marina_Skyline.jpg/330px-Dubai_Marina_Skyline.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Dubai_Marina"
+    }
+  },
+  {
+    "slug": "abu-dhabi",
+    "name": "Abu Dhabi",
+    "country": "UAE",
+    "continent": "Asia",
+    "lat": 24.4539,
+    "lng": 54.3773,
+    "keywords": [
+      "abu dhabi trip planner",
+      "sheikh zayed mosque",
+      "uae capital"
+    ],
+    "unsplashQuery": "abu dhabi",
+    "wikiPageId": "Abu_Dhabi",
+    "image": null,
+    "wikipedia": {
+      "title": "Abu Dhabi",
+      "extract": "Abu Dhabi is the capital city of the United Arab Emirates (UAE). The city is the seat of the Abu Dhabi Central Capital District, the capital city of the Emirate of Abu Dhabi, and the UAE's second-most populous city, after Dubai. The city is situated on a T-shaped island, extending into the Persian Gulf from the central-western coast of the UAE.",
+      "description": "Capital city of the United Arab Emirates",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Abu_dhabi_skylines_2014.jpg/330px-Abu_dhabi_skylines_2014.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Abu_Dhabi"
+    }
+  },
+  {
+    "slug": "jerusalem",
+    "name": "Jerusalem",
+    "country": "Israel",
+    "continent": "Asia",
+    "lat": 31.7683,
+    "lng": 35.2137,
+    "keywords": [
+      "jerusalem trip planner",
+      "holy city",
+      "israel travel"
+    ],
+    "unsplashQuery": "jerusalem israel",
+    "wikiPageId": "Jerusalem",
+    "image": null,
+    "wikipedia": {
+      "title": "Jerusalem",
+      "extract": "Jerusalem is a city in the Southern Levant, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea. It is one of the oldest cities in the world and is considered holy to the three major Abrahamic religions: Judaism, Christianity and Islam. Both Israel and Palestine claim Jerusalem as their capital city; Israel maintains its primary governmental institutions there, while Palestine ultimately foresees it as its seat of power. Neither claim is widely recognised internationally.",
+      "description": "City in the Southern Levant",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/%D7%94%D7%9E%D7%A6%D7%95%D7%93%D7%94_%D7%91%D7%9C%D7%99%D7%9C%D7%94.jpg/330px-%D7%94%D7%9E%D7%A6%D7%95%D7%93%D7%94_%D7%91%D7%9C%D7%99%D7%9C%D7%94.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Jerusalem"
+    }
+  },
+  {
+    "slug": "tel-aviv",
+    "name": "Tel Aviv",
+    "country": "Israel",
+    "continent": "Asia",
+    "lat": 32.0853,
+    "lng": 34.7818,
+    "keywords": [
+      "tel aviv trip planner",
+      "israel beaches",
+      "tel aviv nightlife"
+    ],
+    "unsplashQuery": "tel aviv israel",
+    "wikiPageId": "Tel_Aviv",
+    "image": null,
+    "wikipedia": {
+      "title": "Tel Aviv",
+      "extract": "Tel Aviv, officially Tel Aviv-Yafo, and also known as Tel Aviv-Jaffa, is the most populous city in the Gush Dan metropolitan area of Israel. Located on the Israeli Mediterranean coastline and with a population of 495,230, it is the economic and technological center of the country and a global high-tech hub. If East Jerusalem is considered part of Israel, Tel Aviv is the country's second-most-populous city, after Jerusalem; if not, Tel Aviv is the most populous city, ahead of West Jerusalem.",
+      "description": "City in Central Israel",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Sarona_CBD_01_%28cropped%29.jpg/330px-Sarona_CBD_01_%28cropped%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Tel_Aviv"
+    }
+  },
+  {
+    "slug": "doha",
+    "name": "Doha",
+    "country": "Qatar",
+    "continent": "Asia",
+    "lat": 25.2854,
+    "lng": 51.531,
+    "keywords": [
+      "doha trip planner",
+      "qatar travel",
+      "souq waqif"
+    ],
+    "unsplashQuery": "doha qatar",
+    "wikiPageId": "Doha",
+    "image": null,
+    "wikipedia": {
+      "title": "Doha",
+      "extract": "Doha is the capital city and main financial hub of Qatar. Located on the Persian Gulf coast in the east of the country, north of Al Wakrah and south of Al Khor and Lusail, it is home to most of the country's population. It is also Qatar's fastest growing city, with over 80% of the nation's population living in Doha or its surrounding suburbs, known collectively as the Doha Metropolitan Area.",
+      "description": "Capital and largest city of Qatar",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/The_Pearl_Marina_in_Nov_2013.jpg/330px-The_Pearl_Marina_in_Nov_2013.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Doha"
+    }
+  },
+  {
+    "slug": "muscat",
+    "name": "Muscat",
+    "country": "Oman",
+    "continent": "Asia",
+    "lat": 23.588,
+    "lng": 58.3829,
+    "keywords": [
+      "muscat trip planner",
+      "oman travel",
+      "sultan qaboos mosque"
+    ],
+    "unsplashQuery": "muscat oman",
+    "wikiPageId": "Muscat,_Oman",
+    "image": null,
+    "wikipedia": {
+      "title": "Muscat",
+      "extract": "Muscat is the capital and most populous city of Oman. It is the seat of the Governorate of Muscat. According to the National Centre for Statistics and Information (NCSI), the population of the Muscat Governorate in 2022 was 1.72 million. The metropolitan area includes six provinces, called wilayat, and spans approximately 6,500 km2 (2,500 sq mi). Known since the early 1st century CE as a leading port for trade between the west and the east, Muscat was ruled successively by various indigenous tribes, as well as by foreign powers such as the Persians, the Portuguese Empire and the Ottoman Empire. In the 18th century, Muscat was a regional military power: its influence extended as far as East Africa and Zanzibar. As an important port town in the Gulf of Oman, Muscat attracted foreign traders and settlers such as the Persians, the Balochs and the Sindhis. Beginning in 1970, after the accession of Qaboos bin Said as the Sultan of Oman, Muscat experienced rapid infrastructural development; it developed a vibrant economy and became a multi-ethnic society. The Globalization and World Cities Research Network classifies Muscat as a Beta-level Global City.",
+      "description": "Capital and largest city of Oman",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Al_Alam_Palace.jpg/330px-Al_Alam_Palace.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Muscat"
+    }
+  },
+  {
+    "slug": "melbourne",
+    "name": "Melbourne",
+    "country": "Australia",
+    "continent": "Oceania",
+    "lat": -37.8136,
+    "lng": 144.9631,
+    "keywords": [
+      "melbourne trip planner",
+      "australia culture",
+      "great ocean road"
+    ],
+    "unsplashQuery": "melbourne australia",
+    "wikiPageId": "Melbourne",
+    "image": null,
+    "wikipedia": {
+      "title": "Melbourne",
+      "extract": "Melbourne is the capital and most populous city of the Australian state of Victoria, and the second most-populous city in Australia. The city's name generally refers to a 2,453-square-kilometre (947 sq mi) area, comprising an urban agglomeration of 31 local government areas. The name is also used to specifically refer to the local government area named City of Melbourne, whose area is centred on the Melbourne central business district and some immediate surrounds.",
+      "description": "Capital city of Victoria, Australia",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Melburnian_Skyline.jpg/330px-Melburnian_Skyline.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Melbourne"
+    }
+  },
+  {
+    "slug": "brisbane",
+    "name": "Brisbane",
+    "country": "Australia",
+    "continent": "Oceania",
+    "lat": -27.4698,
+    "lng": 153.0251,
+    "keywords": [
+      "brisbane trip planner",
+      "australia travel",
+      "south bank"
+    ],
+    "unsplashQuery": "brisbane australia",
+    "wikiPageId": "Brisbane",
+    "image": null,
+    "wikipedia": {
+      "title": "Brisbane",
+      "extract": "Brisbane is the capital and largest city of the state of Queensland and the third-most populous city in Australia, with a population of approximately 2.8 million. Brisbane lies at the centre of South East Queensland urban region with an estimated population of 4.1 million in 2024. The central business district is situated within a peninsula of the Brisbane River about 15 km (9 mi) from its mouth at Moreton Bay. Greater Brisbane sprawls over the hilly floodplain of the Brisbane River Valley between Pacific Ocean and the Taylor and D'Aguilar mountain ranges, encompassing several local government areas, most centrally the City of Brisbane, the most populous local government area in Australia. The demonym of Brisbane is Brisbanite.",
+      "description": "Capital city of Queensland, Australia",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Brisbane_CBD_seen_from_Kangaroo_Point%2C_2024%2C_01_%282%29.jpg/330px-Brisbane_CBD_seen_from_Kangaroo_Point%2C_2024%2C_01_%282%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Brisbane"
+    }
+  },
+  {
+    "slug": "auckland",
+    "name": "Auckland",
+    "country": "New Zealand",
+    "continent": "Oceania",
+    "lat": -36.8485,
+    "lng": 174.7633,
+    "keywords": [
+      "auckland trip planner",
+      "new zealand travel",
+      "sky tower"
+    ],
+    "unsplashQuery": "auckland new zealand",
+    "wikiPageId": "Auckland",
+    "image": null,
+    "wikipedia": {
+      "title": "Auckland",
+      "extract": "Auckland is a large metropolitan city in the North Island of New Zealand. It has an urban population of about 1,547,200. It is located in the greater Auckland Region, the area governed by Auckland Council, which includes outlying rural areas and the islands of the Hauraki Gulf, and which has a total population of 1,816,000 as of June 2025. It is the most populous city of New Zealand and the fifth-largest city in Oceania.",
+      "description": "Largest city in New Zealand",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Auckland_skyline_-_May_2024_%282%29.jpg/330px-Auckland_skyline_-_May_2024_%282%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Auckland"
+    }
+  },
+  {
+    "slug": "queenstown",
+    "name": "Queenstown",
+    "country": "New Zealand",
+    "continent": "Oceania",
+    "lat": -45.0312,
+    "lng": 168.6626,
+    "keywords": [
+      "queenstown trip planner",
+      "new zealand adventure",
+      "milford sound"
+    ],
+    "unsplashQuery": "queenstown new zealand",
+    "wikiPageId": "Queenstown,_New_Zealand",
+    "image": null,
+    "wikipedia": {
+      "title": "Queenstown, New Zealand",
+      "extract": "Queenstown is a resort town in Otago in the south-west of New Zealand's South Island. It is the seat and largest town in the Queenstown-Lakes District.",
+      "description": "Resort town in New Zealand's South Island",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Queenstown_1_%288168013172%29.jpg/330px-Queenstown_1_%288168013172%29.jpg",
+      "pageUrl": "https://en.wikipedia.org/wiki/Queenstown%2C_New_Zealand"
+    }
+  },
+  {
+    "slug": "fiji",
+    "name": "Fiji",
+    "country": "Fiji",
+    "continent": "Oceania",
+    "lat": -17.7134,
+    "lng": 178.065,
+    "keywords": [
+      "fiji trip planner",
+      "fiji islands",
+      "tropical paradise"
+    ],
+    "unsplashQuery": "fiji islands",
+    "wikiPageId": "Fiji",
+    "image": null,
+    "wikipedia": {
+      "title": "Fiji",
+      "extract": "Fiji, officially the Republic of Fiji, is an island country in Melanesia, part of Oceania in the South Pacific Ocean. It lies about 1,100 nautical miles north-northeast of New Zealand. Fiji consists of an archipelago of more than 330 islands—of which about 110 are permanently inhabited—and more than 500 islets, amounting to a total land area of about 18,300 square kilometres (7,100 sq mi). The most outlying island group is Ono-i-Lau. About 87% of the total population live on the two major islands, Viti Levu and Vanua Levu. About three-quarters of Fijians live on Viti Levu's coasts, either in the capital city of Suva, or in smaller urban centres such as Nadi or Lautoka. The interior of Viti Levu is sparsely inhabited because of its terrain.",
+      "description": "Country in Oceania",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Fiji.svg/330px-Flag_of_Fiji.svg.png",
+      "pageUrl": "https://en.wikipedia.org/wiki/Fiji"
+    }
+  }
 ]
