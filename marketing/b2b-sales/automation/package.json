@@ -1,0 +1,31 @@
+{
+  "name": "b2b-sales-automation",
+  "version": "1.0.0",
+  "description": "B2B email campaign automation for TripCompanion white-label sales",
+  "main": "send-campaign.js",
+  "scripts": {
+    "test": "node send-campaign.js --test michael@tripcompanion.app --email 1",
+    "send:batch1:email1": "node send-campaign.js --batch 1 --email 1",
+    "send:batch1:email2": "node send-campaign.js --batch 1 --email 2",
+    "send:batch1:email3": "node send-campaign.js --batch 1 --email 3",
+    "send:all:email1": "node send-campaign.js --batch all --email 1",
+    "dry-run": "node send-campaign.js --batch 1 --email 1 --dry-run",
+    "track": "node track-responses.js",
+    "analyze": "node analyze-campaign.js"
+  },
+  "keywords": [
+    "email",
+    "campaign",
+    "automation",
+    "b2b",
+    "sales"
+  ],
+  "author": "Michael Guo",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.0.3"
+  }
+}

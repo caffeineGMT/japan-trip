@@ -92,7 +92,6 @@ app.use('/api/referrals', referralRouter);
 // ===== CHROME EXTENSION ROUTES =====
 const extensionSavePOIRouter = require('./api/extension/save-poi');
 app.use('/api/extension', extensionSavePOIRouter);
-app.use('/api/extension', extensionSavePOIRouter);
 
 // ===== PARTNERSHIP ROUTES (JAL/ANA Co-Marketing) =====
 const partnershipTrack = require('./api/partnerships/track');
@@ -101,6 +100,21 @@ app.post('/api/partnerships/track', partnershipTrack.trackEvent);
 app.get('/api/partnerships/analytics', partnershipTrack.getAnalytics);
 app.post('/api/partnerships/convert', partnershipTrack.markConversion);
 app.get('/api/partnerships/commissions', partnershipTrack.getCommissions);
+
+// ===== ANALYTICS ROUTES (PostHog Conversion Funnel) =====
+const { analyticsMiddleware, serverAnalytics } = require('./api/analytics');
+
+// Initialize server-side analytics
+if (process.env.POSTHOG_API_KEY) {
+  serverAnalytics.init(process.env.POSTHOG_API_KEY, {
+    host: process.env.POSTHOG_HOST || 'https://app.posthog.com',
+  });
+  console.log('✓ PostHog server-side analytics initialized');
+} else {
+  console.warn('⚠️  POSTHOG_API_KEY not set - analytics disabled');
+}
+
+app.post('/api/analytics/track', analyticsMiddleware);
 
 // Partnership dashboard
 app.get('/partnerships/dashboard', (req, res) => {
@@ -219,27 +233,21 @@ app.use((err, req, res, next) => {
 // Serve uploads directory for tenant logos
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Partnership dashboard
+app.get('/partnerships/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'marketing', 'partnerships', 'partnership-dashboard.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
   console.log(`📍 Marketplace: http://localhost:${PORT}/marketplace`);
   console.log(`🏢 Partners: http://localhost:${PORT}/partners`);
+  console.log(`📊 Analytics Dashboard: http://localhost:${PORT}/analytics-dashboard.html`);
   console.log(`💳 Stripe configured: ${!!process.env.STRIPE_SECRET_KEY}`);
   console.log(`🗄️  Supabase configured: ${!!process.env.SUPABASE_URL}`);
   console.log(`☁️  Cloudflare configured: ${!!process.env.CLOUDFLARE_API_TOKEN}`);
   console.log(`🔐 Multi-tenant: enabled`);
+  console.log(`📈 PostHog analytics: ${!!process.env.POSTHOG_API_KEY ? 'enabled' : 'disabled'}`);
   console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
-});
-
-// ===== PARTNERSHIP ROUTES (JAL/ANA Co-Marketing) =====
-const partnershipTrack = require('./api/partnerships/track');
-
-app.post('/api/partnerships/track', partnershipTrack.trackEvent);
-app.get('/api/partnerships/analytics', partnershipTrack.getAnalytics);
-app.post('/api/partnerships/convert', partnershipTrack.markConversion);
-app.get('/api/partnerships/commissions', partnershipTrack.getCommissions);
-
-// Partnership dashboard
-app.get('/partnerships/dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'marketing', 'partnerships', 'partnership-dashboard.html'));
 });
 

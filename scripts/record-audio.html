@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Recorder - Japan Trip Phrases</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #e8e8ef;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #ef4444;
+    }
+
+    .subtitle {
+      color: #9ca3af;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .info-box {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .info-box h3 {
+      color: #ef4444;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .info-box ul {
+      margin-left: 20px;
+      color: #d1d5db;
+      line-height: 1.8;
+    }
+
+    .controls {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .control-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #d1d5db;
+      font-size: 14px;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: #e8e8ef;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    select:hover, button:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(239, 68, 68, 0.5);
+    }
+
+    button {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      border: none;
+      color: white;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    button:hover:not(:disabled) {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    }
+
+    .progress {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ef4444 0%, #f97316 100%);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      font-size: 14px;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    .phrase-preview {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 20px;
+      border-left: 3px solid #ef4444;
+    }
+
+    .phrase-preview .ja {
+      font-size: 20px;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .phrase-preview .romaji {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-bottom: 5px;
+    }
+
+    .phrase-preview .en {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .status {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .status.success {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+      display: block;
+    }
+
+    .status.error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+      display: block;
+    }
+
+    .file-list {
+      margin-top: 20px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .file-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 15px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .file-item .filename {
+      font-family: 'Monaco', 'Courier New', monospace;
+      color: #d1d5db;
+    }
+
+    .file-item .badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .file-item .badge.success {
+      background: rgba(16, 185, 129, 0.2);
+      color: #10b981;
+    }
+
+    .file-item .badge.pending {
+      background: rgba(251, 191, 36, 0.2);
+      color: #fbbf24;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎤 Audio Recorder</h1>
+    <p class="subtitle">Generate native speaker audio for Japanese phrases</p>
+
+    <div class="info-box">
+      <h3>📝 Instructions</h3>
+      <ul>
+        <li>Select a Japanese voice from your browser's available voices</li>
+        <li>Click "Generate All Audio" to create MP3 files for all phrases</li>
+        <li>The audio files will be downloaded automatically as a ZIP file</li>
+        <li>Extract the ZIP and place the files in the <code>/audio/phrases/</code> directory</li>
+        <li>For best quality, use a browser with high-quality Japanese voices (Chrome recommended)</li>
+      </ul>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label for="voice-select">Select Japanese Voice</label>
+        <select id="voice-select">
+          <option value="">Loading voices...</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="speed">Speaking Speed</label>
+        <select id="speed">
+          <option value="0.8">Slow (0.8x)</option>
+          <option value="0.9" selected>Natural (0.9x)</option>
+          <option value="1.0">Normal (1.0x)</option>
+        </select>
+      </div>
+
+      <button id="generate-btn" disabled>Generate All Audio</button>
+      <button id="test-btn" disabled>Test Current Voice</button>
+    </div>
+
+    <div class="phrase-preview" id="preview" style="display: none;">
+      <div class="ja" id="preview-ja"></div>
+      <div class="romaji" id="preview-romaji"></div>
+      <div class="en" id="preview-en"></div>
+    </div>
+
+    <div class="progress" id="progress" style="display: none;">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-text" id="progress-text">0 / 0</div>
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <div class="file-list" id="file-list"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script>
+    let phrases = {};
+    let voices = [];
+    let selectedVoice = null;
+    let isGenerating = false;
+
+    // Load phrases
+    fetch('../phrases.json')
+      .then(r => r.json())
+      .then(data => {
+        phrases = data;
+        console.log('Phrases loaded:', phrases);
+      })
+      .catch(err => {
+        showStatus('Failed to load phrases.json', 'error');
+      });
+
+    // Load available voices
+    function loadVoices() {
+      voices = speechSynthesis.getVoices();
+      const japaneseVoices = voices.filter(v => v.lang.startsWith('ja'));
+
+      const select = document.getElementById('voice-select');
+      select.innerHTML = '';
+
+      if (japaneseVoices.length === 0) {
+        select.innerHTML = '<option value="">No Japanese voices found</option>';
+        return;
+      }
+
+      japaneseVoices.forEach((voice, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = `${voice.name} (${voice.lang})`;
+        select.appendChild(option);
+      });
+
+      // Auto-select first voice
+      if (japaneseVoices.length > 0) {
+        selectedVoice = japaneseVoices[0];
+        document.getElementById('generate-btn').disabled = false;
+        document.getElementById('test-btn').disabled = false;
+      }
+    }
+
+    // Voice changed
+    document.getElementById('voice-select').addEventListener('change', (e) => {
+      const japaneseVoices = voices.filter(v => v.lang.startsWith('ja'));
+      selectedVoice = japaneseVoices[parseInt(e.target.value)];
+    });
+
+    // Test voice
+    document.getElementById('test-btn').addEventListener('click', () => {
+      const utterance = new SpeechSynthesisUtterance('こんにちは、テストです');
+      utterance.voice = selectedVoice;
+      utterance.rate = parseFloat(document.getElementById('speed').value);
+      speechSynthesis.speak(utterance);
+    });
+
+    // Show status
+    function showStatus(message, type = 'success') {
+      const status = document.getElementById('status');
+      status.textContent = message;
+      status.className = `status ${type}`;
+    }
+
+    // Generate audio with MediaRecorder
+    async function generateAudioFile(text, filename) {
+      return new Promise((resolve, reject) => {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.voice = selectedVoice;
+        utterance.rate = parseFloat(document.getElementById('speed').value);
+
+        // Note: Browser TTS doesn't provide direct audio file output
+        // This is a limitation - we'll need to use the MediaRecorder API
+        // For now, we'll indicate this requires a different approach
+
+        utterance.onend = () => resolve(null);
+        utterance.onerror = () => reject(new Error('Speech synthesis failed'));
+
+        speechSynthesis.speak(utterance);
+      });
+    }
+
+    // Generate all audio
+    document.getElementById('generate-btn').addEventListener('click', async () => {
+      if (isGenerating) return;
+      isGenerating = true;
+
+      document.getElementById('generate-btn').disabled = true;
+      document.getElementById('progress').style.display = 'block';
+      document.getElementById('file-list').innerHTML = '';
+
+      const categories = Object.keys(phrases);
+      let totalPhrases = 0;
+      let processedPhrases = 0;
+
+      // Count total
+      categories.forEach(cat => {
+        totalPhrases += phrases[cat].length;
+      });
+
+      showStatus(`⚠ Browser TTS cannot export audio files directly. Please use Google Cloud TTS script instead: npm install @google-cloud/text-to-speech && node scripts/generate-audio.js`, 'error');
+
+      // Update progress to show all phrases
+      const fileList = document.getElementById('file-list');
+      for (const category of categories) {
+        const categoryPhrases = phrases[category];
+        for (let i = 0; i < categoryPhrases.length; i++) {
+          const phrase = categoryPhrases[i];
+          const filename = `${category}_${i}.mp3`;
+
+          const item = document.createElement('div');
+          item.className = 'file-item';
+          item.innerHTML = `
+            <span class="filename">${filename}</span>
+            <span class="badge pending">Needs Google Cloud TTS</span>
+          `;
+          fileList.appendChild(item);
+
+          processedPhrases++;
+          const progress = (processedPhrases / totalPhrases) * 100;
+          document.getElementById('progress-fill').style.width = progress + '%';
+          document.getElementById('progress-text').textContent = `${processedPhrases} / ${totalPhrases}`;
+        }
+      }
+
+      document.getElementById('generate-btn').disabled = false;
+      isGenerating = false;
+    });
+
+    // Initialize voices
+    speechSynthesis.onvoiceschanged = loadVoices;
+    loadVoices();
+  </script>
+</body>
+</html>

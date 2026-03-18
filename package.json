@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.1",
+    "@google-cloud/text-to-speech": "^6.4.0",
     "@supabase/supabase-js": "^2.99.2",
     "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
