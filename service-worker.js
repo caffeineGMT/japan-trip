@@ -10,6 +10,9 @@ const TILES_CACHE = `tiles-${CACHE_VERSION}`;
 const STATIC_ASSETS = [
   '/',
   '/index.html',
+  '/reservations.html',
+  '/checklist.html',
+  '/offline.html',
   '/style.css',
   '/script.js',
   '/data.js',
@@ -18,8 +21,12 @@ const STATIC_ASSETS = [
   '/routes.js',
   '/weather.js',
   '/whats-next.js',
+  '/sakura-widget.js',
+  '/reservations.js',
+  '/checklist.js',
   '/manifest.json',
-  '/offline.html'
+  '/icons/icon-192.png',
+  '/icons/icon-512.png'
 ];
 
 // Leaflet library assets
