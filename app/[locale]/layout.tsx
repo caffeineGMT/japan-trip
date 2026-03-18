@@ -4,6 +4,8 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import '../globals.css';
+import InstallPrompt from '@/components/InstallPrompt';
+import OfflineIndicator from '@/components/OfflineIndicator';
 
 export const metadata: Metadata = {
   title: 'Japan Trip Companion',
@@ -79,11 +81,13 @@ export default async function LocaleLayout({
         <meta name="apple-mobile-web-app-title" content="Japan Trip" />
       </head>
       <body className="antialiased">
+        <OfflineIndicator />
         <NextIntlClientProvider messages={messages}>
           <main className="min-h-screen">
             {children}
           </main>
         </NextIntlClientProvider>
+        <InstallPrompt />
       </body>
     </html>
   );
