@@ -61,6 +61,19 @@ app.use('/api/affiliate', affiliateTrackRouter);
 app.use('/api/affiliate', affiliateStatsRouter);
 app.use('/api/affiliate', affiliatePayoutRouter);
 
+// ===== EMAIL NURTURE ROUTES =====
+const emailSubscribeRouter = require('./api/email/subscribe');
+const emailUnsubscribeRouter = require('./api/email/unsubscribe');
+const emailWebhookRouter = require('./api/email/webhook');
+const emailAnalyticsRouter = require('./api/email/analytics');
+const emailCronRouter = require('./api/email/cron');
+
+app.use('/api/email', emailSubscribeRouter);
+app.use('/api/email', emailUnsubscribeRouter);
+app.use('/api/email', emailWebhookRouter);
+app.use('/api/email', emailAnalyticsRouter);
+app.use('/api/email', emailCronRouter);
+
 // ===== OUTREACH ROUTES =====
 const outreachCampaigns = require('./api/outreach/campaigns');
 
@@ -75,6 +88,16 @@ app.post('/api/outreach/webhooks/mailgun', outreachCampaigns.mailgunWebhook);
 // Serve embed widget pages
 app.get('/embed/:tripId', (req, res) => {
   res.sendFile(path.join(__dirname, 'embed', 'trip.html'));
+});
+
+// Email nurture dashboard
+app.get('/email-dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'marketing', 'email-nurture', 'dashboard.html'));
+});
+
+// Cherry blossom forecast route (for Reddit marketing campaign)
+app.get('/cherry-blossom-forecast', (req, res) => {
+  res.sendFile(path.join(__dirname, 'marketing', 'reddit', 'assets', 'cherry-blossom-embed.html'));
 });
 
 // Health check endpoint

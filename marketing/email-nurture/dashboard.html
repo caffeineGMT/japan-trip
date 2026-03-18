@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Nurture Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .stat-target {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-top: 0.5rem;
+    }
+
+    .stat-target.good {
+      color: #10b981;
+      font-weight: 600;
+    }
+
+    .stat-target.bad {
+      color: #ef4444;
+      font-weight: 600;
+    }
+
+    .campaign-table {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .table-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .table-header h2 {
+      font-size: 1.25rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #f9fafb;
+      padding: 1rem;
+      text-align: left;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #6b7280;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .badge-green {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+
+    .badge-yellow {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+
+    .badge-red {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 3rem;
+      color: #6b7280;
+    }
+
+    .error {
+      background-color: #fee2e2;
+      color: #991b1b;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .refresh-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+
+    .refresh-btn:hover {
+      opacity: 0.9;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .last-updated {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📧 Email Nurture Dashboard</h1>
+    <p>9-Email Drip Campaign Analytics</p>
+  </div>
+
+  <div class="container">
+    <div class="toolbar">
+      <div class="last-updated" id="lastUpdated">Loading...</div>
+      <button class="refresh-btn" onclick="loadDashboard()">↻ Refresh</button>
+    </div>
+
+    <div id="error" class="error" style="display: none;"></div>
+
+    <!-- Overview Stats -->
+    <div class="stats-grid" id="statsGrid">
+      <div class="loading">Loading analytics...</div>
+    </div>
+
+    <!-- Campaign Performance Table -->
+    <div class="campaign-table">
+      <div class="table-header">
+        <h2>Campaign Performance</h2>
+      </div>
+      <div id="campaignTable">
+        <div class="loading">Loading campaigns...</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function loadDashboard() {
+      try {
+        document.getElementById('error').style.display = 'none';
+
+        const response = await fetch('/api/email/analytics');
+        const result = await response.json();
+
+        if (!result.success) {
+          throw new Error(result.error || 'Failed to load analytics');
+        }
+
+        renderStats(result.data);
+        renderCampaigns(result.data);
+
+        document.getElementById('lastUpdated').textContent = `Last updated: ${new Date().toLocaleString()}`;
+
+      } catch (error) {
+        console.error('Dashboard error:', error);
+        const errorEl = document.getElementById('error');
+        errorEl.textContent = `Error: ${error.message}`;
+        errorEl.style.display = 'block';
+      }
+    }
+
+    function renderStats(data) {
+      const { overview, targets } = data;
+
+      const stats = [
+        {
+          label: 'Total Subscribers',
+          value: overview.total_subscribers.toLocaleString(),
+          target: null
+        },
+        {
+          label: 'Active Subscribers',
+          value: overview.active_subscribers.toLocaleString(),
+          target: null
+        },
+        {
+          label: 'Open Rate',
+          value: `${overview.overall_open_rate}%`,
+          target: targets.open_rate,
+          current: parseFloat(overview.overall_open_rate)
+        },
+        {
+          label: 'Click Rate',
+          value: `${overview.overall_click_rate}%`,
+          target: targets.click_rate,
+          current: parseFloat(overview.overall_click_rate)
+        },
+        {
+          label: 'Conversion Rate',
+          value: `${overview.conversion_rate}%`,
+          target: targets.conversion_rate,
+          current: parseFloat(overview.conversion_rate)
+        },
+        {
+          label: 'Total Revenue',
+          value: `$${parseFloat(overview.total_revenue).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+          target: null
+        },
+        {
+          label: 'LTV per Subscriber',
+          value: `$${overview.ltv_per_subscriber}`,
+          target: targets.ltv_per_subscriber,
+          current: parseFloat(overview.ltv_per_subscriber)
+        },
+        {
+          label: 'Conversions',
+          value: overview.total_conversions.toLocaleString(),
+          target: null
+        }
+      ];
+
+      const html = stats.map(stat => `
+        <div class="stat-card">
+          <div class="stat-label">${stat.label}</div>
+          <div class="stat-value">${stat.value}</div>
+          ${stat.target !== null ? `
+            <div class="stat-target ${stat.current >= stat.target ? 'good' : 'bad'}">
+              Target: ${stat.target}${stat.label.includes('Rate') || stat.label.includes('LTV') && stat.label.includes('$') ? '' : '%'}
+              ${stat.current >= stat.target ? '✓' : '⚠️'}
+            </div>
+          ` : ''}
+        </div>
+      `).join('');
+
+      document.getElementById('statsGrid').innerHTML = html;
+    }
+
+    function renderCampaigns(data) {
+      const { campaigns } = data;
+
+      const html = `
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Campaign Name</th>
+              <th>Day</th>
+              <th>Sends</th>
+              <th>Open Rate</th>
+              <th>Click Rate</th>
+              <th>Conv. Rate</th>
+              <th>Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${campaigns.map(c => `
+              <tr>
+                <td><strong>${c.email_sequence_number}</strong></td>
+                <td>${c.campaign_name}</td>
+                <td>Day ${c.email_sequence_number === 1 ? 0 : (c.email_sequence_number - 1) * 2 + (c.email_sequence_number > 5 ? 4 : 0)}</td>
+                <td>${c.total_sends?.toLocaleString() || 0}</td>
+                <td>
+                  <span class="badge ${getBadgeClass(c.open_rate, 35)}">
+                    ${c.open_rate || 0}%
+                  </span>
+                </td>
+                <td>
+                  <span class="badge ${getBadgeClass(c.click_rate, 8)}">
+                    ${c.click_rate || 0}%
+                  </span>
+                </td>
+                <td>
+                  <span class="badge ${getBadgeClass(c.conversion_rate, 12)}">
+                    ${c.conversion_rate || 0}%
+                  </span>
+                </td>
+                <td>$${parseFloat(c.total_revenue || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+
+      document.getElementById('campaignTable').innerHTML = html;
+    }
+
+    function getBadgeClass(value, target) {
+      value = parseFloat(value);
+      if (value >= target) return 'badge-green';
+      if (value >= target * 0.7) return 'badge-yellow';
+      return 'badge-red';
+    }
+
+    // Load dashboard on page load
+    loadDashboard();
+
+    // Auto-refresh every 5 minutes
+    setInterval(loadDashboard, 5 * 60 * 1000);
+  </script>
+</body>
+</html>
