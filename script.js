@@ -599,6 +599,12 @@ window.focusStop = function focusStop(index) {
     });
   }
 
+  // Safety check - ensure map is initialized
+  if (!map) {
+    console.error('[Map] Cannot focus stop - map not initialized');
+    return;
+  }
+
   map.setView([stop.lat, stop.lng], 15, { animate: true });
   markers[index].openPopup();
 
