@@ -31,7 +31,11 @@
     "validate-audio": "node scripts/validate-audio.js",
     "process-audio": "node scripts/process-native-recordings.js",
     "generate-audio-tts": "python3 scripts/generate-audio-gtts.py",
-    "audio-check": "npm run validate-audio"
+    "audio-check": "npm run validate-audio",
+    "next:dev": "next dev",
+    "next:build": "next build",
+    "next:start": "next start",
+    "next:export": "next build && next export"
   },
   "repository": {
     "type": "git",
@@ -55,8 +59,10 @@
     "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
     "astro": "^6.0.6",
+    "axios": "^1.13.6",
     "bcrypt": "^6.0.0",
     "chart.js": "^4.5.1",
+    "cheerio": "^1.2.0",
     "cloudflare": "^5.2.0",
     "cors": "^2.8.6",
     "date-fns": "^4.1.0",
@@ -66,22 +72,36 @@
     "fuse.js": "^7.1.0",
     "geolib": "^3.3.4",
     "jsonwebtoken": "^9.0.3",
+    "leaflet": "^1.9.4",
     "mailgun.js": "^12.7.1",
     "multer": "^2.1.1",
     "nanoid": "^5.1.7",
+    "next": "^14.2.35",
+    "next-intl": "^3.26.5",
+    "next-pwa": "^5.6.0",
     "openai": "^6.32.0",
     "paypal-rest-sdk": "^1.8.1",
     "posthog-js": "^1.362.0",
     "posthog-node": "^5.28.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-leaflet": "^5.0.0",
+    "react-leaflet-cluster": "^4.0.0",
     "sharp": "^0.34.5",
+    "simple-statistics": "^7.8.9",
     "stripe": "^20.4.1",
-    "terser": "^5.46.1"
+    "terser": "^5.46.1",
+    "workbox-webpack-plugin": "^7.4.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/jest": "^30.0.0",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "jest": "^30.3.0",
     "node-fetch": "^2.7.0",
-    "puppeteer": "^24.39.1"
+    "puppeteer": "^24.39.1",
+    "typescript": "^5.9.3"
   }
 }

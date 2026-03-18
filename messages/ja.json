@@ -1,0 +1,102 @@
+{
+  "common": {
+    "appName": "日本旅行コンパニオン",
+    "welcome": "日本の冒険へようこそ",
+    "description": "桜の開花予報、オフラインマップ、保存した場所で完璧な日本旅行を計画しましょう。",
+    "nav": {
+      "myTrips": "マイトリップ",
+      "cherryBlossomForecast": "桜開花予報",
+      "savedPlaces": "保存した場所",
+      "offlineMode": "オフラインモード",
+      "settings": "設定"
+    },
+    "buttons": {
+      "addTrip": "旅行を追加",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "delete": "削除",
+      "edit": "編集",
+      "share": "共有",
+      "download": "オフライン用にダウンロード",
+      "syncNow": "今すぐ同期"
+    },
+    "status": {
+      "online": "オンライン",
+      "offline": "オフライン",
+      "syncing": "同期中...",
+      "syncComplete": "同期完了",
+      "dataUpdated": "データ更新済み"
+    }
+  },
+  "trips": {
+    "title": "マイトリップ",
+    "noTrips": "まだ旅行がありません。冒険の計画を始めましょう！",
+    "createNew": "新しい旅行を作成",
+    "tripCount": "{count, plural, =0 {旅行なし} other {#件の旅行}}",
+    "startDate": "開始日",
+    "endDate": "終了日",
+    "duration": "{days, plural, other {#日間}}",
+    "addDestination": "目的地を追加",
+    "viewDetails": "詳細を表示",
+    "editTrip": "旅行を編集",
+    "deleteTrip": "旅行を削除"
+  },
+  "forecast": {
+    "title": "桜開花予報",
+    "blooming": "開花中",
+    "peak": "満開",
+    "fallen": "散った",
+    "notYet": "まだ開花していません",
+    "peakDate": "満開: {date}",
+    "bloomStatus": "開花状況",
+    "lastUpdated": "最終更新: {date}",
+    "regions": {
+      "hokkaido": "北海道",
+      "tohoku": "東北",
+      "kanto": "関東",
+      "chubu": "中部",
+      "kansai": "関西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    }
+  },
+  "places": {
+    "title": "保存した場所",
+    "noPlaces": "まだ保存した場所がありません",
+    "addPlace": "場所を追加",
+    "viewOnMap": "地図で表示",
+    "getDirections": "道順を取得",
+    "notes": "メモ",
+    "category": "カテゴリー",
+    "categories": {
+      "temple": "寺院",
+      "shrine": "神社",
+      "restaurant": "レストラン",
+      "hotel": "ホテル",
+      "viewpoint": "展望台",
+      "shopping": "ショッピング",
+      "museum": "博物館",
+      "park": "公園"
+    }
+  },
+  "errors": {
+    "networkError": "ネットワークエラー。接続を確認してください。",
+    "loadFailed": "データの読み込みに失敗しました",
+    "saveFailed": "変更の保存に失敗しました",
+    "notFound": "ページが見つかりません",
+    "unauthorized": "不正なアクセス",
+    "serverError": "サーバーエラー。後でもう一度お試しください。",
+    "offlineNotice": "オフラインです。一部の機能が制限される場合があります。",
+    "syncFailed": "同期に失敗しました。自動的に再試行します。"
+  },
+  "offline": {
+    "title": "オフラインモード",
+    "enabled": "オフラインモードが有効です",
+    "disabled": "オフラインモードが無効です",
+    "dataAvailable": "オフラインで利用可能なデータ",
+    "downloadSize": "ダウンロードサイズ: {size}",
+    "lastSync": "最終同期: {date}",
+    "storage": "使用ストレージ: {total}中{used}"
+  }
+}

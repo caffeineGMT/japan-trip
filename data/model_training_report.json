@@ -1,0 +1,15 @@
+{
+  "trainingDate": "2026-03-18T22:40:39.646Z",
+  "totalCities": 50,
+  "totalRecords": 800,
+  "averageMetrics": {
+    "rSquared": 0.9250913340485232,
+    "rmse": 1.0887555728805725
+  },
+  "modelQuality": {
+    "excellent": 41,
+    "good": 9,
+    "fair": 0,
+    "poor": 0
+  }
+}

@@ -49,6 +49,10 @@
     {
       "path": "/api/affiliate/payout/process-monthly",
       "schedule": "0 0 1 * *"
+    },
+    {
+      "path": "/api/cron/refresh-forecasts",
+      "schedule": "0 0 * * 0"
     }
   ]
 }

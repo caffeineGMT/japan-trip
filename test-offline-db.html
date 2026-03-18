@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline Database Test - Japan Trip Companion</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      padding: 30px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      opacity: 0.9;
+      font-size: 14px;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding: 24px;
+      background: #f9fafb;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .test-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      border: 2px solid #e5e7eb;
+      transition: all 0.2s ease;
+    }
+
+    .test-card:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+    }
+
+    .test-card h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #374151;
+    }
+
+    button {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    button.secondary {
+      background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    }
+
+    button.danger {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    }
+
+    button.success {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    }
+
+    .output {
+      margin-top: 12px;
+      padding: 12px;
+      background: #f3f4f6;
+      border-radius: 6px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #374151;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .output.success {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .output.error {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .stat-box {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+      border: 2px solid #e5e7eb;
+    }
+
+    .stat-value {
+      font-size: 32px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    .badge.online {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .badge.offline {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .instructions {
+      background: #dbeafe;
+      border-left: 4px solid #3b82f6;
+      padding: 16px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .instructions strong {
+      color: #1e40af;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌸 Offline Database Test Suite</h1>
+      <p>Testing Dexie.js IndexedDB integration for offline-first Japan Trip Companion</p>
+    </div>
+
+    <div class="content">
+      <div class="instructions">
+        <strong>Test Instructions:</strong><br>
+        1. Click buttons to perform CRUD operations on IndexedDB<br>
+        2. Refresh the page to verify data persistence<br>
+        3. Clear browser cache (NOT IndexedDB) - data should survive<br>
+        4. Go offline (DevTools Network tab) and verify operations still work<br>
+        5. Only clearing IndexedDB data should remove stored information
+      </div>
+
+      <!-- Database Stats -->
+      <div class="section">
+        <h2>
+          <span class="section-icon">📊</span>
+          Database Statistics
+          <span class="badge" id="online-badge">Online</span>
+        </h2>
+        <div class="stats" id="stats-container"></div>
+        <button class="success" onclick="loadStats()">Refresh Stats</button>
+      </div>
+
+      <!-- Trip Operations -->
+      <div class="section">
+        <h2>
+          <span class="section-icon">✈️</span>
+          Trip Operations
+        </h2>
+        <div class="test-grid">
+          <div class="test-card">
+            <h3>Create Sample Trip</h3>
+            <button onclick="createSampleTrip()">Add Tokyo Trip</button>
+            <button onclick="createMultipleTrips()">Add 3 Trips</button>
+            <div class="output" id="trip-create-output"></div>
+          </div>
+
+          <div class="test-card">
+            <h3>Read Trips</h3>
+            <button onclick="getAllTrips()">Get All Trips</button>
+            <button onclick="getUpcomingTrips()">Get Upcoming</button>
+            <div class="output" id="trip-read-output"></div>
+          </div>
+
+          <div class="test-card">
+            <h3>Update/Delete Trips</h3>
+            <button onclick="updateFirstTrip()">Update First Trip</button>
+            <button class="danger" onclick="deleteFirstTrip()">Delete First Trip</button>
+            <div class="output" id="trip-update-output"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saved Places Operations -->
+      <div class="section">
+        <h2>
+          <span class="section-icon">📍</span>
+          Saved Places Operations
+        </h2>
+        <div class="test-grid">
+          <div class="test-card">
+            <h3>Create Saved Places</h3>
+            <button onclick="addSamplePlace()">Add Sample Place</button>
+            <button onclick="bulkAddPlaces()">Bulk Add 5 Places</button>
+            <div class="output" id="place-create-output"></div>
+          </div>
+
+          <div class="test-card">
+            <h3>Read Saved Places</h3>
+            <button onclick="getAllPlaces()">Get All Places</button>
+            <button onclick="getPlacesByCategory()">Get Restaurants</button>
+            <div class="output" id="place-read-output"></div>
+          </div>
+
+          <div class="test-card">
+            <h3>Update/Delete Places</h3>
+            <button onclick="updateFirstPlace()">Update First Place</button>
+            <button class="danger" onclick="deleteFirstPlace()">Delete First Place</button>
+            <div class="output" id="place-update-output"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forecast Data Operations -->
+      <div class="section">
+        <h2>
+          <span class="section-icon">🌸</span>
+          Forecast Data Operations
+        </h2>
+        <div class="test-grid">
+          <div class="test-card">
+            <h3>Create Forecasts</h3>
+            <button onclick="addSampleForecast()">Add Tokyo Forecast</button>
+            <button onclick="bulkAddForecasts()">Add Multiple Forecasts</button>
+            <div class="output" id="forecast-create-output"></div>
+          </div>
+
+          <div class="test-card">
+            <h3>Read Forecasts</h3>
+            <button onclick="getAllForecasts()">Get All Forecasts</button>
+            <button onclick="getForecastByLocation()">Get Tokyo Forecast</button>
+            <div class="output" id="forecast-read-output"></div>
+          </div>
+
+          <div class="test-card">
+            <h3>Cache Management</h3>
+            <button onclick="upsertForecast()">Upsert Tokyo Data</button>
+            <button class="secondary" onclick="clearStaleForecasts()">Clear Stale Cache</button>
+            <div class="output" id="forecast-cache-output"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clear All Data -->
+      <div class="section">
+        <h2>
+          <span class="section-icon">🗑️</span>
+          Database Management
+        </h2>
+        <div class="test-grid">
+          <div class="test-card">
+            <h3>Clear All Data</h3>
+            <button class="danger" onclick="clearAllData()">Clear Entire Database</button>
+            <div class="output" id="clear-output"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { db, getDatabaseInfo, clearOldCache } from './lib/db.js';
+
+    // Make db globally available for inline onclick handlers
+    window.db = db;
+    window.getDatabaseInfo = getDatabaseInfo;
+    window.clearOldCache = clearOldCache;
+
+    // Monitor online/offline status
+    const updateOnlineStatus = () => {
+      const badge = document.getElementById('online-badge');
+      if (navigator.onLine) {
+        badge.textContent = 'Online';
+        badge.className = 'badge online';
+      } else {
+        badge.textContent = 'Offline';
+        badge.className = 'badge offline';
+      }
+    };
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+
+    // Load stats on page load
+    window.loadStats = async function() {
+      try {
+        const stats = await getDatabaseInfo();
+        const container = document.getElementById('stats-container');
+
+        container.innerHTML = `
+          <div class="stat-box">
+            <div class="stat-value">${stats.trips}</div>
+            <div class="stat-label">Trips</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">${stats.savedPlaces}</div>
+            <div class="stat-label">Saved Places</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">${stats.forecastData}</div>
+            <div class="stat-label">Forecasts</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">${stats.mapTiles}</div>
+            <div class="stat-label">Map Tiles</div>
+          </div>
+        `;
+      } catch (error) {
+        console.error('Error loading stats:', error);
+      }
+    };
+
+    // Trip Operations
+    window.createSampleTrip = async function() {
+      const output = document.getElementById('trip-create-output');
+      try {
+        const id = await db.trips.add({
+          name: 'Tokyo Spring Adventure',
+          startDate: '2026-04-01',
+          endDate: '2026-04-07',
+          locations: ['Tokyo', 'Shibuya', 'Asakusa'],
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        });
+        output.className = 'output success';
+        output.textContent = `✓ Trip created with ID: ${id}`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.createMultipleTrips = async function() {
+      const output = document.getElementById('trip-create-output');
+      try {
+        const trips = [
+          { name: 'Kyoto Cultural Tour', startDate: '2026-05-10', endDate: '2026-05-15', locations: ['Kyoto', 'Nara'], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+          { name: 'Osaka Food Journey', startDate: '2026-06-01', endDate: '2026-06-05', locations: ['Osaka', 'Kobe'], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+          { name: 'Hokkaido Winter Trip', startDate: '2027-01-15', endDate: '2027-01-22', locations: ['Sapporo', 'Niseko'], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() }
+        ];
+        await db.trips.bulkAdd(trips);
+        output.className = 'output success';
+        output.textContent = `✓ ${trips.length} trips created`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.getAllTrips = async function() {
+      const output = document.getElementById('trip-read-output');
+      try {
+        const trips = await db.trips.toArray();
+        output.className = 'output';
+        output.textContent = trips.length > 0
+          ? trips.map(t => `${t.id}: ${t.name} (${t.startDate} to ${t.endDate})`).join('\n')
+          : 'No trips found';
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.getUpcomingTrips = async function() {
+      const output = document.getElementById('trip-read-output');
+      try {
+        const today = new Date().toISOString().split('T')[0];
+        const trips = await db.trips.where('startDate').aboveOrEqual(today).toArray();
+        output.className = 'output';
+        output.textContent = trips.length > 0
+          ? `Found ${trips.length} upcoming trips:\n${trips.map(t => `${t.name}`).join(', ')}`
+          : 'No upcoming trips found';
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.updateFirstTrip = async function() {
+      const output = document.getElementById('trip-update-output');
+      try {
+        const trip = await db.trips.toCollection().first();
+        if (!trip) {
+          output.className = 'output error';
+          output.textContent = 'No trips to update';
+          return;
+        }
+        await db.trips.update(trip.id, { name: trip.name + ' (Updated)', updatedAt: new Date().toISOString() });
+        output.className = 'output success';
+        output.textContent = `✓ Trip ${trip.id} updated`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.deleteFirstTrip = async function() {
+      const output = document.getElementById('trip-update-output');
+      try {
+        const trip = await db.trips.toCollection().first();
+        if (!trip) {
+          output.className = 'output error';
+          output.textContent = 'No trips to delete';
+          return;
+        }
+        await db.trips.delete(trip.id);
+        output.className = 'output success';
+        output.textContent = `✓ Trip ${trip.id} deleted`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    // Saved Places Operations
+    window.addSamplePlace = async function() {
+      const output = document.getElementById('place-create-output');
+      try {
+        const trip = await db.trips.toCollection().first();
+        if (!trip) {
+          output.className = 'output error';
+          output.textContent = 'Create a trip first!';
+          return;
+        }
+        const id = await db.savedPlaces.add({
+          tripId: trip.id,
+          name: 'Senso-ji Temple',
+          lat: 35.7148,
+          lng: 139.7967,
+          category: 'temple',
+          notes: 'Historic Buddhist temple in Asakusa',
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        });
+        output.className = 'output success';
+        output.textContent = `✓ Place created with ID: ${id}`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.bulkAddPlaces = async function() {
+      const output = document.getElementById('place-create-output');
+      try {
+        const trip = await db.trips.toCollection().first();
+        if (!trip) {
+          output.className = 'output error';
+          output.textContent = 'Create a trip first!';
+          return;
+        }
+        const places = [
+          { tripId: trip.id, name: 'Ichiran Ramen', lat: 35.6938, lng: 139.7036, category: 'restaurant', notes: 'Famous ramen chain', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+          { tripId: trip.id, name: 'Shibuya Crossing', lat: 35.6595, lng: 139.7004, category: 'attraction', notes: 'Busiest intersection', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+          { tripId: trip.id, name: 'Meiji Shrine', lat: 35.6764, lng: 139.6993, category: 'shrine', notes: 'Shinto shrine in forest', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+          { tripId: trip.id, name: 'Hotel Gracery', lat: 35.6954, lng: 139.7036, category: 'hotel', notes: 'Godzilla-themed hotel', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+          { tripId: trip.id, name: 'Tsukiji Market', lat: 35.6654, lng: 139.7706, category: 'market', notes: 'Fresh seafood market', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() }
+        ];
+        await db.savedPlaces.bulkAdd(places);
+        output.className = 'output success';
+        output.textContent = `✓ ${places.length} places added`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.getAllPlaces = async function() {
+      const output = document.getElementById('place-read-output');
+      try {
+        const places = await db.savedPlaces.toArray();
+        output.className = 'output';
+        output.textContent = places.length > 0
+          ? places.map(p => `${p.name} (${p.category})`).join('\n')
+          : 'No places found';
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.getPlacesByCategory = async function() {
+      const output = document.getElementById('place-read-output');
+      try {
+        const places = await db.savedPlaces.where('category').equals('restaurant').toArray();
+        output.className = 'output';
+        output.textContent = places.length > 0
+          ? `Found ${places.length} restaurants:\n${places.map(p => p.name).join(', ')}`
+          : 'No restaurants found';
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.updateFirstPlace = async function() {
+      const output = document.getElementById('place-update-output');
+      try {
+        const place = await db.savedPlaces.toCollection().first();
+        if (!place) {
+          output.className = 'output error';
+          output.textContent = 'No places to update';
+          return;
+        }
+        await db.savedPlaces.update(place.id, { notes: 'Updated notes: Must visit!', updatedAt: new Date().toISOString() });
+        output.className = 'output success';
+        output.textContent = `✓ Place ${place.id} updated`;
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.deleteFirstPlace = async function() {
+      const output = document.getElementById('place-update-output');
+      try {
+        const place = await db.savedPlaces.toCollection().first();
+        if (!place) {
+          output.className = 'output error';
+          output.textContent = 'No places to delete';
+          return;
+        }
+        await db.savedPlaces.delete(place.id);
+        output.className = 'output success';
+        output.textContent = `✓ Place ${place.id} deleted`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    // Forecast Operations
+    window.addSampleForecast = async function() {
+      const output = document.getElementById('forecast-create-output');
+      try {
+        const id = await db.forecastData.add({
+          location: 'Tokyo',
+          bloomDate: '2026-03-25',
+          peakStart: '2026-03-28',
+          peakEnd: '2026-04-05',
+          cachedAt: new Date().toISOString(),
+          createdAt: new Date().toISOString()
+        });
+        output.className = 'output success';
+        output.textContent = `✓ Forecast created with ID: ${id}`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.bulkAddForecasts = async function() {
+      const output = document.getElementById('forecast-create-output');
+      try {
+        const forecasts = [
+          { location: 'Kyoto', bloomDate: '2026-03-28', peakStart: '2026-04-01', peakEnd: '2026-04-08', cachedAt: new Date().toISOString(), createdAt: new Date().toISOString() },
+          { location: 'Osaka', bloomDate: '2026-03-27', peakStart: '2026-03-30', peakEnd: '2026-04-06', cachedAt: new Date().toISOString(), createdAt: new Date().toISOString() },
+          { location: 'Hiroshima', bloomDate: '2026-03-26', peakStart: '2026-03-29', peakEnd: '2026-04-05', cachedAt: new Date().toISOString(), createdAt: new Date().toISOString() }
+        ];
+        await db.forecastData.bulkAdd(forecasts);
+        output.className = 'output success';
+        output.textContent = `✓ ${forecasts.length} forecasts added`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.getAllForecasts = async function() {
+      const output = document.getElementById('forecast-read-output');
+      try {
+        const forecasts = await db.forecastData.toArray();
+        output.className = 'output';
+        output.textContent = forecasts.length > 0
+          ? forecasts.map(f => `${f.location}: Bloom ${f.bloomDate}, Peak ${f.peakStart}-${f.peakEnd}`).join('\n')
+          : 'No forecasts found';
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.getForecastByLocation = async function() {
+      const output = document.getElementById('forecast-read-output');
+      try {
+        const forecast = await db.forecastData.where('location').equalsIgnoreCase('Tokyo').first();
+        output.className = 'output';
+        output.textContent = forecast
+          ? `Tokyo: Bloom ${forecast.bloomDate}, Peak ${forecast.peakStart}-${forecast.peakEnd}\nCached: ${new Date(forecast.cachedAt).toLocaleString()}`
+          : 'Tokyo forecast not found';
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.upsertForecast = async function() {
+      const output = document.getElementById('forecast-cache-output');
+      try {
+        const existing = await db.forecastData.where('location').equalsIgnoreCase('Tokyo').first();
+        if (existing) {
+          await db.forecastData.update(existing.id, {
+            bloomDate: '2026-03-26',
+            peakStart: '2026-03-29',
+            peakEnd: '2026-04-06',
+            cachedAt: new Date().toISOString()
+          });
+          output.className = 'output success';
+          output.textContent = '✓ Tokyo forecast updated (upsert)';
+        } else {
+          await addSampleForecast();
+          output.className = 'output success';
+          output.textContent = '✓ Tokyo forecast created (upsert)';
+        }
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    window.clearStaleForecasts = async function() {
+      const output = document.getElementById('forecast-cache-output');
+      try {
+        const count = await clearOldCache();
+        output.className = 'output success';
+        output.textContent = `✓ Cleared ${count} stale forecasts`;
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    // Clear All Data
+    window.clearAllData = async function() {
+      const output = document.getElementById('clear-output');
+      if (!confirm('Are you sure you want to clear ALL data from IndexedDB?')) {
+        return;
+      }
+      try {
+        await db.trips.clear();
+        await db.savedPlaces.clear();
+        await db.forecastData.clear();
+        await db.mapTiles.clear();
+        output.className = 'output success';
+        output.textContent = '✓ All data cleared from database';
+        loadStats();
+      } catch (error) {
+        output.className = 'output error';
+        output.textContent = `✗ Error: ${error.message}`;
+      }
+    };
+
+    // Load stats on initial page load
+    loadStats();
+  </script>
+</body>
+</html>

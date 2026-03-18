@@ -1,0 +1,7202 @@
+[
+  {
+    "city": "Sapporo",
+    "year": 2010,
+    "bloomDOY": 91,
+    "bloomDate": "2010-04-01",
+    "tempAccumulation": 384,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2011,
+    "bloomDOY": 91,
+    "bloomDate": "2011-04-01",
+    "tempAccumulation": 378,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2012,
+    "bloomDOY": 100,
+    "bloomDate": "2012-04-09",
+    "tempAccumulation": 475,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2013,
+    "bloomDOY": 101,
+    "bloomDate": "2013-04-11",
+    "tempAccumulation": 510,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2014,
+    "bloomDOY": 98,
+    "bloomDate": "2014-04-08",
+    "tempAccumulation": 453,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2015,
+    "bloomDOY": 93,
+    "bloomDate": "2015-04-03",
+    "tempAccumulation": 414,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2016,
+    "bloomDOY": 91,
+    "bloomDate": "2016-03-31",
+    "tempAccumulation": 363,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2017,
+    "bloomDOY": 94,
+    "bloomDate": "2017-04-04",
+    "tempAccumulation": 385,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2018,
+    "bloomDOY": 85,
+    "bloomDate": "2018-03-26",
+    "tempAccumulation": 277,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2019,
+    "bloomDOY": 91,
+    "bloomDate": "2019-04-01",
+    "tempAccumulation": 356,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2020,
+    "bloomDOY": 86,
+    "bloomDate": "2020-03-26",
+    "tempAccumulation": 298,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2021,
+    "bloomDOY": 92,
+    "bloomDate": "2021-04-02",
+    "tempAccumulation": 402,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2022,
+    "bloomDOY": 91,
+    "bloomDate": "2022-04-01",
+    "tempAccumulation": 369,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2023,
+    "bloomDOY": 97,
+    "bloomDate": "2023-04-07",
+    "tempAccumulation": 460,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2024,
+    "bloomDOY": 95,
+    "bloomDate": "2024-04-04",
+    "tempAccumulation": 399,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Sapporo",
+    "year": 2025,
+    "bloomDOY": 99,
+    "bloomDate": "2025-04-09",
+    "tempAccumulation": 447,
+    "latitude": 43.064,
+    "longitude": 141.347
+  },
+  {
+    "city": "Hakodate",
+    "year": 2010,
+    "bloomDOY": 93,
+    "bloomDate": "2010-04-03",
+    "tempAccumulation": 409,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2011,
+    "bloomDOY": 100,
+    "bloomDate": "2011-04-10",
+    "tempAccumulation": 486,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2012,
+    "bloomDOY": 98,
+    "bloomDate": "2012-04-07",
+    "tempAccumulation": 475,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2013,
+    "bloomDOY": 101,
+    "bloomDate": "2013-04-11",
+    "tempAccumulation": 516,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2014,
+    "bloomDOY": 97,
+    "bloomDate": "2014-04-07",
+    "tempAccumulation": 434,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2015,
+    "bloomDOY": 99,
+    "bloomDate": "2015-04-09",
+    "tempAccumulation": 489,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2016,
+    "bloomDOY": 95,
+    "bloomDate": "2016-04-04",
+    "tempAccumulation": 416,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2017,
+    "bloomDOY": 93,
+    "bloomDate": "2017-04-03",
+    "tempAccumulation": 394,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2018,
+    "bloomDOY": 91,
+    "bloomDate": "2018-04-01",
+    "tempAccumulation": 375,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2019,
+    "bloomDOY": 88,
+    "bloomDate": "2019-03-29",
+    "tempAccumulation": 346,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2020,
+    "bloomDOY": 92,
+    "bloomDate": "2020-04-01",
+    "tempAccumulation": 360,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2021,
+    "bloomDOY": 89,
+    "bloomDate": "2021-03-30",
+    "tempAccumulation": 327,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2022,
+    "bloomDOY": 96,
+    "bloomDate": "2022-04-06",
+    "tempAccumulation": 454,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2023,
+    "bloomDOY": 93,
+    "bloomDate": "2023-04-03",
+    "tempAccumulation": 403,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2024,
+    "bloomDOY": 102,
+    "bloomDate": "2024-04-11",
+    "tempAccumulation": 488,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Hakodate",
+    "year": 2025,
+    "bloomDOY": 103,
+    "bloomDate": "2025-04-13",
+    "tempAccumulation": 516,
+    "latitude": 41.768,
+    "longitude": 140.729
+  },
+  {
+    "city": "Aomori",
+    "year": 2010,
+    "bloomDOY": 94,
+    "bloomDate": "2010-04-04",
+    "tempAccumulation": 409,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2011,
+    "bloomDOY": 101,
+    "bloomDate": "2011-04-11",
+    "tempAccumulation": 490,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2012,
+    "bloomDOY": 103,
+    "bloomDate": "2012-04-12",
+    "tempAccumulation": 513,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2013,
+    "bloomDOY": 102,
+    "bloomDate": "2013-04-12",
+    "tempAccumulation": 517,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2014,
+    "bloomDOY": 101,
+    "bloomDate": "2014-04-11",
+    "tempAccumulation": 511,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2015,
+    "bloomDOY": 97,
+    "bloomDate": "2015-04-07",
+    "tempAccumulation": 423,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2016,
+    "bloomDOY": 98,
+    "bloomDate": "2016-04-07",
+    "tempAccumulation": 454,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2017,
+    "bloomDOY": 95,
+    "bloomDate": "2017-04-05",
+    "tempAccumulation": 402,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2018,
+    "bloomDOY": 97,
+    "bloomDate": "2018-04-07",
+    "tempAccumulation": 441,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2019,
+    "bloomDOY": 95,
+    "bloomDate": "2019-04-05",
+    "tempAccumulation": 411,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2020,
+    "bloomDOY": 95,
+    "bloomDate": "2020-04-04",
+    "tempAccumulation": 418,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2021,
+    "bloomDOY": 96,
+    "bloomDate": "2021-04-06",
+    "tempAccumulation": 427,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2022,
+    "bloomDOY": 93,
+    "bloomDate": "2022-04-03",
+    "tempAccumulation": 417,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2023,
+    "bloomDOY": 97,
+    "bloomDate": "2023-04-07",
+    "tempAccumulation": 444,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2024,
+    "bloomDOY": 103,
+    "bloomDate": "2024-04-12",
+    "tempAccumulation": 494,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Aomori",
+    "year": 2025,
+    "bloomDOY": 105,
+    "bloomDate": "2025-04-15",
+    "tempAccumulation": 528,
+    "latitude": 40.824,
+    "longitude": 140.74
+  },
+  {
+    "city": "Akita",
+    "year": 2010,
+    "bloomDOY": 103,
+    "bloomDate": "2010-04-13",
+    "tempAccumulation": 510,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2011,
+    "bloomDOY": 101,
+    "bloomDate": "2011-04-11",
+    "tempAccumulation": 502,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2012,
+    "bloomDOY": 101,
+    "bloomDate": "2012-04-10",
+    "tempAccumulation": 493,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2013,
+    "bloomDOY": 108,
+    "bloomDate": "2013-04-18",
+    "tempAccumulation": 570,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2014,
+    "bloomDOY": 107,
+    "bloomDate": "2014-04-17",
+    "tempAccumulation": 559,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2015,
+    "bloomDOY": 104,
+    "bloomDate": "2015-04-14",
+    "tempAccumulation": 532,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2016,
+    "bloomDOY": 98,
+    "bloomDate": "2016-04-07",
+    "tempAccumulation": 471,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2017,
+    "bloomDOY": 100,
+    "bloomDate": "2017-04-10",
+    "tempAccumulation": 495,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2018,
+    "bloomDOY": 97,
+    "bloomDate": "2018-04-07",
+    "tempAccumulation": 448,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2019,
+    "bloomDOY": 94,
+    "bloomDate": "2019-04-04",
+    "tempAccumulation": 432,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2020,
+    "bloomDOY": 97,
+    "bloomDate": "2020-04-06",
+    "tempAccumulation": 462,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2021,
+    "bloomDOY": 97,
+    "bloomDate": "2021-04-07",
+    "tempAccumulation": 449,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2022,
+    "bloomDOY": 98,
+    "bloomDate": "2022-04-08",
+    "tempAccumulation": 481,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2023,
+    "bloomDOY": 103,
+    "bloomDate": "2023-04-13",
+    "tempAccumulation": 537,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2024,
+    "bloomDOY": 106,
+    "bloomDate": "2024-04-15",
+    "tempAccumulation": 549,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Akita",
+    "year": 2025,
+    "bloomDOY": 105,
+    "bloomDate": "2025-04-15",
+    "tempAccumulation": 565,
+    "latitude": 39.719,
+    "longitude": 140.103
+  },
+  {
+    "city": "Morioka",
+    "year": 2010,
+    "bloomDOY": 99,
+    "bloomDate": "2010-04-09",
+    "tempAccumulation": 482,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2011,
+    "bloomDOY": 100,
+    "bloomDate": "2011-04-10",
+    "tempAccumulation": 463,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2012,
+    "bloomDOY": 109,
+    "bloomDate": "2012-04-18",
+    "tempAccumulation": 599,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2013,
+    "bloomDOY": 108,
+    "bloomDate": "2013-04-18",
+    "tempAccumulation": 561,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2014,
+    "bloomDOY": 103,
+    "bloomDate": "2014-04-13",
+    "tempAccumulation": 531,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2015,
+    "bloomDOY": 104,
+    "bloomDate": "2015-04-14",
+    "tempAccumulation": 517,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2016,
+    "bloomDOY": 102,
+    "bloomDate": "2016-04-11",
+    "tempAccumulation": 506,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2017,
+    "bloomDOY": 97,
+    "bloomDate": "2017-04-07",
+    "tempAccumulation": 436,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2018,
+    "bloomDOY": 94,
+    "bloomDate": "2018-04-04",
+    "tempAccumulation": 431,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2019,
+    "bloomDOY": 96,
+    "bloomDate": "2019-04-06",
+    "tempAccumulation": 433,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2020,
+    "bloomDOY": 97,
+    "bloomDate": "2020-04-06",
+    "tempAccumulation": 446,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2021,
+    "bloomDOY": 101,
+    "bloomDate": "2021-04-11",
+    "tempAccumulation": 504,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2022,
+    "bloomDOY": 98,
+    "bloomDate": "2022-04-08",
+    "tempAccumulation": 434,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2023,
+    "bloomDOY": 106,
+    "bloomDate": "2023-04-16",
+    "tempAccumulation": 565,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2024,
+    "bloomDOY": 103,
+    "bloomDate": "2024-04-12",
+    "tempAccumulation": 513,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Morioka",
+    "year": 2025,
+    "bloomDOY": 102,
+    "bloomDate": "2025-04-12",
+    "tempAccumulation": 509,
+    "latitude": 39.704,
+    "longitude": 141.155
+  },
+  {
+    "city": "Yamagata",
+    "year": 2010,
+    "bloomDOY": 101,
+    "bloomDate": "2010-04-11",
+    "tempAccumulation": 483,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2011,
+    "bloomDOY": 108,
+    "bloomDate": "2011-04-18",
+    "tempAccumulation": 561,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2012,
+    "bloomDOY": 107,
+    "bloomDate": "2012-04-16",
+    "tempAccumulation": 569,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2013,
+    "bloomDOY": 113,
+    "bloomDate": "2013-04-23",
+    "tempAccumulation": 646,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2014,
+    "bloomDOY": 113,
+    "bloomDate": "2014-04-23",
+    "tempAccumulation": 614,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2015,
+    "bloomDOY": 107,
+    "bloomDate": "2015-04-17",
+    "tempAccumulation": 572,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2016,
+    "bloomDOY": 104,
+    "bloomDate": "2016-04-13",
+    "tempAccumulation": 538,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2017,
+    "bloomDOY": 101,
+    "bloomDate": "2017-04-11",
+    "tempAccumulation": 480,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2018,
+    "bloomDOY": 104,
+    "bloomDate": "2018-04-14",
+    "tempAccumulation": 551,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2019,
+    "bloomDOY": 103,
+    "bloomDate": "2019-04-13",
+    "tempAccumulation": 518,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2020,
+    "bloomDOY": 98,
+    "bloomDate": "2020-04-07",
+    "tempAccumulation": 468,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2021,
+    "bloomDOY": 103,
+    "bloomDate": "2021-04-13",
+    "tempAccumulation": 504,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2022,
+    "bloomDOY": 99,
+    "bloomDate": "2022-04-09",
+    "tempAccumulation": 470,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2023,
+    "bloomDOY": 105,
+    "bloomDate": "2023-04-15",
+    "tempAccumulation": 564,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2024,
+    "bloomDOY": 108,
+    "bloomDate": "2024-04-17",
+    "tempAccumulation": 552,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Yamagata",
+    "year": 2025,
+    "bloomDOY": 106,
+    "bloomDate": "2025-04-16",
+    "tempAccumulation": 562,
+    "latitude": 38.241,
+    "longitude": 140.363
+  },
+  {
+    "city": "Sendai",
+    "year": 2010,
+    "bloomDOY": 104,
+    "bloomDate": "2010-04-14",
+    "tempAccumulation": 507,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2011,
+    "bloomDOY": 103,
+    "bloomDate": "2011-04-13",
+    "tempAccumulation": 531,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2012,
+    "bloomDOY": 107,
+    "bloomDate": "2012-04-16",
+    "tempAccumulation": 559,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2013,
+    "bloomDOY": 109,
+    "bloomDate": "2013-04-19",
+    "tempAccumulation": 612,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2014,
+    "bloomDOY": 110,
+    "bloomDate": "2014-04-20",
+    "tempAccumulation": 596,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2015,
+    "bloomDOY": 109,
+    "bloomDate": "2015-04-19",
+    "tempAccumulation": 575,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2016,
+    "bloomDOY": 104,
+    "bloomDate": "2016-04-13",
+    "tempAccumulation": 510,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2017,
+    "bloomDOY": 106,
+    "bloomDate": "2017-04-16",
+    "tempAccumulation": 553,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2018,
+    "bloomDOY": 99,
+    "bloomDate": "2018-04-09",
+    "tempAccumulation": 453,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2019,
+    "bloomDOY": 96,
+    "bloomDate": "2019-04-06",
+    "tempAccumulation": 424,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2020,
+    "bloomDOY": 98,
+    "bloomDate": "2020-04-07",
+    "tempAccumulation": 447,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2021,
+    "bloomDOY": 100,
+    "bloomDate": "2021-04-10",
+    "tempAccumulation": 484,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2022,
+    "bloomDOY": 100,
+    "bloomDate": "2022-04-10",
+    "tempAccumulation": 473,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2023,
+    "bloomDOY": 101,
+    "bloomDate": "2023-04-11",
+    "tempAccumulation": 485,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2024,
+    "bloomDOY": 104,
+    "bloomDate": "2024-04-13",
+    "tempAccumulation": 503,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Sendai",
+    "year": 2025,
+    "bloomDOY": 107,
+    "bloomDate": "2025-04-17",
+    "tempAccumulation": 580,
+    "latitude": 38.268,
+    "longitude": 140.872
+  },
+  {
+    "city": "Fukushima",
+    "year": 2010,
+    "bloomDOY": 102,
+    "bloomDate": "2010-04-12",
+    "tempAccumulation": 525,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2011,
+    "bloomDOY": 107,
+    "bloomDate": "2011-04-17",
+    "tempAccumulation": 541,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2012,
+    "bloomDOY": 114,
+    "bloomDate": "2012-04-23",
+    "tempAccumulation": 635,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2013,
+    "bloomDOY": 107,
+    "bloomDate": "2013-04-17",
+    "tempAccumulation": 581,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2014,
+    "bloomDOY": 113,
+    "bloomDate": "2014-04-23",
+    "tempAccumulation": 622,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2015,
+    "bloomDOY": 107,
+    "bloomDate": "2015-04-17",
+    "tempAccumulation": 545,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2016,
+    "bloomDOY": 106,
+    "bloomDate": "2016-04-15",
+    "tempAccumulation": 542,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2017,
+    "bloomDOY": 106,
+    "bloomDate": "2017-04-16",
+    "tempAccumulation": 532,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2018,
+    "bloomDOY": 101,
+    "bloomDate": "2018-04-11",
+    "tempAccumulation": 491,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2019,
+    "bloomDOY": 103,
+    "bloomDate": "2019-04-13",
+    "tempAccumulation": 499,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2020,
+    "bloomDOY": 100,
+    "bloomDate": "2020-04-09",
+    "tempAccumulation": 492,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2021,
+    "bloomDOY": 100,
+    "bloomDate": "2021-04-10",
+    "tempAccumulation": 491,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2022,
+    "bloomDOY": 108,
+    "bloomDate": "2022-04-18",
+    "tempAccumulation": 551,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2023,
+    "bloomDOY": 104,
+    "bloomDate": "2023-04-14",
+    "tempAccumulation": 544,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2024,
+    "bloomDOY": 111,
+    "bloomDate": "2024-04-20",
+    "tempAccumulation": 588,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Fukushima",
+    "year": 2025,
+    "bloomDOY": 111,
+    "bloomDate": "2025-04-21",
+    "tempAccumulation": 596,
+    "latitude": 37.76,
+    "longitude": 140.475
+  },
+  {
+    "city": "Niigata",
+    "year": 2010,
+    "bloomDOY": 104,
+    "bloomDate": "2010-04-14",
+    "tempAccumulation": 530,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2011,
+    "bloomDOY": 110,
+    "bloomDate": "2011-04-20",
+    "tempAccumulation": 605,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2012,
+    "bloomDOY": 107,
+    "bloomDate": "2012-04-16",
+    "tempAccumulation": 563,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2013,
+    "bloomDOY": 112,
+    "bloomDate": "2013-04-22",
+    "tempAccumulation": 640,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2014,
+    "bloomDOY": 107,
+    "bloomDate": "2014-04-17",
+    "tempAccumulation": 574,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2015,
+    "bloomDOY": 111,
+    "bloomDate": "2015-04-21",
+    "tempAccumulation": 612,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2016,
+    "bloomDOY": 103,
+    "bloomDate": "2016-04-12",
+    "tempAccumulation": 491,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2017,
+    "bloomDOY": 102,
+    "bloomDate": "2017-04-12",
+    "tempAccumulation": 509,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2018,
+    "bloomDOY": 104,
+    "bloomDate": "2018-04-14",
+    "tempAccumulation": 532,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2019,
+    "bloomDOY": 104,
+    "bloomDate": "2019-04-14",
+    "tempAccumulation": 536,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2020,
+    "bloomDOY": 98,
+    "bloomDate": "2020-04-07",
+    "tempAccumulation": 454,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2021,
+    "bloomDOY": 99,
+    "bloomDate": "2021-04-09",
+    "tempAccumulation": 492,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2022,
+    "bloomDOY": 106,
+    "bloomDate": "2022-04-16",
+    "tempAccumulation": 563,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2023,
+    "bloomDOY": 108,
+    "bloomDate": "2023-04-18",
+    "tempAccumulation": 558,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2024,
+    "bloomDOY": 108,
+    "bloomDate": "2024-04-17",
+    "tempAccumulation": 588,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Niigata",
+    "year": 2025,
+    "bloomDOY": 109,
+    "bloomDate": "2025-04-19",
+    "tempAccumulation": 581,
+    "latitude": 37.902,
+    "longitude": 139.023
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2010,
+    "bloomDOY": 106,
+    "bloomDate": "2010-04-16",
+    "tempAccumulation": 549,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2011,
+    "bloomDOY": 112,
+    "bloomDate": "2011-04-22",
+    "tempAccumulation": 634,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2012,
+    "bloomDOY": 114,
+    "bloomDate": "2012-04-23",
+    "tempAccumulation": 659,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2013,
+    "bloomDOY": 114,
+    "bloomDate": "2013-04-24",
+    "tempAccumulation": 655,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2014,
+    "bloomDOY": 114,
+    "bloomDate": "2014-04-24",
+    "tempAccumulation": 656,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2015,
+    "bloomDOY": 112,
+    "bloomDate": "2015-04-22",
+    "tempAccumulation": 614,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2016,
+    "bloomDOY": 110,
+    "bloomDate": "2016-04-19",
+    "tempAccumulation": 587,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2017,
+    "bloomDOY": 106,
+    "bloomDate": "2017-04-16",
+    "tempAccumulation": 574,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2018,
+    "bloomDOY": 108,
+    "bloomDate": "2018-04-18",
+    "tempAccumulation": 558,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2019,
+    "bloomDOY": 104,
+    "bloomDate": "2019-04-14",
+    "tempAccumulation": 506,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2020,
+    "bloomDOY": 102,
+    "bloomDate": "2020-04-11",
+    "tempAccumulation": 524,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2021,
+    "bloomDOY": 101,
+    "bloomDate": "2021-04-11",
+    "tempAccumulation": 481,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2022,
+    "bloomDOY": 107,
+    "bloomDate": "2022-04-17",
+    "tempAccumulation": 580,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2023,
+    "bloomDOY": 109,
+    "bloomDate": "2023-04-19",
+    "tempAccumulation": 589,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2024,
+    "bloomDOY": 113,
+    "bloomDate": "2024-04-22",
+    "tempAccumulation": 648,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Kanazawa",
+    "year": 2025,
+    "bloomDOY": 110,
+    "bloomDate": "2025-04-20",
+    "tempAccumulation": 604,
+    "latitude": 36.594,
+    "longitude": 136.626
+  },
+  {
+    "city": "Toyama",
+    "year": 2010,
+    "bloomDOY": 107,
+    "bloomDate": "2010-04-17",
+    "tempAccumulation": 547,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2011,
+    "bloomDOY": 113,
+    "bloomDate": "2011-04-23",
+    "tempAccumulation": 616,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2012,
+    "bloomDOY": 112,
+    "bloomDate": "2012-04-21",
+    "tempAccumulation": 613,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2013,
+    "bloomDOY": 110,
+    "bloomDate": "2013-04-20",
+    "tempAccumulation": 584,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2014,
+    "bloomDOY": 116,
+    "bloomDate": "2014-04-26",
+    "tempAccumulation": 649,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2015,
+    "bloomDOY": 107,
+    "bloomDate": "2015-04-17",
+    "tempAccumulation": 576,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2016,
+    "bloomDOY": 107,
+    "bloomDate": "2016-04-16",
+    "tempAccumulation": 541,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2017,
+    "bloomDOY": 110,
+    "bloomDate": "2017-04-20",
+    "tempAccumulation": 625,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2018,
+    "bloomDOY": 107,
+    "bloomDate": "2018-04-17",
+    "tempAccumulation": 578,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2019,
+    "bloomDOY": 104,
+    "bloomDate": "2019-04-14",
+    "tempAccumulation": 548,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2020,
+    "bloomDOY": 106,
+    "bloomDate": "2020-04-15",
+    "tempAccumulation": 539,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2021,
+    "bloomDOY": 101,
+    "bloomDate": "2021-04-11",
+    "tempAccumulation": 477,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2022,
+    "bloomDOY": 108,
+    "bloomDate": "2022-04-18",
+    "tempAccumulation": 555,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2023,
+    "bloomDOY": 113,
+    "bloomDate": "2023-04-23",
+    "tempAccumulation": 655,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2024,
+    "bloomDOY": 109,
+    "bloomDate": "2024-04-18",
+    "tempAccumulation": 588,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Toyama",
+    "year": 2025,
+    "bloomDOY": 112,
+    "bloomDate": "2025-04-22",
+    "tempAccumulation": 625,
+    "latitude": 36.695,
+    "longitude": 137.213
+  },
+  {
+    "city": "Fukui",
+    "year": 2010,
+    "bloomDOY": 107,
+    "bloomDate": "2010-04-17",
+    "tempAccumulation": 553,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2011,
+    "bloomDOY": 112,
+    "bloomDate": "2011-04-22",
+    "tempAccumulation": 611,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2012,
+    "bloomDOY": 112,
+    "bloomDate": "2012-04-21",
+    "tempAccumulation": 624,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2013,
+    "bloomDOY": 118,
+    "bloomDate": "2013-04-28",
+    "tempAccumulation": 697,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2014,
+    "bloomDOY": 114,
+    "bloomDate": "2014-04-24",
+    "tempAccumulation": 628,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2015,
+    "bloomDOY": 110,
+    "bloomDate": "2015-04-20",
+    "tempAccumulation": 599,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2016,
+    "bloomDOY": 112,
+    "bloomDate": "2016-04-21",
+    "tempAccumulation": 640,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2017,
+    "bloomDOY": 105,
+    "bloomDate": "2017-04-15",
+    "tempAccumulation": 539,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2018,
+    "bloomDOY": 107,
+    "bloomDate": "2018-04-17",
+    "tempAccumulation": 578,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2019,
+    "bloomDOY": 106,
+    "bloomDate": "2019-04-16",
+    "tempAccumulation": 559,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2020,
+    "bloomDOY": 102,
+    "bloomDate": "2020-04-11",
+    "tempAccumulation": 511,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2021,
+    "bloomDOY": 110,
+    "bloomDate": "2021-04-20",
+    "tempAccumulation": 606,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2022,
+    "bloomDOY": 108,
+    "bloomDate": "2022-04-18",
+    "tempAccumulation": 565,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2023,
+    "bloomDOY": 113,
+    "bloomDate": "2023-04-23",
+    "tempAccumulation": 636,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2024,
+    "bloomDOY": 116,
+    "bloomDate": "2024-04-25",
+    "tempAccumulation": 676,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Fukui",
+    "year": 2025,
+    "bloomDOY": 115,
+    "bloomDate": "2025-04-25",
+    "tempAccumulation": 645,
+    "latitude": 36.051,
+    "longitude": 136.222
+  },
+  {
+    "city": "Nagano",
+    "year": 2010,
+    "bloomDOY": 106,
+    "bloomDate": "2010-04-16",
+    "tempAccumulation": 528,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2011,
+    "bloomDOY": 107,
+    "bloomDate": "2011-04-17",
+    "tempAccumulation": 556,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2012,
+    "bloomDOY": 115,
+    "bloomDate": "2012-04-24",
+    "tempAccumulation": 662,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2013,
+    "bloomDOY": 110,
+    "bloomDate": "2013-04-20",
+    "tempAccumulation": 587,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2014,
+    "bloomDOY": 114,
+    "bloomDate": "2014-04-24",
+    "tempAccumulation": 638,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2015,
+    "bloomDOY": 112,
+    "bloomDate": "2015-04-22",
+    "tempAccumulation": 620,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2016,
+    "bloomDOY": 107,
+    "bloomDate": "2016-04-16",
+    "tempAccumulation": 559,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2017,
+    "bloomDOY": 107,
+    "bloomDate": "2017-04-17",
+    "tempAccumulation": 582,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2018,
+    "bloomDOY": 102,
+    "bloomDate": "2018-04-12",
+    "tempAccumulation": 528,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2019,
+    "bloomDOY": 104,
+    "bloomDate": "2019-04-14",
+    "tempAccumulation": 526,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2020,
+    "bloomDOY": 105,
+    "bloomDate": "2020-04-14",
+    "tempAccumulation": 534,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2021,
+    "bloomDOY": 106,
+    "bloomDate": "2021-04-16",
+    "tempAccumulation": 556,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2022,
+    "bloomDOY": 108,
+    "bloomDate": "2022-04-18",
+    "tempAccumulation": 589,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2023,
+    "bloomDOY": 109,
+    "bloomDate": "2023-04-19",
+    "tempAccumulation": 588,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2024,
+    "bloomDOY": 112,
+    "bloomDate": "2024-04-21",
+    "tempAccumulation": 620,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Nagano",
+    "year": 2025,
+    "bloomDOY": 115,
+    "bloomDate": "2025-04-25",
+    "tempAccumulation": 645,
+    "latitude": 36.651,
+    "longitude": 138.181
+  },
+  {
+    "city": "Kofu",
+    "year": 2010,
+    "bloomDOY": 114,
+    "bloomDate": "2010-04-24",
+    "tempAccumulation": 642,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2011,
+    "bloomDOY": 111,
+    "bloomDate": "2011-04-21",
+    "tempAccumulation": 632,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2012,
+    "bloomDOY": 118,
+    "bloomDate": "2012-04-27",
+    "tempAccumulation": 679,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2013,
+    "bloomDOY": 115,
+    "bloomDate": "2013-04-25",
+    "tempAccumulation": 674,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2014,
+    "bloomDOY": 116,
+    "bloomDate": "2014-04-26",
+    "tempAccumulation": 667,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2015,
+    "bloomDOY": 115,
+    "bloomDate": "2015-04-25",
+    "tempAccumulation": 656,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2016,
+    "bloomDOY": 115,
+    "bloomDate": "2016-04-24",
+    "tempAccumulation": 637,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2017,
+    "bloomDOY": 107,
+    "bloomDate": "2017-04-17",
+    "tempAccumulation": 574,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2018,
+    "bloomDOY": 110,
+    "bloomDate": "2018-04-20",
+    "tempAccumulation": 615,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2019,
+    "bloomDOY": 104,
+    "bloomDate": "2019-04-14",
+    "tempAccumulation": 503,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2020,
+    "bloomDOY": 109,
+    "bloomDate": "2020-04-18",
+    "tempAccumulation": 574,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2021,
+    "bloomDOY": 104,
+    "bloomDate": "2021-04-14",
+    "tempAccumulation": 513,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2022,
+    "bloomDOY": 108,
+    "bloomDate": "2022-04-18",
+    "tempAccumulation": 561,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2023,
+    "bloomDOY": 111,
+    "bloomDate": "2023-04-21",
+    "tempAccumulation": 630,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2024,
+    "bloomDOY": 113,
+    "bloomDate": "2024-04-22",
+    "tempAccumulation": 649,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Kofu",
+    "year": 2025,
+    "bloomDOY": 115,
+    "bloomDate": "2025-04-25",
+    "tempAccumulation": 640,
+    "latitude": 35.664,
+    "longitude": 138.569
+  },
+  {
+    "city": "Maebashi",
+    "year": 2010,
+    "bloomDOY": 107,
+    "bloomDate": "2010-04-17",
+    "tempAccumulation": 587,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2011,
+    "bloomDOY": 113,
+    "bloomDate": "2011-04-23",
+    "tempAccumulation": 613,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2012,
+    "bloomDOY": 112,
+    "bloomDate": "2012-04-21",
+    "tempAccumulation": 610,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2013,
+    "bloomDOY": 118,
+    "bloomDate": "2013-04-28",
+    "tempAccumulation": 713,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2014,
+    "bloomDOY": 114,
+    "bloomDate": "2014-04-24",
+    "tempAccumulation": 655,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2015,
+    "bloomDOY": 113,
+    "bloomDate": "2015-04-23",
+    "tempAccumulation": 630,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2016,
+    "bloomDOY": 106,
+    "bloomDate": "2016-04-15",
+    "tempAccumulation": 541,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2017,
+    "bloomDOY": 107,
+    "bloomDate": "2017-04-17",
+    "tempAccumulation": 542,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2018,
+    "bloomDOY": 106,
+    "bloomDate": "2018-04-16",
+    "tempAccumulation": 544,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2019,
+    "bloomDOY": 106,
+    "bloomDate": "2019-04-16",
+    "tempAccumulation": 577,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2020,
+    "bloomDOY": 104,
+    "bloomDate": "2020-04-13",
+    "tempAccumulation": 536,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2021,
+    "bloomDOY": 104,
+    "bloomDate": "2021-04-14",
+    "tempAccumulation": 526,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2022,
+    "bloomDOY": 104,
+    "bloomDate": "2022-04-14",
+    "tempAccumulation": 518,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2023,
+    "bloomDOY": 109,
+    "bloomDate": "2023-04-19",
+    "tempAccumulation": 600,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2024,
+    "bloomDOY": 113,
+    "bloomDate": "2024-04-22",
+    "tempAccumulation": 640,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Maebashi",
+    "year": 2025,
+    "bloomDOY": 114,
+    "bloomDate": "2025-04-24",
+    "tempAccumulation": 624,
+    "latitude": 36.391,
+    "longitude": 139.063
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2010,
+    "bloomDOY": 109,
+    "bloomDate": "2010-04-19",
+    "tempAccumulation": 588,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2011,
+    "bloomDOY": 112,
+    "bloomDate": "2011-04-22",
+    "tempAccumulation": 608,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2012,
+    "bloomDOY": 111,
+    "bloomDate": "2012-04-20",
+    "tempAccumulation": 612,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2013,
+    "bloomDOY": 113,
+    "bloomDate": "2013-04-23",
+    "tempAccumulation": 626,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2014,
+    "bloomDOY": 117,
+    "bloomDate": "2014-04-27",
+    "tempAccumulation": 663,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2015,
+    "bloomDOY": 113,
+    "bloomDate": "2015-04-23",
+    "tempAccumulation": 657,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2016,
+    "bloomDOY": 112,
+    "bloomDate": "2016-04-21",
+    "tempAccumulation": 606,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2017,
+    "bloomDOY": 105,
+    "bloomDate": "2017-04-15",
+    "tempAccumulation": 558,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2018,
+    "bloomDOY": 104,
+    "bloomDate": "2018-04-14",
+    "tempAccumulation": 536,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2019,
+    "bloomDOY": 105,
+    "bloomDate": "2019-04-15",
+    "tempAccumulation": 547,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2020,
+    "bloomDOY": 102,
+    "bloomDate": "2020-04-11",
+    "tempAccumulation": 520,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2021,
+    "bloomDOY": 105,
+    "bloomDate": "2021-04-15",
+    "tempAccumulation": 520,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2022,
+    "bloomDOY": 108,
+    "bloomDate": "2022-04-18",
+    "tempAccumulation": 581,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2023,
+    "bloomDOY": 113,
+    "bloomDate": "2023-04-23",
+    "tempAccumulation": 628,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2024,
+    "bloomDOY": 108,
+    "bloomDate": "2024-04-17",
+    "tempAccumulation": 584,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Utsunomiya",
+    "year": 2025,
+    "bloomDOY": 112,
+    "bloomDate": "2025-04-22",
+    "tempAccumulation": 636,
+    "latitude": 36.551,
+    "longitude": 139.883
+  },
+  {
+    "city": "Mito",
+    "year": 2010,
+    "bloomDOY": 113,
+    "bloomDate": "2010-04-23",
+    "tempAccumulation": 621,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2011,
+    "bloomDOY": 113,
+    "bloomDate": "2011-04-23",
+    "tempAccumulation": 611,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2012,
+    "bloomDOY": 112,
+    "bloomDate": "2012-04-21",
+    "tempAccumulation": 645,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2013,
+    "bloomDOY": 117,
+    "bloomDate": "2013-04-27",
+    "tempAccumulation": 685,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2014,
+    "bloomDOY": 113,
+    "bloomDate": "2014-04-23",
+    "tempAccumulation": 624,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2015,
+    "bloomDOY": 113,
+    "bloomDate": "2015-04-23",
+    "tempAccumulation": 640,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2016,
+    "bloomDOY": 108,
+    "bloomDate": "2016-04-17",
+    "tempAccumulation": 575,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2017,
+    "bloomDOY": 103,
+    "bloomDate": "2017-04-13",
+    "tempAccumulation": 521,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2018,
+    "bloomDOY": 103,
+    "bloomDate": "2018-04-13",
+    "tempAccumulation": 533,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2019,
+    "bloomDOY": 102,
+    "bloomDate": "2019-04-12",
+    "tempAccumulation": 512,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2020,
+    "bloomDOY": 108,
+    "bloomDate": "2020-04-17",
+    "tempAccumulation": 569,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2021,
+    "bloomDOY": 108,
+    "bloomDate": "2021-04-18",
+    "tempAccumulation": 595,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2022,
+    "bloomDOY": 107,
+    "bloomDate": "2022-04-17",
+    "tempAccumulation": 563,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2023,
+    "bloomDOY": 113,
+    "bloomDate": "2023-04-23",
+    "tempAccumulation": 616,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2024,
+    "bloomDOY": 112,
+    "bloomDate": "2024-04-21",
+    "tempAccumulation": 605,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Mito",
+    "year": 2025,
+    "bloomDOY": 116,
+    "bloomDate": "2025-04-26",
+    "tempAccumulation": 666,
+    "latitude": 36.382,
+    "longitude": 140.471
+  },
+  {
+    "city": "Tokyo",
+    "year": 2010,
+    "bloomDOY": 111,
+    "bloomDate": "2010-04-21",
+    "tempAccumulation": 623,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2011,
+    "bloomDOY": 114,
+    "bloomDate": "2011-04-24",
+    "tempAccumulation": 659,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2012,
+    "bloomDOY": 112,
+    "bloomDate": "2012-04-21",
+    "tempAccumulation": 633,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2013,
+    "bloomDOY": 119,
+    "bloomDate": "2013-04-29",
+    "tempAccumulation": 694,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2014,
+    "bloomDOY": 112,
+    "bloomDate": "2014-04-22",
+    "tempAccumulation": 604,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2015,
+    "bloomDOY": 116,
+    "bloomDate": "2015-04-26",
+    "tempAccumulation": 675,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2016,
+    "bloomDOY": 111,
+    "bloomDate": "2016-04-20",
+    "tempAccumulation": 627,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2017,
+    "bloomDOY": 108,
+    "bloomDate": "2017-04-18",
+    "tempAccumulation": 598,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2018,
+    "bloomDOY": 110,
+    "bloomDate": "2018-04-20",
+    "tempAccumulation": 616,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2019,
+    "bloomDOY": 106,
+    "bloomDate": "2019-04-16",
+    "tempAccumulation": 576,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2020,
+    "bloomDOY": 109,
+    "bloomDate": "2020-04-18",
+    "tempAccumulation": 607,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2021,
+    "bloomDOY": 111,
+    "bloomDate": "2021-04-21",
+    "tempAccumulation": 588,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2022,
+    "bloomDOY": 106,
+    "bloomDate": "2022-04-16",
+    "tempAccumulation": 572,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2023,
+    "bloomDOY": 109,
+    "bloomDate": "2023-04-19",
+    "tempAccumulation": 572,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2024,
+    "bloomDOY": 115,
+    "bloomDate": "2024-04-24",
+    "tempAccumulation": 648,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Tokyo",
+    "year": 2025,
+    "bloomDOY": 118,
+    "bloomDate": "2025-04-28",
+    "tempAccumulation": 679,
+    "latitude": 35.689,
+    "longitude": 139.692
+  },
+  {
+    "city": "Yokohama",
+    "year": 2010,
+    "bloomDOY": 113,
+    "bloomDate": "2010-04-23",
+    "tempAccumulation": 641,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2011,
+    "bloomDOY": 116,
+    "bloomDate": "2011-04-26",
+    "tempAccumulation": 680,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2012,
+    "bloomDOY": 112,
+    "bloomDate": "2012-04-21",
+    "tempAccumulation": 615,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2013,
+    "bloomDOY": 118,
+    "bloomDate": "2013-04-28",
+    "tempAccumulation": 682,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2014,
+    "bloomDOY": 117,
+    "bloomDate": "2014-04-27",
+    "tempAccumulation": 699,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2015,
+    "bloomDOY": 111,
+    "bloomDate": "2015-04-21",
+    "tempAccumulation": 629,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2016,
+    "bloomDOY": 115,
+    "bloomDate": "2016-04-24",
+    "tempAccumulation": 658,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2017,
+    "bloomDOY": 112,
+    "bloomDate": "2017-04-22",
+    "tempAccumulation": 634,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2018,
+    "bloomDOY": 105,
+    "bloomDate": "2018-04-15",
+    "tempAccumulation": 521,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2019,
+    "bloomDOY": 108,
+    "bloomDate": "2019-04-18",
+    "tempAccumulation": 583,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2020,
+    "bloomDOY": 107,
+    "bloomDate": "2020-04-16",
+    "tempAccumulation": 580,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2021,
+    "bloomDOY": 107,
+    "bloomDate": "2021-04-17",
+    "tempAccumulation": 580,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2022,
+    "bloomDOY": 113,
+    "bloomDate": "2022-04-23",
+    "tempAccumulation": 627,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2023,
+    "bloomDOY": 109,
+    "bloomDate": "2023-04-19",
+    "tempAccumulation": 592,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2024,
+    "bloomDOY": 112,
+    "bloomDate": "2024-04-21",
+    "tempAccumulation": 606,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Yokohama",
+    "year": 2025,
+    "bloomDOY": 116,
+    "bloomDate": "2025-04-26",
+    "tempAccumulation": 664,
+    "latitude": 35.444,
+    "longitude": 139.638
+  },
+  {
+    "city": "Chiba",
+    "year": 2010,
+    "bloomDOY": 108,
+    "bloomDate": "2010-04-18",
+    "tempAccumulation": 589,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2011,
+    "bloomDOY": 111,
+    "bloomDate": "2011-04-21",
+    "tempAccumulation": 628,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2012,
+    "bloomDOY": 114,
+    "bloomDate": "2012-04-23",
+    "tempAccumulation": 669,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2013,
+    "bloomDOY": 120,
+    "bloomDate": "2013-04-30",
+    "tempAccumulation": 707,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2014,
+    "bloomDOY": 118,
+    "bloomDate": "2014-04-28",
+    "tempAccumulation": 694,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2015,
+    "bloomDOY": 115,
+    "bloomDate": "2015-04-25",
+    "tempAccumulation": 649,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2016,
+    "bloomDOY": 114,
+    "bloomDate": "2016-04-23",
+    "tempAccumulation": 643,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2017,
+    "bloomDOY": 106,
+    "bloomDate": "2017-04-16",
+    "tempAccumulation": 548,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2018,
+    "bloomDOY": 103,
+    "bloomDate": "2018-04-13",
+    "tempAccumulation": 515,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2019,
+    "bloomDOY": 106,
+    "bloomDate": "2019-04-16",
+    "tempAccumulation": 532,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2020,
+    "bloomDOY": 109,
+    "bloomDate": "2020-04-18",
+    "tempAccumulation": 575,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2021,
+    "bloomDOY": 104,
+    "bloomDate": "2021-04-14",
+    "tempAccumulation": 547,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2022,
+    "bloomDOY": 112,
+    "bloomDate": "2022-04-22",
+    "tempAccumulation": 604,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2023,
+    "bloomDOY": 113,
+    "bloomDate": "2023-04-23",
+    "tempAccumulation": 644,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2024,
+    "bloomDOY": 115,
+    "bloomDate": "2024-04-24",
+    "tempAccumulation": 655,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Chiba",
+    "year": 2025,
+    "bloomDOY": 113,
+    "bloomDate": "2025-04-23",
+    "tempAccumulation": 622,
+    "latitude": 35.604,
+    "longitude": 140.123
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2010,
+    "bloomDOY": 111,
+    "bloomDate": "2010-04-21",
+    "tempAccumulation": 622,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2011,
+    "bloomDOY": 116,
+    "bloomDate": "2011-04-26",
+    "tempAccumulation": 648,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2012,
+    "bloomDOY": 114,
+    "bloomDate": "2012-04-23",
+    "tempAccumulation": 661,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2013,
+    "bloomDOY": 112,
+    "bloomDate": "2013-04-22",
+    "tempAccumulation": 614,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2014,
+    "bloomDOY": 114,
+    "bloomDate": "2014-04-24",
+    "tempAccumulation": 624,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2015,
+    "bloomDOY": 113,
+    "bloomDate": "2015-04-23",
+    "tempAccumulation": 631,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2016,
+    "bloomDOY": 107,
+    "bloomDate": "2016-04-16",
+    "tempAccumulation": 585,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2017,
+    "bloomDOY": 111,
+    "bloomDate": "2017-04-21",
+    "tempAccumulation": 621,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2018,
+    "bloomDOY": 106,
+    "bloomDate": "2018-04-16",
+    "tempAccumulation": 527,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2019,
+    "bloomDOY": 104,
+    "bloomDate": "2019-04-14",
+    "tempAccumulation": 542,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2020,
+    "bloomDOY": 105,
+    "bloomDate": "2020-04-14",
+    "tempAccumulation": 528,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2021,
+    "bloomDOY": 109,
+    "bloomDate": "2021-04-19",
+    "tempAccumulation": 606,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2022,
+    "bloomDOY": 112,
+    "bloomDate": "2022-04-22",
+    "tempAccumulation": 633,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2023,
+    "bloomDOY": 111,
+    "bloomDate": "2023-04-21",
+    "tempAccumulation": 612,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2024,
+    "bloomDOY": 112,
+    "bloomDate": "2024-04-21",
+    "tempAccumulation": 641,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Kumagaya",
+    "year": 2025,
+    "bloomDOY": 116,
+    "bloomDate": "2025-04-26",
+    "tempAccumulation": 661,
+    "latitude": 36.148,
+    "longitude": 139.388
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2010,
+    "bloomDOY": 111,
+    "bloomDate": "2010-04-21",
+    "tempAccumulation": 617,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2011,
+    "bloomDOY": 112,
+    "bloomDate": "2011-04-22",
+    "tempAccumulation": 603,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2012,
+    "bloomDOY": 115,
+    "bloomDate": "2012-04-24",
+    "tempAccumulation": 650,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2013,
+    "bloomDOY": 116,
+    "bloomDate": "2013-04-26",
+    "tempAccumulation": 652,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2014,
+    "bloomDOY": 116,
+    "bloomDate": "2014-04-26",
+    "tempAccumulation": 653,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2015,
+    "bloomDOY": 112,
+    "bloomDate": "2015-04-22",
+    "tempAccumulation": 613,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2016,
+    "bloomDOY": 112,
+    "bloomDate": "2016-04-21",
+    "tempAccumulation": 612,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2017,
+    "bloomDOY": 111,
+    "bloomDate": "2017-04-21",
+    "tempAccumulation": 612,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2018,
+    "bloomDOY": 111,
+    "bloomDate": "2018-04-21",
+    "tempAccumulation": 625,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2019,
+    "bloomDOY": 109,
+    "bloomDate": "2019-04-19",
+    "tempAccumulation": 598,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2020,
+    "bloomDOY": 111,
+    "bloomDate": "2020-04-20",
+    "tempAccumulation": 602,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2021,
+    "bloomDOY": 106,
+    "bloomDate": "2021-04-16",
+    "tempAccumulation": 530,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2022,
+    "bloomDOY": 113,
+    "bloomDate": "2022-04-23",
+    "tempAccumulation": 624,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2023,
+    "bloomDOY": 116,
+    "bloomDate": "2023-04-26",
+    "tempAccumulation": 692,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2024,
+    "bloomDOY": 119,
+    "bloomDate": "2024-04-28",
+    "tempAccumulation": 689,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Shizuoka",
+    "year": 2025,
+    "bloomDOY": 116,
+    "bloomDate": "2025-04-26",
+    "tempAccumulation": 677,
+    "latitude": 34.976,
+    "longitude": 138.383
+  },
+  {
+    "city": "Nagoya",
+    "year": 2010,
+    "bloomDOY": 111,
+    "bloomDate": "2010-04-21",
+    "tempAccumulation": 633,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2011,
+    "bloomDOY": 117,
+    "bloomDate": "2011-04-27",
+    "tempAccumulation": 704,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2012,
+    "bloomDOY": 113,
+    "bloomDate": "2012-04-22",
+    "tempAccumulation": 628,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2013,
+    "bloomDOY": 118,
+    "bloomDate": "2013-04-28",
+    "tempAccumulation": 675,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2014,
+    "bloomDOY": 114,
+    "bloomDate": "2014-04-24",
+    "tempAccumulation": 640,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2015,
+    "bloomDOY": 111,
+    "bloomDate": "2015-04-21",
+    "tempAccumulation": 621,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2016,
+    "bloomDOY": 110,
+    "bloomDate": "2016-04-19",
+    "tempAccumulation": 578,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2017,
+    "bloomDOY": 113,
+    "bloomDate": "2017-04-23",
+    "tempAccumulation": 629,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2018,
+    "bloomDOY": 110,
+    "bloomDate": "2018-04-20",
+    "tempAccumulation": 597,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2019,
+    "bloomDOY": 109,
+    "bloomDate": "2019-04-19",
+    "tempAccumulation": 599,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2020,
+    "bloomDOY": 108,
+    "bloomDate": "2020-04-17",
+    "tempAccumulation": 573,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2021,
+    "bloomDOY": 106,
+    "bloomDate": "2021-04-16",
+    "tempAccumulation": 552,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2022,
+    "bloomDOY": 110,
+    "bloomDate": "2022-04-20",
+    "tempAccumulation": 625,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2023,
+    "bloomDOY": 113,
+    "bloomDate": "2023-04-23",
+    "tempAccumulation": 629,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2024,
+    "bloomDOY": 117,
+    "bloomDate": "2024-04-26",
+    "tempAccumulation": 700,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Nagoya",
+    "year": 2025,
+    "bloomDOY": 115,
+    "bloomDate": "2025-04-25",
+    "tempAccumulation": 680,
+    "latitude": 35.181,
+    "longitude": 136.906
+  },
+  {
+    "city": "Gifu",
+    "year": 2010,
+    "bloomDOY": 113,
+    "bloomDate": "2010-04-23",
+    "tempAccumulation": 647,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2011,
+    "bloomDOY": 112,
+    "bloomDate": "2011-04-22",
+    "tempAccumulation": 635,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2012,
+    "bloomDOY": 112,
+    "bloomDate": "2012-04-21",
+    "tempAccumulation": 626,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2013,
+    "bloomDOY": 113,
+    "bloomDate": "2013-04-23",
+    "tempAccumulation": 640,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2014,
+    "bloomDOY": 119,
+    "bloomDate": "2014-04-29",
+    "tempAccumulation": 689,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2015,
+    "bloomDOY": 116,
+    "bloomDate": "2015-04-26",
+    "tempAccumulation": 695,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2016,
+    "bloomDOY": 116,
+    "bloomDate": "2016-04-25",
+    "tempAccumulation": 695,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2017,
+    "bloomDOY": 111,
+    "bloomDate": "2017-04-21",
+    "tempAccumulation": 611,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2018,
+    "bloomDOY": 106,
+    "bloomDate": "2018-04-16",
+    "tempAccumulation": 541,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2019,
+    "bloomDOY": 105,
+    "bloomDate": "2019-04-15",
+    "tempAccumulation": 528,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2020,
+    "bloomDOY": 106,
+    "bloomDate": "2020-04-15",
+    "tempAccumulation": 556,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2021,
+    "bloomDOY": 105,
+    "bloomDate": "2021-04-15",
+    "tempAccumulation": 541,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2022,
+    "bloomDOY": 111,
+    "bloomDate": "2022-04-21",
+    "tempAccumulation": 631,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2023,
+    "bloomDOY": 112,
+    "bloomDate": "2023-04-22",
+    "tempAccumulation": 616,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2024,
+    "bloomDOY": 114,
+    "bloomDate": "2024-04-23",
+    "tempAccumulation": 659,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Gifu",
+    "year": 2025,
+    "bloomDOY": 119,
+    "bloomDate": "2025-04-29",
+    "tempAccumulation": 712,
+    "latitude": 35.423,
+    "longitude": 136.761
+  },
+  {
+    "city": "Tsu",
+    "year": 2010,
+    "bloomDOY": 111,
+    "bloomDate": "2010-04-21",
+    "tempAccumulation": 589,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2011,
+    "bloomDOY": 119,
+    "bloomDate": "2011-04-29",
+    "tempAccumulation": 716,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2012,
+    "bloomDOY": 114,
+    "bloomDate": "2012-04-23",
+    "tempAccumulation": 627,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2013,
+    "bloomDOY": 118,
+    "bloomDate": "2013-04-28",
+    "tempAccumulation": 706,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2014,
+    "bloomDOY": 121,
+    "bloomDate": "2014-05-01",
+    "tempAccumulation": 716,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2015,
+    "bloomDOY": 118,
+    "bloomDate": "2015-04-28",
+    "tempAccumulation": 704,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2016,
+    "bloomDOY": 112,
+    "bloomDate": "2016-04-21",
+    "tempAccumulation": 637,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2017,
+    "bloomDOY": 115,
+    "bloomDate": "2017-04-25",
+    "tempAccumulation": 681,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2018,
+    "bloomDOY": 107,
+    "bloomDate": "2018-04-17",
+    "tempAccumulation": 583,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2019,
+    "bloomDOY": 105,
+    "bloomDate": "2019-04-15",
+    "tempAccumulation": 517,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2020,
+    "bloomDOY": 112,
+    "bloomDate": "2020-04-21",
+    "tempAccumulation": 613,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2021,
+    "bloomDOY": 110,
+    "bloomDate": "2021-04-20",
+    "tempAccumulation": 612,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2022,
+    "bloomDOY": 110,
+    "bloomDate": "2022-04-20",
+    "tempAccumulation": 578,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2023,
+    "bloomDOY": 113,
+    "bloomDate": "2023-04-23",
+    "tempAccumulation": 634,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2024,
+    "bloomDOY": 117,
+    "bloomDate": "2024-04-26",
+    "tempAccumulation": 671,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Tsu",
+    "year": 2025,
+    "bloomDOY": 120,
+    "bloomDate": "2025-04-30",
+    "tempAccumulation": 729,
+    "latitude": 34.73,
+    "longitude": 136.517
+  },
+  {
+    "city": "Otsu",
+    "year": 2010,
+    "bloomDOY": 111,
+    "bloomDate": "2010-04-21",
+    "tempAccumulation": 592,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2011,
+    "bloomDOY": 117,
+    "bloomDate": "2011-04-27",
+    "tempAccumulation": 703,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2012,
+    "bloomDOY": 118,
+    "bloomDate": "2012-04-27",
+    "tempAccumulation": 717,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2013,
+    "bloomDOY": 116,
+    "bloomDate": "2013-04-26",
+    "tempAccumulation": 683,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2014,
+    "bloomDOY": 118,
+    "bloomDate": "2014-04-28",
+    "tempAccumulation": 695,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2015,
+    "bloomDOY": 115,
+    "bloomDate": "2015-04-25",
+    "tempAccumulation": 678,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2016,
+    "bloomDOY": 117,
+    "bloomDate": "2016-04-26",
+    "tempAccumulation": 660,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2017,
+    "bloomDOY": 107,
+    "bloomDate": "2017-04-17",
+    "tempAccumulation": 567,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2018,
+    "bloomDOY": 111,
+    "bloomDate": "2018-04-21",
+    "tempAccumulation": 637,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2019,
+    "bloomDOY": 104,
+    "bloomDate": "2019-04-14",
+    "tempAccumulation": 524,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2020,
+    "bloomDOY": 105,
+    "bloomDate": "2020-04-14",
+    "tempAccumulation": 543,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2021,
+    "bloomDOY": 113,
+    "bloomDate": "2021-04-23",
+    "tempAccumulation": 638,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2022,
+    "bloomDOY": 108,
+    "bloomDate": "2022-04-18",
+    "tempAccumulation": 589,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2023,
+    "bloomDOY": 114,
+    "bloomDate": "2023-04-24",
+    "tempAccumulation": 640,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2024,
+    "bloomDOY": 119,
+    "bloomDate": "2024-04-28",
+    "tempAccumulation": 698,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Otsu",
+    "year": 2025,
+    "bloomDOY": 117,
+    "bloomDate": "2025-04-27",
+    "tempAccumulation": 705,
+    "latitude": 35.004,
+    "longitude": 135.868
+  },
+  {
+    "city": "Kyoto",
+    "year": 2010,
+    "bloomDOY": 116,
+    "bloomDate": "2010-04-26",
+    "tempAccumulation": 677,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2011,
+    "bloomDOY": 113,
+    "bloomDate": "2011-04-23",
+    "tempAccumulation": 620,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2012,
+    "bloomDOY": 116,
+    "bloomDate": "2012-04-25",
+    "tempAccumulation": 692,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2013,
+    "bloomDOY": 115,
+    "bloomDate": "2013-04-25",
+    "tempAccumulation": 643,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2014,
+    "bloomDOY": 113,
+    "bloomDate": "2014-04-23",
+    "tempAccumulation": 628,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2015,
+    "bloomDOY": 119,
+    "bloomDate": "2015-04-29",
+    "tempAccumulation": 718,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2016,
+    "bloomDOY": 116,
+    "bloomDate": "2016-04-25",
+    "tempAccumulation": 669,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2017,
+    "bloomDOY": 108,
+    "bloomDate": "2017-04-18",
+    "tempAccumulation": 562,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2018,
+    "bloomDOY": 109,
+    "bloomDate": "2018-04-19",
+    "tempAccumulation": 602,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2019,
+    "bloomDOY": 105,
+    "bloomDate": "2019-04-15",
+    "tempAccumulation": 554,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2020,
+    "bloomDOY": 105,
+    "bloomDate": "2020-04-14",
+    "tempAccumulation": 528,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2021,
+    "bloomDOY": 108,
+    "bloomDate": "2021-04-18",
+    "tempAccumulation": 579,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2022,
+    "bloomDOY": 111,
+    "bloomDate": "2022-04-21",
+    "tempAccumulation": 627,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2023,
+    "bloomDOY": 117,
+    "bloomDate": "2023-04-27",
+    "tempAccumulation": 660,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2024,
+    "bloomDOY": 115,
+    "bloomDate": "2024-04-24",
+    "tempAccumulation": 684,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Kyoto",
+    "year": 2025,
+    "bloomDOY": 117,
+    "bloomDate": "2025-04-27",
+    "tempAccumulation": 672,
+    "latitude": 35.012,
+    "longitude": 135.768
+  },
+  {
+    "city": "Osaka",
+    "year": 2010,
+    "bloomDOY": 116,
+    "bloomDate": "2010-04-26",
+    "tempAccumulation": 648,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2011,
+    "bloomDOY": 115,
+    "bloomDate": "2011-04-25",
+    "tempAccumulation": 684,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2012,
+    "bloomDOY": 117,
+    "bloomDate": "2012-04-26",
+    "tempAccumulation": 698,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2013,
+    "bloomDOY": 120,
+    "bloomDate": "2013-04-30",
+    "tempAccumulation": 712,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2014,
+    "bloomDOY": 118,
+    "bloomDate": "2014-04-28",
+    "tempAccumulation": 676,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2015,
+    "bloomDOY": 116,
+    "bloomDate": "2015-04-26",
+    "tempAccumulation": 649,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2016,
+    "bloomDOY": 115,
+    "bloomDate": "2016-04-24",
+    "tempAccumulation": 669,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2017,
+    "bloomDOY": 109,
+    "bloomDate": "2017-04-19",
+    "tempAccumulation": 583,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2018,
+    "bloomDOY": 110,
+    "bloomDate": "2018-04-20",
+    "tempAccumulation": 581,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2019,
+    "bloomDOY": 112,
+    "bloomDate": "2019-04-22",
+    "tempAccumulation": 615,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2020,
+    "bloomDOY": 109,
+    "bloomDate": "2020-04-18",
+    "tempAccumulation": 568,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2021,
+    "bloomDOY": 107,
+    "bloomDate": "2021-04-17",
+    "tempAccumulation": 549,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2022,
+    "bloomDOY": 114,
+    "bloomDate": "2022-04-24",
+    "tempAccumulation": 638,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2023,
+    "bloomDOY": 111,
+    "bloomDate": "2023-04-21",
+    "tempAccumulation": 596,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2024,
+    "bloomDOY": 120,
+    "bloomDate": "2024-04-29",
+    "tempAccumulation": 739,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Osaka",
+    "year": 2025,
+    "bloomDOY": 114,
+    "bloomDate": "2025-04-24",
+    "tempAccumulation": 640,
+    "latitude": 34.693,
+    "longitude": 135.502
+  },
+  {
+    "city": "Nara",
+    "year": 2010,
+    "bloomDOY": 116,
+    "bloomDate": "2010-04-26",
+    "tempAccumulation": 696,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2011,
+    "bloomDOY": 112,
+    "bloomDate": "2011-04-22",
+    "tempAccumulation": 643,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2012,
+    "bloomDOY": 121,
+    "bloomDate": "2012-04-30",
+    "tempAccumulation": 744,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2013,
+    "bloomDOY": 114,
+    "bloomDate": "2013-04-24",
+    "tempAccumulation": 654,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2014,
+    "bloomDOY": 117,
+    "bloomDate": "2014-04-27",
+    "tempAccumulation": 706,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2015,
+    "bloomDOY": 114,
+    "bloomDate": "2015-04-24",
+    "tempAccumulation": 672,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2016,
+    "bloomDOY": 115,
+    "bloomDate": "2016-04-24",
+    "tempAccumulation": 666,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2017,
+    "bloomDOY": 110,
+    "bloomDate": "2017-04-20",
+    "tempAccumulation": 616,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2018,
+    "bloomDOY": 107,
+    "bloomDate": "2018-04-17",
+    "tempAccumulation": 557,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2019,
+    "bloomDOY": 111,
+    "bloomDate": "2019-04-21",
+    "tempAccumulation": 599,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2020,
+    "bloomDOY": 112,
+    "bloomDate": "2020-04-21",
+    "tempAccumulation": 601,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2021,
+    "bloomDOY": 108,
+    "bloomDate": "2021-04-18",
+    "tempAccumulation": 587,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2022,
+    "bloomDOY": 111,
+    "bloomDate": "2022-04-21",
+    "tempAccumulation": 631,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2023,
+    "bloomDOY": 114,
+    "bloomDate": "2023-04-24",
+    "tempAccumulation": 643,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2024,
+    "bloomDOY": 120,
+    "bloomDate": "2024-04-29",
+    "tempAccumulation": 719,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Nara",
+    "year": 2025,
+    "bloomDOY": 122,
+    "bloomDate": "2025-05-02",
+    "tempAccumulation": 751,
+    "latitude": 34.685,
+    "longitude": 135.833
+  },
+  {
+    "city": "Wakayama",
+    "year": 2010,
+    "bloomDOY": 118,
+    "bloomDate": "2010-04-28",
+    "tempAccumulation": 680,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2011,
+    "bloomDOY": 119,
+    "bloomDate": "2011-04-29",
+    "tempAccumulation": 721,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2012,
+    "bloomDOY": 120,
+    "bloomDate": "2012-04-29",
+    "tempAccumulation": 744,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2013,
+    "bloomDOY": 116,
+    "bloomDate": "2013-04-26",
+    "tempAccumulation": 674,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2014,
+    "bloomDOY": 116,
+    "bloomDate": "2014-04-26",
+    "tempAccumulation": 672,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2015,
+    "bloomDOY": 120,
+    "bloomDate": "2015-04-30",
+    "tempAccumulation": 714,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2016,
+    "bloomDOY": 113,
+    "bloomDate": "2016-04-22",
+    "tempAccumulation": 628,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2017,
+    "bloomDOY": 110,
+    "bloomDate": "2017-04-20",
+    "tempAccumulation": 587,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2018,
+    "bloomDOY": 112,
+    "bloomDate": "2018-04-22",
+    "tempAccumulation": 638,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2019,
+    "bloomDOY": 106,
+    "bloomDate": "2019-04-16",
+    "tempAccumulation": 533,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2020,
+    "bloomDOY": 110,
+    "bloomDate": "2020-04-19",
+    "tempAccumulation": 586,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2021,
+    "bloomDOY": 112,
+    "bloomDate": "2021-04-22",
+    "tempAccumulation": 623,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2022,
+    "bloomDOY": 112,
+    "bloomDate": "2022-04-22",
+    "tempAccumulation": 630,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2023,
+    "bloomDOY": 114,
+    "bloomDate": "2023-04-24",
+    "tempAccumulation": 669,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2024,
+    "bloomDOY": 117,
+    "bloomDate": "2024-04-26",
+    "tempAccumulation": 688,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Wakayama",
+    "year": 2025,
+    "bloomDOY": 121,
+    "bloomDate": "2025-05-01",
+    "tempAccumulation": 745,
+    "latitude": 34.226,
+    "longitude": 135.167
+  },
+  {
+    "city": "Kobe",
+    "year": 2010,
+    "bloomDOY": 111,
+    "bloomDate": "2010-04-21",
+    "tempAccumulation": 635,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2011,
+    "bloomDOY": 113,
+    "bloomDate": "2011-04-23",
+    "tempAccumulation": 626,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2012,
+    "bloomDOY": 117,
+    "bloomDate": "2012-04-26",
+    "tempAccumulation": 692,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2013,
+    "bloomDOY": 122,
+    "bloomDate": "2013-05-02",
+    "tempAccumulation": 737,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2014,
+    "bloomDOY": 115,
+    "bloomDate": "2014-04-25",
+    "tempAccumulation": 643,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2015,
+    "bloomDOY": 114,
+    "bloomDate": "2015-04-24",
+    "tempAccumulation": 669,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2016,
+    "bloomDOY": 116,
+    "bloomDate": "2016-04-25",
+    "tempAccumulation": 683,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2017,
+    "bloomDOY": 115,
+    "bloomDate": "2017-04-25",
+    "tempAccumulation": 667,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2018,
+    "bloomDOY": 108,
+    "bloomDate": "2018-04-18",
+    "tempAccumulation": 570,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2019,
+    "bloomDOY": 105,
+    "bloomDate": "2019-04-15",
+    "tempAccumulation": 541,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2020,
+    "bloomDOY": 105,
+    "bloomDate": "2020-04-14",
+    "tempAccumulation": 557,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2021,
+    "bloomDOY": 111,
+    "bloomDate": "2021-04-21",
+    "tempAccumulation": 615,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2022,
+    "bloomDOY": 110,
+    "bloomDate": "2022-04-20",
+    "tempAccumulation": 617,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2023,
+    "bloomDOY": 114,
+    "bloomDate": "2023-04-24",
+    "tempAccumulation": 646,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2024,
+    "bloomDOY": 117,
+    "bloomDate": "2024-04-26",
+    "tempAccumulation": 678,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Kobe",
+    "year": 2025,
+    "bloomDOY": 116,
+    "bloomDate": "2025-04-26",
+    "tempAccumulation": 683,
+    "latitude": 34.691,
+    "longitude": 135.183
+  },
+  {
+    "city": "Tottori",
+    "year": 2010,
+    "bloomDOY": 110,
+    "bloomDate": "2010-04-20",
+    "tempAccumulation": 600,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2011,
+    "bloomDOY": 116,
+    "bloomDate": "2011-04-26",
+    "tempAccumulation": 663,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2012,
+    "bloomDOY": 113,
+    "bloomDate": "2012-04-22",
+    "tempAccumulation": 632,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2013,
+    "bloomDOY": 113,
+    "bloomDate": "2013-04-23",
+    "tempAccumulation": 658,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2014,
+    "bloomDOY": 118,
+    "bloomDate": "2014-04-28",
+    "tempAccumulation": 692,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2015,
+    "bloomDOY": 118,
+    "bloomDate": "2015-04-28",
+    "tempAccumulation": 719,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2016,
+    "bloomDOY": 112,
+    "bloomDate": "2016-04-21",
+    "tempAccumulation": 643,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2017,
+    "bloomDOY": 107,
+    "bloomDate": "2017-04-17",
+    "tempAccumulation": 560,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2018,
+    "bloomDOY": 109,
+    "bloomDate": "2018-04-19",
+    "tempAccumulation": 569,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2019,
+    "bloomDOY": 109,
+    "bloomDate": "2019-04-19",
+    "tempAccumulation": 583,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2020,
+    "bloomDOY": 110,
+    "bloomDate": "2020-04-19",
+    "tempAccumulation": 603,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2021,
+    "bloomDOY": 111,
+    "bloomDate": "2021-04-21",
+    "tempAccumulation": 628,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2022,
+    "bloomDOY": 110,
+    "bloomDate": "2022-04-20",
+    "tempAccumulation": 578,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2023,
+    "bloomDOY": 115,
+    "bloomDate": "2023-04-25",
+    "tempAccumulation": 681,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2024,
+    "bloomDOY": 112,
+    "bloomDate": "2024-04-21",
+    "tempAccumulation": 605,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Tottori",
+    "year": 2025,
+    "bloomDOY": 113,
+    "bloomDate": "2025-04-23",
+    "tempAccumulation": 621,
+    "latitude": 35.503,
+    "longitude": 134.238
+  },
+  {
+    "city": "Matsue",
+    "year": 2010,
+    "bloomDOY": 109,
+    "bloomDate": "2010-04-19",
+    "tempAccumulation": 567,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2011,
+    "bloomDOY": 113,
+    "bloomDate": "2011-04-23",
+    "tempAccumulation": 634,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2012,
+    "bloomDOY": 115,
+    "bloomDate": "2012-04-24",
+    "tempAccumulation": 642,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2013,
+    "bloomDOY": 118,
+    "bloomDate": "2013-04-28",
+    "tempAccumulation": 692,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2014,
+    "bloomDOY": 116,
+    "bloomDate": "2014-04-26",
+    "tempAccumulation": 664,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2015,
+    "bloomDOY": 115,
+    "bloomDate": "2015-04-25",
+    "tempAccumulation": 643,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2016,
+    "bloomDOY": 110,
+    "bloomDate": "2016-04-19",
+    "tempAccumulation": 601,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2017,
+    "bloomDOY": 112,
+    "bloomDate": "2017-04-22",
+    "tempAccumulation": 602,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2018,
+    "bloomDOY": 107,
+    "bloomDate": "2018-04-17",
+    "tempAccumulation": 559,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2019,
+    "bloomDOY": 105,
+    "bloomDate": "2019-04-15",
+    "tempAccumulation": 542,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2020,
+    "bloomDOY": 106,
+    "bloomDate": "2020-04-15",
+    "tempAccumulation": 560,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2021,
+    "bloomDOY": 106,
+    "bloomDate": "2021-04-16",
+    "tempAccumulation": 553,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2022,
+    "bloomDOY": 107,
+    "bloomDate": "2022-04-17",
+    "tempAccumulation": 549,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2023,
+    "bloomDOY": 109,
+    "bloomDate": "2023-04-19",
+    "tempAccumulation": 582,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2024,
+    "bloomDOY": 118,
+    "bloomDate": "2024-04-27",
+    "tempAccumulation": 719,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Matsue",
+    "year": 2025,
+    "bloomDOY": 114,
+    "bloomDate": "2025-04-24",
+    "tempAccumulation": 631,
+    "latitude": 35.468,
+    "longitude": 133.048
+  },
+  {
+    "city": "Okayama",
+    "year": 2010,
+    "bloomDOY": 110,
+    "bloomDate": "2010-04-20",
+    "tempAccumulation": 615,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2011,
+    "bloomDOY": 116,
+    "bloomDate": "2011-04-26",
+    "tempAccumulation": 653,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2012,
+    "bloomDOY": 117,
+    "bloomDate": "2012-04-26",
+    "tempAccumulation": 659,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2013,
+    "bloomDOY": 121,
+    "bloomDate": "2013-05-01",
+    "tempAccumulation": 709,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2014,
+    "bloomDOY": 121,
+    "bloomDate": "2014-05-01",
+    "tempAccumulation": 718,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2015,
+    "bloomDOY": 117,
+    "bloomDate": "2015-04-27",
+    "tempAccumulation": 662,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2016,
+    "bloomDOY": 116,
+    "bloomDate": "2016-04-25",
+    "tempAccumulation": 669,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2017,
+    "bloomDOY": 109,
+    "bloomDate": "2017-04-19",
+    "tempAccumulation": 581,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2018,
+    "bloomDOY": 112,
+    "bloomDate": "2018-04-22",
+    "tempAccumulation": 617,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2019,
+    "bloomDOY": 107,
+    "bloomDate": "2019-04-17",
+    "tempAccumulation": 556,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2020,
+    "bloomDOY": 107,
+    "bloomDate": "2020-04-16",
+    "tempAccumulation": 580,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2021,
+    "bloomDOY": 110,
+    "bloomDate": "2021-04-20",
+    "tempAccumulation": 623,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2022,
+    "bloomDOY": 109,
+    "bloomDate": "2022-04-19",
+    "tempAccumulation": 611,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2023,
+    "bloomDOY": 114,
+    "bloomDate": "2023-04-24",
+    "tempAccumulation": 632,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2024,
+    "bloomDOY": 115,
+    "bloomDate": "2024-04-24",
+    "tempAccumulation": 669,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Okayama",
+    "year": 2025,
+    "bloomDOY": 117,
+    "bloomDate": "2025-04-27",
+    "tempAccumulation": 703,
+    "latitude": 34.662,
+    "longitude": 133.918
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2010,
+    "bloomDOY": 114,
+    "bloomDate": "2010-04-24",
+    "tempAccumulation": 648,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2011,
+    "bloomDOY": 114,
+    "bloomDate": "2011-04-24",
+    "tempAccumulation": 629,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2012,
+    "bloomDOY": 120,
+    "bloomDate": "2012-04-29",
+    "tempAccumulation": 735,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2013,
+    "bloomDOY": 117,
+    "bloomDate": "2013-04-27",
+    "tempAccumulation": 662,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2014,
+    "bloomDOY": 115,
+    "bloomDate": "2014-04-25",
+    "tempAccumulation": 668,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2015,
+    "bloomDOY": 116,
+    "bloomDate": "2015-04-26",
+    "tempAccumulation": 689,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2016,
+    "bloomDOY": 116,
+    "bloomDate": "2016-04-25",
+    "tempAccumulation": 664,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2017,
+    "bloomDOY": 114,
+    "bloomDate": "2017-04-24",
+    "tempAccumulation": 648,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2018,
+    "bloomDOY": 107,
+    "bloomDate": "2018-04-17",
+    "tempAccumulation": 569,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2019,
+    "bloomDOY": 113,
+    "bloomDate": "2019-04-23",
+    "tempAccumulation": 640,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2020,
+    "bloomDOY": 107,
+    "bloomDate": "2020-04-16",
+    "tempAccumulation": 555,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2021,
+    "bloomDOY": 107,
+    "bloomDate": "2021-04-17",
+    "tempAccumulation": 561,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2022,
+    "bloomDOY": 110,
+    "bloomDate": "2022-04-20",
+    "tempAccumulation": 580,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2023,
+    "bloomDOY": 114,
+    "bloomDate": "2023-04-24",
+    "tempAccumulation": 636,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2024,
+    "bloomDOY": 120,
+    "bloomDate": "2024-04-29",
+    "tempAccumulation": 744,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Hiroshima",
+    "year": 2025,
+    "bloomDOY": 119,
+    "bloomDate": "2025-04-29",
+    "tempAccumulation": 721,
+    "latitude": 34.396,
+    "longitude": 132.459
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2010,
+    "bloomDOY": 111,
+    "bloomDate": "2010-04-21",
+    "tempAccumulation": 630,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2011,
+    "bloomDOY": 114,
+    "bloomDate": "2011-04-24",
+    "tempAccumulation": 653,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2012,
+    "bloomDOY": 121,
+    "bloomDate": "2012-04-30",
+    "tempAccumulation": 755,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2013,
+    "bloomDOY": 119,
+    "bloomDate": "2013-04-29",
+    "tempAccumulation": 724,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2014,
+    "bloomDOY": 117,
+    "bloomDate": "2014-04-27",
+    "tempAccumulation": 696,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2015,
+    "bloomDOY": 116,
+    "bloomDate": "2015-04-26",
+    "tempAccumulation": 695,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2016,
+    "bloomDOY": 119,
+    "bloomDate": "2016-04-28",
+    "tempAccumulation": 689,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2017,
+    "bloomDOY": 113,
+    "bloomDate": "2017-04-23",
+    "tempAccumulation": 619,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2018,
+    "bloomDOY": 111,
+    "bloomDate": "2018-04-21",
+    "tempAccumulation": 613,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2019,
+    "bloomDOY": 112,
+    "bloomDate": "2019-04-22",
+    "tempAccumulation": 631,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2020,
+    "bloomDOY": 107,
+    "bloomDate": "2020-04-16",
+    "tempAccumulation": 556,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2021,
+    "bloomDOY": 113,
+    "bloomDate": "2021-04-23",
+    "tempAccumulation": 638,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2022,
+    "bloomDOY": 109,
+    "bloomDate": "2022-04-19",
+    "tempAccumulation": 613,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2023,
+    "bloomDOY": 119,
+    "bloomDate": "2023-04-29",
+    "tempAccumulation": 698,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2024,
+    "bloomDOY": 120,
+    "bloomDate": "2024-04-29",
+    "tempAccumulation": 709,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Yamaguchi",
+    "year": 2025,
+    "bloomDOY": 123,
+    "bloomDate": "2025-05-03",
+    "tempAccumulation": 763,
+    "latitude": 34.186,
+    "longitude": 131.471
+  },
+  {
+    "city": "Tokushima",
+    "year": 2010,
+    "bloomDOY": 118,
+    "bloomDate": "2010-04-28",
+    "tempAccumulation": 713,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2011,
+    "bloomDOY": 118,
+    "bloomDate": "2011-04-28",
+    "tempAccumulation": 704,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2012,
+    "bloomDOY": 115,
+    "bloomDate": "2012-04-24",
+    "tempAccumulation": 653,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2013,
+    "bloomDOY": 122,
+    "bloomDate": "2013-05-02",
+    "tempAccumulation": 719,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2014,
+    "bloomDOY": 119,
+    "bloomDate": "2014-04-29",
+    "tempAccumulation": 729,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2015,
+    "bloomDOY": 116,
+    "bloomDate": "2015-04-26",
+    "tempAccumulation": 647,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2016,
+    "bloomDOY": 118,
+    "bloomDate": "2016-04-27",
+    "tempAccumulation": 690,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2017,
+    "bloomDOY": 111,
+    "bloomDate": "2017-04-21",
+    "tempAccumulation": 587,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2018,
+    "bloomDOY": 108,
+    "bloomDate": "2018-04-18",
+    "tempAccumulation": 598,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2019,
+    "bloomDOY": 113,
+    "bloomDate": "2019-04-23",
+    "tempAccumulation": 658,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2020,
+    "bloomDOY": 108,
+    "bloomDate": "2020-04-17",
+    "tempAccumulation": 598,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2021,
+    "bloomDOY": 110,
+    "bloomDate": "2021-04-20",
+    "tempAccumulation": 610,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2022,
+    "bloomDOY": 117,
+    "bloomDate": "2022-04-27",
+    "tempAccumulation": 680,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2023,
+    "bloomDOY": 117,
+    "bloomDate": "2023-04-27",
+    "tempAccumulation": 670,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2024,
+    "bloomDOY": 118,
+    "bloomDate": "2024-04-27",
+    "tempAccumulation": 671,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Tokushima",
+    "year": 2025,
+    "bloomDOY": 117,
+    "bloomDate": "2025-04-27",
+    "tempAccumulation": 690,
+    "latitude": 34.066,
+    "longitude": 134.559
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2010,
+    "bloomDOY": 118,
+    "bloomDate": "2010-04-28",
+    "tempAccumulation": 713,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2011,
+    "bloomDOY": 116,
+    "bloomDate": "2011-04-26",
+    "tempAccumulation": 691,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2012,
+    "bloomDOY": 118,
+    "bloomDate": "2012-04-27",
+    "tempAccumulation": 707,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2013,
+    "bloomDOY": 120,
+    "bloomDate": "2013-04-30",
+    "tempAccumulation": 739,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2014,
+    "bloomDOY": 119,
+    "bloomDate": "2014-04-29",
+    "tempAccumulation": 695,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2015,
+    "bloomDOY": 119,
+    "bloomDate": "2015-04-29",
+    "tempAccumulation": 723,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2016,
+    "bloomDOY": 112,
+    "bloomDate": "2016-04-21",
+    "tempAccumulation": 631,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2017,
+    "bloomDOY": 114,
+    "bloomDate": "2017-04-24",
+    "tempAccumulation": 655,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2018,
+    "bloomDOY": 114,
+    "bloomDate": "2018-04-24",
+    "tempAccumulation": 671,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2019,
+    "bloomDOY": 107,
+    "bloomDate": "2019-04-17",
+    "tempAccumulation": 548,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2020,
+    "bloomDOY": 106,
+    "bloomDate": "2020-04-15",
+    "tempAccumulation": 542,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2021,
+    "bloomDOY": 108,
+    "bloomDate": "2021-04-18",
+    "tempAccumulation": 566,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2022,
+    "bloomDOY": 116,
+    "bloomDate": "2022-04-26",
+    "tempAccumulation": 664,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2023,
+    "bloomDOY": 115,
+    "bloomDate": "2023-04-25",
+    "tempAccumulation": 668,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2024,
+    "bloomDOY": 120,
+    "bloomDate": "2024-04-29",
+    "tempAccumulation": 732,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Takamatsu",
+    "year": 2025,
+    "bloomDOY": 118,
+    "bloomDate": "2025-04-28",
+    "tempAccumulation": 718,
+    "latitude": 34.34,
+    "longitude": 134.043
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2010,
+    "bloomDOY": 117,
+    "bloomDate": "2010-04-27",
+    "tempAccumulation": 673,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2011,
+    "bloomDOY": 116,
+    "bloomDate": "2011-04-26",
+    "tempAccumulation": 661,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2012,
+    "bloomDOY": 123,
+    "bloomDate": "2012-05-02",
+    "tempAccumulation": 748,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2013,
+    "bloomDOY": 117,
+    "bloomDate": "2013-04-27",
+    "tempAccumulation": 670,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2014,
+    "bloomDOY": 118,
+    "bloomDate": "2014-04-28",
+    "tempAccumulation": 716,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2015,
+    "bloomDOY": 115,
+    "bloomDate": "2015-04-25",
+    "tempAccumulation": 670,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2016,
+    "bloomDOY": 116,
+    "bloomDate": "2016-04-25",
+    "tempAccumulation": 654,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2017,
+    "bloomDOY": 114,
+    "bloomDate": "2017-04-24",
+    "tempAccumulation": 624,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2018,
+    "bloomDOY": 109,
+    "bloomDate": "2018-04-19",
+    "tempAccumulation": 582,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2019,
+    "bloomDOY": 112,
+    "bloomDate": "2019-04-22",
+    "tempAccumulation": 603,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2020,
+    "bloomDOY": 113,
+    "bloomDate": "2020-04-22",
+    "tempAccumulation": 651,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2021,
+    "bloomDOY": 109,
+    "bloomDate": "2021-04-19",
+    "tempAccumulation": 611,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2022,
+    "bloomDOY": 113,
+    "bloomDate": "2022-04-23",
+    "tempAccumulation": 645,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2023,
+    "bloomDOY": 117,
+    "bloomDate": "2023-04-27",
+    "tempAccumulation": 701,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2024,
+    "bloomDOY": 118,
+    "bloomDate": "2024-04-27",
+    "tempAccumulation": 693,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Matsuyama",
+    "year": 2025,
+    "bloomDOY": 119,
+    "bloomDate": "2025-04-29",
+    "tempAccumulation": 713,
+    "latitude": 33.841,
+    "longitude": 132.766
+  },
+  {
+    "city": "Kochi",
+    "year": 2010,
+    "bloomDOY": 116,
+    "bloomDate": "2010-04-26",
+    "tempAccumulation": 673,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2011,
+    "bloomDOY": 121,
+    "bloomDate": "2011-05-01",
+    "tempAccumulation": 748,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2012,
+    "bloomDOY": 121,
+    "bloomDate": "2012-04-30",
+    "tempAccumulation": 757,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2013,
+    "bloomDOY": 118,
+    "bloomDate": "2013-04-28",
+    "tempAccumulation": 719,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2014,
+    "bloomDOY": 124,
+    "bloomDate": "2014-05-04",
+    "tempAccumulation": 755,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2015,
+    "bloomDOY": 117,
+    "bloomDate": "2015-04-27",
+    "tempAccumulation": 703,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2016,
+    "bloomDOY": 113,
+    "bloomDate": "2016-04-22",
+    "tempAccumulation": 651,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2017,
+    "bloomDOY": 113,
+    "bloomDate": "2017-04-23",
+    "tempAccumulation": 654,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2018,
+    "bloomDOY": 113,
+    "bloomDate": "2018-04-23",
+    "tempAccumulation": 649,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2019,
+    "bloomDOY": 110,
+    "bloomDate": "2019-04-20",
+    "tempAccumulation": 575,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2020,
+    "bloomDOY": 114,
+    "bloomDate": "2020-04-23",
+    "tempAccumulation": 668,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2021,
+    "bloomDOY": 114,
+    "bloomDate": "2021-04-24",
+    "tempAccumulation": 642,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2022,
+    "bloomDOY": 118,
+    "bloomDate": "2022-04-28",
+    "tempAccumulation": 680,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2023,
+    "bloomDOY": 119,
+    "bloomDate": "2023-04-29",
+    "tempAccumulation": 688,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2024,
+    "bloomDOY": 123,
+    "bloomDate": "2024-05-02",
+    "tempAccumulation": 779,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Kochi",
+    "year": 2025,
+    "bloomDOY": 123,
+    "bloomDate": "2025-05-03",
+    "tempAccumulation": 761,
+    "latitude": 33.56,
+    "longitude": 133.531
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2010,
+    "bloomDOY": 115,
+    "bloomDate": "2010-04-25",
+    "tempAccumulation": 658,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2011,
+    "bloomDOY": 117,
+    "bloomDate": "2011-04-27",
+    "tempAccumulation": 705,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2012,
+    "bloomDOY": 120,
+    "bloomDate": "2012-04-29",
+    "tempAccumulation": 710,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2013,
+    "bloomDOY": 118,
+    "bloomDate": "2013-04-28",
+    "tempAccumulation": 696,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2014,
+    "bloomDOY": 118,
+    "bloomDate": "2014-04-28",
+    "tempAccumulation": 688,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2015,
+    "bloomDOY": 118,
+    "bloomDate": "2015-04-28",
+    "tempAccumulation": 674,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2016,
+    "bloomDOY": 116,
+    "bloomDate": "2016-04-25",
+    "tempAccumulation": 677,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2017,
+    "bloomDOY": 115,
+    "bloomDate": "2017-04-25",
+    "tempAccumulation": 644,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2018,
+    "bloomDOY": 114,
+    "bloomDate": "2018-04-24",
+    "tempAccumulation": 641,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2019,
+    "bloomDOY": 114,
+    "bloomDate": "2019-04-24",
+    "tempAccumulation": 658,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2020,
+    "bloomDOY": 113,
+    "bloomDate": "2020-04-22",
+    "tempAccumulation": 658,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2021,
+    "bloomDOY": 109,
+    "bloomDate": "2021-04-19",
+    "tempAccumulation": 575,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2022,
+    "bloomDOY": 112,
+    "bloomDate": "2022-04-22",
+    "tempAccumulation": 645,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2023,
+    "bloomDOY": 115,
+    "bloomDate": "2023-04-25",
+    "tempAccumulation": 663,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2024,
+    "bloomDOY": 117,
+    "bloomDate": "2024-04-26",
+    "tempAccumulation": 674,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Fukuoka",
+    "year": 2025,
+    "bloomDOY": 123,
+    "bloomDate": "2025-05-03",
+    "tempAccumulation": 771,
+    "latitude": 33.59,
+    "longitude": 130.401
+  },
+  {
+    "city": "Saga",
+    "year": 2010,
+    "bloomDOY": 115,
+    "bloomDate": "2010-04-25",
+    "tempAccumulation": 649,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2011,
+    "bloomDOY": 120,
+    "bloomDate": "2011-04-30",
+    "tempAccumulation": 736,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2012,
+    "bloomDOY": 119,
+    "bloomDate": "2012-04-28",
+    "tempAccumulation": 689,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2013,
+    "bloomDOY": 124,
+    "bloomDate": "2013-05-04",
+    "tempAccumulation": 777,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2014,
+    "bloomDOY": 119,
+    "bloomDate": "2014-04-29",
+    "tempAccumulation": 689,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2015,
+    "bloomDOY": 120,
+    "bloomDate": "2015-04-30",
+    "tempAccumulation": 713,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2016,
+    "bloomDOY": 116,
+    "bloomDate": "2016-04-25",
+    "tempAccumulation": 675,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2017,
+    "bloomDOY": 112,
+    "bloomDate": "2017-04-22",
+    "tempAccumulation": 634,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2018,
+    "bloomDOY": 117,
+    "bloomDate": "2018-04-27",
+    "tempAccumulation": 692,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2019,
+    "bloomDOY": 114,
+    "bloomDate": "2019-04-24",
+    "tempAccumulation": 644,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2020,
+    "bloomDOY": 111,
+    "bloomDate": "2020-04-20",
+    "tempAccumulation": 603,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2021,
+    "bloomDOY": 111,
+    "bloomDate": "2021-04-21",
+    "tempAccumulation": 632,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2022,
+    "bloomDOY": 115,
+    "bloomDate": "2022-04-25",
+    "tempAccumulation": 669,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2023,
+    "bloomDOY": 117,
+    "bloomDate": "2023-04-27",
+    "tempAccumulation": 663,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2024,
+    "bloomDOY": 118,
+    "bloomDate": "2024-04-27",
+    "tempAccumulation": 699,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Saga",
+    "year": 2025,
+    "bloomDOY": 123,
+    "bloomDate": "2025-05-03",
+    "tempAccumulation": 760,
+    "latitude": 33.249,
+    "longitude": 130.3
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2010,
+    "bloomDOY": 116,
+    "bloomDate": "2010-04-26",
+    "tempAccumulation": 668,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2011,
+    "bloomDOY": 123,
+    "bloomDate": "2011-05-03",
+    "tempAccumulation": 747,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2012,
+    "bloomDOY": 121,
+    "bloomDate": "2012-04-30",
+    "tempAccumulation": 749,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2013,
+    "bloomDOY": 126,
+    "bloomDate": "2013-05-06",
+    "tempAccumulation": 804,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2014,
+    "bloomDOY": 122,
+    "bloomDate": "2014-05-02",
+    "tempAccumulation": 722,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2015,
+    "bloomDOY": 118,
+    "bloomDate": "2015-04-28",
+    "tempAccumulation": 694,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2016,
+    "bloomDOY": 122,
+    "bloomDate": "2016-05-01",
+    "tempAccumulation": 719,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2017,
+    "bloomDOY": 120,
+    "bloomDate": "2017-04-30",
+    "tempAccumulation": 714,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2018,
+    "bloomDOY": 111,
+    "bloomDate": "2018-04-21",
+    "tempAccumulation": 612,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2019,
+    "bloomDOY": 116,
+    "bloomDate": "2019-04-26",
+    "tempAccumulation": 685,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2020,
+    "bloomDOY": 111,
+    "bloomDate": "2020-04-20",
+    "tempAccumulation": 630,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2021,
+    "bloomDOY": 116,
+    "bloomDate": "2021-04-26",
+    "tempAccumulation": 654,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2022,
+    "bloomDOY": 115,
+    "bloomDate": "2022-04-25",
+    "tempAccumulation": 685,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2023,
+    "bloomDOY": 117,
+    "bloomDate": "2023-04-27",
+    "tempAccumulation": 699,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2024,
+    "bloomDOY": 123,
+    "bloomDate": "2024-05-02",
+    "tempAccumulation": 776,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Nagasaki",
+    "year": 2025,
+    "bloomDOY": 124,
+    "bloomDate": "2025-05-04",
+    "tempAccumulation": 776,
+    "latitude": 32.744,
+    "longitude": 129.873
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2010,
+    "bloomDOY": 115,
+    "bloomDate": "2010-04-25",
+    "tempAccumulation": 664,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2011,
+    "bloomDOY": 121,
+    "bloomDate": "2011-05-01",
+    "tempAccumulation": 727,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2012,
+    "bloomDOY": 118,
+    "bloomDate": "2012-04-27",
+    "tempAccumulation": 676,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2013,
+    "bloomDOY": 121,
+    "bloomDate": "2013-05-01",
+    "tempAccumulation": 717,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2014,
+    "bloomDOY": 123,
+    "bloomDate": "2014-05-03",
+    "tempAccumulation": 773,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2015,
+    "bloomDOY": 124,
+    "bloomDate": "2015-05-04",
+    "tempAccumulation": 788,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2016,
+    "bloomDOY": 119,
+    "bloomDate": "2016-04-28",
+    "tempAccumulation": 707,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2017,
+    "bloomDOY": 120,
+    "bloomDate": "2017-04-30",
+    "tempAccumulation": 713,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2018,
+    "bloomDOY": 110,
+    "bloomDate": "2018-04-20",
+    "tempAccumulation": 581,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2019,
+    "bloomDOY": 116,
+    "bloomDate": "2019-04-26",
+    "tempAccumulation": 667,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2020,
+    "bloomDOY": 109,
+    "bloomDate": "2020-04-18",
+    "tempAccumulation": 609,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2021,
+    "bloomDOY": 115,
+    "bloomDate": "2021-04-25",
+    "tempAccumulation": 674,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2022,
+    "bloomDOY": 115,
+    "bloomDate": "2022-04-25",
+    "tempAccumulation": 650,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2023,
+    "bloomDOY": 116,
+    "bloomDate": "2023-04-26",
+    "tempAccumulation": 685,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2024,
+    "bloomDOY": 118,
+    "bloomDate": "2024-04-27",
+    "tempAccumulation": 679,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Kumamoto",
+    "year": 2025,
+    "bloomDOY": 124,
+    "bloomDate": "2025-05-04",
+    "tempAccumulation": 791,
+    "latitude": 32.789,
+    "longitude": 130.742
+  },
+  {
+    "city": "Oita",
+    "year": 2010,
+    "bloomDOY": 118,
+    "bloomDate": "2010-04-28",
+    "tempAccumulation": 689,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2011,
+    "bloomDOY": 123,
+    "bloomDate": "2011-05-03",
+    "tempAccumulation": 776,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2012,
+    "bloomDOY": 123,
+    "bloomDate": "2012-05-02",
+    "tempAccumulation": 746,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2013,
+    "bloomDOY": 124,
+    "bloomDate": "2013-05-04",
+    "tempAccumulation": 748,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2014,
+    "bloomDOY": 124,
+    "bloomDate": "2014-05-04",
+    "tempAccumulation": 774,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2015,
+    "bloomDOY": 123,
+    "bloomDate": "2015-05-03",
+    "tempAccumulation": 775,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2016,
+    "bloomDOY": 115,
+    "bloomDate": "2016-04-24",
+    "tempAccumulation": 669,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2017,
+    "bloomDOY": 118,
+    "bloomDate": "2017-04-28",
+    "tempAccumulation": 712,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2018,
+    "bloomDOY": 113,
+    "bloomDate": "2018-04-23",
+    "tempAccumulation": 641,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2019,
+    "bloomDOY": 108,
+    "bloomDate": "2019-04-18",
+    "tempAccumulation": 580,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2020,
+    "bloomDOY": 111,
+    "bloomDate": "2020-04-20",
+    "tempAccumulation": 612,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2021,
+    "bloomDOY": 114,
+    "bloomDate": "2021-04-24",
+    "tempAccumulation": 663,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2022,
+    "bloomDOY": 114,
+    "bloomDate": "2022-04-24",
+    "tempAccumulation": 628,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2023,
+    "bloomDOY": 119,
+    "bloomDate": "2023-04-29",
+    "tempAccumulation": 724,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2024,
+    "bloomDOY": 121,
+    "bloomDate": "2024-04-30",
+    "tempAccumulation": 728,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Oita",
+    "year": 2025,
+    "bloomDOY": 123,
+    "bloomDate": "2025-05-03",
+    "tempAccumulation": 773,
+    "latitude": 33.238,
+    "longitude": 131.612
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2010,
+    "bloomDOY": 122,
+    "bloomDate": "2010-05-02",
+    "tempAccumulation": 721,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2011,
+    "bloomDOY": 126,
+    "bloomDate": "2011-05-06",
+    "tempAccumulation": 807,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2012,
+    "bloomDOY": 125,
+    "bloomDate": "2012-05-04",
+    "tempAccumulation": 769,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2013,
+    "bloomDOY": 124,
+    "bloomDate": "2013-05-04",
+    "tempAccumulation": 778,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2014,
+    "bloomDOY": 127,
+    "bloomDate": "2014-05-07",
+    "tempAccumulation": 815,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2015,
+    "bloomDOY": 125,
+    "bloomDate": "2015-05-05",
+    "tempAccumulation": 778,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2016,
+    "bloomDOY": 125,
+    "bloomDate": "2016-05-04",
+    "tempAccumulation": 792,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2017,
+    "bloomDOY": 120,
+    "bloomDate": "2017-04-30",
+    "tempAccumulation": 708,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2018,
+    "bloomDOY": 117,
+    "bloomDate": "2018-04-27",
+    "tempAccumulation": 697,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2019,
+    "bloomDOY": 119,
+    "bloomDate": "2019-04-29",
+    "tempAccumulation": 709,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2020,
+    "bloomDOY": 119,
+    "bloomDate": "2020-04-28",
+    "tempAccumulation": 685,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2021,
+    "bloomDOY": 115,
+    "bloomDate": "2021-04-25",
+    "tempAccumulation": 635,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2022,
+    "bloomDOY": 116,
+    "bloomDate": "2022-04-26",
+    "tempAccumulation": 684,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2023,
+    "bloomDOY": 121,
+    "bloomDate": "2023-05-01",
+    "tempAccumulation": 718,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2024,
+    "bloomDOY": 122,
+    "bloomDate": "2024-05-01",
+    "tempAccumulation": 726,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Miyazaki",
+    "year": 2025,
+    "bloomDOY": 123,
+    "bloomDate": "2025-05-03",
+    "tempAccumulation": 741,
+    "latitude": 31.908,
+    "longitude": 131.424
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2010,
+    "bloomDOY": 125,
+    "bloomDate": "2010-05-05",
+    "tempAccumulation": 788,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2011,
+    "bloomDOY": 126,
+    "bloomDate": "2011-05-06",
+    "tempAccumulation": 785,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2012,
+    "bloomDOY": 124,
+    "bloomDate": "2012-05-03",
+    "tempAccumulation": 775,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2013,
+    "bloomDOY": 127,
+    "bloomDate": "2013-05-07",
+    "tempAccumulation": 789,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2014,
+    "bloomDOY": 127,
+    "bloomDate": "2014-05-07",
+    "tempAccumulation": 804,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2015,
+    "bloomDOY": 123,
+    "bloomDate": "2015-05-03",
+    "tempAccumulation": 753,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2016,
+    "bloomDOY": 119,
+    "bloomDate": "2016-04-28",
+    "tempAccumulation": 715,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2017,
+    "bloomDOY": 118,
+    "bloomDate": "2017-04-28",
+    "tempAccumulation": 673,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2018,
+    "bloomDOY": 117,
+    "bloomDate": "2018-04-27",
+    "tempAccumulation": 678,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2019,
+    "bloomDOY": 120,
+    "bloomDate": "2019-04-30",
+    "tempAccumulation": 742,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2020,
+    "bloomDOY": 115,
+    "bloomDate": "2020-04-24",
+    "tempAccumulation": 667,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2021,
+    "bloomDOY": 120,
+    "bloomDate": "2021-04-30",
+    "tempAccumulation": 698,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2022,
+    "bloomDOY": 123,
+    "bloomDate": "2022-05-03",
+    "tempAccumulation": 765,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2023,
+    "bloomDOY": 123,
+    "bloomDate": "2023-05-03",
+    "tempAccumulation": 762,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2024,
+    "bloomDOY": 127,
+    "bloomDate": "2024-05-06",
+    "tempAccumulation": 791,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Kagoshima",
+    "year": 2025,
+    "bloomDOY": 125,
+    "bloomDate": "2025-05-05",
+    "tempAccumulation": 796,
+    "latitude": 31.56,
+    "longitude": 130.558
+  },
+  {
+    "city": "Naha",
+    "year": 2010,
+    "bloomDOY": 136,
+    "bloomDate": "2010-05-16",
+    "tempAccumulation": 896,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2011,
+    "bloomDOY": 137,
+    "bloomDate": "2011-05-17",
+    "tempAccumulation": 948,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2012,
+    "bloomDOY": 140,
+    "bloomDate": "2012-05-19",
+    "tempAccumulation": 967,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2013,
+    "bloomDOY": 137,
+    "bloomDate": "2013-05-17",
+    "tempAccumulation": 901,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2014,
+    "bloomDOY": 138,
+    "bloomDate": "2014-05-18",
+    "tempAccumulation": 948,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2015,
+    "bloomDOY": 140,
+    "bloomDate": "2015-05-20",
+    "tempAccumulation": 941,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2016,
+    "bloomDOY": 137,
+    "bloomDate": "2016-05-16",
+    "tempAccumulation": 929,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2017,
+    "bloomDOY": 133,
+    "bloomDate": "2017-05-13",
+    "tempAccumulation": 859,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2018,
+    "bloomDOY": 133,
+    "bloomDate": "2018-05-13",
+    "tempAccumulation": 889,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2019,
+    "bloomDOY": 126,
+    "bloomDate": "2019-05-06",
+    "tempAccumulation": 776,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2020,
+    "bloomDOY": 131,
+    "bloomDate": "2020-05-10",
+    "tempAccumulation": 873,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2021,
+    "bloomDOY": 128,
+    "bloomDate": "2021-05-08",
+    "tempAccumulation": 797,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2022,
+    "bloomDOY": 130,
+    "bloomDate": "2022-05-10",
+    "tempAccumulation": 852,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2023,
+    "bloomDOY": 133,
+    "bloomDate": "2023-05-13",
+    "tempAccumulation": 867,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2024,
+    "bloomDOY": 135,
+    "bloomDate": "2024-05-14",
+    "tempAccumulation": 923,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Naha",
+    "year": 2025,
+    "bloomDOY": 138,
+    "bloomDate": "2025-05-18",
+    "tempAccumulation": 931,
+    "latitude": 26.212,
+    "longitude": 127.679
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2010,
+    "bloomDOY": 139,
+    "bloomDate": "2010-05-19",
+    "tempAccumulation": 969,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2011,
+    "bloomDOY": 141,
+    "bloomDate": "2011-05-21",
+    "tempAccumulation": 975,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2012,
+    "bloomDOY": 145,
+    "bloomDate": "2012-05-24",
+    "tempAccumulation": 1001,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2013,
+    "bloomDOY": 146,
+    "bloomDate": "2013-05-26",
+    "tempAccumulation": 1025,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2014,
+    "bloomDOY": 143,
+    "bloomDate": "2014-05-23",
+    "tempAccumulation": 1001,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2015,
+    "bloomDOY": 145,
+    "bloomDate": "2015-05-25",
+    "tempAccumulation": 1009,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2016,
+    "bloomDOY": 143,
+    "bloomDate": "2016-05-22",
+    "tempAccumulation": 984,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2017,
+    "bloomDOY": 139,
+    "bloomDate": "2017-05-19",
+    "tempAccumulation": 955,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2018,
+    "bloomDOY": 135,
+    "bloomDate": "2018-05-15",
+    "tempAccumulation": 902,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2019,
+    "bloomDOY": 133,
+    "bloomDate": "2019-05-13",
+    "tempAccumulation": 886,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2020,
+    "bloomDOY": 135,
+    "bloomDate": "2020-05-14",
+    "tempAccumulation": 905,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2021,
+    "bloomDOY": 138,
+    "bloomDate": "2021-05-18",
+    "tempAccumulation": 944,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2022,
+    "bloomDOY": 142,
+    "bloomDate": "2022-05-22",
+    "tempAccumulation": 969,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2023,
+    "bloomDOY": 138,
+    "bloomDate": "2023-05-18",
+    "tempAccumulation": 923,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2024,
+    "bloomDOY": 144,
+    "bloomDate": "2024-05-23",
+    "tempAccumulation": 983,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Ishigaki",
+    "year": 2025,
+    "bloomDOY": 143,
+    "bloomDate": "2025-05-23",
+    "tempAccumulation": 1015,
+    "latitude": 24.34,
+    "longitude": 124.163
+  },
+  {
+    "city": "Shimoda",
+    "year": 2010,
+    "bloomDOY": 115,
+    "bloomDate": "2010-04-25",
+    "tempAccumulation": 644,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2011,
+    "bloomDOY": 118,
+    "bloomDate": "2011-04-28",
+    "tempAccumulation": 695,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2012,
+    "bloomDOY": 117,
+    "bloomDate": "2012-04-26",
+    "tempAccumulation": 703,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2013,
+    "bloomDOY": 120,
+    "bloomDate": "2013-04-30",
+    "tempAccumulation": 700,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2014,
+    "bloomDOY": 118,
+    "bloomDate": "2014-04-28",
+    "tempAccumulation": 681,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2015,
+    "bloomDOY": 117,
+    "bloomDate": "2015-04-27",
+    "tempAccumulation": 695,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2016,
+    "bloomDOY": 117,
+    "bloomDate": "2016-04-26",
+    "tempAccumulation": 699,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2017,
+    "bloomDOY": 109,
+    "bloomDate": "2017-04-19",
+    "tempAccumulation": 609,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2018,
+    "bloomDOY": 113,
+    "bloomDate": "2018-04-23",
+    "tempAccumulation": 657,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2019,
+    "bloomDOY": 105,
+    "bloomDate": "2019-04-15",
+    "tempAccumulation": 517,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2020,
+    "bloomDOY": 106,
+    "bloomDate": "2020-04-15",
+    "tempAccumulation": 539,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2021,
+    "bloomDOY": 111,
+    "bloomDate": "2021-04-21",
+    "tempAccumulation": 599,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2022,
+    "bloomDOY": 113,
+    "bloomDate": "2022-04-23",
+    "tempAccumulation": 649,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2023,
+    "bloomDOY": 112,
+    "bloomDate": "2023-04-22",
+    "tempAccumulation": 628,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2024,
+    "bloomDOY": 115,
+    "bloomDate": "2024-04-24",
+    "tempAccumulation": 643,
+    "latitude": 34.678,
+    "longitude": 138.943
+  },
+  {
+    "city": "Shimoda",
+    "year": 2025,
+    "bloomDOY": 121,
+    "bloomDate": "2025-05-01",
+    "tempAccumulation": 714,
+    "latitude": 34.678,
+    "longitude": 138.943
+  }
+]

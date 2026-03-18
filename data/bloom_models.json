@@ -1,0 +1,802 @@
+{
+  "Sapporo": {
+    "city": "Sapporo",
+    "coefficients": {
+      "intercept": 64.34136292777076,
+      "slope": 0.0730829188627422
+    },
+    "metrics": {
+      "rSquared": 0.9381800740527593,
+      "rmse": 1.1222029705402223,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      85,
+      101
+    ]
+  },
+  "Hakodate": {
+    "city": "Hakodate",
+    "coefficients": {
+      "intercept": 63.96307829181495,
+      "slope": 0.07354685646500593
+    },
+    "metrics": {
+      "rSquared": 0.941215751852398,
+      "rmse": 1.0838664396846744,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      88,
+      103
+    ]
+  },
+  "Aomori": {
+    "city": "Aomori",
+    "coefficients": {
+      "intercept": 61.97352750634905,
+      "slope": 0.07952096998197221
+    },
+    "metrics": {
+      "rSquared": 0.9224624597546415,
+      "rmse": 1.0015697314337761,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      93,
+      105
+    ]
+  },
+  "Akita": {
+    "city": "Akita",
+    "coefficients": {
+      "intercept": 55.52641821522956,
+      "slope": 0.09069861062151795
+    },
+    "metrics": {
+      "rSquared": 0.9537721126131717,
+      "rmse": 0.8641115251565272,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      94,
+      108
+    ]
+  },
+  "Morioka": {
+    "city": "Morioka",
+    "coefficients": {
+      "intercept": 61.92358442030082,
+      "slope": 0.07922101504100718
+    },
+    "metrics": {
+      "rSquared": 0.9377203304220868,
+      "rmse": 1.0373173381053769,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      94,
+      109
+    ]
+  },
+  "Yamagata": {
+    "city": "Yamagata",
+    "coefficients": {
+      "intercept": 60.937965737113004,
+      "slope": 0.08148318865073878
+    },
+    "metrics": {
+      "rSquared": 0.9194308733569175,
+      "rmse": 1.1916504760559317,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      98,
+      113
+    ]
+  },
+  "Sendai": {
+    "city": "Sendai",
+    "coefficients": {
+      "intercept": 65.57529142033466,
+      "slope": 0.07329900353046857
+    },
+    "metrics": {
+      "rSquared": 0.9457609878649749,
+      "rmse": 0.9601308948025132,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      96,
+      110
+    ]
+  },
+  "Fukushima": {
+    "city": "Fukushima",
+    "coefficients": {
+      "intercept": 55.05631750887339,
+      "slope": 0.09334460625162687
+    },
+    "metrics": {
+      "rSquared": 0.914856246864462,
+      "rmse": 1.252931741331699,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      100,
+      114
+    ]
+  },
+  "Niigata": {
+    "city": "Niigata",
+    "coefficients": {
+      "intercept": 62.19511023941567,
+      "slope": 0.07893953740024347
+    },
+    "metrics": {
+      "rSquared": 0.9401860005465731,
+      "rmse": 0.9570276206205336,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      98,
+      112
+    ]
+  },
+  "Kanazawa": {
+    "city": "Kanazawa",
+    "coefficients": {
+      "intercept": 64.85462126552672,
+      "slope": 0.07478509872070212
+    },
+    "metrics": {
+      "rSquared": 0.9415216890458222,
+      "rmse": 0.9966030115408856,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      101,
+      114
+    ]
+  },
+  "Toyama": {
+    "city": "Toyama",
+    "coefficients": {
+      "intercept": 65.2354592829974,
+      "slope": 0.07494983377759143
+    },
+    "metrics": {
+      "rSquared": 0.8693485934109967,
+      "rmse": 1.3273102729669473,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      101,
+      116
+    ]
+  },
+  "Fukui": {
+    "city": "Fukui",
+    "coefficients": {
+      "intercept": 59.457213157506835,
+      "slope": 0.08437825483395993
+    },
+    "metrics": {
+      "rSquared": 0.9607317317061873,
+      "rmse": 0.8377152881969383,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      102,
+      118
+    ]
+  },
+  "Nagano": {
+    "city": "Nagano",
+    "coefficients": {
+      "intercept": 58.53151793618008,
+      "slope": 0.0861231716056148
+    },
+    "metrics": {
+      "rSquared": 0.9342089296916998,
+      "rmse": 0.9839234318441156,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      102,
+      115
+    ]
+  },
+  "Kofu": {
+    "city": "Kofu",
+    "coefficients": {
+      "intercept": 65.47004335058034,
+      "slope": 0.07490141238987554
+    },
+    "metrics": {
+      "rSquared": 0.915324994393455,
+      "rmse": 1.2040468052660709,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      104,
+      118
+    ]
+  },
+  "Maebashi": {
+    "city": "Maebashi",
+    "coefficients": {
+      "intercept": 63.43265540630997,
+      "slope": 0.07773662367798652
+    },
+    "metrics": {
+      "rSquared": 0.9157545118989181,
+      "rmse": 1.2478882939263578,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      104,
+      118
+    ]
+  },
+  "Utsunomiya": {
+    "city": "Utsunomiya",
+    "coefficients": {
+      "intercept": 56.941835832663045,
+      "slope": 0.08848264273256508
+    },
+    "metrics": {
+      "rSquared": 0.9259113746928791,
+      "rmse": 1.1086562666117172,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      102,
+      117
+    ]
+  },
+  "Mito": {
+    "city": "Mito",
+    "coefficients": {
+      "intercept": 56.765598133035965,
+      "slope": 0.08900432416985957
+    },
+    "metrics": {
+      "rSquared": 0.9393552771928999,
+      "rmse": 1.102926950377486,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      102,
+      117
+    ]
+  },
+  "Tokyo": {
+    "city": "Tokyo",
+    "coefficients": {
+      "intercept": 53.77457860365352,
+      "slope": 0.09293017173217769
+    },
+    "metrics": {
+      "rSquared": 0.875120361304929,
+      "rmse": 1.3264744991027924,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      106,
+      119
+    ]
+  },
+  "Yokohama": {
+    "city": "Yokohama",
+    "coefficients": {
+      "intercept": 61.7151505593126,
+      "slope": 0.08042814443509143
+    },
+    "metrics": {
+      "rSquared": 0.9293699343445576,
+      "rmse": 1.0052944424394037,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      105,
+      118
+    ]
+  },
+  "Chiba": {
+    "city": "Chiba",
+    "coefficients": {
+      "intercept": 60.67622720473156,
+      "slope": 0.08249469144937328
+    },
+    "metrics": {
+      "rSquared": 0.9474192569326735,
+      "rmse": 1.0928693256895896,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      103,
+      120
+    ]
+  },
+  "Kumagaya": {
+    "city": "Kumagaya",
+    "coefficients": {
+      "intercept": 62.1318149275103,
+      "slope": 0.07983712189010202
+    },
+    "metrics": {
+      "rSquared": 0.8709592960948949,
+      "rmse": 1.2840550734051461,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      104,
+      116
+    ]
+  },
+  "Shizuoka": {
+    "city": "Shizuoka",
+    "coefficients": {
+      "intercept": 65.11125033358326,
+      "slope": 0.0760493576139584
+    },
+    "metrics": {
+      "rSquared": 0.890277339015987,
+      "rmse": 1.0466671836177222,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      106,
+      119
+    ]
+  },
+  "Nagoya": {
+    "city": "Nagoya",
+    "coefficients": {
+      "intercept": 66.20505936131718,
+      "slope": 0.0731113038079027
+    },
+    "metrics": {
+      "rSquared": 0.8843541236728499,
+      "rmse": 1.1292771278696259,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      106,
+      118
+    ]
+  },
+  "Gifu": {
+    "city": "Gifu",
+    "coefficients": {
+      "intercept": 64.67920695441455,
+      "slope": 0.07534750436333738
+    },
+    "metrics": {
+      "rSquared": 0.9591963776424534,
+      "rmse": 0.8859075424576969,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      105,
+      119
+    ]
+  },
+  "Tsu": {
+    "city": "Tsu",
+    "coefficients": {
+      "intercept": 66.26689435722909,
+      "slope": 0.07386111609467026
+    },
+    "metrics": {
+      "rSquared": 0.9337837333551132,
+      "rmse": 1.1717307300378677,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      105,
+      121
+    ]
+  },
+  "Otsu": {
+    "city": "Otsu",
+    "coefficients": {
+      "intercept": 63.626833189446764,
+      "slope": 0.0771224723896048
+    },
+    "metrics": {
+      "rSquared": 0.9415390711807629,
+      "rmse": 1.1496804175606536,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      104,
+      119
+    ]
+  },
+  "Kyoto": {
+    "city": "Kyoto",
+    "coefficients": {
+      "intercept": 63.249475974879914,
+      "slope": 0.07820152094927547
+    },
+    "metrics": {
+      "rSquared": 0.925017406327779,
+      "rmse": 1.1846043746945036,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      105,
+      119
+    ]
+  },
+  "Osaka": {
+    "city": "Osaka",
+    "coefficients": {
+      "intercept": 69.41890522292256,
+      "slope": 0.06952635592320537
+    },
+    "metrics": {
+      "rSquared": 0.9325853663218775,
+      "rmse": 0.9949317030503243,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      107,
+      120
+    ]
+  },
+  "Nara": {
+    "city": "Nara",
+    "coefficients": {
+      "intercept": 64.86785193798549,
+      "slope": 0.07497514248852953
+    },
+    "metrics": {
+      "rSquared": 0.9418429106403898,
+      "rmse": 1.0266923807270292,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      107,
+      122
+    ]
+  },
+  "Wakayama": {
+    "city": "Wakayama",
+    "coefficients": {
+      "intercept": 67.97879101250352,
+      "slope": 0.07105386857196579
+    },
+    "metrics": {
+      "rSquared": 0.9624106427722535,
+      "rmse": 0.8096075695414594,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      106,
+      121
+    ]
+  },
+  "Kobe": {
+    "city": "Kobe",
+    "coefficients": {
+      "intercept": 59.08669968116544,
+      "slope": 0.08418099279670074
+    },
+    "metrics": {
+      "rSquared": 0.9529288384586526,
+      "rmse": 0.956431822314152,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      105,
+      122
+    ]
+  },
+  "Tottori": {
+    "city": "Tottori",
+    "coefficients": {
+      "intercept": 70.95717492493222,
+      "slope": 0.06583808681625157
+    },
+    "metrics": {
+      "rSquared": 0.899327027817475,
+      "rmse": 0.9875572986000413,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      107,
+      118
+    ]
+  },
+  "Matsue": {
+    "city": "Matsue",
+    "coefficients": {
+      "intercept": 62.700741513413,
+      "slope": 0.07975237533730924
+    },
+    "metrics": {
+      "rSquared": 0.9508105222417513,
+      "rmse": 0.9523292477750072,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      105,
+      118
+    ]
+  },
+  "Okayama": {
+    "city": "Okayama",
+    "coefficients": {
+      "intercept": 54.71334784072285,
+      "slope": 0.09189689329710778
+    },
+    "metrics": {
+      "rSquared": 0.9087460402487946,
+      "rmse": 1.3419537480722625,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      107,
+      121
+    ]
+  },
+  "Hiroshima": {
+    "city": "Hiroshima",
+    "coefficients": {
+      "intercept": 67.7764324988672,
+      "slope": 0.07136699971186827
+    },
+    "metrics": {
+      "rSquared": 0.9545396177012221,
+      "rmse": 0.8902459417018344,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      107,
+      120
+    ]
+  },
+  "Yamaguchi": {
+    "city": "Yamaguchi",
+    "coefficients": {
+      "intercept": 62.57499377486876,
+      "slope": 0.07889909189310053
+    },
+    "metrics": {
+      "rSquared": 0.936534633587369,
+      "rmse": 1.1388913144186084,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      107,
+      123
+    ]
+  },
+  "Tokushima": {
+    "city": "Tokushima",
+    "coefficients": {
+      "intercept": 59.425355936037555,
+      "slope": 0.08422287887570869
+    },
+    "metrics": {
+      "rSquared": 0.85931241160709,
+      "rmse": 1.4986845452786657,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      108,
+      122
+    ]
+  },
+  "Takamatsu": {
+    "city": "Takamatsu",
+    "coefficients": {
+      "intercept": 67.95921229853687,
+      "slope": 0.07058544529901624
+    },
+    "metrics": {
+      "rSquared": 0.9723368461601827,
+      "rmse": 0.7391530885658215,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      106,
+      120
+    ]
+  },
+  "Matsuyama": {
+    "city": "Matsuyama",
+    "coefficients": {
+      "intercept": 64.47918848958018,
+      "slope": 0.07671530703407603
+    },
+    "metrics": {
+      "rSquared": 0.884242328072995,
+      "rmse": 1.202148986383844,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      109,
+      123
+    ]
+  },
+  "Kochi": {
+    "city": "Kochi",
+    "coefficients": {
+      "intercept": 66.71129753017044,
+      "slope": 0.07292553049155763
+    },
+    "metrics": {
+      "rSquared": 0.9085437634223635,
+      "rmse": 1.25018910292597,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      110,
+      124
+    ]
+  },
+  "Fukuoka": {
+    "city": "Fukuoka",
+    "coefficients": {
+      "intercept": 65.49695355168035,
+      "slope": 0.07507206325538926
+    },
+    "metrics": {
+      "rSquared": 0.8857930394950777,
+      "rmse": 1.081127587945828,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      109,
+      123
+    ]
+  },
+  "Saga": {
+    "city": "Saga",
+    "coefficients": {
+      "intercept": 62.904988697540226,
+      "slope": 0.07913952589155587
+    },
+    "metrics": {
+      "rSquared": 0.927878792689429,
+      "rmse": 1.011403927841231,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      111,
+      124
+    ]
+  },
+  "Nagasaki": {
+    "city": "Nagasaki",
+    "coefficients": {
+      "intercept": 61.851964139896104,
+      "slope": 0.08041014414696156
+    },
+    "metrics": {
+      "rSquared": 0.9168176115035827,
+      "rmse": 1.258069910564345,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      111,
+      126
+    ]
+  },
+  "Kumamoto": {
+    "city": "Kumamoto",
+    "coefficients": {
+      "intercept": 66.51908526414815,
+      "slope": 0.07383971135696149
+    },
+    "metrics": {
+      "rSquared": 0.934047653109925,
+      "rmse": 1.1101731768099408,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      109,
+      124
+    ]
+  },
+  "Oita": {
+    "city": "Oita",
+    "coefficients": {
+      "intercept": 62.926804350751844,
+      "slope": 0.07867691140665337
+    },
+    "metrics": {
+      "rSquared": 0.9571468619905115,
+      "rmse": 1.0304304591903748,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      108,
+      124
+    ]
+  },
+  "Miyazaki": {
+    "city": "Miyazaki",
+    "coefficients": {
+      "intercept": 70.13429713230306,
+      "slope": 0.07003751133921202
+    },
+    "metrics": {
+      "rSquared": 0.9205850800261459,
+      "rmse": 1.0056338158306175,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      115,
+      127
+    ]
+  },
+  "Kagoshima": {
+    "city": "Kagoshima",
+    "coefficients": {
+      "intercept": 64.43252253000156,
+      "slope": 0.0774626191069172
+    },
+    "metrics": {
+      "rSquared": 0.9242903988861461,
+      "rmse": 1.0201525742192397,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      115,
+      127
+    ]
+  },
+  "Naha": {
+    "city": "Naha",
+    "coefficients": {
+      "intercept": 69.40388421172729,
+      "slope": 0.07285009810536221
+    },
+    "metrics": {
+      "rSquared": 0.9057228543291659,
+      "rmse": 1.237741336932339,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      126,
+      140
+    ]
+  },
+  "Ishigaki": {
+    "city": "Ishigaki",
+    "coefficients": {
+      "intercept": 54.32936288339941,
+      "slope": 0.08932605165516053
+    },
+    "metrics": {
+      "rSquared": 0.9241386578645006,
+      "rmse": 1.0621398829240136,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      133,
+      146
+    ]
+  },
+  "Shimoda": {
+    "city": "Shimoda",
+    "coefficients": {
+      "intercept": 64.43573308307049,
+      "slope": 0.07674780858762748
+    },
+    "metrics": {
+      "rSquared": 0.9212059642464233,
+      "rmse": 1.2756494470788813,
+      "sampleSize": 16
+    },
+    "historicalRange": [
+      105,
+      121
+    ]
+  }
+}

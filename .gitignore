@@ -8,3 +8,9 @@ node_modules/
 test-results/
 playwright-report/
 *.log
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+.vercel
