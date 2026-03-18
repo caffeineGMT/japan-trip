@@ -52,10 +52,20 @@ if (!fs.existsSync(DESTINATIONS_DIR)) {
 /**
  * Fetch JSON from URL with promise
  */
-function fetchJSON(url) {
+function fetchJSON(url, options = {}) {
     return new Promise((resolve, reject) => {
         const protocol = url.startsWith('https') ? https : http;
-        protocol.get(url, (res) => {
+
+        const defaultOptions = {
+            headers: {
+                'User-Agent': 'Japan-Trip-Companion/1.0 (https://trip.to; contact@trip.to)',
+                'Accept': 'application/json'
+            }
+        };
+
+        const requestOptions = { ...defaultOptions, ...options };
+
+        protocol.get(url, requestOptions, (res) => {
             let data = '';
             res.on('data', (chunk) => data += chunk);
             res.on('end', () => {
