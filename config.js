@@ -1,5 +1,5 @@
 // Configuration for external API integrations
-const CONFIG = {
+window.CONFIG = {
   // Google Maps API key - Replace with your actual API key
   // Get one at: https://console.cloud.google.com/google/maps-apis/
   GOOGLE_MAPS_API_KEY: 'YOUR_GOOGLE_MAPS_API_KEY_HERE',

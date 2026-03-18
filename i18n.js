@@ -1,5 +1,5 @@
 // Internationalization module for Japan Trip Companion
-const I18N = {
+window.I18N = {
   currentLang: 'en',
 
   /**

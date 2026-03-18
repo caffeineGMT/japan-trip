@@ -7,7 +7,7 @@
  * @param {string} mode - Travel mode: 'transit', 'walking', 'driving'
  * @returns {Promise<Object>} Route data with duration, distance, and encoded polyline
  */
-async function fetchRoute(origin, destination, mode = 'transit') {
+window.fetchRoute = async function fetchRoute(origin, destination, mode = 'transit') {
   // Check if API key is configured
   if (!CONFIG.GOOGLE_MAPS_API_KEY || CONFIG.GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY_HERE') {
     console.warn('Google Maps API key not configured. Using straight-line routes.');
@@ -59,7 +59,7 @@ async function fetchRoute(origin, destination, mode = 'transit') {
  * @param {Object} destination - {lat, lng}
  * @returns {Object} Simplified route data
  */
-function getFallbackRoute(origin, destination) {
+window.getFallbackRoute = function getFallbackRoute(origin, destination) {
   // Calculate approximate straight-line distance using Haversine formula
   const distance = calculateDistance(origin.lat, origin.lng, destination.lat, destination.lng);
 
@@ -84,7 +84,7 @@ function getFallbackRoute(origin, destination) {
  * @param {number} lng2 - Destination longitude
  * @returns {number} Distance in kilometers
  */
-function calculateDistance(lat1, lng1, lat2, lng2) {
+window.calculateDistance = function calculateDistance(lat1, lng1, lat2, lng2) {
   const R = 6371; // Earth's radius in km
   const dLat = toRad(lat2 - lat1);
   const dLng = toRad(lng2 - lng1);
@@ -100,7 +100,7 @@ function calculateDistance(lat1, lng1, lat2, lng2) {
 /**
  * Convert degrees to radians
  */
-function toRad(degrees) {
+window.toRad = function toRad(degrees) {
   return degrees * (Math.PI / 180);
 }
 
@@ -109,7 +109,7 @@ function toRad(degrees) {
  * @param {string} encoded - Encoded polyline string
  * @returns {Array} Array of [lat, lng] coordinates
  */
-function decodePolyline(encoded) {
+window.decodePolyline = function decodePolyline(encoded) {
   if (!encoded) return null;
 
   const coordinates = [];
@@ -154,7 +154,7 @@ function decodePolyline(encoded) {
  * @param {string} mode - Travel mode
  * @returns {string} Emoji representing the mode
  */
-function getModeIcon(mode) {
+window.getModeIcon = function getModeIcon(mode) {
   const icons = {
     transit: '🚇',
     walking: '🚶',
@@ -170,7 +170,7 @@ function getModeIcon(mode) {
  * @param {string} defaultMode - Default travel mode
  * @returns {Promise<Array>} Array of route data
  */
-async function fetchMultipleRoutes(stops, defaultMode = 'transit') {
+window.fetchMultipleRoutes = async function fetchMultipleRoutes(stops, defaultMode = 'transit') {
   const routePromises = [];
 
   for (let i = 0; i < stops.length - 1; i++) {

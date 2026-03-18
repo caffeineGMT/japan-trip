@@ -488,7 +488,7 @@ async function renderMap(day) {
 }
 
 // Focus on a specific stop from sidebar click
-function focusStop(index) {
+window.focusStop = function focusStop(index) {
   const day = TRIP_DATA[currentDayIndex];
   const stop = day.stops[index];
 
@@ -512,7 +512,7 @@ function highlightStopCard(index) {
 }
 
 // Toggle checklist
-function toggleCheck(index) {
+window.toggleCheck = function toggleCheck(index) {
   const el = document.getElementById(`check-${index}`);
   if (el) {
     el.classList.toggle('checked');
@@ -618,7 +618,7 @@ async function drawRoutes(day) {
 }
 
 // Open Google Maps with directions to a specific location
-function openGoogleMaps(lat, lng, name) {
+window.openGoogleMaps = function openGoogleMaps(lat, lng, name) {
   const url = `${CONFIG.MAPS_DEEP_LINK_BASE}&destination=${lat},${lng}&destination_place_id=&travelmode=transit`;
   window.open(url, '_blank');
 }
@@ -774,7 +774,7 @@ function loadPhrases() {
 }
 
 // Text-to-speech function
-function speak(text, lang) {
+window.speak = function speak(text, lang) {
   if (!window.speechSynthesis) {
     console.error('Speech synthesis not supported');
     return;
@@ -851,7 +851,7 @@ function renderPhrases() {
 }
 
 // Toggle category collapse/expand
-function togglePhraseCategory(category) {
+window.togglePhraseCategory = function togglePhraseCategory(category) {
   const content = document.getElementById(`phrases-${category}`);
   const header = content.previousElementSibling;
 
