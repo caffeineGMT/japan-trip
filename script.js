@@ -1,11 +1,194 @@
-// Initialize i18n
-I18N.init();
+// ==================== DYNAMIC TEMPLATE LOADER ====================
+// Import template loader
+import { loadTemplate, showErrorOverlay } from './lib/template-loader.js';
 
-// Initialize map
+// Global state
+let TRIP_DATA = [];
+let TEMPLATE_METADATA = null;
+
+// Initialize app with dynamic template
+async function initializeApp() {
+  try {
+    // Get trip ID from URL parameter, default to Japan template
+    const urlParams = new URLSearchParams(window.location.search);
+    const tripId = urlParams.get('trip') || 'japan-cherry-blossom-2026';
+
+    console.log(`[Template] Loading template: ${tripId}`);
+
+    // Load template
+    const template = await loadTemplate(tripId);
+
+    // Set global data
+    TRIP_DATA = template.days;
+    TEMPLATE_METADATA = template.metadata;
+
+    console.log(`[Template] Loaded successfully:`, {
+      id: TEMPLATE_METADATA.id,
+      title: TEMPLATE_METADATA.title.en,
+      days: TRIP_DATA.length
+    });
+
+    // Set map initial position from geography
+    if (template.geography) {
+      const [lat, lng] = template.geography.default_center;
+      const zoom = template.geography.default_zoom;
+      map.setView([lat, lng], zoom);
+    }
+
+    // Render template header
+    renderTemplateHeader(TEMPLATE_METADATA);
+
+    // Initialize i18n
+    I18N.init();
+
+    // Build tabs and select first day
+    buildTabs();
+    selectDay(0);
+
+    // Initialize weather cache for all cities
+    if (typeof initializeWeather === 'function') {
+      initializeWeather().catch(err => {
+        console.error('Weather initialization error:', err);
+      });
+    }
+
+    // Initialize sakura widget
+    if (typeof initSakuraWidget === 'function') {
+      initSakuraWidget().catch(err => {
+        console.error('Sakura widget initialization error:', err);
+      });
+    }
+
+    // Initialize phrases
+    loadPhrases();
+
+  } catch (error) {
+    console.error('[Template] Load error:', error);
+    showErrorOverlay(error, urlParams.get('trip'));
+  }
+}
+
+// Render template header with metadata
+function renderTemplateHeader(metadata) {
+  const headerContainer = document.getElementById('template-header');
+  if (!headerContainer) {
+    // Create header container if it doesn't exist
+    const header = document.getElementById('top-header');
+    const newContainer = document.createElement('div');
+    newContainer.id = 'template-header';
+    newContainer.className = 'template-header';
+    header.insertAdjacentElement('afterend', newContainer);
+  }
+
+  const container = document.getElementById('template-header');
+
+  // Build header HTML
+  const currentLang = I18N?.currentLang || 'en';
+  const title = metadata.title[currentLang] || metadata.title.en;
+  const destination = metadata.destination[currentLang] || metadata.destination.en;
+
+  // Season badge
+  const seasonIcons = {
+    spring: '🌸',
+    summer: '☀️',
+    fall: '🍂',
+    winter: '❄️'
+  };
+  const seasonIcon = seasonIcons[metadata.season] || '';
+
+  const html = `
+    <div class="template-info">
+      <h1 class="template-title">${title}</h1>
+      <div class="template-meta">
+        <span class="template-destination">📍 ${destination}</span>
+        <span class="template-duration">${metadata.duration_days} Days</span>
+        ${metadata.season ? `<span class="template-season">${seasonIcon} ${metadata.season.charAt(0).toUpperCase() + metadata.season.slice(1)}</span>` : ''}
+        ${metadata.last_updated ? `<span class="template-updated">Updated: ${metadata.last_updated}</span>` : ''}
+      </div>
+    </div>
+  `;
+
+  container.innerHTML = html;
+
+  // Add styles if not already present
+  if (!document.getElementById('template-header-styles')) {
+    const style = document.createElement('style');
+    style.id = 'template-header-styles';
+    style.textContent = `
+      .template-header {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        border-bottom: 2px solid var(--primary);
+        padding: 20px 25px;
+        display: none; /* Hidden on mobile by default */
+      }
+
+      @media (min-width: 768px) {
+        .template-header {
+          display: block;
+        }
+      }
+
+      .template-info {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .template-title {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #e8e8ef;
+        margin: 0 0 10px 0;
+        letter-spacing: -0.02em;
+      }
+
+      .template-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 0.95em;
+        color: var(--text-muted);
+      }
+
+      .template-meta > span {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 12px;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 6px;
+        border: 1px solid rgba(99, 102, 241, 0.2);
+      }
+
+      .template-destination {
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .template-duration {
+        background: rgba(16, 185, 129, 0.1);
+        border-color: rgba(16, 185, 129, 0.2);
+        color: #10b981;
+      }
+
+      .template-season {
+        background: rgba(245, 158, 11, 0.1);
+        border-color: rgba(245, 158, 11, 0.2);
+        color: #f59e0b;
+      }
+
+      .template-updated {
+        font-size: 0.85em;
+        opacity: 0.7;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+}
+
+// Initialize map (will be repositioned by template)
 const map = L.map('map', {
   zoomControl: true,
   attributionControl: true
-}).setView([35.6762, 139.6503], 12);
+}).setView([0, 0], 2); // Temporary initial view
 
 // Use CartoDB dark tiles for the aesthetic
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -40,6 +223,7 @@ function getCategoryLabel(cat) {
 // Build day tabs
 function buildTabs() {
   const tabsContainer = document.getElementById('day-tabs');
+  tabsContainer.innerHTML = ''; // Clear existing tabs
   TRIP_DATA.forEach((day, i) => {
     const tab = document.createElement('div');
     tab.className = 'day-tab' + (i === 0 ? ' active' : '');
@@ -563,26 +747,13 @@ document.querySelectorAll('.lang-switcher button').forEach(btn => {
 
     // Re-render current day with new language
     selectDay(currentDayIndex);
+
+    // Re-render template header if metadata exists
+    if (TEMPLATE_METADATA) {
+      renderTemplateHeader(TEMPLATE_METADATA);
+    }
   });
 });
-
-// Init
-buildTabs();
-selectDay(0);
-
-// Initialize weather cache for all cities
-if (typeof initializeWeather === 'function') {
-  initializeWeather().catch(err => {
-    console.error('Weather initialization error:', err);
-  });
-}
-
-// Initialize sakura widget
-if (typeof initSakuraWidget === 'function') {
-  initSakuraWidget().catch(err => {
-    console.error('Sakura widget initialization error:', err);
-  });
-}
 
 // ==================== PHRASES MODULE ====================
 
@@ -590,15 +761,17 @@ if (typeof initSakuraWidget === 'function') {
 let phrasesData = null;
 
 // Fetch phrases on init
-fetch('phrases.json')
-  .then(r => r.json())
-  .then(d => {
-    phrasesData = d;
-    console.log('Phrases loaded successfully');
-  })
-  .catch(err => {
-    console.error('Error loading phrases:', err);
-  });
+function loadPhrases() {
+  fetch('phrases.json')
+    .then(r => r.json())
+    .then(d => {
+      phrasesData = d;
+      console.log('Phrases loaded successfully');
+    })
+    .catch(err => {
+      console.error('Error loading phrases:', err);
+    });
+}
 
 // Text-to-speech function
 function speak(text, lang) {
@@ -606,10 +779,10 @@ function speak(text, lang) {
     console.error('Speech synthesis not supported');
     return;
   }
-  
+
   // Cancel any ongoing speech
   window.speechSynthesis.cancel();
-  
+
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = lang;
   utterance.rate = 0.9; // Slightly slower for clarity
@@ -625,9 +798,9 @@ function renderPhrases() {
 
   const container = document.getElementById('phrases-list');
   const currentLang = I18N.currentLang;
-  
+
   let html = '';
-  
+
   // Category metadata
   const categoryMeta = {
     general: { icon: '💬', label: { en: 'General', zh: '常用', ja: '一般' } },
@@ -642,7 +815,7 @@ function renderPhrases() {
   Object.keys(phrasesData).forEach(category => {
     const meta = categoryMeta[category];
     const phrases = phrasesData[category];
-    
+
     html += `
       <div class="phrase-category">
         <button class="phrase-category-header" onclick="togglePhraseCategory('${category}')">
@@ -653,10 +826,10 @@ function renderPhrases() {
         </button>
         <div class="phrase-category-content" id="phrases-${category}">
     `;
-    
+
     phrases.forEach((phrase, index) => {
       const translatedText = currentLang === 'en' ? phrase.en : (currentLang === 'zh' ? phrase.zh : phrase.ja);
-      
+
       html += `
         <div class="phrase-card" onclick="speak('${phrase.ja.replace(/'/g, "\\'")}', 'ja-JP')">
           <div class="phrase-main">
@@ -670,10 +843,10 @@ function renderPhrases() {
         </div>
       `;
     });
-    
+
     html += '</div></div>';
   });
-  
+
   container.innerHTML = html;
 }
 
@@ -681,7 +854,7 @@ function renderPhrases() {
 function togglePhraseCategory(category) {
   const content = document.getElementById(`phrases-${category}`);
   const header = content.previousElementSibling;
-  
+
   if (content.style.display === 'none' || content.style.display === '') {
     content.style.display = 'block';
     header.classList.add('expanded');
@@ -776,7 +949,7 @@ function showInstallButton() {
     </svg>
     <span>Install App</span>
   `;
-  installButton.title = 'Install Japan Trip app';
+  installButton.title = 'Install Trip Companion app';
 
   // Add click handler
   installButton.addEventListener('click', installApp);
@@ -943,3 +1116,10 @@ window.cacheCurrentMapTiles = function() {
 
 console.log('[PWA] Features initialized');
 
+// ==================== START APP ====================
+// Initialize the app when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+  initializeApp();
+}
