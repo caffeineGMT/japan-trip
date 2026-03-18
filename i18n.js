@@ -24,6 +24,14 @@ const I18N = {
     }
     this.currentLang = lang;
     localStorage.setItem('tripLang', lang);
+
+    // Update HTML lang attribute for proper CJK font rendering
+    const langMap = {
+      'en': 'en',
+      'zh': 'zh-CN',
+      'ja': 'ja-JP'
+    };
+    document.documentElement.lang = langMap[lang];
   },
 
   /**
@@ -32,5 +40,13 @@ const I18N = {
   init() {
     const saved = localStorage.getItem('tripLang');
     this.currentLang = saved && ['en', 'zh', 'ja'].includes(saved) ? saved : 'en';
+
+    // Set HTML lang attribute on init for proper CJK font rendering
+    const langMap = {
+      'en': 'en',
+      'zh': 'zh-CN',
+      'ja': 'ja-JP'
+    };
+    document.documentElement.lang = langMap[this.currentLang];
   }
 };
