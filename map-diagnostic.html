@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Diagnostic Test</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #0f0f14;
+      color: #e8e8ef;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .diagnostic-section {
+      background: #1a1a24;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #2a2a3a;
+    }
+
+    .diagnostic-section h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #ef4444;
+    }
+
+    .result {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .success {
+      color: #10b981;
+    }
+
+    .error {
+      color: #ef4444;
+    }
+
+    .warning {
+      color: #f59e0b;
+    }
+
+    #map-container {
+      width: 100%;
+      height: 400px;
+      background: #1a1a24;
+      border: 2px solid #ef4444;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Map Diagnostic Tool</h1>
+
+  <div class="diagnostic-section">
+    <h2>1. Leaflet.js Library Check</h2>
+    <div id="leaflet-check" class="result">Checking...</div>
+  </div>
+
+  <div class="diagnostic-section">
+    <h2>2. DOM Ready Check</h2>
+    <div id="dom-check" class="result">Checking...</div>
+  </div>
+
+  <div class="diagnostic-section">
+    <h2>3. Map Container Dimensions</h2>
+    <div id="container-check" class="result">Checking...</div>
+  </div>
+
+  <div class="diagnostic-section">
+    <h2>4. Map Initialization</h2>
+    <div id="map-init-check" class="result">Checking...</div>
+  </div>
+
+  <div class="diagnostic-section">
+    <h2>5. Tile Loading Test</h2>
+    <div id="tile-check" class="result">Checking...</div>
+  </div>
+
+  <div class="diagnostic-section">
+    <h2>6. Browser Console Errors</h2>
+    <div id="console-check" class="result">Check browser console (F12) for errors...</div>
+  </div>
+
+  <h2>Test Map Container</h2>
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
+
+  <div class="diagnostic-section">
+    <h2>7. Final Status</h2>
+    <div id="final-status" class="result">Running diagnostics...</div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    console.log('=== MAP DIAGNOSTIC SCRIPT START ===');
+
+    const results = {
+      leaflet: false,
+      dom: false,
+      container: false,
+      mapInit: false,
+      tiles: false
+    };
+
+    // 1. Check Leaflet.js
+    function checkLeaflet() {
+      const el = document.getElementById('leaflet-check');
+      if (typeof L !== 'undefined' && L.version) {
+        el.innerHTML = `✓ Leaflet.js loaded (v${L.version})`;
+        el.className = 'result success';
+        results.leaflet = true;
+        console.log('✓ Leaflet.js version:', L.version);
+      } else {
+        el.innerHTML = '✗ Leaflet.js NOT loaded';
+        el.className = 'result error';
+        console.error('✗ Leaflet.js not found');
+      }
+    }
+
+    // 2. Check DOM Ready
+    function checkDOM() {
+      const el = document.getElementById('dom-check');
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        el.innerHTML = `✓ DOM Ready (readyState: ${document.readyState})`;
+        el.className = 'result success';
+        results.dom = true;
+        console.log('✓ DOM readyState:', document.readyState);
+      } else {
+        el.innerHTML = `⚠ DOM not ready (readyState: ${document.readyState})`;
+        el.className = 'result warning';
+        console.warn('⚠ DOM readyState:', document.readyState);
+      }
+    }
+
+    // 3. Check Container Dimensions
+    function checkContainer() {
+      const el = document.getElementById('container-check');
+      const container = document.getElementById('map-container');
+      const mapDiv = document.getElementById('map');
+
+      if (!container || !mapDiv) {
+        el.innerHTML = '✗ Map container or #map div not found';
+        el.className = 'result error';
+        console.error('✗ Container elements missing');
+        return;
+      }
+
+      const containerRect = container.getBoundingClientRect();
+      const mapRect = mapDiv.getBoundingClientRect();
+
+      const containerInfo = `Container: ${containerRect.width}px × ${containerRect.height}px`;
+      const mapInfo = `Map div: ${mapRect.width}px × ${mapRect.height}px`;
+
+      if (containerRect.height > 0 && mapRect.height > 0) {
+        el.innerHTML = `✓ ${containerInfo}<br>✓ ${mapInfo}`;
+        el.className = 'result success';
+        results.container = true;
+        console.log('✓ Container dimensions:', containerRect);
+        console.log('✓ Map div dimensions:', mapRect);
+      } else {
+        el.innerHTML = `✗ ${containerInfo}<br>✗ ${mapInfo}<br>⚠ Container has zero height!`;
+        el.className = 'result error';
+        console.error('✗ Container has zero height');
+      }
+    }
+
+    // 4. Initialize Map
+    function initializeMap() {
+      const el = document.getElementById('map-init-check');
+
+      try {
+        console.log('Attempting to initialize map...');
+
+        // Initialize map with Tokyo coordinates
+        const map = L.map('map', {
+          zoomControl: true,
+          attributionControl: true
+        }).setView([35.6762, 139.6503], 12);
+
+        console.log('Map object created:', map);
+
+        // Add tile layer
+        const tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+          subdomains: 'abcd',
+          maxZoom: 19
+        }).addTo(map);
+
+        console.log('Tile layer added:', tileLayer);
+
+        // Add a test marker
+        const marker = L.marker([35.6762, 139.6503]).addTo(map)
+          .bindPopup('Tokyo Station - Test Marker');
+
+        console.log('Test marker added:', marker);
+
+        el.innerHTML = '✓ Map initialized successfully';
+        el.className = 'result success';
+        results.mapInit = true;
+
+        // Check tile loading
+        tileLayer.on('loading', function() {
+          console.log('Tiles loading...');
+        });
+
+        tileLayer.on('load', function() {
+          console.log('✓ Tiles loaded successfully');
+          const tileEl = document.getElementById('tile-check');
+          tileEl.innerHTML = '✓ Tiles loaded successfully';
+          tileEl.className = 'result success';
+          results.tiles = true;
+          updateFinalStatus();
+        });
+
+        tileLayer.on('tileerror', function(error) {
+          console.error('✗ Tile load error:', error);
+          const tileEl = document.getElementById('tile-check');
+          tileEl.innerHTML = '✗ Tile load error - check browser console';
+          tileEl.className = 'result error';
+          updateFinalStatus();
+        });
+
+        // Force resize
+        setTimeout(() => {
+          map.invalidateSize();
+          console.log('Map size invalidated');
+        }, 100);
+
+      } catch (error) {
+        el.innerHTML = `✗ Map initialization failed: ${error.message}`;
+        el.className = 'result error';
+        console.error('✗ Map initialization error:', error);
+      }
+    }
+
+    // Update final status
+    function updateFinalStatus() {
+      const el = document.getElementById('final-status');
+      const allPassed = Object.values(results).every(r => r === true);
+
+      if (allPassed) {
+        el.innerHTML = '✓ ALL TESTS PASSED - Map should be working!';
+        el.className = 'result success';
+        console.log('✓ ALL TESTS PASSED');
+      } else {
+        const failed = Object.keys(results).filter(k => !results[k]);
+        el.innerHTML = `✗ TESTS FAILED: ${failed.join(', ')}`;
+        el.className = 'result error';
+        console.error('✗ Failed tests:', failed);
+      }
+    }
+
+    // Run diagnostics
+    function runDiagnostics() {
+      console.log('Running diagnostics...');
+      checkLeaflet();
+      checkDOM();
+      checkContainer();
+
+      if (results.leaflet && results.container) {
+        initializeMap();
+      } else {
+        const el = document.getElementById('map-init-check');
+        el.innerHTML = '✗ Cannot initialize map - prerequisites failed';
+        el.className = 'result error';
+        updateFinalStatus();
+      }
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', runDiagnostics);
+    } else {
+      runDiagnostics();
+    }
+
+    console.log('=== MAP DIAGNOSTIC SCRIPT END ===');
+  </script>
+</body>
+</html>

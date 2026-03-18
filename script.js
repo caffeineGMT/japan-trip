@@ -28,11 +28,21 @@ async function initializeApp() {
       days: TRIP_DATA.length
     });
 
+    // Initialize map AFTER template is loaded and DOM is ready
+    console.log('[App] Initializing map...');
+    initializeMap();
+
+    if (!map) {
+      console.error('[App] Map initialization failed!');
+      throw new Error('Map initialization failed - check browser console for details');
+    }
+
     // Set map initial position from geography
     if (template.geography) {
       const [lat, lng] = template.geography.default_center;
       const zoom = template.geography.default_zoom;
       map.setView([lat, lng], zoom);
+      console.log('[Map] Set view to:', lat, lng, 'zoom:', zoom);
     }
 
     // Render template header
@@ -195,18 +205,79 @@ function renderTemplateHeader(metadata) {
   }
 }
 
-// Initialize map (will be repositioned by template)
-const map = L.map('map', {
-  zoomControl: true,
-  attributionControl: true
-}).setView([0, 0], 2); // Temporary initial view
+// ==================== MAP INITIALIZATION ====================
+// Map will be initialized AFTER DOM is ready to ensure container has dimensions
+let map = null;
 
-// Use CartoDB dark tiles for the aesthetic
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-  subdomains: 'abcd',
-  maxZoom: 19
-}).addTo(map);
+function initializeMap() {
+  if (map) {
+    console.warn('[Map] Map already initialized');
+    return map;
+  }
+
+  console.log('[Map] Initializing Leaflet map...');
+
+  // Check if container exists and has dimensions
+  const mapContainer = document.getElementById('map');
+  if (!mapContainer) {
+    console.error('[Map] Map container #map not found');
+    return null;
+  }
+
+  const rect = mapContainer.getBoundingClientRect();
+  console.log('[Map] Container dimensions:', rect.width, 'x', rect.height);
+
+  if (rect.height === 0) {
+    console.error('[Map] Container has zero height! Check CSS.');
+    return null;
+  }
+
+  try {
+    // Initialize map with temporary view (will be repositioned by template)
+    map = L.map('map', {
+      zoomControl: true,
+      attributionControl: true
+    }).setView([0, 0], 2);
+
+    console.log('[Map] Leaflet map object created');
+
+    // Use CartoDB dark tiles for the aesthetic
+    const tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    console.log('[Map] Tile layer added');
+
+    // Listen for tile loading events
+    tileLayer.on('loading', () => {
+      console.log('[Map] Tiles loading...');
+    });
+
+    tileLayer.on('load', () => {
+      console.log('[Map] Tiles loaded successfully');
+    });
+
+    tileLayer.on('tileerror', (error) => {
+      console.error('[Map] Tile load error:', error);
+    });
+
+    // Force map to recognize container size
+    setTimeout(() => {
+      if (map) {
+        map.invalidateSize();
+        console.log('[Map] Size invalidated (forced refresh)');
+      }
+    }, 100);
+
+    return map;
+
+  } catch (error) {
+    console.error('[Map] Initialization failed:', error);
+    return null;
+  }
+}
 
 // State
 let currentDayIndex = 0;
@@ -431,6 +502,12 @@ async function renderAffiliateWidgets(day, dayIndex, container) {
 
 // Render map markers and route
 async function renderMap(day) {
+  // Safety check - ensure map is initialized
+  if (!map) {
+    console.error('[Map] Cannot render - map not initialized');
+    return;
+  }
+
   // Clear existing
   markers.forEach(m => map.removeLayer(m));
   markers = [];

@@ -26,7 +26,12 @@
     "b2b:test": "node scripts/cold-email-sequence.js --test 5",
     "b2b:send": "node scripts/cold-email-sequence.js --send",
     "b2b:followup-day5": "node scripts/cold-email-sequence.js --day 5 --send",
-    "b2b:followup-day10": "node scripts/cold-email-sequence.js --day 10 --send"
+    "b2b:followup-day10": "node scripts/cold-email-sequence.js --day 10 --send",
+    "test:smoke:playwright": "./tests/run-smoke-tests.sh",
+    "validate-audio": "node scripts/validate-audio.js",
+    "process-audio": "node scripts/process-native-recordings.js",
+    "generate-audio-tts": "python3 scripts/generate-audio-gtts.py",
+    "audio-check": "npm run validate-audio"
   },
   "repository": {
     "type": "git",
