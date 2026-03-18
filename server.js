@@ -15,6 +15,12 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+
+// Multi-tenant middleware (must come before static files)
+const { multiTenantMiddleware, injectTenantBranding } = require('./lib/multi-tenant');
+app.use(multiTenantMiddleware);
+app.use(injectTenantBranding);
+
 app.use(express.static(__dirname));
 
 // ===== STRIPE PAYMENT ROUTES =====
@@ -28,6 +34,24 @@ app.use('/api/stripe', webhookRouter);
 app.use('/api/stripe', portalRouter);
 app.use('/api/user', userAccessRouter);
 
+// ===== WHITE-LABEL ROUTES =====
+const whiteLabelProvisionRouter = require('./api/white-label/provision');
+const whiteLabelConfigRouter = require('./api/white-label/config');
+
+app.use('/api/white-label', whiteLabelProvisionRouter);
+app.use('/api/white-label', whiteLabelConfigRouter);
+
+// ===== AI ASSISTANT ROUTES =====
+const aiOptimizeRouter = require('./api/ai/optimize');
+const aiRecommendRouter = require('./api/ai/recommend');
+const aiEditRouter = require('./api/ai/edit');
+const aiChecklistRouter = require('./api/ai/checklist');
+
+app.use('/api/ai', aiOptimizeRouter);
+app.use('/api/ai', aiRecommendRouter);
+app.use('/api/ai', aiEditRouter);
+app.use('/api/ai', aiChecklistRouter);
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
@@ -35,8 +59,53 @@ app.get('/api/health', (req, res) => {
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development',
     stripe: !!process.env.STRIPE_SECRET_KEY,
-    supabase: !!process.env.SUPABASE_URL
+    supabase: !!process.env.SUPABASE_URL,
+    openai: !!process.env.OPENAI_API_KEY
   });
+});
+
+// AI usage tracking endpoint
+app.get('/api/ai/usage', async (req, res) => {
+  try {
+    const { userId } = req.query;
+
+    if (!userId) {
+      return res.status(400).json({ error: 'User ID required' });
+    }
+
+    const openaiClient = require('./lib/openai-client');
+    const { createClient } = require('@supabase/supabase-js');
+
+    const supabase = createClient(
+      process.env.SUPABASE_URL,
+      process.env.SUPABASE_SERVICE_ROLE_KEY
+    );
+
+    // Get user tier
+    const { data: userData } = await supabase
+      .from('users')
+      .select('subscription_tier, subscription_status')
+      .eq('id', userId)
+      .single();
+
+    const isPremium = userData?.subscription_tier === 'premium' &&
+                     userData?.subscription_status === 'active';
+    const userTier = isPremium ? 'premium' : 'free';
+
+    // Check rate limit
+    const rateLimit = await openaiClient.checkRateLimit(userId, userTier);
+
+    res.json({
+      limit: rateLimit.limit,
+      remaining: rateLimit.remaining,
+      resetAt: rateLimit.resetAt,
+      tier: userTier
+    });
+
+  } catch (error) {
+    console.error('Usage check error:', error);
+    res.status(500).json({ error: 'Failed to check usage' });
+  }
 });
 
 // ===== MARKETPLACE ROUTES =====
@@ -162,10 +231,16 @@ app.use((err, req, res, next) => {
   });
 });
 
+// Serve uploads directory for tenant logos
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
   console.log(`📍 Marketplace: http://localhost:${PORT}/marketplace`);
+  console.log(`🏢 Partners: http://localhost:${PORT}/partners`);
   console.log(`💳 Stripe configured: ${!!process.env.STRIPE_SECRET_KEY}`);
   console.log(`🗄️  Supabase configured: ${!!process.env.SUPABASE_URL}`);
+  console.log(`☁️  Cloudflare configured: ${!!process.env.CLOUDFLARE_API_TOKEN}`);
+  console.log(`🔐 Multi-tenant: enabled`);
   console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
 });

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agency Dashboard | Trip Companion White-Label</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dashboard {
+      max-width: 1400px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-left: 4px solid #667eea;
+    }
+
+    .stat-label {
+      color: #6b7280;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #667eea;
+    }
+
+    .stat-change {
+      font-size: 0.875rem;
+      color: #10b981;
+      margin-top: 0.5rem;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+
+    .section {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #667eea;
+      border-bottom: 2px solid #f3f4f6;
+      padding-bottom: 0.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #374151;
+      font-size: 0.875rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .color-inputs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .color-input-group {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    input[type="color"] {
+      width: 60px;
+      height: 40px;
+      padding: 0.25rem;
+      cursor: pointer;
+    }
+
+    input[type="text"].color-code {
+      flex: 1;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: #6b7280;
+    }
+
+    .logo-preview {
+      width: 200px;
+      height: 200px;
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0;
+      background: #f9fafb;
+      overflow: hidden;
+    }
+
+    .logo-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .upload-btn {
+      position: relative;
+      display: inline-block;
+    }
+
+    .upload-btn input[type="file"] {
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 300px;
+      margin-top: 1rem;
+    }
+
+    canvas {
+      max-height: 100%;
+    }
+
+    .info-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #1e40af;
+    }
+
+    .tier-badge {
+      display: inline-block;
+      background: #667eea;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .alert {
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .alert-success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #10b981;
+    }
+
+    .alert-error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+    }
+
+    @media (max-width: 1024px) {
+      .sections {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        padding: 0 1rem;
+      }
+
+      .color-inputs {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-content">
+      <div>
+        <h1>Agency Dashboard</h1>
+        <p id="agencyName">Loading...</p>
+      </div>
+      <div>
+        <span class="tier-badge" id="tierBadge">Starter</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard">
+    <div id="alertContainer"></div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Active Users</div>
+        <div class="stat-value" id="statActiveUsers">0</div>
+        <div class="stat-change" id="statActiveChange">—</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Trips Created</div>
+        <div class="stat-value" id="statTrips">0</div>
+        <div class="stat-change" id="statTripsChange">+0 this month</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Booking Clicks</div>
+        <div class="stat-value" id="statBookings">0</div>
+        <div class="stat-change" id="statBookingsChange">+0 this month</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Est. Revenue</div>
+        <div class="stat-value" id="statRevenue">$0</div>
+        <div class="stat-change">Affiliate commissions</div>
+      </div>
+    </div>
+
+    <div class="sections">
+      <div>
+        <div class="section">
+          <h2 class="section-title">Analytics</h2>
+          <div class="chart-container">
+            <canvas id="analyticsChart"></canvas>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 2rem;">
+          <h2 class="section-title">Branding</h2>
+
+          <div class="form-group">
+            <label>Logo</label>
+            <div class="logo-preview" id="logoPreview">
+              <span style="color: #9ca3af;">No logo uploaded</span>
+            </div>
+            <div class="upload-btn">
+              <button class="btn">Upload Logo</button>
+              <input type="file" id="logoUpload" accept="image/*" onchange="uploadLogo(event)">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Brand Colors</label>
+            <div class="color-inputs">
+              <div>
+                <small style="display: block; margin-bottom: 0.25rem; color: #6b7280;">Primary</small>
+                <div class="color-input-group">
+                  <input type="color" id="colorPrimary" value="#4f46e5" onchange="updateColorCode('Primary')">
+                  <input type="text" class="color-code" id="colorPrimaryCode" value="#4f46e5" onchange="updateColorPicker('Primary')">
+                </div>
+              </div>
+              <div>
+                <small style="display: block; margin-bottom: 0.25rem; color: #6b7280;">Secondary</small>
+                <div class="color-input-group">
+                  <input type="color" id="colorSecondary" value="#7c3aed" onchange="updateColorCode('Secondary')">
+                  <input type="text" class="color-code" id="colorSecondaryCode" value="#7c3aed" onchange="updateColorPicker('Secondary')">
+                </div>
+              </div>
+              <div>
+                <small style="display: block; margin-bottom: 0.25rem; color: #6b7280;">Accent</small>
+                <div class="color-input-group">
+                  <input type="color" id="colorAccent" value="#db2777" onchange="updateColorCode('Accent')">
+                  <input type="text" class="color-code" id="colorAccentCode" value="#db2777" onchange="updateColorPicker('Accent')">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Custom CSS (Advanced)</label>
+            <textarea id="customCss" rows="6" placeholder="/* Add custom CSS here */"></textarea>
+          </div>
+
+          <button class="btn" onclick="saveBranding()">Save Branding</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="section">
+          <h2 class="section-title">Instance Info</h2>
+
+          <div class="info-box">
+            <strong>Your URL</strong>
+            <a href="#" id="tenantUrl" target="_blank" style="color: #3b82f6; word-break: break-all;">Loading...</a>
+          </div>
+
+          <div class="form-group">
+            <label>Subdomain</label>
+            <input type="text" id="subdomain" disabled>
+          </div>
+
+          <div class="form-group">
+            <label>Custom Domain (Enterprise)</label>
+            <input type="text" id="customDomain" placeholder="youragency.com">
+            <small style="color: #6b7280; font-size: 0.75rem;">Add CNAME: @ → tripcompanion.app</small>
+          </div>
+
+          <button class="btn" onclick="saveCustomDomain()">Update Domain</button>
+        </div>
+
+        <div class="section" style="margin-top: 2rem;">
+          <h2 class="section-title">Usage Limits</h2>
+
+          <div class="form-group">
+            <label>Monthly Active Users</label>
+            <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;">
+              <div style="flex: 1; background: #e5e7eb; height: 8px; border-radius: 4px; overflow: hidden;">
+                <div id="usageBar" style="background: #667eea; height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+              </div>
+              <span id="usageText" style="font-weight: 600; color: #667eea;">0 / 100</span>
+            </div>
+          </div>
+
+          <div class="info-box" style="margin-top: 1rem;">
+            <strong>Upgrade to increase limits</strong>
+            Growth: 500 users/mo<br>
+            Enterprise: Unlimited users
+          </div>
+
+          <button class="btn btn-secondary">Upgrade Plan</button>
+        </div>
+
+        <div class="section" style="margin-top: 2rem;">
+          <h2 class="section-title">Documentation</h2>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 0.75rem;">
+              <a href="#" style="color: #667eea; text-decoration: none;">📖 Setup Guide</a>
+            </li>
+            <li style="margin-bottom: 0.75rem;">
+              <a href="#" style="color: #667eea; text-decoration: none;">🎨 Branding Guidelines</a>
+            </li>
+            <li style="margin-bottom: 0.75rem;">
+              <a href="#" style="color: #667eea; text-decoration: none;">🔌 API Documentation</a>
+            </li>
+            <li style="margin-bottom: 0.75rem;">
+              <a href="#" style="color: #667eea; text-decoration: none;">💬 Support</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>
+    let tenantId = null;
+    let tenantData = null;
+    let analyticsChart = null;
+
+    // Get tenant ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    tenantId = urlParams.get('tenant');
+
+    if (!tenantId) {
+      alert('No tenant ID provided');
+    }
+
+    // Load tenant data
+    async function loadDashboard() {
+      try {
+        const response = await fetch(`/api/white-label/config/${tenantId}`);
+        if (!response.ok) throw new Error('Failed to load tenant data');
+
+        const data = await response.json();
+        tenantData = data.tenant;
+
+        // Update UI
+        document.getElementById('agencyName').textContent = tenantData.agencyName;
+        document.getElementById('tierBadge').textContent = tenantData.tier;
+        document.getElementById('subdomain').value = tenantData.subdomain;
+        document.getElementById('customDomain').value = tenantData.customDomain || '';
+        document.getElementById('tenantUrl').textContent = `https://${tenantData.subdomain}.tripcompanion.app`;
+        document.getElementById('tenantUrl').href = `https://${tenantData.subdomain}.tripcompanion.app`;
+
+        // Stats
+        document.getElementById('statActiveUsers').textContent = data.stats.activeUsers;
+        document.getElementById('statTrips').textContent = data.stats.tripsCreated;
+        document.getElementById('statBookings').textContent = data.stats.bookingClicks;
+        document.getElementById('statRevenue').textContent = `$${data.stats.estimatedRevenue.toFixed(2)}`;
+
+        // Usage bar
+        const usagePercent = (data.stats.activeUsers / tenantData.limits.maxMonthlyUsers) * 100;
+        document.getElementById('usageBar').style.width = `${Math.min(usagePercent, 100)}%`;
+        document.getElementById('usageText').textContent = `${data.stats.activeUsers} / ${tenantData.limits.maxMonthlyUsers}`;
+
+        // Branding
+        if (tenantData.branding.logoUrl) {
+          document.getElementById('logoPreview').innerHTML = `<img src="${tenantData.branding.logoUrl}" alt="Logo">`;
+        }
+
+        const colors = tenantData.branding.colors;
+        document.getElementById('colorPrimary').value = colors.primary;
+        document.getElementById('colorPrimaryCode').value = colors.primary;
+        document.getElementById('colorSecondary').value = colors.secondary;
+        document.getElementById('colorSecondaryCode').value = colors.secondary;
+        document.getElementById('colorAccent').value = colors.accent;
+        document.getElementById('colorAccentCode').value = colors.accent;
+        document.getElementById('customCss').value = tenantData.branding.customCss || '';
+
+        // Load analytics chart
+        loadAnalytics();
+
+      } catch (error) {
+        console.error('Dashboard load error:', error);
+        showAlert('Failed to load dashboard data', 'error');
+      }
+    }
+
+    async function loadAnalytics() {
+      try {
+        const response = await fetch(`/api/white-label/config/${tenantId}/analytics?days=30`);
+        const data = await response.json();
+
+        const ctx = document.getElementById('analyticsChart').getContext('2d');
+
+        if (analyticsChart) {
+          analyticsChart.destroy();
+        }
+
+        analyticsChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: data.analytics.map(d => new Date(d.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })),
+            datasets: [
+              {
+                label: 'Active Users',
+                data: data.analytics.map(d => d.active_users || 0),
+                borderColor: '#667eea',
+                backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                tension: 0.3
+              },
+              {
+                label: 'Booking Clicks',
+                data: data.analytics.map(d => d.booking_clicks || 0),
+                borderColor: '#10b981',
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                tension: 0.3
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Last 30 Days'
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      } catch (error) {
+        console.error('Analytics load error:', error);
+      }
+    }
+
+    function updateColorCode(colorName) {
+      const picker = document.getElementById(`color${colorName}`);
+      const code = document.getElementById(`color${colorName}Code`);
+      code.value = picker.value;
+    }
+
+    function updateColorPicker(colorName) {
+      const picker = document.getElementById(`color${colorName}`);
+      const code = document.getElementById(`color${colorName}Code`);
+      if (/^#[0-9A-F]{6}$/i.test(code.value)) {
+        picker.value = code.value;
+      }
+    }
+
+    async function uploadLogo(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const formData = new FormData();
+      formData.append('logo', file);
+
+      try {
+        const response = await fetch(`/api/white-label/config/${tenantId}/logo`, {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          document.getElementById('logoPreview').innerHTML = `<img src="${result.logoUrl}" alt="Logo">`;
+          showAlert('Logo uploaded successfully!', 'success');
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (error) {
+        console.error('Logo upload error:', error);
+        showAlert('Failed to upload logo', 'error');
+      }
+    }
+
+    async function saveBranding() {
+      try {
+        const brandColors = {
+          primary: document.getElementById('colorPrimary').value,
+          secondary: document.getElementById('colorSecondary').value,
+          accent: document.getElementById('colorAccent').value
+        };
+
+        const customCss = document.getElementById('customCss').value;
+
+        const response = await fetch(`/api/white-label/config/${tenantId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            brandColors,
+            customCss
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          showAlert('Branding saved successfully!', 'success');
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (error) {
+        console.error('Branding save error:', error);
+        showAlert('Failed to save branding', 'error');
+      }
+    }
+
+    async function saveCustomDomain() {
+      try {
+        const customDomain = document.getElementById('customDomain').value;
+
+        if (tenantData.tier !== 'enterprise' && customDomain) {
+          showAlert('Custom domains are only available on Enterprise tier', 'error');
+          return;
+        }
+
+        const response = await fetch(`/api/white-label/config/${tenantId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            customDomain
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          showAlert('Custom domain updated! DNS changes may take up to 24 hours to propagate.', 'success');
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (error) {
+        console.error('Domain save error:', error);
+        showAlert('Failed to save custom domain', 'error');
+      }
+    }
+
+    function showAlert(message, type) {
+      const alertContainer = document.getElementById('alertContainer');
+      const alertClass = type === 'success' ? 'alert-success' : 'alert-error';
+
+      const alert = document.createElement('div');
+      alert.className = `alert ${alertClass}`;
+      alert.textContent = message;
+
+      alertContainer.appendChild(alert);
+
+      setTimeout(() => {
+        alert.remove();
+      }, 5000);
+    }
+
+    // Load dashboard on page load
+    loadDashboard();
+  </script>
+</body>
+</html>

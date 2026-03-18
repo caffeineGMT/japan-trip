@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS public.users (
   email TEXT NOT NULL UNIQUE,
   stripe_customer_id TEXT UNIQUE,
   subscription_status TEXT DEFAULT 'inactive', -- active, canceled, past_due, inactive
+  subscription_tier TEXT DEFAULT 'free', -- free, premium
   subscription_id TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
@@ -140,3 +141,64 @@ COMMENT ON TABLE public.users IS 'User accounts with Stripe integration';
 COMMENT ON TABLE public.templates IS 'Available itinerary templates for purchase';
 COMMENT ON TABLE public.user_templates IS 'User-owned templates (purchases)';
 COMMENT ON VIEW public.analytics_summary IS 'Summary analytics for revenue and user metrics';
+
+-- ===== AI ASSISTANT TABLES =====
+
+-- AI usage tracking (for rate limiting)
+CREATE TABLE IF NOT EXISTS public.ai_usage (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
+  endpoint TEXT NOT NULL, -- optimize, recommend, edit, checklist
+  prompt_tokens INTEGER NOT NULL DEFAULT 0,
+  completion_tokens INTEGER NOT NULL DEFAULT 0,
+  total_tokens INTEGER NOT NULL DEFAULT 0,
+  cached BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- AI response cache (24h TTL)
+CREATE TABLE IF NOT EXISTS public.ai_cache (
+  cache_key TEXT PRIMARY KEY,
+  response TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create indexes for AI tables
+CREATE INDEX IF NOT EXISTS idx_ai_usage_user_id ON public.ai_usage(user_id);
+CREATE INDEX IF NOT EXISTS idx_ai_usage_created_at ON public.ai_usage(created_at);
+CREATE INDEX IF NOT EXISTS idx_ai_usage_endpoint ON public.ai_usage(endpoint);
+CREATE INDEX IF NOT EXISTS idx_ai_cache_created_at ON public.ai_cache(created_at);
+
+-- Enable RLS on AI tables
+ALTER TABLE public.ai_usage ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.ai_cache ENABLE ROW LEVEL SECURITY;
+
+-- AI usage policies (users can read their own usage)
+CREATE POLICY "Users can read own ai usage"
+  ON public.ai_usage
+  FOR SELECT
+  USING (auth.uid() = user_id);
+
+-- Service role full access
+CREATE POLICY "Service role full access to ai_usage"
+  ON public.ai_usage
+  FOR ALL
+  USING (auth.role() = 'service_role');
+
+CREATE POLICY "Service role full access to ai_cache"
+  ON public.ai_cache
+  FOR ALL
+  USING (auth.role() = 'service_role');
+
+-- Function to clean up old cache entries (run daily)
+CREATE OR REPLACE FUNCTION cleanup_ai_cache()
+RETURNS void AS $$
+BEGIN
+  DELETE FROM public.ai_cache
+  WHERE created_at < NOW() - INTERVAL '24 hours';
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+COMMENT ON TABLE public.ai_usage IS 'AI API usage tracking for rate limiting';
+COMMENT ON TABLE public.ai_cache IS 'Cached AI responses (24h TTL for cost optimization)';
+COMMENT ON FUNCTION cleanup_ai_cache IS 'Removes AI cache entries older than 24 hours';

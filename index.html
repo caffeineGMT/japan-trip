@@ -65,7 +65,7 @@
   </div>
 
   <script src="i18n.js"></script>
-  <script src="data.js"></script>
+  <!-- data.js now loaded dynamically via template loader -->
   <script src="config.js"></script>
   <script src="weather.js"></script>
   <script src="routes.js"></script>
@@ -75,9 +75,12 @@
   <script src="widgets/hotels.js"></script>
   <script src="widgets/activities.js"></script>
   <script src="widgets/transport.js"></script>
-  <!-- Main App -->
-  <script src="script.js"></script>
+  <!-- Main App (ES6 Module with dynamic template loading) -->
+  <script type="module" src="script.js"></script>
   <script src="whats-next.js"></script>
+
+  <!-- AI Assistant -->
+  <script src="components/ai-assistant.js"></script>
 
   <!-- Phrases Modal -->
   <div id="phrases-modal" class="modal">

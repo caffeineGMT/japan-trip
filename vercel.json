@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/([a-zA-Z0-9]{8})$",
+      "dest": "/share/index.html"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:shortCode(^[a-zA-Z0-9]{8}$)",
+      "destination": "/share/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/og/:shortCode",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/share/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "SUPABASE_URL": "@supabase-url",
+    "SUPABASE_ANON_KEY": "@supabase-anon-key",
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase-service-role-key",
+    "STRIPE_SECRET_KEY": "@stripe-secret-key",
+    "STRIPE_WEBHOOK_SECRET": "@stripe-webhook-secret",
+    "MAPBOX_ACCESS_TOKEN": "@mapbox-access-token",
+    "BASE_URL": "https://trip.to"
+  }
+}

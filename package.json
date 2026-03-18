@@ -8,7 +8,11 @@
     "dev": "NODE_ENV=development node server.js",
     "test": "node test-payment.js",
     "test:payment": "node test-payment.js",
-    "validate": "node lib/validator.js"
+    "validate": "node lib/validator.js",
+    "astro:dev": "astro dev",
+    "astro:build": "astro build",
+    "astro:preview": "astro preview",
+    "generate:destinations": "node scripts/generate-destination-data.js"
   },
   "repository": {
     "type": "git",
@@ -25,10 +29,13 @@
     "lib": "lib"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
     "@supabase/supabase-js": "^2.99.2",
     "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
+    "astro": "^6.0.6",
     "bcrypt": "^6.0.0",
+    "chart.js": "^4.5.1",
     "cloudflare": "^5.2.0",
     "cors": "^2.8.6",
     "date-fns": "^4.1.0",
@@ -38,9 +45,13 @@
     "fuse.js": "^7.1.0",
     "geolib": "^3.3.4",
     "jsonwebtoken": "^9.0.3",
+    "mailgun.js": "^12.7.1",
     "multer": "^2.1.1",
+    "node-fetch": "^2.7.0",
     "openai": "^6.32.0",
+    "paypal-rest-sdk": "^1.8.1",
     "sharp": "^0.34.5",
-    "stripe": "^20.4.1"
+    "stripe": "^20.4.1",
+    "terser": "^5.46.1"
   }
 }
