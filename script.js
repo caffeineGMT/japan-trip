@@ -15,6 +15,8 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 let currentDayIndex = 0;
 let markers = [];
 let routeLine = null;
+let routePolylines = [];
+let routeBadges = [];
 
 // City color mapping
 function getCityColor(day) {
@@ -91,7 +93,21 @@ function renderSidebar(day) {
     headerHtml += `<div class="hotel-badge">&#127976; ${day.hotel}</div>`;
   }
 
+  // Add weather widget placeholder in header
+  headerHtml += `<div id="weatherWidget" class="weather-container"></div>`;
+
   header.innerHTML = headerHtml;
+
+  // Render weather for this day
+  if (day.city && typeof renderWeather === 'function') {
+    const targetDate = parseDateFromDay(day);
+    const weatherContainer = document.getElementById('weatherWidget');
+    if (weatherContainer) {
+      renderWeather(day.city, targetDate, weatherContainer).catch(err => {
+        console.error('Weather render error:', err);
+      });
+    }
+  }
 
   // Content — stop cards
   let contentHtml = '';
@@ -150,7 +166,7 @@ function renderSidebar(day) {
 }
 
 // Render map markers and route
-function renderMap(day) {
+async function renderMap(day) {
   // Clear existing
   markers.forEach(m => map.removeLayer(m));
   markers = [];
@@ -158,6 +174,10 @@ function renderMap(day) {
     map.removeLayer(routeLine);
     routeLine = null;
   }
+  routePolylines.forEach(p => map.removeLayer(p));
+  routePolylines = [];
+  routeBadges.forEach(b => map.removeLayer(b));
+  routeBadges = [];
 
   const color = getCityColor(day);
   const latlngs = [];
@@ -174,13 +194,19 @@ function renderMap(day) {
       popupAnchor: [0, -20]
     });
 
+    // Create popup content with Google Maps deep link
+    const popupContent = `
+      <h4>${stop.name}</h4>
+      <div class="popup-time">${stop.time}</div>
+      <div class="popup-desc">${stop.desc}</div>
+      <button class="directions-button" onclick="openGoogleMaps(${stop.lat}, ${stop.lng}, '${stop.name.replace(/'/g, "\\'")}')">
+        <span class="directions-icon">🧭</span> Directions
+      </button>
+    `;
+
     const marker = L.marker([stop.lat, stop.lng], { icon })
       .addTo(map)
-      .bindPopup(`
-        <h4>${stop.name}</h4>
-        <div class="popup-time">${stop.time}</div>
-        <div class="popup-desc">${stop.desc}</div>
-      `, { maxWidth: 280 });
+      .bindPopup(popupContent, { maxWidth: 280 });
 
     marker.on('click', () => {
       highlightStopCard(i);
@@ -190,7 +216,7 @@ function renderMap(day) {
     latlngs.push([stop.lat, stop.lng]);
   });
 
-  // Draw route line
+  // Draw route line (fallback - simple dashed line)
   if (latlngs.length > 1) {
     routeLine = L.polyline(latlngs, {
       color: color,
@@ -208,6 +234,11 @@ function renderMap(day) {
       padding: [60, 60],
       maxZoom: day.zoom || 14
     });
+  }
+
+  // Draw detailed routes with Google Directions API
+  if (day.stops.length > 1) {
+    await drawRoutes(day);
   }
 }
 
@@ -243,12 +274,141 @@ function toggleCheck(index) {
   }
 }
 
+// Draw routes between consecutive stops with Google Directions API
+async function drawRoutes(day) {
+  const stops = day.stops;
+
+  for (let i = 0; i < stops.length - 1; i++) {
+    const origin = { lat: stops[i].lat, lng: stops[i].lng };
+    const destination = { lat: stops[i + 1].lat, lng: stops[i + 1].lng };
+
+    // Determine travel mode (can be customized per stop)
+    const mode = stops[i].travelMode || CONFIG.DEFAULT_TRAVEL_MODE;
+
+    try {
+      // Fetch route from Google Directions API
+      const routeData = await fetchRoute(origin, destination, mode);
+
+      // Get color for this route based on mode
+      const routeColor = CONFIG.ROUTE_COLORS[mode] || CONFIG.ROUTE_COLORS.transit;
+
+      let polyline;
+
+      // Draw polyline
+      if (routeData.polyline && !routeData.fallback) {
+        // Use Google's encoded polyline for curved route
+        const coordinates = decodePolyline(routeData.polyline);
+        if (coordinates) {
+          polyline = L.polyline(coordinates, {
+            color: routeColor,
+            weight: CONFIG.ROUTE_WEIGHT,
+            opacity: CONFIG.ROUTE_OPACITY,
+            className: 'route-polyline',
+            smoothFactor: 1.5
+          }).addTo(map);
+
+          // Add hover tooltip with route details
+          polyline.bindTooltip(`
+            <div class="route-tooltip">
+              <div><strong>${getModeIcon(mode)} ${mode.charAt(0).toUpperCase() + mode.slice(1)}</strong></div>
+              <div>Distance: ${routeData.distance}</div>
+              <div>Duration: ${routeData.duration}</div>
+            </div>
+          `, {
+            sticky: true,
+            className: 'route-tooltip-popup'
+          });
+
+          routePolylines.push(polyline);
+        }
+      }
+
+      // Calculate midpoint for badge placement
+      const midLat = (origin.lat + destination.lat) / 2;
+      const midLng = (origin.lng + destination.lng) / 2;
+
+      // Create travel time badge
+      const badgeClass = CONFIG.BADGE_PULSE_ANIMATION && (stops[i].highlight || stops[i + 1].highlight)
+        ? 'travel-time-badge pulse'
+        : 'travel-time-badge';
+
+      const badgeIcon = L.divIcon({
+        className: '',
+        html: `
+          <div class="${badgeClass}" data-mode="${mode}">
+            <span class="badge-icon">${getModeIcon(mode)}</span>
+            <span class="badge-duration">${routeData.duration}</span>
+            <span class="badge-distance">${routeData.distance}</span>
+          </div>
+        `,
+        iconSize: [120, 40],
+        iconAnchor: [60, 20]
+      });
+
+      const badge = L.marker([midLat, midLng], {
+        icon: badgeIcon,
+        interactive: true
+      }).addTo(map);
+
+      // Make badge clickable to toggle between duration/distance on mobile
+      badge.on('click', function(e) {
+        const badgeEl = e.target.getElement().querySelector('.travel-time-badge');
+        if (badgeEl) {
+          badgeEl.classList.toggle('show-distance');
+        }
+      });
+
+      routeBadges.push(badge);
+
+    } catch (error) {
+      console.error(`Error drawing route ${i} -> ${i + 1}:`, error);
+    }
+  }
+
+  // Hide the fallback dashed line if we have API routes
+  if (routePolylines.length > 0 && routeLine) {
+    map.removeLayer(routeLine);
+    routeLine = null;
+  }
+}
+
+// Open Google Maps with directions to a specific location
+function openGoogleMaps(lat, lng, name) {
+  const url = `${CONFIG.MAPS_DEEP_LINK_BASE}&destination=${lat},${lng}&destination_place_id=&travelmode=transit`;
+  window.open(url, '_blank');
+}
+
 // Utility
 function hexToRgba(hex, alpha) {
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);
   const b = parseInt(hex.slice(5, 7), 16);
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+// Parse date from day object for weather integration
+function parseDateFromDay(day) {
+  // day.date format examples: "Mar 31", "Apr 1", "Mar 29-30"
+  if (!day.date) return null;
+
+  const year = 2026; // Trip year
+  const datePart = day.date.split('-')[0].trim(); // Get first date if range
+
+  // Parse month and day
+  const parts = datePart.split(' ');
+  if (parts.length !== 2) return null;
+
+  const monthMap = {
+    'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+    'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
+  };
+
+  const month = monthMap[parts[0]];
+  const dayNum = parseInt(parts[1]);
+
+  if (month === undefined || isNaN(dayNum)) return null;
+
+  return new Date(year, month, dayNum);
 }
 
 // Keyboard navigation
@@ -271,3 +431,10 @@ document.addEventListener('keydown', (e) => {
 // Init
 buildTabs();
 selectDay(0);
+
+// Initialize weather cache for all cities
+if (typeof initializeWeather === 'function') {
+  initializeWeather().catch(err => {
+    console.error('Weather initialization error:', err);
+  });
+}

@@ -9,15 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Top nav -->
   <header id="top-header">
+    <button id="sidebar-toggle" class="hamburger" aria-label="Toggle sidebar">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div class="header-left">
       <h1>Japan 2026</h1>
       <span class="header-dates">Mar 30 &ndash; Apr 13</span>
     </div>
+    <button id="whatsNextToggle" class="btn-toggle">What's Next</button>
     <nav class="day-tabs" id="day-tabs"></nav>
   </header>
 
@@ -35,6 +42,9 @@
   </div>
 
   <script src="data.js"></script>
+  <script src="config.js"></script>
+  <script src="weather.js"></script>
+  <script src="routes.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
