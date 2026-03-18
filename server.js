@@ -92,99 +92,19 @@ app.use('/api/referrals', referralRouter);
 // ===== CHROME EXTENSION ROUTES =====
 const extensionSavePOIRouter = require('./api/extension/save-poi');
 app.use('/api/extension', extensionSavePOIRouter);
+app.use('/api/extension', extensionSavePOIRouter);
 
-// Serve embed widget pages
-app.get('/embed/:tripId', (req, res) => {
-  res.sendFile(path.join(__dirname, 'embed', 'trip.html'));
-});
+// ===== PARTNERSHIP ROUTES (JAL/ANA Co-Marketing) =====
+const partnershipTrack = require('./api/partnerships/track');
 
-// Email nurture dashboard
-app.get('/email-dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'marketing', 'email-nurture', 'dashboard.html'));
-});
+app.post('/api/partnerships/track', partnershipTrack.trackEvent);
+app.get('/api/partnerships/analytics', partnershipTrack.getAnalytics);
+app.post('/api/partnerships/convert', partnershipTrack.markConversion);
+app.get('/api/partnerships/commissions', partnershipTrack.getCommissions);
 
-// Cherry blossom forecast route (for Reddit marketing campaign)
-app.get('/cherry-blossom-forecast', (req, res) => {
-  res.sendFile(path.join(__dirname, 'marketing', 'reddit', 'assets', 'cherry-blossom-embed.html'));
-});
-
-// Referral landing pages
-app.get('/ref/:code', (req, res) => {
-  res.sendFile(path.join(__dirname, 'ref-landing.html'));
-});
-
-app.get('/referral-dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'referral-dashboard.html'));
-});
-
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({
-    status: 'ok',
-    timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development',
-    stripe: !!process.env.STRIPE_SECRET_KEY,
-    supabase: !!process.env.SUPABASE_URL,
-    openai: !!process.env.OPENAI_API_KEY
-  });
-});
-
-// AI usage tracking endpoint
-app.get('/api/ai/usage', async (req, res) => {
-  try {
-    const { userId } = req.query;
-
-    if (!userId) {
-      return res.status(400).json({ error: 'User ID required' });
-    }
-
-    const openaiClient = require('./lib/openai-client');
-    const { createClient } = require('@supabase/supabase-js');
-
-    const supabase = createClient(
-      process.env.SUPABASE_URL,
-      process.env.SUPABASE_SERVICE_ROLE_KEY
-    );
-
-    // Get user tier
-    const { data: userData } = await supabase
-      .from('users')
-      .select('subscription_tier, subscription_status')
-      .eq('id', userId)
-      .single();
-
-    const isPremium = userData?.subscription_tier === 'premium' &&
-                     userData?.subscription_status === 'active';
-    const userTier = isPremium ? 'premium' : 'free';
-
-    // Check rate limit
-    const rateLimit = await openaiClient.checkRateLimit(userId, userTier);
-
-    res.json({
-      limit: rateLimit.limit,
-      remaining: rateLimit.remaining,
-      resetAt: rateLimit.resetAt,
-      tier: userTier
-    });
-
-  } catch (error) {
-    console.error('Usage check error:', error);
-    res.status(500).json({ error: 'Failed to check usage' });
-  }
-});
-
-// ===== MARKETPLACE ROUTES =====
-// Serve seed data for marketplace catalog
-app.get('/api/templates', (req, res) => {
-  try {
-    const seedData = JSON.parse(
-      fs.readFileSync(path.join(__dirname, 'marketplace', 'seed-data.json'), 'utf-8')
-    );
-    res.json(seedData);
-  } catch (error) {
-    console.error('Error loading templates:', error);
-    res.status(500).json({ error: 'Failed to load templates' });
-  }
+// Partnership dashboard
+app.get('/partnerships/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'marketing', 'partnerships', 'partnership-dashboard.html'));
 });
 
 // Serve individual template details
@@ -309,3 +229,17 @@ app.listen(PORT, () => {
   console.log(`🔐 Multi-tenant: enabled`);
   console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
+
+// ===== PARTNERSHIP ROUTES (JAL/ANA Co-Marketing) =====
+const partnershipTrack = require('./api/partnerships/track');
+
+app.post('/api/partnerships/track', partnershipTrack.trackEvent);
+app.get('/api/partnerships/analytics', partnershipTrack.getAnalytics);
+app.post('/api/partnerships/convert', partnershipTrack.markConversion);
+app.get('/api/partnerships/commissions', partnershipTrack.getCommissions);
+
+// Partnership dashboard
+app.get('/partnerships/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'marketing', 'partnerships', 'partnership-dashboard.html'));
+});
+

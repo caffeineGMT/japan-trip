@@ -766,6 +766,8 @@ function loadPhrases() {
     .then(r => r.json())
     .then(d => {
       phrasesData = d;
+      // Make globally accessible for audio player
+      window.phrasesData = d;
       console.log('Phrases loaded successfully');
     })
     .catch(err => {
@@ -773,7 +775,19 @@ function loadPhrases() {
     });
 }
 
-// Text-to-speech function
+// Play phrase audio with native speaker recording or TTS fallback
+window.playPhraseAudio = function playPhraseAudio(japaneseText, category, index) {
+  if (window.phraseAudioPlayer) {
+    // Use the new audio player with native recordings
+    window.phraseAudioPlayer.play(japaneseText, category, index);
+  } else {
+    // Fallback to old TTS if audio player not loaded
+    console.warn('Audio player not loaded, using TTS fallback');
+    speak(japaneseText, 'ja-JP');
+  }
+}
+
+// Legacy TTS function (kept for fallback)
 window.speak = function speak(text, lang) {
   if (!window.speechSynthesis) {
     console.error('Speech synthesis not supported');
@@ -829,16 +843,21 @@ function renderPhrases() {
 
     phrases.forEach((phrase, index) => {
       const translatedText = currentLang === 'en' ? phrase.en : (currentLang === 'zh' ? phrase.zh : phrase.ja);
+      const hasNativeAudio = window.phraseAudioPlayer && window.phraseAudioPlayer.isAudioAvailable(category, index);
+      const audioIndicator = hasNativeAudio
+        ? '<span class="audio-indicator native" title="Native speaker audio">🎤</span>'
+        : '<span class="audio-indicator tts" title="AI voice">🤖</span>';
 
       html += `
-        <div class="phrase-card" onclick="speak('${phrase.ja.replace(/'/g, "\\'")}', 'ja-JP')">
+        <div class="phrase-card" onclick="playPhraseAudio('${phrase.ja.replace(/'/g, "\\'")}', '${category}', ${index})">
           <div class="phrase-main">
             <div class="phrase-japanese">${phrase.ja}</div>
             <div class="phrase-romaji">${phrase.romaji}</div>
           </div>
           <div class="phrase-translation">${translatedText}</div>
-          <button class="phrase-speaker" aria-label="Speak">
+          <button class="phrase-speaker" aria-label="Play audio">
             <span class="speaker-icon">🔊</span>
+            ${audioIndicator}
           </button>
         </div>
       `;
