@@ -50,7 +50,7 @@ if (!fs.existsSync(DESTINATIONS_DIR)) {
 }
 
 /**
- * Fetch JSON from URL with promise
+ * Fetch JSON from URL with promise - improved error handling
  */
 function fetchJSON(url, options = {}) {
     return new Promise((resolve, reject) => {
@@ -58,24 +58,42 @@ function fetchJSON(url, options = {}) {
 
         const defaultOptions = {
             headers: {
-                'User-Agent': 'Japan-Trip-Companion/1.0 (https://trip.to; contact@trip.to)',
+                'User-Agent': 'Mozilla/5.0 (compatible; Japan-Trip-Companion/1.0; +https://trip.to)',
                 'Accept': 'application/json'
             }
         };
 
         const requestOptions = { ...defaultOptions, ...options };
 
-        protocol.get(url, requestOptions, (res) => {
+        const req = protocol.get(url, requestOptions, (res) => {
+            // Handle redirects
+            if (res.statusCode === 301 || res.statusCode === 302) {
+                fetchJSON(res.headers.location, options).then(resolve).catch(reject);
+                return;
+            }
+
+            if (res.statusCode !== 200) {
+                reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
+                return;
+            }
+
             let data = '';
+            res.setEncoding('utf8');
             res.on('data', (chunk) => data += chunk);
             res.on('end', () => {
                 try {
                     resolve(JSON.parse(data));
                 } catch (e) {
-                    reject(e);
+                    reject(new Error(`JSON parse error: ${e.message}`));
                 }
             });
-        }).on('error', reject);
+        });
+
+        req.on('error', reject);
+        req.setTimeout(10000, () => {
+            req.destroy();
+            reject(new Error('Request timeout'));
+        });
     });
 }
 
@@ -154,11 +172,13 @@ async function fetchUnsplashImage(cityName) {
 }
 
 /**
- * Fetch description from Wikipedia
+ * Fetch description from Wikipedia - improved with better error handling
  */
 async function fetchWikipediaDescription(cityName) {
     try {
+        // Use the correct Wikipedia REST API endpoint
         const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cityName)}`;
+
         const data = await fetchJSON(url);
 
         if (data.extract) {
@@ -176,19 +196,109 @@ async function fetchWikipediaDescription(cityName) {
             };
         }
 
-        return {
-            short: `Beautiful destination in Japan`,
-            full: `${cityName} is a must-visit destination in Japan, offering unique cultural experiences, stunning landscapes, and unforgettable memories.`,
-            extract_html: `<p>${cityName} is a must-visit destination in Japan, offering unique cultural experiences, stunning landscapes, and unforgettable memories.</p>`
-        };
+        return getFallbackDescription(cityName);
     } catch (error) {
         console.error(`Error fetching Wikipedia data for ${cityName}:`, error.message);
-        return {
-            short: `Beautiful destination in Japan`,
-            full: `${cityName} is a must-visit destination in Japan, offering unique cultural experiences, stunning landscapes, and unforgettable memories.`,
-            extract_html: `<p>${cityName} is a must-visit destination in Japan, offering unique cultural experiences, stunning landscapes, and unforgettable memories.</p>`
-        };
+        return getFallbackDescription(cityName);
     }
+}
+
+/**
+ * Fallback descriptions for each city (high-quality, SEO-optimized)
+ */
+function getFallbackDescription(cityName) {
+    const descriptions = {
+        'Tokyo': {
+            short: 'Capital city of Japan',
+            full: 'Tokyo, officially the Tokyo Metropolis, is the capital and most populous prefecture of Japan. Located at the head of Tokyo Bay, it is a global hub of business, finance, technology, and culture. From ancient temples to cutting-edge skyscrapers, Tokyo seamlessly blends tradition with modernity. Experience world-class dining, vibrant neighborhoods like Shibuya and Shinjuku, and serene gardens in this dynamic metropolis.',
+        },
+        'Kyoto': {
+            short: 'Historic cultural capital of Japan',
+            full: 'Kyoto, the ancient capital of Japan for over a millennium, is renowned for its classical Buddhist temples, stunning gardens, imperial palaces, and traditional wooden houses. Home to over 2,000 temples and shrines, including the iconic Fushimi Inari and Kinkaku-ji (Golden Pavilion), Kyoto offers an unparalleled glimpse into traditional Japanese culture. Experience geisha districts, tea ceremonies, and some of Japan\'s most spectacular cherry blossom and autumn foliage viewing spots.',
+        },
+        'Osaka': {
+            short: 'Japan\'s kitchen and vibrant commercial hub',
+            full: 'Osaka, Japan\'s third-largest city, is famous for its modern architecture, vibrant nightlife, and hearty street food culture. Known as "Japan\'s Kitchen," Osaka offers culinary delights like takoyaki and okonomiyaki. The city features attractions like Osaka Castle, the bustling Dotonbori district, and Universal Studios Japan. With a reputation for friendly locals and energetic atmosphere, Osaka provides a perfect contrast to Tokyo\'s formality and Kyoto\'s tradition.',
+        },
+        'Hakone': {
+            short: 'Mountain resort town near Mount Fuji',
+            full: 'Hakone is a mountainous town in Japan\'s Fuji-Hakone-Izu National Park, renowned for its hot springs resorts (onsen), natural beauty, and museums. On clear days, visitors can enjoy stunning views of nearby Mount Fuji. Hakone offers traditional ryokan accommodations, the scenic Lake Ashi, the Hakone Open-Air Museum, and a historic mountain railway. It\'s a perfect escape from Tokyo, offering relaxation and natural splendor just 90 minutes from the capital.',
+        },
+        'Nara': {
+            short: 'Ancient capital famous for friendly deer',
+            full: 'Nara, Japan\'s first permanent capital, is a treasure trove of historical sites including Todai-ji Temple housing a 15-meter bronze Buddha statue. The city\'s most charming feature is Nara Park, where over 1,000 friendly deer roam freely and bow to visitors for food. With eight UNESCO World Heritage Sites, including Kasuga-taisha Shrine with its thousands of lanterns, Nara offers an intimate encounter with Japan\'s ancient past and natural beauty.',
+        },
+        'Hiroshima': {
+            short: 'City of peace and resilience',
+            full: 'Hiroshima, rebuilt after the devastating 1945 atomic bombing, stands today as a vibrant city dedicated to peace. The Peace Memorial Park and Museum serve as powerful reminders of the past and hopes for a nuclear-free future. Beyond its historical significance, Hiroshima offers beautiful gardens, the reconstructed Hiroshima Castle, and world-famous okonomiyaki. The nearby island of Miyajima, with its floating torii gate, is easily accessible from the city.',
+        },
+        'Nikko': {
+            short: 'Sacred mountain town with ornate shrines',
+            full: 'Nikko, a mountain town in Tochigi Prefecture, is home to Toshogu, Japan\'s most lavishly decorated shrine and the mausoleum of Tokugawa Ieyasu, founder of the Tokugawa shogunate. The town\'s Shrines and Temples of Nikko are UNESCO World Heritage Sites. Surrounded by stunning natural scenery including waterfalls, lakes, and autumn foliage, Nikko offers hiking in Nikko National Park and traditional hot springs. The saying "Never say \'magnificent\' until you\'ve seen Nikko" speaks to its splendor.',
+        },
+        'Kamakura': {
+            short: 'Historic coastal town with Great Buddha',
+            full: 'Kamakura, a coastal town south of Tokyo, was Japan\'s political center from 1185-1333. Today, it\'s known for the Great Buddha (Daibutsu), a 13-meter bronze statue dating from 1252, and numerous Zen temples and shrines. The town offers beautiful hiking trails, traditional shopping streets, and beaches. Kamakura\'s laid-back atmosphere and rich history make it a popular day trip from Tokyo, combining cultural sites with coastal scenery.',
+        },
+        'Takayama': {
+            short: 'Beautifully preserved Edo-period town',
+            full: 'Takayama, in the mountainous Hida region, preserves a beautifully intact old town with traditional wooden merchant houses. The city is famous for its skilled carpentry, sake breweries, and one of Japan\'s most celebrated festivals held in spring and autumn. Visitors can explore museums, morning markets, and taste Hida beef. The surrounding Japanese Alps offer spectacular scenery, hot springs, and access to traditional thatched-roof villages like Shirakawa-go.',
+        },
+        'Kanazawa': {
+            short: 'Cultural gem with pristine gardens',
+            full: 'Kanazawa, on the Sea of Japan coast, escaped war damage and retains its historic districts, including the well-preserved geisha district Higashi Chaya. The city boasts Kenroku-en, considered one of Japan\'s three most beautiful gardens, and the 21st Century Museum of Contemporary Art. Famous for gold leaf production, traditional crafts, and fresh seafood, Kanazawa offers an authentic cultural experience with less crowding than Kyoto.',
+        },
+        'Fukuoka': {
+            short: 'Gateway city to Kyushu',
+            full: 'Fukuoka, the largest city on Kyushu Island, is known for its modern architecture, beaches, and renowned food scene, particularly Hakata ramen and fresh seafood from its fish markets. The city offers ancient temples, shopping arcades, and the unique Canal City complex. With excellent connections to other Kyushu destinations and even South Korea, Fukuoka serves as an ideal base for exploring southwestern Japan.',
+        },
+        'Sapporo': {
+            short: 'Northern capital famous for snow and beer',
+            full: 'Sapporo, the capital of Hokkaido, is famous for its winter sports, the annual Snow Festival featuring massive ice sculptures, and Sapporo beer. The city offers wide boulevards, parks, and proximity to ski resorts and hot springs. Summer brings the refreshing climate and lavender fields. Sapporo\'s food scene includes fresh seafood, Genghis Khan (grilled mutton), and unique regional ramen.',
+        },
+        'Yokohama': {
+            short: 'Port city with cosmopolitan flair',
+            full: 'Yokohama, Japan\'s second-largest city, is a major port with a cosmopolitan atmosphere. Chinatown, Japan\'s largest, offers authentic Chinese cuisine. The futuristic Minato Mirai 21 district features the Landmark Tower with panoramic views, waterfront promenades, museums, and the unique Cup Noodles Museum. Historic Western-style buildings in Motomachi reflect Yokohama\'s role in opening Japan to the world.',
+        },
+        'Nagoya': {
+            short: 'Industrial powerhouse with samurai heritage',
+            full: 'Nagoya, Japan\'s fourth-largest city, is an industrial powerhouse and automotive hub home to Toyota. The reconstructed Nagoya Castle showcases the city\'s samurai past. Atsuta Shrine, one of Japan\'s most important Shinto shrines, houses the sacred sword Kusanagi. The city offers excellent museums, shopping, and is a gateway to the historic towns of Takayama and Shirakawa-go.',
+        },
+        'Kobe': {
+            short: 'Sophisticated port city famous for beef',
+            full: 'Kobe, a port city framed by mountains and sea, is famous worldwide for its premium marbled beef. The city blends cosmopolitan culture with natural beauty, featuring the scenic Rokko mountain range, Arima Onsen hot springs, and a charming historic Chinatown. The 1995 earthquake led to thoughtful urban renewal. The waterfront area offers modern architecture, shopping, and stunning night views.',
+        },
+        'Okinawa': {
+            short: 'Tropical paradise with unique culture',
+            full: 'Okinawa, Japan\'s southernmost prefecture, offers a tropical climate, stunning beaches, and a unique Ryukyuan culture distinct from mainland Japan. The islands feature coral reefs perfect for diving, Shuri Castle (a UNESCO World Heritage Site), and traditional Okinawan cuisine known for its health benefits. The archipelago combines natural beauty with a laid-back island lifestyle and historical significance as the former Ryukyu Kingdom.',
+        },
+        'Miyajima': {
+            short: 'Sacred island with floating torii gate',
+            full: 'Miyajima, officially Itsukushima, is a small island near Hiroshima renowned for its giant torii gate appearing to float on water at high tide. Itsukushima Shrine, a UNESCO World Heritage Site, and its vermillion buildings are built over water. The island offers temples, a five-story pagoda, friendly deer, hiking Mount Misen, and maple leaf-shaped cookies (momiji manju). It\'s considered one of Japan\'s three most scenic views.',
+        },
+        'Kawaguchiko': {
+            short: 'Lake resort with Mount Fuji views',
+            full: 'Lake Kawaguchiko, one of the Fuji Five Lakes, offers the best views of Mount Fuji reflected in its waters. This resort town provides hot springs, museums, the Fuji-Q Highland amusement park, and the Chureito Pagoda, an iconic photo spot. Outdoor activities include boating, fishing, cycling, and camping. Each season offers unique beauty: cherry blossoms in spring, lavender in summer, and fall foliage framing Japan\'s sacred mountain.',
+        },
+        'Matsumoto': {
+            short: 'Alpine city with original castle',
+            full: 'Matsumoto, in the Japanese Alps, is home to Matsumoto Castle, one of Japan\'s few original castles and designated a National Treasure. Its striking black walls have earned it the nickname "Crow Castle." The city serves as a gateway to the Northern Alps and offers museums including the Japan Ukiyo-e Museum. The surrounding area provides hot springs, hiking, and skiing opportunities in stunning mountain scenery.',
+        },
+        'Nagano': {
+            short: '1998 Winter Olympics host in the mountains',
+            full: 'Nagano, host of the 1998 Winter Olympics, is a mountain city famous for Zenko-ji Temple, one of Japan\'s most important Buddhist temples. The surrounding area offers world-class skiing, the famous snow monkeys bathing in hot springs at Jigokudani, and scenic hiking trails. The region produces soba noodles and sake, and provides access to traditional post towns along the historic Nakasendo trail.',
+        }
+    };
+
+    const fallback = descriptions[cityName] || {
+        short: `Beautiful destination in Japan`,
+        full: `${cityName} is a must-visit destination in Japan, offering unique cultural experiences, stunning landscapes, and unforgettable memories. Whether you're interested in history, nature, cuisine, or modern attractions, ${cityName} has something special to offer every traveler.`
+    };
+
+    return {
+        ...fallback,
+        extract_html: `<p>${fallback.full}</p>`
+    };
 }
 
 /**
@@ -424,8 +534,8 @@ async function main() {
             const page = await generatePage(city, template, CITIES);
             pages.push(page);
 
-            // Rate limiting - wait 1 second between API calls
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Rate limiting - wait 500ms between API calls (faster than before)
+            await new Promise(resolve => setTimeout(resolve, 500));
         } catch (error) {
             console.error(`❌ Error generating page for ${city.name}:`, error.message);
         }
@@ -443,7 +553,7 @@ async function main() {
     console.log(`\n📈 SEO Checklist:`);
     console.log(`  ✓ ${pages.length} destination landing pages with unique content`);
     console.log(`  ✓ Hero images from Unsplash (high quality)`);
-    console.log(`  ✓ Wikipedia descriptions (authoritative content)`);
+    console.log(`  ✓ Real Wikipedia + fallback descriptions (authoritative content)`);
     console.log(`  ✓ SEO meta tags (title, description, keywords)`);
     console.log(`  ✓ Open Graph & Twitter Card tags`);
     console.log(`  ✓ JSON-LD structured data (TravelAgency schema)`);
