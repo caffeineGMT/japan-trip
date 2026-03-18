@@ -1,0 +1,33 @@
+{
+  "lastUpdated": "2026-03-15",
+  "cities": [
+    {
+      "name": "Tokyo",
+      "status": "blooming",
+      "peakStart": "2026-03-28",
+      "peakEnd": "2026-04-05",
+      "confidence": 0.85
+    },
+    {
+      "name": "Kyoto",
+      "status": "peak",
+      "peakStart": "2026-04-01",
+      "peakEnd": "2026-04-08",
+      "confidence": 0.90
+    },
+    {
+      "name": "Osaka",
+      "status": "peak",
+      "peakStart": "2026-04-02",
+      "peakEnd": "2026-04-09",
+      "confidence": 0.88
+    },
+    {
+      "name": "Nara",
+      "status": "peak",
+      "peakStart": "2026-04-02",
+      "peakEnd": "2026-04-09",
+      "confidence": 0.87
+    }
+  ]
+}

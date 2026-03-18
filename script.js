@@ -131,6 +131,15 @@ function renderSidebar(day) {
     `;
   });
 
+  // Cultural Tips
+  if (day.culturalTips) {
+    contentHtml += '<div class="cultural-tips"><h3>' + I18N.t({en: 'Cultural Tips', zh: '文化贴士', ja: '文化のヒント'}) + '</h3><ul>';
+    day.culturalTips.forEach(tip => {
+      contentHtml += '<li>' + I18N.t(tip) + '</li>';
+    });
+    contentHtml += '</ul></div>';
+  }
+
   // Checklist
   if (day.checklist) {
     contentHtml += '<div class="checklist-section"><h3>Checklist</h3>';
@@ -519,3 +528,165 @@ if (typeof initializeWeather === 'function') {
     console.error('Weather initialization error:', err);
   });
 }
+
+// Initialize sakura widget
+if (typeof initSakuraWidget === 'function') {
+  initSakuraWidget().catch(err => {
+    console.error('Sakura widget initialization error:', err);
+  });
+}
+
+// ==================== PHRASES MODULE ====================
+
+// Global phrases data
+let phrasesData = null;
+
+// Fetch phrases on init
+fetch('phrases.json')
+  .then(r => r.json())
+  .then(d => {
+    phrasesData = d;
+    console.log('Phrases loaded successfully');
+  })
+  .catch(err => {
+    console.error('Error loading phrases:', err);
+  });
+
+// Text-to-speech function
+function speak(text, lang) {
+  if (!window.speechSynthesis) {
+    console.error('Speech synthesis not supported');
+    return;
+  }
+  
+  // Cancel any ongoing speech
+  window.speechSynthesis.cancel();
+  
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = lang;
+  utterance.rate = 0.9; // Slightly slower for clarity
+  window.speechSynthesis.speak(utterance);
+}
+
+// Render phrases modal
+function renderPhrases() {
+  if (!phrasesData) {
+    document.getElementById('phrases-list').innerHTML = '<p style="text-align: center; color: var(--text-muted); padding: 20px;">Loading phrases...</p>';
+    return;
+  }
+
+  const container = document.getElementById('phrases-list');
+  const currentLang = I18N.currentLang;
+  
+  let html = '';
+  
+  // Category metadata
+  const categoryMeta = {
+    general: { icon: '💬', label: { en: 'General', zh: '常用', ja: '一般' } },
+    restaurant: { icon: '🍜', label: { en: 'Restaurant', zh: '餐厅', ja: 'レストラン' } },
+    train: { icon: '🚄', label: { en: 'Train', zh: '交通', ja: '電車' } },
+    temple: { icon: '⛩️', label: { en: 'Temple', zh: '寺庙', ja: '寺院' } },
+    shopping: { icon: '🛍️', label: { en: 'Shopping', zh: '购物', ja: 'ショッピング' } },
+    emergency: { icon: '🚨', label: { en: 'Emergency', zh: '紧急', ja: '緊急' } }
+  };
+
+  // Render each category
+  Object.keys(phrasesData).forEach(category => {
+    const meta = categoryMeta[category];
+    const phrases = phrasesData[category];
+    
+    html += `
+      <div class="phrase-category">
+        <button class="phrase-category-header" onclick="togglePhraseCategory('${category}')">
+          <span class="category-icon">${meta.icon}</span>
+          <span class="category-label">${meta.label[currentLang] || meta.label.en}</span>
+          <span class="category-count">${phrases.length}</span>
+          <span class="category-chevron">▼</span>
+        </button>
+        <div class="phrase-category-content" id="phrases-${category}">
+    `;
+    
+    phrases.forEach((phrase, index) => {
+      const translatedText = currentLang === 'en' ? phrase.en : (currentLang === 'zh' ? phrase.zh : phrase.ja);
+      
+      html += `
+        <div class="phrase-card" onclick="speak('${phrase.ja.replace(/'/g, "\\'")}', 'ja-JP')">
+          <div class="phrase-main">
+            <div class="phrase-japanese">${phrase.ja}</div>
+            <div class="phrase-romaji">${phrase.romaji}</div>
+          </div>
+          <div class="phrase-translation">${translatedText}</div>
+          <button class="phrase-speaker" aria-label="Speak">
+            <span class="speaker-icon">🔊</span>
+          </button>
+        </div>
+      `;
+    });
+    
+    html += '</div></div>';
+  });
+  
+  container.innerHTML = html;
+}
+
+// Toggle category collapse/expand
+function togglePhraseCategory(category) {
+  const content = document.getElementById(`phrases-${category}`);
+  const header = content.previousElementSibling;
+  
+  if (content.style.display === 'none' || content.style.display === '') {
+    content.style.display = 'block';
+    header.classList.add('expanded');
+  } else {
+    content.style.display = 'none';
+    header.classList.remove('expanded');
+  }
+}
+
+// Phrases button event listener
+const phrasesBtn = document.getElementById('phrases-btn');
+if (phrasesBtn) {
+  phrasesBtn.addEventListener('click', () => {
+    renderPhrases();
+    const modal = document.getElementById('phrases-modal');
+    if (modal) {
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+  });
+}
+
+// Close modal event listeners
+const closeModalBtns = document.querySelectorAll('.close-modal');
+closeModalBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = btn.closest('.modal');
+    if (modal) {
+      modal.classList.remove('show');
+      document.body.style.overflow = ''; // Restore scrolling
+      window.speechSynthesis.cancel(); // Stop any ongoing speech
+    }
+  });
+});
+
+// Close modal on backdrop click
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal')) {
+    e.target.classList.remove('show');
+    document.body.style.overflow = '';
+    window.speechSynthesis.cancel();
+  }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const modal = document.querySelector('.modal.show');
+    if (modal) {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+      window.speechSynthesis.cancel();
+    }
+  }
+});
+

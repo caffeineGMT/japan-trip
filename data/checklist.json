@@ -1,0 +1,55 @@
+{
+  "Clothing": [
+    "Shirts (7)",
+    "Pants/Shorts (3)",
+    "Underwear (10)",
+    "Socks (10)",
+    "Jacket",
+    "Sleepwear",
+    "Walking shoes",
+    "Sandals"
+  ],
+  "Electronics": [
+    "Phone",
+    "Chargers",
+    "Power bank",
+    "Camera",
+    "SD cards",
+    "Japan power adapter",
+    "Headphones"
+  ],
+  "Documents": [
+    "Passport",
+    "Flight tickets (JFM9KK)",
+    "Hotel confirmations",
+    "Suica card (Apple Pay)",
+    "Credit cards",
+    "Travel insurance",
+    "Visit Japan Web QR"
+  ],
+  "Toiletries": [
+    "Toothbrush/paste",
+    "Deodorant",
+    "Sunscreen",
+    "Shampoo/conditioner",
+    "Razor",
+    "Lip balm"
+  ],
+  "Medicine": [
+    "Prescriptions",
+    "Pain relievers",
+    "Allergy meds",
+    "Motion sickness pills",
+    "Band-aids",
+    "Hand sanitizer"
+  ],
+  "Misc": [
+    "Backpack",
+    "Reusable water bottle",
+    "Umbrella",
+    "Sunglasses",
+    "Portable WiFi/eSIM",
+    "Snacks for flight",
+    "Pen (customs form)"
+  ]
+}

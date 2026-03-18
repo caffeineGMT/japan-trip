@@ -24,8 +24,15 @@
       <h1>Japan 2026</h1>
       <span class="header-dates">Mar 30 &ndash; Apr 13</span>
     </div>
+    <nav class="top-nav">
+      <a href="/" class="active">Map</a>
+      <a href="/reservations.html">Reservations</a>
+      <a href="/checklist.html">Packing</a>
+    </nav>
+    <div id="sakura-widget" class="sakura-widget"></div>
     <button id="whatsNextToggle" class="btn-toggle">What's Next</button>
     <nav class="day-tabs" id="day-tabs"></nav>
+    <button id="phrases-btn" class="icon-btn" title="Japanese Phrases">🗣️</button>
     <div class="lang-switcher">
       <button data-lang="en" class="active">EN</button>
       <button data-lang="zh">中文</button>
@@ -51,7 +58,19 @@
   <script src="config.js"></script>
   <script src="weather.js"></script>
   <script src="routes.js"></script>
+  <script src="sakura-widget.js"></script>
   <script src="script.js"></script>
   <script src="whats-next.js"></script>
+
+  <!-- Phrases Modal -->
+  <div id="phrases-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Japanese Travel Phrases</h3>
+        <button class="close-modal" aria-label="Close">&times;</button>
+      </div>
+      <div id="phrases-list" class="phrases-list"></div>
+    </div>
+  </div>
 </body>
 </html>

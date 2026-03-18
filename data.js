@@ -40,6 +40,11 @@ const TRIP_DATA = [
     center: [35.665, 139.770],
     zoom: 13,
     hotel: { en: "Mitsui Garden Hotel Roppongi Tokyo Premier", zh: "三井花园饭店六本木东京顶级", ja: "三井ガーデンホテル六本木東京プレミア" },
+    culturalTips: [
+      { en: "Bow slightly when greeting staff at hotels and restaurants", zh: "在酒店和餐厅与工作人员打招呼时要微微鞠躬", ja: "ホテルやレストランでスタッフに挨拶する時は軽くお辞儀をする" },
+      { en: "No tipping in Japan - it can be considered insulting", zh: "日本不需要给小费 - 这可能被认为是冒犯", ja: "日本ではチップは不要 - 失礼にあたることがある" },
+      { en: "Always carry cash - many small shops don't accept cards", zh: "随身携带现金 - 许多小商店不接受信用卡", ja: "現金を持ち歩く - 小さな店ではカードが使えないことが多い" }
+    ],
     stops: [
       {
         name: { en: "Narita Airport (NRT)", zh: "成田机场 (NRT)", ja: "成田空港 (NRT)" },
@@ -107,6 +112,11 @@ const TRIP_DATA = [
     color: "#ef4444",
     center: [35.700, 139.780],
     zoom: 12,
+    culturalTips: [
+      { en: "Remove shoes before entering temples - look for shoe racks at entrance", zh: "进入寺庙前脱鞋 - 入口处会有鞋架", ja: "寺院に入る前に靴を脱ぐ - 入口に下駄箱がある" },
+      { en: "Cleanse hands and mouth at temple water basins (temizuya) before praying", zh: "参拜前在寺庙的手水舍洗手漱口", ja: "参拝前に手水舎で手と口を清める" },
+      { en: "Bow twice, clap twice, bow once at Shinto shrines", zh: "在神社参拜：两拜、两拍手、一拜", ja: "神社での参拝：二礼二拍手一礼" }
+    ],
     stops: [
       {
         name: { en: "Tokyo Skytree", zh: "东京晴空塔", ja: "東京スカイツリー" },
@@ -184,6 +194,10 @@ const TRIP_DATA = [
     color: "#ef4444",
     center: [35.660, 139.710],
     zoom: 13,
+    culturalTips: [
+      { en: "Stand on left side of escalators, walk on right (opposite in Osaka!)", zh: "在自动扶梯上靠左站立，右侧供行走（大阪相反！）", ja: "エスカレーターは左側に立ち、右側を歩く（大阪は逆！）" },
+      { en: "No eating or drinking while walking on streets", zh: "不要边走边吃或喝东西", ja: "歩きながら食べたり飲んだりしない" }
+    ],
     stops: [
       {
         name: { en: "Daikanyama T-Site / Tsutaya Books", zh: "代官山T-Site / 茑屋书店", ja: "代官山T-Site / 蔦屋書店" },
@@ -265,6 +279,10 @@ const TRIP_DATA = [
     color: "#ef4444",
     center: [35.670, 139.760],
     zoom: 13,
+    culturalTips: [
+      { en: "Slurp your noodles loudly - it shows appreciation to the chef", zh: "吃面要发出声音 - 这表示对厨师的赞赏", ja: "麺類は音を立てて食べる - シェフへの敬意を表す" },
+      { en: "Say 'itadakimasu' before eating and 'gochisousama' after", zh: "吃饭前说'itadakimasu'，吃完说'gochisousama'", ja: "食事の前に「いただきます」、後に「ごちそうさま」" }
+    ],
     stops: [
       {
         name: { en: "Imperial Palace", zh: "皇居", ja: "皇居" },
@@ -343,6 +361,10 @@ const TRIP_DATA = [
     color: "#ef4444",
     center: [35.660, 139.730],
     zoom: 12,
+    culturalTips: [
+      { en: "On trains: switch phones to silent mode and avoid phone calls", zh: "在电车上：手机调成静音模式，避免打电话", ja: "電車内：携帯電話はマナーモードに、通話は避ける" },
+      { en: "Queue in designated lines on platform - don't rush into trains", zh: "在站台指定位置排队 - 不要急着冲进车厢", ja: "ホームの指定位置に並ぶ - 急いで乗り込まない" }
+    ],
     stops: [
       {
         name: { en: "Cappiness Cafe / Cafe Capyba", zh: "Cappiness咖啡馆 / Cafe Capyba", ja: "カッピネスカフェ / カフェカピバ" },
@@ -376,6 +398,11 @@ const TRIP_DATA = [
     center: [34.980, 135.780],
     zoom: 13,
     hotel: { en: "Onyado Nono Kyoto Shichijo (with onsen!)", zh: "御宿野乃京都七条（带温泉！）", ja: "お宿野乃京都七条（温泉付き！）" },
+    culturalTips: [
+      { en: "Wash your body completely before entering onsen baths", zh: "进入温泉浴池前要彻底清洗身体", ja: "温泉に入る前に体を完全に洗う" },
+      { en: "No photos inside temples without permission", zh: "未经许可不要在寺庙内拍照", ja: "許可なく寺院内で写真撮影しない" },
+      { en: "Don't touch Buddha statues or temple artifacts", zh: "不要触摸佛像或寺庙文物", ja: "仏像や寺院の工芸品に触れない" }
+    ],
     stops: [
       {
         name: { en: "Fushimi Inari Taisha", zh: "伏见稻荷大社", ja: "伏見稲荷大社" },
@@ -444,6 +471,10 @@ const TRIP_DATA = [
     color: "#f59e0b",
     center: [34.995, 135.755],
     zoom: 14,
+    culturalTips: [
+      { en: "At markets: sample food only when vendor offers, don't touch produce", zh: "在市场：只有商家主动提供时才能试吃，不要触摸食品", ja: "市場で：店員が勧めた時のみ試食、商品に触れない" },
+      { en: "Geisha spotting in Gion: don't chase them for photos, be respectful", zh: "在祇园看到艺伎：不要追着拍照，要尊重她们", ja: "祇園での芸者：写真のために追いかけない、敬意を払う" }
+    ],
     stops: [
       {
         name: { en: "Toji Temple", zh: "东寺", ja: "東寺" },
@@ -521,6 +552,10 @@ const TRIP_DATA = [
     color: "#f59e0b",
     center: [35.020, 135.680],
     zoom: 12,
+    culturalTips: [
+      { en: "Bamboo grove etiquette: stay on path, no carving into bamboo", zh: "竹林礼仪：保持在小径上，不要在竹子上刻字", ja: "竹林でのマナー：小道から外れない、竹に彫刻しない" },
+      { en: "Temple gardens: walk slowly and mindfully, it's a meditative space", zh: "寺庙花园：缓慢、专注地行走，这是冥想空间", ja: "寺院の庭園：ゆっくり心を込めて歩く、瞑想の場所" }
+    ],
     stops: [
       {
         name: { en: "Otagi Nenbutsu-ji", zh: "爱宕念佛寺", ja: "愛宕念仏寺" },
@@ -619,6 +654,11 @@ const TRIP_DATA = [
     center: [34.660, 135.505],
     zoom: 13,
     hotel: { en: "Centara Grand Hotel Osaka", zh: "大阪诗塔拉大饭店", ja: "センタラグランドホテル大阪" },
+    culturalTips: [
+      { en: "In Osaka: stand on right side of escalators, walk on left (opposite of Tokyo!)", zh: "在大阪：在自动扶梯上靠右站立，左侧供行走（与东京相反！）", ja: "大阪では：エスカレーターは右側に立ち、左側を歩く（東京と逆！）" },
+      { en: "Kushikatsu rule: never double-dip in communal sauce", zh: "串炸规则：不要在公共酱料中重复蘸取", ja: "串カツのルール：共用ソースに二度つけしない" },
+      { en: "Osaka locals are more casual and loud than Tokyo - enjoy the energy!", zh: "大阪人比东京人更随意和热情 - 享受这种活力！", ja: "大阪の人は東京より気さくで賑やか - エネルギーを楽しむ！" }
+    ],
     stops: [
       {
         name: { en: "Shitennoji Temple", zh: "四天王寺", ja: "四天王寺" },
@@ -803,6 +843,11 @@ const TRIP_DATA = [
     color: "#10b981",
     center: [34.685, 135.840],
     zoom: 14,
+    culturalTips: [
+      { en: "Nara deer can be aggressive when hungry - hide food and bow to them", zh: "奈良鹿饿时可能会有攻击性 - 藏好食物并向它们鞠躬", ja: "奈良の鹿は空腹時に攻撃的になる - 食べ物を隠し、お辞儀をする" },
+      { en: "Don't tease the deer or feed them anything except deer crackers", zh: "不要戏弄鹿或喂它们除鹿饼干以外的任何东西", ja: "鹿をからかったり、鹿せんべい以外を与えない" },
+      { en: "Keep bags closed - deer will try to eat maps, tickets, and plastic", zh: "关好包 - 鹿会试图吃地图、票和塑料", ja: "バッグを閉じる - 鹿は地図、チケット、プラスチックを食べようとする" }
+    ],
     stops: [
       {
         name: { en: "Nara Park", zh: "奈良公园", ja: "奈良公園" },

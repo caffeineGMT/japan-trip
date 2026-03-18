@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "date": "2026-04-03",
+    "restaurant": "Genshiyaki Hibachi",
+    "time": "7:30 PM",
+    "confirmation": "TBD",
+    "phone": "+81-3-XXXX-XXXX",
+    "lat": 35.6627,
+    "lng": 139.7310,
+    "notes": "Meeting friends"
+  },
+  {
+    "id": 2,
+    "date": "2026-04-05",
+    "restaurant": "Gion Matayoshi",
+    "time": "12:00 PM",
+    "confirmation": "TableCheck",
+    "phone": "+81-75-XXX-XXXX",
+    "lat": 35.0035,
+    "lng": 135.7760,
+    "notes": "Traditional Kyoto cuisine"
+  },
+  {
+    "id": 3,
+    "date": "2026-04-08",
+    "restaurant": "Jumbo Tsuribune Tsurikichi",
+    "time": "6:00 PM",
+    "confirmation": "3TQW9Y973F",
+    "phone": "+81-6-XXXX-XXXX",
+    "lat": 34.6940,
+    "lng": 135.4970,
+    "notes": "Fishing restaurant - catch your dinner"
+  },
+  {
+    "id": 4,
+    "date": "2026-04-10",
+    "restaurant": "Kani Doraku",
+    "time": "6:00 PM",
+    "confirmation": "Google Reservation",
+    "phone": "+81-6-6211-8975",
+    "lat": 34.6686,
+    "lng": 135.5020,
+    "notes": "Famous crab restaurant"
+  }
+]

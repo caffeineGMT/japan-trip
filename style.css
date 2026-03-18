@@ -120,6 +120,69 @@ html, body {
   color: var(--text-muted);
 }
 
+/* Sakura Widget */
+.sakura-widget {
+  display: none;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sakura-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: rgba(251, 191, 36, 0.05);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  transition: all 0.3s ease;
+}
+
+.sakura-status:hover {
+  background: rgba(251, 191, 36, 0.1);
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.sakura-status.pulse .sakura-icon {
+  animation: sakura-pulse 2s infinite;
+}
+
+@keyframes sakura-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.sakura-icon {
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sakura-label {
+  font-size: 9px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.sakura-peak {
+  font-size: 10px;
+  color: var(--highlight);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* What's Next Button */
 .btn-toggle {
   padding: 4px 12px;
@@ -263,6 +326,33 @@ html, body {
   height: 6px;
   border-radius: 50%;
   margin-top: 2px;
+}
+
+/* Mobile sakura widget - stack vertically on small screens */
+@media (max-width: 640px) {
+  .sakura-widget {
+    order: 10;
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .sakura-status {
+    flex: 1;
+    max-width: 80px;
+  }
+
+  .sakura-label {
+    font-size: 8px;
+  }
+
+  .sakura-icon {
+    font-size: 14px;
+  }
+
+  .sakura-peak {
+    font-size: 9px;
+  }
 }
 
 /* Mobile Container - Vertical Stack */
@@ -559,6 +649,45 @@ html, body {
 .stop-category.activity {
   background: rgba(99, 102, 241, 0.15);
   color: #818cf8;
+}
+
+/* Cultural Tips */
+.cultural-tips {
+  margin-top: 16px;
+  padding: 14px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 10px;
+}
+
+.cultural-tips h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--return);
+}
+
+.cultural-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cultural-tips li {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-left: 16px;
+  margin-bottom: 4px;
+  position: relative;
+  line-height: 1.5;
+  padding-left: 8px;
+}
+
+.cultural-tips li:before {
+  content: '💡';
+  position: absolute;
+  left: -16px;
+  font-size: 12px;
 }
 
 /* Checklist */
@@ -880,6 +1009,19 @@ html, body {
     font-size: 13px;
   }
 
+  /* Sakura widget on tablet */
+  .sakura-status {
+    padding: 5px 8px;
+  }
+
+  .sakura-label {
+    font-size: 10px;
+  }
+
+  .sakura-peak {
+    font-size: 11px;
+  }
+
   .btn-toggle {
     font-size: 12px;
     padding: 6px 16px;
@@ -1125,3 +1267,376 @@ html, body {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* ==================== PHRASES MODULE STYLES ==================== */
+
+/* Icon button for phrases */
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icon-btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+/* Modal base styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: var(--surface);
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.modal-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.close-modal {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.close-modal:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.close-modal:active {
+  transform: scale(0.9);
+}
+
+/* Phrases list container */
+.phrases-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px 24px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.phrases-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.phrases-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.phrases-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+/* Phrase category */
+.phrase-category {
+  margin-bottom: 16px;
+}
+
+.phrase-category-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.phrase-category-header:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+.phrase-category-header:active {
+  transform: scale(0.98);
+}
+
+.phrase-category-header.expanded .category-chevron {
+  transform: rotate(180deg);
+}
+
+.category-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.category-label {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+}
+
+.category-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: rgba(239, 68, 68, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.category-chevron {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.phrase-category-content {
+  display: none;
+  padding: 12px 0 0;
+}
+
+/* Phrase cards */
+.phrase-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  padding-right: 50px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.phrase-card:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  transform: translateX(2px);
+}
+
+.phrase-card:active {
+  transform: scale(0.98);
+}
+
+.phrase-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.phrase-japanese {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.4;
+}
+
+.phrase-romaji {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: 'Inter', sans-serif;
+}
+
+.phrase-translation {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.phrase-speaker {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.phrase-speaker:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.phrase-speaker:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.speaker-icon {
+  font-size: 18px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-height: 90vh;
+    border-radius: 12px;
+  }
+
+  .modal-header {
+    padding: 16px 20px;
+  }
+
+  .modal-header h3 {
+    font-size: 18px;
+  }
+
+  .phrases-list {
+    padding: 12px 16px 16px;
+  }
+
+  .phrase-card {
+    padding: 12px 14px;
+    padding-right: 48px;
+  }
+
+  .phrase-japanese {
+    font-size: 16px;
+  }
+
+  .phrase-romaji {
+    font-size: 12px;
+  }
+
+  .phrase-translation {
+    font-size: 13px;
+  }
+
+  .phrase-speaker {
+    width: 36px;
+    height: 36px;
+    right: 10px;
+  }
+
+  .speaker-icon {
+    font-size: 16px;
+  }
+
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .modal-content {
+    max-width: 560px;
+  }
+}
+
+/* Desktop hover states */
+@media (hover: hover) and (min-width: 1024px) {
+  .icon-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+  }
+}
+

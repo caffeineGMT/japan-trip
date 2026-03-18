@@ -1,0 +1,278 @@
+{
+  "restaurant": [
+    {
+      "ja": "すみません",
+      "romaji": "Sumimasen",
+      "en": "Excuse me",
+      "zh": "不好意思"
+    },
+    {
+      "ja": "お願いします",
+      "romaji": "Onegaishimasu",
+      "en": "Please",
+      "zh": "拜托"
+    },
+    {
+      "ja": "メニューをください",
+      "romaji": "Menyū o kudasai",
+      "en": "Menu, please",
+      "zh": "请给我菜单"
+    },
+    {
+      "ja": "おすすめは何ですか",
+      "romaji": "Osusume wa nan desu ka",
+      "en": "What do you recommend?",
+      "zh": "推荐什么菜"
+    },
+    {
+      "ja": "これをください",
+      "romaji": "Kore o kudasai",
+      "en": "This one, please",
+      "zh": "请给我这个"
+    },
+    {
+      "ja": "お会計お願いします",
+      "romaji": "Okaikei onegaishimasu",
+      "en": "Check, please",
+      "zh": "请结账"
+    },
+    {
+      "ja": "美味しかったです",
+      "romaji": "Oishikatta desu",
+      "en": "It was delicious",
+      "zh": "很好吃"
+    },
+    {
+      "ja": "ベジタリアンです",
+      "romaji": "Bejitarian desu",
+      "en": "I'm vegetarian",
+      "zh": "我吃素"
+    },
+    {
+      "ja": "お水をください",
+      "romaji": "Omizu o kudasai",
+      "en": "Water, please",
+      "zh": "请给我水"
+    }
+  ],
+  "train": [
+    {
+      "ja": "何番線ですか",
+      "romaji": "Nanbansen desu ka",
+      "en": "Which platform?",
+      "zh": "几号站台"
+    },
+    {
+      "ja": "切符売り場はどこですか",
+      "romaji": "Kippu uriba wa doko desu ka",
+      "en": "Where is the ticket office?",
+      "zh": "售票处在哪里"
+    },
+    {
+      "ja": "東京駅までお願いします",
+      "romaji": "Tōkyō-eki made onegaishimasu",
+      "en": "To Tokyo Station, please",
+      "zh": "请到东京站"
+    },
+    {
+      "ja": "次の電車は何時ですか",
+      "romaji": "Tsugi no densha wa nanji desu ka",
+      "en": "When is the next train?",
+      "zh": "下一班车什么时候"
+    },
+    {
+      "ja": "乗り換えが必要ですか",
+      "romaji": "Norikae ga hitsuyō desu ka",
+      "en": "Do I need to transfer?",
+      "zh": "需要换乘吗"
+    },
+    {
+      "ja": "ICカードをチャージしたいです",
+      "romaji": "IC kādo o chāji shitai desu",
+      "en": "I want to charge my IC card",
+      "zh": "我想充值IC卡"
+    },
+    {
+      "ja": "空港までいくらですか",
+      "romaji": "Kūkō made ikura desu ka",
+      "en": "How much to the airport?",
+      "zh": "到机场多少钱"
+    }
+  ],
+  "temple": [
+    {
+      "ja": "写真を撮ってもいいですか",
+      "romaji": "Shashin o totte mo ii desu ka",
+      "en": "May I take photos?",
+      "zh": "可以拍照吗"
+    },
+    {
+      "ja": "靴を脱ぎますか",
+      "romaji": "Kutsu o nugimasu ka",
+      "en": "Should I take off my shoes?",
+      "zh": "要脱鞋吗"
+    },
+    {
+      "ja": "お守りはありますか",
+      "romaji": "Omamori wa arimasu ka",
+      "en": "Do you have amulets?",
+      "zh": "有护身符吗"
+    },
+    {
+      "ja": "入場料はいくらですか",
+      "romaji": "Nyūjō-ryō wa ikura desu ka",
+      "en": "How much is admission?",
+      "zh": "门票多少钱"
+    },
+    {
+      "ja": "御朱印をお願いします",
+      "romaji": "Goshuin o onegaishimasu",
+      "en": "Temple stamp, please",
+      "zh": "请给我朱印"
+    }
+  ],
+  "shopping": [
+    {
+      "ja": "いくらですか",
+      "romaji": "Ikura desu ka",
+      "en": "How much is it?",
+      "zh": "多少钱"
+    },
+    {
+      "ja": "これを試着してもいいですか",
+      "romaji": "Kore o shichaku shite mo ii desu ka",
+      "en": "Can I try this on?",
+      "zh": "可以试穿吗"
+    },
+    {
+      "ja": "他の色はありますか",
+      "romaji": "Hoka no iro wa arimasu ka",
+      "en": "Do you have other colors?",
+      "zh": "有其他颜色吗"
+    },
+    {
+      "ja": "安くなりますか",
+      "romaji": "Yasuku narimasu ka",
+      "en": "Can you give me a discount?",
+      "zh": "能便宜点吗"
+    },
+    {
+      "ja": "クレジットカードは使えますか",
+      "romaji": "Kurejitto kādo wa tsukaemasu ka",
+      "en": "Do you accept credit cards?",
+      "zh": "可以用信用卡吗"
+    },
+    {
+      "ja": "袋をください",
+      "romaji": "Fukuro o kudasai",
+      "en": "Bag, please",
+      "zh": "请给我袋子"
+    },
+    {
+      "ja": "免税できますか",
+      "romaji": "Menzei dekimasu ka",
+      "en": "Can I get tax-free?",
+      "zh": "可以免税吗"
+    }
+  ],
+  "emergency": [
+    {
+      "ja": "助けてください",
+      "romaji": "Tasukete kudasai",
+      "en": "Please help me",
+      "zh": "请帮帮我"
+    },
+    {
+      "ja": "警察を呼んでください",
+      "romaji": "Keisatsu o yonde kudasai",
+      "en": "Please call the police",
+      "zh": "请叫警察"
+    },
+    {
+      "ja": "病院はどこですか",
+      "romaji": "Byōin wa doko desu ka",
+      "en": "Where is the hospital?",
+      "zh": "医院在哪里"
+    },
+    {
+      "ja": "英語が話せる人はいますか",
+      "romaji": "Eigo ga hanaseru hito wa imasu ka",
+      "en": "Is there anyone who speaks English?",
+      "zh": "有会说英语的人吗"
+    },
+    {
+      "ja": "財布をなくしました",
+      "romaji": "Saifu o nakushimashita",
+      "en": "I lost my wallet",
+      "zh": "我的钱包丢了"
+    },
+    {
+      "ja": "道に迷いました",
+      "romaji": "Michi ni mayoimashita",
+      "en": "I'm lost",
+      "zh": "我迷路了"
+    }
+  ],
+  "general": [
+    {
+      "ja": "こんにちは",
+      "romaji": "Konnichiwa",
+      "en": "Hello",
+      "zh": "你好"
+    },
+    {
+      "ja": "ありがとうございます",
+      "romaji": "Arigatō gozaimasu",
+      "en": "Thank you very much",
+      "zh": "非常感谢"
+    },
+    {
+      "ja": "どういたしまして",
+      "romaji": "Dō itashimashite",
+      "en": "You're welcome",
+      "zh": "不客气"
+    },
+    {
+      "ja": "はい",
+      "romaji": "Hai",
+      "en": "Yes",
+      "zh": "是"
+    },
+    {
+      "ja": "いいえ",
+      "romaji": "Iie",
+      "en": "No",
+      "zh": "不"
+    },
+    {
+      "ja": "わかりません",
+      "romaji": "Wakarimasen",
+      "en": "I don't understand",
+      "zh": "我不明白"
+    },
+    {
+      "ja": "日本語が話せません",
+      "romaji": "Nihongo ga hanasemasen",
+      "en": "I don't speak Japanese",
+      "zh": "我不会说日语"
+    },
+    {
+      "ja": "トイレはどこですか",
+      "romaji": "Toire wa doko desu ka",
+      "en": "Where is the toilet?",
+      "zh": "厕所在哪里"
+    },
+    {
+      "ja": "WiFiはありますか",
+      "romaji": "WiFi wa arimasu ka",
+      "en": "Do you have WiFi?",
+      "zh": "有WiFi吗"
+    },
+    {
+      "ja": "すみません、英語のメニューはありますか",
+      "romaji": "Sumimasen, eigo no menyū wa arimasu ka",
+      "en": "Excuse me, do you have an English menu?",
+      "zh": "不好意思，有英文菜单吗"
+    }
+  ]
+}
