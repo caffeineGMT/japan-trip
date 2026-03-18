@@ -19,6 +19,7 @@
     "astro:build": "astro build",
     "astro:preview": "astro preview",
     "generate:destinations": "node scripts/generate-destination-data.js",
+    "generate:seo": "node scripts/generate-seo-pages.js",
     "outreach:campaign": "node scripts/run-outreach-campaign.js",
     "outreach:followups": "node scripts/process-followups-cron.js",
     "b2b:preview": "node scripts/cold-email-sequence.js",
@@ -45,6 +46,7 @@
     "@astrojs/sitemap": "^3.7.1",
     "@google-cloud/text-to-speech": "^6.4.0",
     "@supabase/supabase-js": "^2.99.2",
+    "@vercel/og": "^0.11.1",
     "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
     "astro": "^6.0.6",
@@ -61,6 +63,7 @@
     "jsonwebtoken": "^9.0.3",
     "mailgun.js": "^12.7.1",
     "multer": "^2.1.1",
+    "nanoid": "^5.1.7",
     "openai": "^6.32.0",
     "paypal-rest-sdk": "^1.8.1",
     "posthog-js": "^1.362.0",
@@ -70,6 +73,7 @@
     "terser": "^5.46.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@types/jest": "^30.0.0",
     "jest": "^30.3.0",
     "node-fetch": "^2.7.0",

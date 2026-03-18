@@ -45,6 +45,7 @@
     <button id="whatsNextToggle" class="btn-toggle">What's Next</button>
     <nav class="day-tabs" id="day-tabs"></nav>
     <button id="phrases-btn" class="icon-btn" title="Japanese Phrases">🗣️</button>
+    <button id="share-btn" class="icon-btn" title="Share Trip">🔗</button>
     <div class="lang-switcher">
       <button data-lang="en" class="active">EN</button>
       <button data-lang="zh">中文</button>
@@ -85,6 +86,9 @@
   <!-- AI Assistant -->
   <script src="components/ai-assistant.js"></script>
 
+  <!-- Share Functionality -->
+  <script src="lib/share.js"></script>
+
   <!-- Analytics (PostHog) -->
   <script src="lib/analytics.js"></script>
   <script src="lib/analytics-init.js"></script>
@@ -97,6 +101,72 @@
         <button class="close-modal" aria-label="Close">&times;</button>
       </div>
       <div id="phrases-list" class="phrases-list"></div>
+    </div>
+  </div>
+
+  <!-- Share Modal -->
+  <div id="share-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Share Your Trip</h3>
+        <button class="close-modal" aria-label="Close">&times;</button>
+      </div>
+      <div class="share-modal-body">
+        <p class="share-description">Share your Japan itinerary with friends and earn rewards!</p>
+
+        <div id="share-loading" class="share-loading" style="display: none;">
+          <div class="spinner"></div>
+          <p>Generating share link...</p>
+        </div>
+
+        <div id="share-content" class="share-content">
+          <div class="share-link-container">
+            <input type="text" id="share-link-input" readonly class="share-link-input" placeholder="Your share link will appear here">
+            <button id="copy-link-btn" class="btn-primary">Copy Link</button>
+          </div>
+
+          <div class="share-buttons">
+            <button class="share-btn twitter" data-platform="twitter">
+              <span class="share-icon">🐦</span>
+              <span>Twitter</span>
+            </button>
+            <button class="share-btn facebook" data-platform="facebook">
+              <span class="share-icon">📘</span>
+              <span>Facebook</span>
+            </button>
+            <button class="share-btn whatsapp" data-platform="whatsapp">
+              <span class="share-icon">💬</span>
+              <span>WhatsApp</span>
+            </button>
+            <button class="share-btn email" data-platform="email">
+              <span class="share-icon">✉️</span>
+              <span>Email</span>
+            </button>
+          </div>
+
+          <div class="share-rewards">
+            <div class="rewards-card">
+              <h4>🎁 Referral Rewards</h4>
+              <p>Refer 3 friends to get <strong>1 month of Premium free!</strong></p>
+              <div class="rewards-stats" id="rewards-stats">
+                <div class="stat">
+                  <span class="stat-value" id="referral-count">0</span>
+                  <span class="stat-label">Referrals</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value" id="rewards-earned">0</span>
+                  <span class="stat-label">Months Earned</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="share-error" class="share-error" style="display: none;">
+          <p>Failed to generate share link. Please try again.</p>
+          <button id="retry-share-btn" class="btn-secondary">Retry</button>
+        </div>
+      </div>
     </div>
   </div>
 
