@@ -52,6 +52,20 @@ app.use('/api/ai', aiRecommendRouter);
 app.use('/api/ai', aiEditRouter);
 app.use('/api/ai', aiChecklistRouter);
 
+// ===== AFFILIATE PARTNER ROUTES =====
+const affiliateTrackRouter = require('./api/affiliate/track');
+const affiliateStatsRouter = require('./api/affiliate/stats');
+const affiliatePayoutRouter = require('./api/affiliate/payout');
+
+app.use('/api/affiliate', affiliateTrackRouter);
+app.use('/api/affiliate', affiliateStatsRouter);
+app.use('/api/affiliate', affiliatePayoutRouter);
+
+// Serve embed widget pages
+app.get('/embed/:tripId', (req, res) => {
+  res.sendFile(path.join(__dirname, 'embed', 'trip.html'));
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({

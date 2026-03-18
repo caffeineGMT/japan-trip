@@ -50,5 +50,11 @@
     "STRIPE_WEBHOOK_SECRET": "@stripe-webhook-secret",
     "MAPBOX_ACCESS_TOKEN": "@mapbox-access-token",
     "BASE_URL": "https://trip.to"
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/affiliate/payout/process-monthly",
+      "schedule": "0 0 1 * *"
+    }
+  ]
 }
