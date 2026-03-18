@@ -89,6 +89,10 @@ app.post('/api/outreach/webhooks/mailgun', outreachCampaigns.mailgunWebhook);
 const referralRouter = require('./api/referrals/routes');
 app.use('/api/referrals', referralRouter);
 
+// ===== CHROME EXTENSION ROUTES =====
+const extensionSavePOIRouter = require('./api/extension/save-poi');
+app.use('/api/extension', extensionSavePOIRouter);
+
 // Serve embed widget pages
 app.get('/embed/:tripId', (req, res) => {
   res.sendFile(path.join(__dirname, 'embed', 'trip.html'));
