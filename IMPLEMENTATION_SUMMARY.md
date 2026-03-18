@@ -116,3 +116,113 @@ Successfully implemented a production-ready mobile-first CSS Grid layout with ha
 - Add pull-to-refresh on mobile
 - Optimize font loading with font-display: swap
 - Implement virtual scrolling for long itineraries
+
+---
+
+# Restaurant Reservations & Packing Checklist Implementation
+
+## Overview
+Built two new pages for the Japan Trip companion app: Restaurant Reservations and Packing Checklist, both with full localStorage persistence and integrated into the main navigation.
+
+## Files Created/Modified
+
+### New Pages & JavaScript
+1. **reservations.html** - Restaurant reservations page with table layout
+2. **reservations.js** - Fetches and renders reservation data with Google Maps integration
+3. **checklist.html** - Packing checklist page with categorized items
+4. **checklist.js** - Checkbox state management with localStorage persistence
+
+### Data Files
+1. **data/reservations.json** - 4 restaurant reservations sorted by date:
+   - Apr 3: Genshiyaki Hibachi (Tokyo)
+   - Apr 5: Gion Matayoshi (Kyoto)
+   - Apr 8: Jumbo Tsuribune Tsurikichi (Osaka fishing restaurant)
+   - Apr 10: Kani Doraku (Osaka crab restaurant)
+
+2. **data/checklist.json** - 6 categories with 45 total items:
+   - Clothing (8 items)
+   - Electronics (7 items)
+   - Documents (7 items)
+   - Toiletries (6 items)
+   - Medicine (6 items)
+   - Misc (7 items)
+
+### Modified Files
+1. **index.html** - Added top navigation bar with links to Map, Reservations, and Packing pages
+2. **style.css** - Added comprehensive styling (~400 lines) for:
+   - Top navigation (.top-nav)
+   - Page containers and headers
+   - Reservations table with responsive design
+   - Packing checklist with progress indicator
+   - Mobile-first responsive breakpoints
+
+## Features Implemented
+
+### Reservations Page
+✅ Sortable table with 6 columns (Date, Restaurant, Time, Confirmation, Phone, Map)
+✅ Click-to-copy confirmation codes with visual feedback
+✅ Tap-to-call phone numbers (tel: protocol)
+✅ Google Maps deep links with lat/lng coordinates
+✅ Restaurant notes displayed as subtitle
+✅ Mobile responsive - horizontally scrollable table
+✅ Hover states and animations
+
+### Packing Checklist Page
+✅ Progress indicator showing "X/45 packed" with animated progress bar
+✅ Collapsible category sections with item counts (e.g., "12/8")
+✅ Checkbox persistence via localStorage (key: 'japan-trip-checklist')
+✅ Custom item addition per category with prompt dialog
+✅ Custom items persist separately (key: 'japan-trip-custom-items')
+✅ Unique item IDs generated from category + item name
+✅ Strike-through and opacity for checked items
+✅ Category icons (👕 🔌 📄 🧴 💊 🎒)
+✅ 2-column grid layout on tablet/desktop
+
+### Navigation Integration
+✅ Top nav bar added to all 3 pages (Map, Reservations, Packing)
+✅ Active state highlighting for current page
+✅ Consistent dark theme styling matching existing design
+✅ Mobile responsive with proper touch targets
+
+## Technical Decisions Made
+
+1. **localStorage Strategy**: Used two separate keys for better data separation
+   - `japan-trip-checklist`: Stores checked state as object {itemId: boolean}
+   - `japan-trip-custom-items`: Stores custom items by category array
+
+2. **Item ID Generation**: `category-item-name` with lowercase and hyphenation for stable IDs
+
+3. **Progress Calculation**: Real-time updates on checkbox change, counting all items including custom additions
+
+4. **Google Maps Links**: Used Search API format with lat/lng for reliable location opening
+
+5. **Copy-to-Clipboard**: Native Clipboard API with 2-second success feedback
+
+6. **Mobile Optimization**:
+   - Tables scroll horizontally on mobile
+   - Checklist switches from 2-column grid to single column
+   - Restaurant notes hidden on mobile to save space
+
+7. **Dark Theme Consistency**: Used existing CSS variables (--surface, --text, --border, --accent) for seamless integration
+
+## Offline Functionality
+Both pages work offline once cached by the service worker (already implemented in main app). Static JSON files and all assets are cacheable.
+
+## Testing Recommendations
+- [ ] Test localStorage persistence across page reloads
+- [ ] Verify custom item addition and deletion
+- [ ] Test Google Maps links on mobile and desktop
+- [ ] Verify phone number tap-to-call on mobile
+- [ ] Test clipboard copy on different browsers
+- [ ] Check responsive breakpoints (320px, 768px, 1024px)
+- [ ] Verify progress bar calculation with mixed checked states
+
+## Future Enhancements (Not Implemented)
+- Search/filter for reservations
+- Sort reservations by date/restaurant/location
+- Export checklist to CSV or print
+- Share checklist with travel companions
+- Sync checklist across devices (would need backend)
+- Add photos to packing items
+- Smart packing suggestions based on weather forecast
+- Reservation reminder notifications
