@@ -114,6 +114,15 @@ if (process.env.POSTHOG_API_KEY) {
   console.warn('⚠️  POSTHOG_API_KEY not set - analytics disabled');
 }
 
+// ===== PRICING V2 ROUTES (A/B Testing & Conversion Optimization) =====
+const createCheckoutSession = require('./api/stripe/create-checkout-session');
+const analyticsTrack = require('./api/analytics/track');
+const abTestReport = require('./api/analytics/ab-test-report');
+
+app.post('/api/stripe/create-checkout-session', createCheckoutSession);
+app.post('/api/analytics/track', analyticsTrack);
+app.get('/api/analytics/ab-test-report', abTestReport);
+
 app.post('/api/analytics/track', analyticsMiddleware);
 
 // Partnership dashboard

@@ -482,6 +482,11 @@
       const submitBtn = e.target.querySelector('.submit-btn');
       const successMessage = document.getElementById('successMessage');
 
+      // Track signup started
+      if (window.Analytics) {
+        window.Analytics.trackSignupStarted(email);
+      }
+
       // Disable button during submission
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting...';
@@ -505,7 +510,14 @@
         successMessage.classList.add('show');
         emailInput.value = '';
 
-        // Track conversion
+        // Track conversion with PostHog
+        if (window.Analytics) {
+          const userId = email.replace('@', '_at_').replace(/\./g, '_');
+          window.Analytics.trackSignupCompleted(userId, email, 'early_access');
+          window.Analytics.trackFreeTrialStarted('early_access');
+        }
+
+        // Track conversion with Google Analytics
         if (window.gtag) {
           gtag('event', 'early_access_signup', {
             'event_category': 'engagement',
