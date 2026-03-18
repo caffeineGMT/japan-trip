@@ -94,6 +94,9 @@
     </div>
   </div>
 
+  <!-- Analytics -->
+  <script src="lib/analytics.js"></script>
+  <script src="lib/analytics-init.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     // Get session ID from URL
@@ -107,18 +110,65 @@
         return;
       }
 
-      // Wait a moment for webhook to process
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      try {
+        // Fetch session details from Stripe
+        const response = await fetch(`/api/stripe/session/${sessionId}`);
+        const sessionData = await response.json();
 
-      // Update message
-      document.getElementById('success-message').textContent = 'Your purchase has been confirmed! You now have access to your template.';
-      document.getElementById('actions').style.display = 'flex';
+        // Extract plan details
+        const plan = sessionData.metadata?.plan || 'unknown';
+        const amount = sessionData.amount_total ? sessionData.amount_total / 100 : 0;
+        const billingCycle = plan === 'premium' ? 'monthly' : 'one-time';
 
-      // Store success in localStorage for tracking
-      localStorage.setItem('last_purchase_success', Date.now());
+        // Track purchase completion
+        if (window.Analytics) {
+          Analytics.trackPurchaseCompleted(
+            plan,
+            amount,
+            billingCycle,
+            sessionId
+          );
+        }
+
+        // Update user plan in localStorage
+        localStorage.setItem('user_plan', plan);
+        localStorage.setItem('last_purchase_success', Date.now());
+        localStorage.setItem('purchase_details', JSON.stringify({
+          plan,
+          amount,
+          date: new Date().toISOString(),
+          sessionId
+        }));
+
+        // Update message based on plan
+        let message = 'Your purchase has been confirmed! ';
+        if (plan === 'premium') {
+          message += 'Your 7-day free trial has started. You now have unlimited access to all Premium features.';
+        } else if (plan === 'lifetime') {
+          message += 'You now have lifetime access to all Premium features!';
+        } else {
+          message += 'You now have access to your purchase.';
+        }
+
+        document.getElementById('success-message').textContent = message;
+        document.getElementById('actions').style.display = 'flex';
+
+      } catch (error) {
+        console.error('Error verifying payment:', error);
+
+        // Fallback message
+        document.getElementById('success-message').textContent = 'Your purchase has been confirmed! Check your email for details.';
+        document.getElementById('actions').style.display = 'flex';
+
+        // Track with basic info
+        if (window.Analytics) {
+          Analytics.trackPurchaseCompleted('unknown', 0, 'unknown', sessionId);
+        }
+      }
     }
 
-    verifyPayment();
+    // Wait a moment for webhook to process, then verify
+    setTimeout(verifyPayment, 2000);
   </script>
 </body>
 </html>

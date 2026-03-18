@@ -148,6 +148,46 @@ router.post('/checkout', authenticateUser, async (req, res) => {
 });
 
 /**
+ * GET /api/stripe/session/:sessionId
+ * Retrieve Stripe Checkout Session details
+ */
+router.get('/session/:sessionId', async (req, res) => {
+  try {
+    const { sessionId } = req.params;
+
+    if (!sessionId) {
+      return res.status(400).json({
+        error: 'Invalid request',
+        message: 'Session ID is required'
+      });
+    }
+
+    // Retrieve session from Stripe
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
+
+    return res.status(200).json({
+      success: true,
+      id: session.id,
+      amount_total: session.amount_total,
+      currency: session.currency,
+      customer_email: session.customer_email,
+      metadata: session.metadata,
+      payment_status: session.payment_status,
+      status: session.status
+    });
+
+  } catch (error) {
+    console.error('[Stripe] Session retrieval error:', error);
+
+    return res.status(500).json({
+      success: false,
+      error: 'Failed to retrieve session',
+      message: error.message
+    });
+  }
+});
+
+/**
  * POST /api/stripe/create-checkout-session
  * Create a Stripe Checkout Session for pricing page (no auth required for trial)
  *

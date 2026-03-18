@@ -324,4 +324,80 @@ async function handlePaymentFailed(invoice) {
   console.log(`Payment failed for subscription ${subscription.id}`);
 }
 
+/**
+ * Handle white-label subscription creation
+ * Send welcome email and update tenant status
+ */
+async function handleWhiteLabelSubscriptionCreated(subscription) {
+  const subdomain = subscription.metadata.subdomain;
+
+  if (!subdomain) {
+    console.error('Subdomain missing from white-label subscription metadata');
+    return;
+  }
+
+  console.log(`White-label subscription created for ${subdomain}:`, {
+    subscriptionId: subscription.id,
+    status: subscription.status,
+    tier: subscription.metadata.tier
+  });
+
+  // Initialize Supabase client
+  const supabase = createClient(
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+
+  // Find tenant by subdomain
+  const { data: tenant, error } = await supabase
+    .from('tenants')
+    .select('*')
+    .eq('subdomain', subdomain)
+    .single();
+
+  if (error || !tenant) {
+    console.error(`Tenant not found for subdomain: ${subdomain}`);
+    return;
+  }
+
+  // Update tenant subscription status
+  await supabase
+    .from('tenants')
+    .update({
+      subscription_status: subscription.status,
+      stripe_subscription_id: subscription.id
+    })
+    .eq('id', tenant.id);
+
+  // Send welcome email
+  try {
+    const mainDomain = process.env.MAIN_DOMAIN || 'tripcompanion.app';
+    await sendWelcomeEmail({
+      id: tenant.id,
+      agencyName: tenant.agency_name,
+      subdomain: tenant.subdomain,
+      tier: tenant.tier,
+      contactEmail: tenant.contact_email,
+      url: `https://${tenant.subdomain}.${mainDomain}`,
+      dashboardUrl: `/partners/dashboard?tenant=${tenant.id}`,
+      trialEndsAt: tenant.trial_ends_at
+    });
+
+    console.log(`✅ Welcome email sent to ${tenant.contact_email}`);
+  } catch (emailError) {
+    console.error('Failed to send welcome email:', emailError);
+    // Don't fail webhook processing if email fails
+  }
+
+  // Update tenant status to active if subscription is active or trialing
+  if (subscription.status === 'active' || subscription.status === 'trialing') {
+    await supabase
+      .from('tenants')
+      .update({ is_active: true })
+      .eq('id', tenant.id);
+  }
+
+  console.log(`✅ White-label tenant ${subdomain} activated`);
+}
+
 module.exports = router;
