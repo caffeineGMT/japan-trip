@@ -4,8 +4,9 @@
  */
 
 const TransportWidget = {
-  // JR Pass Affiliate ID (UPDATE WITH YOUR REAL ID)
-  JRPASS_AFFILIATE_ID: 'YOUR_JRPASS_AFFILIATE_ID', // Join at jrpass.com/affiliate
+  // JR Pass Affiliate ID
+  // To join: Apply at https://www.jrpass.com/affiliate
+  JRPASS_AFFILIATE_ID: process.env.JRPASS_AFFILIATE_ID || 'japan_trip_demo', // Replace with your own
 
   // Configuration
   config: {

@@ -6,6 +6,17 @@ const {
   addUserTemplate,
   supabaseAdmin
 } = require('../../lib/supabase-auth');
+const { PostHog } = require('posthog-node');
+const { sendWelcomeEmail, sendSubscriptionConfirmation } = require('../../lib/white-label-email');
+const { createClient } = require('@supabase/supabase-js');
+
+// Initialize PostHog for server-side analytics
+const posthog = new PostHog(
+  process.env.POSTHOG_API_KEY || 'phc_placeholder',
+  {
+    host: process.env.POSTHOG_HOST || 'https://app.posthog.com',
+  }
+);
 
 /**
  * POST /api/stripe/webhook
@@ -44,12 +55,42 @@ router.post('/webhook', express.raw({ type: 'application/json' }), async (req, r
       case 'payment_intent.succeeded': {
         const paymentIntent = event.data.object;
         console.log('Payment succeeded:', paymentIntent.id);
+
+        // Track purchase completed for conversion funnel
+        if (paymentIntent.metadata?.user_id) {
+          const amount = paymentIntent.amount / 100; // Convert from cents
+          const planName = paymentIntent.metadata?.plan_name || 'unknown';
+          const billingCycle = paymentIntent.metadata?.billing_cycle || 'unknown';
+
+          // Track with PostHog
+          posthog.capture({
+            distinctId: paymentIntent.metadata.user_id,
+            event: 'purchase_completed',
+            properties: {
+              transaction_id: paymentIntent.id,
+              amount: amount,
+              plan: planName,
+              billing_cycle: billingCycle,
+              currency: paymentIntent.currency,
+              payment_method: paymentIntent.payment_method_types?.[0] || 'unknown',
+              funnel_stage: 'conversion',
+            },
+          });
+
+          console.log(`[Analytics] Purchase tracked: $${amount} - ${planName} - User ${paymentIntent.metadata.user_id}`);
+        }
         break;
       }
 
       case 'customer.subscription.created': {
         const subscription = event.data.object;
-        await handleSubscriptionCreated(subscription);
+
+        // Check if this is a white-label subscription
+        if (subscription.metadata?.subdomain) {
+          await handleWhiteLabelSubscriptionCreated(subscription);
+        } else {
+          await handleSubscriptionCreated(subscription);
+        }
         break;
       }
 
@@ -131,6 +172,26 @@ async function handleCheckoutCompleted(session) {
   } else if (type === 'subscription') {
     // Subscription will be handled by subscription.created event
     console.log('Subscription checkout completed, waiting for subscription.created event');
+
+    // Track checkout completion for subscription
+    if (userId && session.amount_total) {
+      const amount = session.amount_total / 100;
+      const planName = session.metadata.plan_name || 'subscription';
+      const billingCycle = session.metadata.billing_cycle || 'monthly';
+
+      posthog.capture({
+        distinctId: userId,
+        event: 'checkout_completed',
+        properties: {
+          session_id: session.id,
+          amount: amount,
+          plan: planName,
+          billing_cycle: billingCycle,
+          payment_status: session.payment_status,
+          funnel_stage: 'conversion',
+        },
+      });
+    }
   }
 }
 
@@ -148,6 +209,26 @@ async function handleSubscriptionCreated(subscription) {
 
   // Update user subscription status
   await updateUserSubscription(userId, subscription.status, subscription.id);
+
+  // Track subscription activation
+  const price = subscription.items?.data[0]?.price;
+  if (price && userId) {
+    const amount = price.unit_amount / 100;
+    const billingCycle = price.recurring?.interval || 'unknown';
+
+    posthog.capture({
+      distinctId: userId,
+      event: 'subscription_activated',
+      properties: {
+        subscription_id: subscription.id,
+        amount: amount,
+        billing_cycle: billingCycle,
+        status: subscription.status,
+        trial_end: subscription.trial_end ? new Date(subscription.trial_end * 1000).toISOString() : null,
+        funnel_stage: 'retention',
+      },
+    });
+  }
 
   console.log(`Subscription ${subscription.id} created for user ${userId}`, {
     status: subscription.status,

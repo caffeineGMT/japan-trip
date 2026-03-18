@@ -21,6 +21,27 @@ const { multiTenantMiddleware, injectTenantBranding } = require('./lib/multi-ten
 app.use(multiTenantMiddleware);
 app.use(injectTenantBranding);
 
+// PostHog analytics meta tag injection middleware
+app.use((req, res, next) => {
+  // Only inject for HTML files
+  if (req.path.endsWith('.html') || req.path === '/' || !req.path.includes('.')) {
+    const send = res.send;
+    res.send = function(data) {
+      // Check if response is HTML
+      if (typeof data === 'string' && data.includes('<head>')) {
+        const metaTags = `
+  <!-- PostHog Analytics Config -->
+  <meta name="posthog-api-key" content="${process.env.POSTHOG_API_KEY || ''}">
+  <meta name="posthog-host" content="${process.env.POSTHOG_HOST || 'https://app.posthog.com'}">`;
+
+        data = data.replace('<head>', '<head>' + metaTags);
+      }
+      return send.call(this, data);
+    };
+  }
+  next();
+});
+
 app.use(express.static(__dirname));
 
 // ===== STRIPE PAYMENT ROUTES =====

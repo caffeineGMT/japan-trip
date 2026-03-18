@@ -100,6 +100,37 @@
     </div>
   </div>
 
+  <!-- Paywall Overlay (Free users on Day 4+) -->
+  <div id="paywall-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 9999; backdrop-filter: blur(8px);">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 48px; border-radius: 16px; max-width: 500px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+      <div style="font-size: 3rem; margin-bottom: 16px;">🔒</div>
+      <h2 style="font-size: 2rem; margin-bottom: 16px; color: #1a1a1a;">You've reached the free plan limit</h2>
+      <p style="font-size: 1.1rem; color: #6b7280; margin-bottom: 32px; line-height: 1.6;">Upgrade to Premium to unlock unlimited days, AI trip optimizer, and offline maps for your entire Japan adventure.</p>
+      <div style="display: flex; gap: 16px; justify-content: center;">
+        <button onclick="window.location.href='/pricing.html'" style="padding: 16px 32px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; flex: 1;">
+          Upgrade to Premium
+        </button>
+        <button onclick="document.getElementById('paywall-overlay').style.display='none'" style="padding: 16px 32px; background: white; color: #667eea; border: 2px solid #667eea; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer;">
+          Close
+        </button>
+      </div>
+      <p style="margin-top: 24px; font-size: 0.9rem; color: #9ca3af;">Start your 7-day free trial • Cancel anytime</p>
+    </div>
+  </div>
+
+  <!-- Upgrade Banner (Free users on Day 4+) -->
+  <div id="upgrade-banner" style="display: none; position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 0; text-align: center; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; padding: 0 16px;">
+      <span style="font-weight: 600; font-size: 1rem;">🎉 You're on Day 4 of your trip! Unlock unlimited days with Premium</span>
+      <button onclick="window.location.href='/pricing.html'" style="padding: 8px 24px; background: white; color: #667eea; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.95rem;">
+        Upgrade Now
+      </button>
+      <button onclick="document.getElementById('upgrade-banner').style.display='none'" style="padding: 8px 16px; background: rgba(255,255,255,0.2); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem;">
+        ✕
+      </button>
+    </div>
+  </div>
+
   <!-- Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
@@ -141,6 +172,71 @@
         });
       });
     }
+
+    // Paywall logic: Show upgrade prompts for free users on Day 4+
+    (function() {
+      // Check user subscription status (you'll need to implement this based on your auth system)
+      const userPlan = localStorage.getItem('user_plan') || 'free';
+
+      // Get current day from itinerary (assuming it's stored somewhere)
+      function getCurrentDay() {
+        // This is a simplified example - adjust based on your actual data structure
+        const urlParams = new URLSearchParams(window.location.search);
+        const day = parseInt(urlParams.get('day')) || 1;
+        return day;
+      }
+
+      const currentDay = getCurrentDay();
+
+      // Show upgrade prompts for free users on Day 4+
+      if (userPlan === 'free' && currentDay >= 4) {
+        // Show upgrade banner
+        const banner = document.getElementById('upgrade-banner');
+        if (banner) {
+          banner.style.display = 'block';
+          // Adjust top padding to account for banner
+          document.body.style.paddingTop = '60px';
+
+          // Track paywall hit
+          if (window.Analytics) {
+            Analytics.trackPaywallHit('day_4_limit', 'upgrade_banner');
+          }
+        }
+
+        // Show paywall overlay when trying to access AI features
+        window.showPaywall = function(feature) {
+          const overlay = document.getElementById('paywall-overlay');
+          if (overlay) {
+            overlay.style.display = 'block';
+
+            // Track paywall hit
+            if (window.Analytics) {
+              Analytics.trackPaywallHit(feature, 'feature_access');
+            }
+          }
+        };
+
+        // Intercept AI feature clicks
+        document.addEventListener('click', function(e) {
+          // Check if clicked element or parent has data-premium attribute
+          const target = e.target.closest('[data-premium="true"]');
+          if (target && userPlan === 'free') {
+            e.preventDefault();
+            e.stopPropagation();
+            showPaywall(target.dataset.feature || 'premium_feature');
+          }
+        }, true);
+      }
+
+      // Track page load for free vs premium users
+      if (window.Analytics) {
+        Analytics.track('app_loaded', {
+          user_plan: userPlan,
+          current_day: currentDay,
+          paywall_shown: userPlan === 'free' && currentDay >= 4
+        });
+      }
+    })();
   </script>
 </body>
 </html>

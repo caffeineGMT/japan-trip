@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your White-Label Trip Planner is Ready!</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: #f7fafc;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #f7fafc; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <!-- Main Container -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; text-align: center;">
+              <h1 style="margin: 0; color: white; font-size: 32px; font-weight: 700;">🎉 You're All Set!</h1>
+              <p style="margin: 16px 0 0 0; color: rgba(255,255,255,0.9); font-size: 18px;">Your white-label trip planner is ready</p>
+            </td>
+          </tr>
+
+          <!-- Welcome Message -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="margin: 0 0 20px 0; color: #1a202c; font-size: 16px; line-height: 1.6;">
+                Hi {{agencyName}} team,
+              </p>
+              <p style="margin: 0 0 20px 0; color: #1a202c; font-size: 16px; line-height: 1.6;">
+                Welcome to Trip Companion! Your white-label travel platform is now live and ready to start generating revenue.
+              </p>
+              <p style="margin: 0 0 30px 0; color: #1a202c; font-size: 16px; line-height: 1.6;">
+                Your custom subdomain is configured and your 14-day free trial has started. Here's what you need to know:
+              </p>
+
+              <!-- Site URL Card -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="background: #eef2ff; border-radius: 12px; padding: 24px; margin-bottom: 30px;">
+                <tr>
+                  <td>
+                    <p style="margin: 0 0 8px 0; color: #4c51bf; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Your Platform URL</p>
+                    <a href="{{platformUrl}}" style="color: #667eea; font-size: 24px; font-weight: 700; text-decoration: none; word-break: break-all;">{{platformUrl}}</a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Dashboard Access -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="background: #f0fdf4; border-radius: 12px; padding: 24px; margin-bottom: 30px;">
+                <tr>
+                  <td>
+                    <p style="margin: 0 0 8px 0; color: #166534; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Dashboard Access</p>
+                    <p style="margin: 0 0 12px 0; color: #1a202c; font-size: 16px;">
+                      Access your admin dashboard to customize branding, upload your logo, and track analytics:
+                    </p>
+                    <a href="{{dashboardUrl}}" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 8px;">
+                      Open Dashboard →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Setup Checklist -->
+              <h2 style="margin: 0 0 20px 0; color: #1a202c; font-size: 24px; font-weight: 700;">Setup Checklist</h2>
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 30px;">
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="40" style="vertical-align: top;">
+                          <div style="width: 28px; height: 28px; background: #667eea; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700;">1</div>
+                        </td>
+                        <td style="vertical-align: top;">
+                          <p style="margin: 0; color: #1a202c; font-weight: 600; font-size: 16px;">Upload Your Logo</p>
+                          <p style="margin: 4px 0 0 0; color: #718096; font-size: 14px;">Navigate to Dashboard → Branding → Upload Logo (PNG or SVG, max 5MB)</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="40" style="vertical-align: top;">
+                          <div style="width: 28px; height: 28px; background: #667eea; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700;">2</div>
+                        </td>
+                        <td style="vertical-align: top;">
+                          <p style="margin: 0; color: #1a202c; font-weight: 600; font-size: 16px;">Customize Brand Colors</p>
+                          <p style="margin: 4px 0 0 0; color: #718096; font-size: 14px;">Choose your primary, secondary, and accent colors to match your brand</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="40" style="vertical-align: top;">
+                          <div style="width: 28px; height: 28px; background: #667eea; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700;">3</div>
+                        </td>
+                        <td style="vertical-align: top;">
+                          <p style="margin: 0; color: #1a202c; font-weight: 600; font-size: 16px;">Invite Team Members</p>
+                          <p style="margin: 4px 0 0 0; color: #718096; font-size: 14px;">Add your team to help manage trips and customers (Dashboard → Team)</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="40" style="vertical-align: top;">
+                          <div style="width: 28px; height: 28px; background: #667eea; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700;">4</div>
+                        </td>
+                        <td style="vertical-align: top;">
+                          <p style="margin: 0; color: #1a202c; font-weight: 600; font-size: 16px;">Share Your Platform</p>
+                          <p style="margin: 4px 0 0 0; color: #718096; font-size: 14px;">Start promoting {{platformUrl}} to your customers!</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Plan Details -->
+              <h2 style="margin: 0 0 20px 0; color: #1a202c; font-size: 24px; font-weight: 700;">Your Plan Details</h2>
+              <table width="100%" cellpadding="0" cellspacing="0" style="background: #fafafa; border-radius: 12px; padding: 20px; margin-bottom: 30px;">
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="color: #718096; font-size: 14px;">Plan:</td>
+                        <td align="right" style="color: #1a202c; font-weight: 600; font-size: 14px; text-transform: capitalize;">{{tier}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="color: #718096; font-size: 14px;">Trial Ends:</td>
+                        <td align="right" style="color: #1a202c; font-weight: 600; font-size: 14px;">{{trialEndDate}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="color: #718096; font-size: 14px;">Monthly Users:</td>
+                        <td align="right" style="color: #1a202c; font-weight: 600; font-size: 14px;">{{maxUsers}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="color: #718096; font-size: 14px;">Billing:</td>
+                        <td align="right" style="color: #1a202c; font-weight: 600; font-size: 14px;">{{monthlyPrice}}/month after trial</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Quick Links -->
+              <h2 style="margin: 0 0 20px 0; color: #1a202c; font-size: 24px; font-weight: 700;">Quick Links</h2>
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 30px;">
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <a href="{{dashboardUrl}}" style="color: #667eea; text-decoration: none; font-weight: 600;">📊 Dashboard</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <a href="{{platformUrl}}/builder" style="color: #667eea; text-decoration: none; font-weight: 600;">✏️ Trip Builder</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <a href="https://docs.tripcompanion.app" style="color: #667eea; text-decoration: none; font-weight: 600;">📚 Documentation</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <a href="mailto:support@tripcompanion.app" style="color: #667eea; text-decoration: none; font-weight: 600;">💬 Support</a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Support Message -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="background: #fffbeb; border-left: 4px solid #fbbf24; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+                <tr>
+                  <td>
+                    <p style="margin: 0 0 8px 0; color: #78350f; font-weight: 600; font-size: 16px;">Need Help?</p>
+                    <p style="margin: 0; color: #92400e; font-size: 14px; line-height: 1.6;">
+                      Our support team is here to help you succeed. Email us at <a href="mailto:support@tripcompanion.app" style="color: #d97706; text-decoration: none; font-weight: 600;">support@tripcompanion.app</a> or schedule a 1:1 onboarding call.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin: 0 0 20px 0; color: #1a202c; font-size: 16px; line-height: 1.6;">
+                We're excited to see what you build!
+              </p>
+              <p style="margin: 0; color: #1a202c; font-size: 16px; line-height: 1.6;">
+                Best regards,<br>
+                <strong>The Trip Companion Team</strong>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background: #f7fafc; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0 0 12px 0; color: #718096; font-size: 14px;">
+                Trip Companion · White-Label Travel Platforms<br>
+                Made with ❤️ for travel agencies
+              </p>
+              <p style="margin: 0; color: #a0aec0; font-size: 12px;">
+                Questions? Reply to this email or contact <a href="mailto:support@tripcompanion.app" style="color: #667eea; text-decoration: none;">support@tripcompanion.app</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

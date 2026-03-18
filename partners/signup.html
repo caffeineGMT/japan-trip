@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Your White-Label Travel Platform | Trip Companion</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .signup-container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 600px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .demo-link {
+      margin-top: 16px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .demo-link:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .form-container {
+      padding: 40px;
+    }
+
+    .tier-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .tier-option {
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tier-option:hover {
+      border-color: #667eea;
+      background: #f9fafb;
+    }
+
+    .tier-option.selected {
+      border-color: #667eea;
+      background: #eef2ff;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .tier-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1a202c;
+    }
+
+    .tier-price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 4px;
+    }
+
+    .tier-users {
+      font-size: 12px;
+      color: #718096;
+    }
+
+    .tier-features {
+      font-size: 12px;
+      color: #4a5568;
+      margin-top: 12px;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a202c;
+      font-size: 14px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    input.error {
+      border-color: #ef4444;
+    }
+
+    .error-message {
+      color: #ef4444;
+      font-size: 13px;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .subdomain-group {
+      position: relative;
+    }
+
+    .subdomain-suffix {
+      position: absolute;
+      right: 16px;
+      top: 42px;
+      color: #718096;
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    .availability-indicator {
+      position: absolute;
+      right: 16px;
+      top: 42px;
+      font-size: 20px;
+      display: none;
+    }
+
+    .availability-indicator.checking {
+      display: block;
+      animation: spin 1s linear infinite;
+    }
+
+    .availability-indicator.available {
+      display: block;
+    }
+
+    .availability-indicator.taken {
+      display: block;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .card-element {
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .submit-button {
+      width: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .submit-button:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .submit-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .trial-notice {
+      text-align: center;
+      margin-top: 20px;
+      color: #718096;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .trial-notice strong {
+      color: #1a202c;
+    }
+
+    .alert {
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .alert.success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #34d399;
+    }
+
+    .alert.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+    }
+
+    .spinner {
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      width: 20px;
+      height: 20px;
+      animation: spin 0.8s linear infinite;
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .tier-selector {
+        grid-template-columns: 1fr;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .form-container {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <div class="header">
+      <h1>🚀 Launch Your White-Label Travel Platform</h1>
+      <p>Start selling custom trip itineraries in minutes</p>
+      <a href="/demo/index.html" class="demo-link" target="_blank">👀 View Live Demo</a>
+    </div>
+
+    <div class="form-container">
+      <div class="alert" id="alert"></div>
+
+      <form id="signup-form">
+        <!-- Tier Selection -->
+        <div class="form-group">
+          <label>Choose Your Plan</label>
+          <div class="tier-selector">
+            <div class="tier-option" data-tier="starter" data-price="$499">
+              <div class="tier-name">Starter</div>
+              <div class="tier-price">$499<span style="font-size: 14px; font-weight: 400;">/mo</span></div>
+              <div class="tier-users">100 users/mo</div>
+              <div class="tier-features">
+                ✓ Custom subdomain<br>
+                ✓ Basic branding<br>
+                ✓ Email support
+              </div>
+            </div>
+            <div class="tier-option selected" data-tier="growth" data-price="$999">
+              <div class="tier-name">Growth</div>
+              <div class="tier-price">$999<span style="font-size: 14px; font-weight: 400;">/mo</span></div>
+              <div class="tier-users">500 users/mo</div>
+              <div class="tier-features">
+                ✓ Everything in Starter<br>
+                ✓ Full white-labeling<br>
+                ✓ Priority support
+              </div>
+            </div>
+            <div class="tier-option" data-tier="enterprise" data-price="$2,499">
+              <div class="tier-name">Enterprise</div>
+              <div class="tier-price">$2,499<span style="font-size: 14px; font-weight: 400;">/mo</span></div>
+              <div class="tier-users">Unlimited</div>
+              <div class="tier-features">
+                ✓ Everything in Growth<br>
+                ✓ API access<br>
+                ✓ Dedicated account manager
+              </div>
+            </div>
+          </div>
+          <input type="hidden" id="tier" name="tier" value="growth" required>
+        </div>
+
+        <!-- Company Information -->
+        <div class="form-group">
+          <label for="companyName">Company Name *</label>
+          <input type="text" id="companyName" name="companyName" required placeholder="Acme Travel Agency">
+        </div>
+
+        <!-- Subdomain -->
+        <div class="form-group subdomain-group">
+          <label for="desiredSubdomain">Choose Your Subdomain *</label>
+          <input type="text" id="desiredSubdomain" name="desiredSubdomain" required placeholder="acmetravel" pattern="[a-z][a-z0-9-]{2,62}" maxlength="63">
+          <div class="subdomain-suffix">.tripcompanion.app</div>
+          <div class="availability-indicator" id="availability">⏳</div>
+          <div class="error-message" id="subdomain-error">Only lowercase letters, numbers, and hyphens. Must start with a letter.</div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="form-group">
+          <label for="contactEmail">Contact Email *</label>
+          <input type="email" id="contactEmail" name="contactEmail" required placeholder="hello@acmetravel.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+        </div>
+
+        <div class="form-group">
+          <label for="website">Website (optional)</label>
+          <input type="url" id="website" name="website" placeholder="https://acmetravel.com">
+        </div>
+
+        <!-- Payment Information -->
+        <div class="form-group">
+          <label>Payment Information</label>
+          <div id="card-element" class="card-element"></div>
+          <div class="error-message" id="card-errors"></div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button" id="submit-btn">
+          Start 14-Day Free Trial
+          <div class="spinner" id="spinner"></div>
+        </button>
+
+        <div class="trial-notice">
+          <strong>Start your 14-day free trial</strong><br>
+          No charges until your trial ends. Cancel anytime.<br>
+          Your white-label site goes live in 5 minutes.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Stripe
+    const stripe = Stripe('pk_test_51QsjT1LFdMRBIXvAaQW6Dv1PAFLKVBkRNzV7yUJYwJrOEm3Y7dRWwEcJ4pJPRtMgU6Ky0OzO3kYQx6tJLmNK9gve00FpuoZWZc'); // Replace with your publishable key
+    const elements = stripe.elements();
+    const cardElement = elements.create('card', {
+      style: {
+        base: {
+          fontSize: '16px',
+          color: '#1a202c',
+          '::placeholder': {
+            color: '#cbd5e0',
+          },
+        },
+      },
+    });
+    cardElement.mount('#card-element');
+
+    // Card validation
+    cardElement.on('change', (event) => {
+      const cardErrors = document.getElementById('card-errors');
+      if (event.error) {
+        cardErrors.textContent = event.error.message;
+        cardErrors.style.display = 'block';
+      } else {
+        cardErrors.style.display = 'none';
+      }
+    });
+
+    // Tier selection
+    const tierOptions = document.querySelectorAll('.tier-option');
+    const tierInput = document.getElementById('tier');
+
+    tierOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        tierOptions.forEach(opt => opt.classList.remove('selected'));
+        option.classList.add('selected');
+        tierInput.value = option.dataset.tier;
+      });
+    });
+
+    // Subdomain validation and availability check
+    const subdomainInput = document.getElementById('desiredSubdomain');
+    const availabilityIndicator = document.getElementById('availability');
+    const subdomainError = document.getElementById('subdomain-error');
+    let checkTimeout;
+
+    subdomainInput.addEventListener('input', (e) => {
+      let value = e.target.value.toLowerCase();
+
+      // Auto-format: only allow lowercase, numbers, hyphens
+      value = value.replace(/[^a-z0-9-]/g, '');
+
+      // Ensure starts with letter
+      if (value && !/^[a-z]/.test(value)) {
+        value = '';
+      }
+
+      e.target.value = value;
+
+      clearTimeout(checkTimeout);
+      availabilityIndicator.className = 'availability-indicator';
+
+      if (value.length < 3) {
+        subdomainError.textContent = 'Subdomain must be at least 3 characters';
+        subdomainError.style.display = 'block';
+        subdomainInput.classList.add('error');
+        return;
+      }
+
+      subdomainError.style.display = 'none';
+      subdomainInput.classList.remove('error');
+      availabilityIndicator.classList.add('checking');
+      availabilityIndicator.textContent = '⏳';
+
+      // Debounced availability check
+      checkTimeout = setTimeout(async () => {
+        try {
+          const response = await fetch(`/api/white-label/check-subdomain/${value}`);
+          const data = await response.json();
+
+          availabilityIndicator.classList.remove('checking');
+
+          if (data.available) {
+            availabilityIndicator.classList.add('available');
+            availabilityIndicator.textContent = '✅';
+            availabilityIndicator.title = 'Available!';
+          } else {
+            availabilityIndicator.classList.add('taken');
+            availabilityIndicator.textContent = '❌';
+            availabilityIndicator.title = 'Already taken';
+            subdomainError.textContent = 'This subdomain is already taken';
+            subdomainError.style.display = 'block';
+            subdomainInput.classList.add('error');
+          }
+        } catch (error) {
+          console.error('Availability check failed:', error);
+          availabilityIndicator.classList.remove('checking');
+        }
+      }, 500);
+    });
+
+    // Form submission
+    const form = document.getElementById('signup-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const spinner = document.getElementById('spinner');
+    const alertBox = document.getElementById('alert');
+
+    function showAlert(message, type) {
+      alertBox.textContent = message;
+      alertBox.className = `alert ${type}`;
+      alertBox.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Disable submit button
+      submitBtn.disabled = true;
+      spinner.style.display = 'inline-block';
+
+      try {
+        // Create payment method
+        const { paymentMethod, error } = await stripe.createPaymentMethod({
+          type: 'card',
+          card: cardElement,
+          billing_details: {
+            email: document.getElementById('contactEmail').value,
+            name: document.getElementById('companyName').value,
+          },
+        });
+
+        if (error) {
+          throw new Error(error.message);
+        }
+
+        // Submit to provisioning API
+        const formData = {
+          agencyName: document.getElementById('companyName').value,
+          subdomain: document.getElementById('desiredSubdomain').value,
+          tier: document.getElementById('tier').value,
+          contactEmail: document.getElementById('contactEmail').value,
+          contactName: document.getElementById('companyName').value,
+          phone: document.getElementById('phone').value,
+          website: document.getElementById('website').value,
+          paymentMethodId: paymentMethod.id,
+        };
+
+        const response = await fetch('/api/white-label/provision', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Provisioning failed');
+        }
+
+        // Success!
+        showAlert(`🎉 Success! Your white-label site is being set up at ${result.tenant.url}. Check your email for login details.`, 'success');
+
+        // Redirect to dashboard after 3 seconds
+        setTimeout(() => {
+          window.location.href = result.tenant.dashboardUrl;
+        }, 3000);
+
+      } catch (error) {
+        console.error('Signup error:', error);
+        showAlert(`❌ Error: ${error.message}`, 'error');
+        submitBtn.disabled = false;
+        spinner.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

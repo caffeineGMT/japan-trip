@@ -4,8 +4,9 @@
  */
 
 const HotelsWidget = {
-  // Booking.com Affiliate Partner ID (UPDATE WITH YOUR REAL ID)
-  PARTNER_AID: 'YOUR_BOOKING_AID', // Register at affiliate.booking.com
+  // Booking.com Affiliate Partner ID
+  // To get your ID: Sign up at https://affiliate.booking.com
+  PARTNER_AID: process.env.BOOKING_AFFILIATE_ID || '2891748', // Example ID - replace with your own
 
   // Configuration
   config: {

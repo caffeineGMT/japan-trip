@@ -62,6 +62,17 @@ async function initializeApp() {
     // Initialize phrases
     loadPhrases();
 
+    // Track app loaded event for conversion funnel
+    if (window.Analytics) {
+      window.Analytics.track('app_loaded', {
+        template_id: tripId,
+        has_utm_source: !!urlParams.get('utm_source'),
+        utm_source: urlParams.get('utm_source'),
+        utm_medium: urlParams.get('utm_medium'),
+        utm_campaign: urlParams.get('utm_campaign'),
+      });
+    }
+
   } catch (error) {
     console.error('[Template] Load error:', error);
     showErrorOverlay(error, urlParams.get('trip'));
@@ -241,6 +252,15 @@ function buildTabs() {
 function selectDay(index) {
   currentDayIndex = index;
   const day = TRIP_DATA[index];
+
+  // Track day selection for engagement funnel
+  if (window.Analytics && index !== 0) { // Don't track initial load
+    window.Analytics.track('day_selected', {
+      day_number: index + 1,
+      day_name: day.day,
+      city: day.city,
+    });
+  }
 
   // Update tab active state
   document.querySelectorAll('.day-tab').forEach((tab, i) => {
@@ -492,6 +512,16 @@ window.focusStop = function focusStop(index) {
   const day = TRIP_DATA[currentDayIndex];
   const stop = day.stops[index];
 
+  // Track stop click for engagement
+  if (window.Analytics) {
+    window.Analytics.track('stop_clicked', {
+      stop_index: index + 1,
+      stop_name: stop.name?.en || stop.name,
+      stop_category: stop.category,
+      day_number: currentDayIndex + 1,
+    });
+  }
+
   map.setView([stop.lat, stop.lng], 15, { animate: true });
   markers[index].openPopup();
 
@@ -738,6 +768,15 @@ document.addEventListener('keydown', (e) => {
 document.querySelectorAll('.lang-switcher button').forEach(btn => {
   btn.addEventListener('click', (e) => {
     const selectedLang = e.target.dataset.lang;
+
+    // Track language switch
+    if (window.Analytics) {
+      window.Analytics.track('language_switched', {
+        from_language: I18N.currentLang,
+        to_language: selectedLang,
+      });
+    }
+
     I18N.setLang(selectedLang);
 
     // Update active button state
@@ -1091,6 +1130,13 @@ function updateOnlineStatus() {
   } else {
     console.log('[PWA] Offline');
     createOfflineIndicator();
+
+    // Track offline mode enabled
+    if (window.Analytics) {
+      window.Analytics.track('offline_mode_enabled', {
+        service_worker_active: navigator.serviceWorker?.controller !== null,
+      });
+    }
   }
 }
 

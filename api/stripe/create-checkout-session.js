@@ -4,11 +4,26 @@
  */
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const { PostHog } = require('posthog-node');
+
+// Initialize PostHog for server-side analytics
+const posthog = new PostHog(
+  process.env.POSTHOG_API_KEY || 'phc_placeholder',
+  {
+    host: process.env.POSTHOG_HOST || 'https://app.posthog.com',
+  }
+);
 
 // Price IDs for different plans
 const PRICE_IDS = {
   monthly: process.env.STRIPE_PRICE_MONTHLY || 'price_monthly_placeholder',
   annual: process.env.STRIPE_PRICE_ANNUAL || 'price_annual_placeholder'
+};
+
+// Plan prices for analytics
+const PLAN_PRICES = {
+  monthly: 10,
+  annual: 80
 };
 
 module.exports = async (req, res) => {
@@ -28,7 +43,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { planType, trial = true, abTestVariant = 'control', email } = req.body;
+    const { planType, trial = true, abTestVariant = 'control', email, userId } = req.body;
 
     if (!planType || !['monthly', 'annual'].includes(planType)) {
       return res.status(400).json({ error: 'Invalid plan type' });
@@ -55,9 +70,12 @@ module.exports = async (req, res) => {
       success_url: `${process.env.APP_URL || 'http://localhost:3001'}/success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.APP_URL || 'http://localhost:3001'}/pricing-v2.html`,
 
-      // Metadata for tracking
+      // Metadata for tracking and analytics
       metadata: {
-        planType,
+        type: 'subscription',
+        plan_name: planType,
+        billing_cycle: planType,
+        user_id: userId || 'anonymous',
         abTestVariant,
         source: 'pricing_v2'
       },
@@ -77,7 +95,10 @@ module.exports = async (req, res) => {
         trial_period_days: 7,
         metadata: {
           trial_started: new Date().toISOString(),
-          abTestVariant
+          abTestVariant,
+          user_id: userId || 'anonymous',
+          plan_name: planType,
+          billing_cycle: planType
         }
       };
     }
@@ -90,7 +111,25 @@ module.exports = async (req, res) => {
     // Create Stripe Checkout Session
     const session = await stripe.checkout.sessions.create(sessionConfig);
 
-    // Track conversion event
+    // Track conversion event with PostHog
+    const distinctId = userId || `session_${session.id}`;
+    posthog.capture({
+      distinctId: distinctId,
+      event: 'checkout_session_created',
+      properties: {
+        session_id: session.id,
+        plan_name: planType,
+        billing_cycle: planType,
+        price: PLAN_PRICES[planType],
+        trial_enabled: trial,
+        trial_days: trial ? 7 : 0,
+        ab_test_variant: abTestVariant,
+        source: 'pricing_v2',
+        funnel_stage: 'conversion',
+      },
+    });
+
+    // Legacy tracking
     await trackConversion({
       event: 'checkout_session_created',
       planType,

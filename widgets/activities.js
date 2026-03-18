@@ -4,9 +4,10 @@
  */
 
 const ActivitiesWidget = {
-  // GetYourGuide Partner API credentials (UPDATE WITH YOUR REAL KEYS)
-  API_KEY: 'YOUR_GETYOURGUIDE_API_KEY', // Apply at partner.getyourguide.com
-  PARTNER_ID: 'YOUR_PARTNER_ID',
+  // GetYourGuide Partner API credentials
+  // To get your credentials: Apply at https://partner.getyourguide.com
+  API_KEY: process.env.GETYOURGUIDE_API_KEY || 'GYG_DEMO_KEY', // Replace with your own
+  PARTNER_ID: process.env.GETYOURGUIDE_PARTNER_ID || 'DEMO_PARTNER', // Replace with your own
 
   // Configuration
   config: {
