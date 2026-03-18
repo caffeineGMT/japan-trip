@@ -1,0 +1,14 @@
+Date,Post_ID,Post_Title,Post_Type,Post_URL,Upvotes,Comments,Views_Est,Site_Clicks,DMs_Received,Beta_Signups,Paid_Conversions,Notes
+2026-03-18,post_001,Ultimate 2026 Cherry Blossom Forecast,Value Post,,0,0,0,0,0,0,0,Scheduled
+2026-03-21,post_002,AI Optimized Itinerary Before/After,Value Post,,0,0,0,0,0,0,0,Scheduled
+2026-03-25,post_003,AMA: AI Trip Planner Builder,AMA,,0,0,0,0,0,0,0,Scheduled
+2026-03-28,post_004,Full Route Template with Google Maps,Template,,0,0,0,0,0,0,0,Scheduled
+2026-04-01,post_005,Cherry Blossoms Peak Early - Live Update,Trip Report,,0,0,0,0,0,0,0,Conditional (if traveling)
+2026-04-08,post_006,50 Redditors Mistakes - Lessons Learned,Case Study,,0,0,0,0,0,0,0,Scheduled
+2026-04-11,post_007,Free JR Pass Calculator (Google Sheets),Tool Giveaway,,0,0,0,0,0,0,0,Scheduled
+2026-04-15,post_008,14-Day Trip Report - AI vs Reality,Trip Report,,0,0,0,0,0,0,0,Conditional (if traveling)
+2026-04-22,post_009,Tested 5 Trip Planning Tools - Comparison,Comparison,,0,0,0,0,0,0,0,Scheduled
+2026-04-25,post_010,Analyzed 100 Itineraries - Data Viz,Data Analysis,,0,0,0,0,0,0,0,Scheduled
+2026-04-29,post_011,What I Wish I'd Known (2024 vs 2026),Lessons Learned,,0,0,0,0,0,0,0,Scheduled
+2026-05-06,post_012,Built in Public - Launch Announcement,Retrospective,,0,0,0,0,0,0,0,Scheduled
+2026-05-09,post_013,Thank You r/JapanTravel,Community Gratitude,,0,0,0,0,0,0,0,Scheduled

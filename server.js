@@ -61,6 +61,17 @@ app.use('/api/affiliate', affiliateTrackRouter);
 app.use('/api/affiliate', affiliateStatsRouter);
 app.use('/api/affiliate', affiliatePayoutRouter);
 
+// ===== OUTREACH ROUTES =====
+const outreachCampaigns = require('./api/outreach/campaigns');
+
+app.get('/api/outreach/campaigns', outreachCampaigns.listCampaigns);
+app.post('/api/outreach/campaigns/start', outreachCampaigns.startCampaign);
+app.get('/api/outreach/bloggers', outreachCampaigns.listBloggers);
+app.post('/api/outreach/bloggers', outreachCampaigns.addBlogger);
+app.get('/api/outreach/follow-ups', outreachCampaigns.listFollowUps);
+app.post('/api/outreach/follow-ups/process', outreachCampaigns.processFollowUps);
+app.post('/api/outreach/webhooks/mailgun', outreachCampaigns.mailgunWebhook);
+
 // Serve embed widget pages
 app.get('/embed/:tripId', (req, res) => {
   res.sendFile(path.join(__dirname, 'embed', 'trip.html'));

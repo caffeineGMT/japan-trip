@@ -12,7 +12,9 @@
     "astro:dev": "astro dev",
     "astro:build": "astro build",
     "astro:preview": "astro preview",
-    "generate:destinations": "node scripts/generate-destination-data.js"
+    "generate:destinations": "node scripts/generate-destination-data.js",
+    "outreach:campaign": "node scripts/run-outreach-campaign.js",
+    "outreach:followups": "node scripts/process-followups-cron.js"
   },
   "repository": {
     "type": "git",
