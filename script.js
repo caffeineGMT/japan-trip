@@ -1,3 +1,6 @@
+// Initialize i18n
+I18N.init();
+
 // Initialize map
 const map = L.map('map', {
   zoomControl: true,
@@ -85,12 +88,12 @@ function renderSidebar(day) {
   // Header
   let headerHtml = `
     <div class="day-label" style="color:${color}">${day.day} &middot; ${day.weekday}</div>
-    <h2>${day.theme}</h2>
-    <div class="day-meta">${day.city} &middot; ${day.date}</div>
+    <h2>${I18N.t(day.theme)}</h2>
+    <div class="day-meta">${I18N.t(day.city)} &middot; ${day.date}</div>
   `;
 
   if (day.hotel) {
-    headerHtml += `<div class="hotel-badge">&#127976; ${day.hotel}</div>`;
+    headerHtml += `<div class="hotel-badge">&#127976; ${I18N.t(day.hotel)}</div>`;
   }
 
   // Add weather widget placeholder in header
@@ -120,8 +123,8 @@ function renderSidebar(day) {
         <div class="stop-number" style="background:${color}">${i + 1}</div>
         <div class="stop-info">
           <div class="stop-time">${stop.time}</div>
-          <h4>${stop.name}</h4>
-          <div class="stop-desc">${stop.desc}</div>
+          <h4>${I18N.t(stop.name)}</h4>
+          <div class="stop-desc">${I18N.t(stop.desc)}</div>
           <span class="stop-category ${stop.category}">${getCategoryLabel(stop.category)}</span>
         </div>
       </div>
@@ -135,7 +138,7 @@ function renderSidebar(day) {
       contentHtml += `
         <div class="checklist-item" id="check-${i}">
           <input type="checkbox" onchange="toggleCheck(${i})" />
-          <span>${item}</span>
+          <span>${I18N.t(item)}</span>
         </div>
       `;
     });
@@ -144,19 +147,19 @@ function renderSidebar(day) {
 
   // Dinner note
   if (day.dinner) {
-    contentHtml += `<div class="note-block"><strong>Dinner:</strong> ${day.dinner}</div>`;
+    contentHtml += `<div class="note-block"><strong>Dinner:</strong> ${I18N.t(day.dinner)}</div>`;
   }
 
   // Note
   if (day.note) {
-    contentHtml += `<div class="note-block">${day.note}</div>`;
+    contentHtml += `<div class="note-block">${I18N.t(day.note)}</div>`;
   }
 
   // Extras
   if (day.extras) {
     contentHtml += '<div class="extras-block"><h3>Also Consider</h3><ul>';
     day.extras.forEach(e => {
-      contentHtml += `<li>${e}</li>`;
+      contentHtml += `<li>${I18N.t(e)}</li>`;
     });
     contentHtml += '</ul></div>';
   }
@@ -195,11 +198,12 @@ async function renderMap(day) {
     });
 
     // Create popup content with Google Maps deep link
+    const stopName = I18N.t(stop.name);
     const popupContent = `
-      <h4>${stop.name}</h4>
+      <h4>${stopName}</h4>
       <div class="popup-time">${stop.time}</div>
-      <div class="popup-desc">${stop.desc}</div>
-      <button class="directions-button" onclick="openGoogleMaps(${stop.lat}, ${stop.lng}, '${stop.name.replace(/'/g, "\\'")}')">
+      <div class="popup-desc">${I18N.t(stop.desc)}</div>
+      <button class="directions-button" onclick="openGoogleMaps(${stop.lat}, ${stop.lng}, '${stopName.replace(/'/g, "\\'")}')">
         <span class="directions-icon">🧭</span> Directions
       </button>
     `;
@@ -487,6 +491,22 @@ document.addEventListener('keydown', (e) => {
       document.querySelectorAll('.day-tab')[currentDayIndex].scrollIntoView({ behavior: 'smooth', inline: 'center' });
     }
   }
+});
+
+// Language switcher event listeners
+document.querySelectorAll('.lang-switcher button').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const selectedLang = e.target.dataset.lang;
+    I18N.setLang(selectedLang);
+
+    // Update active button state
+    document.querySelectorAll('.lang-switcher button').forEach(b => {
+      b.classList.toggle('active', b === e.target);
+    });
+
+    // Re-render current day with new language
+    selectDay(currentDayIndex);
+  });
 });
 
 // Init
