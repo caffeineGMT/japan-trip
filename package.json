@@ -20,7 +20,12 @@
     "astro:preview": "astro preview",
     "generate:destinations": "node scripts/generate-destination-data.js",
     "outreach:campaign": "node scripts/run-outreach-campaign.js",
-    "outreach:followups": "node scripts/process-followups-cron.js"
+    "outreach:followups": "node scripts/process-followups-cron.js",
+    "b2b:preview": "node scripts/cold-email-sequence.js",
+    "b2b:test": "node scripts/cold-email-sequence.js --test 5",
+    "b2b:send": "node scripts/cold-email-sequence.js --send",
+    "b2b:followup-day5": "node scripts/cold-email-sequence.js --day 5 --send",
+    "b2b:followup-day10": "node scripts/cold-email-sequence.js --day 10 --send"
   },
   "repository": {
     "type": "git",
