@@ -49,11 +49,16 @@
     "jsonwebtoken": "^9.0.3",
     "mailgun.js": "^12.7.1",
     "multer": "^2.1.1",
-    "node-fetch": "^2.7.0",
     "openai": "^6.32.0",
     "paypal-rest-sdk": "^1.8.1",
     "sharp": "^0.34.5",
     "stripe": "^20.4.1",
     "terser": "^5.46.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.3.0",
+    "node-fetch": "^2.7.0",
+    "puppeteer": "^24.39.1"
   }
 }

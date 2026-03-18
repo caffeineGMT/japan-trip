@@ -85,6 +85,10 @@ app.get('/api/outreach/follow-ups', outreachCampaigns.listFollowUps);
 app.post('/api/outreach/follow-ups/process', outreachCampaigns.processFollowUps);
 app.post('/api/outreach/webhooks/mailgun', outreachCampaigns.mailgunWebhook);
 
+// ===== REFERRAL PROGRAM ROUTES =====
+const referralRouter = require('./api/referrals/routes');
+app.use('/api/referrals', referralRouter);
+
 // Serve embed widget pages
 app.get('/embed/:tripId', (req, res) => {
   res.sendFile(path.join(__dirname, 'embed', 'trip.html'));
@@ -98,6 +102,15 @@ app.get('/email-dashboard', (req, res) => {
 // Cherry blossom forecast route (for Reddit marketing campaign)
 app.get('/cherry-blossom-forecast', (req, res) => {
   res.sendFile(path.join(__dirname, 'marketing', 'reddit', 'assets', 'cherry-blossom-embed.html'));
+});
+
+// Referral landing pages
+app.get('/ref/:code', (req, res) => {
+  res.sendFile(path.join(__dirname, 'ref-landing.html'));
+});
+
+app.get('/referral-dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'referral-dashboard.html'));
 });
 
 // Health check endpoint

@@ -1,0 +1,291 @@
+<!-- Promotional Banner for Referral Program -->
+<!-- Add this to the top of your main app pages -->
+
+<div id="referral-banner" class="referral-promo-banner" style="display: none;">
+  <style>
+    .referral-promo-banner {
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 16px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .banner-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .banner-message {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .banner-message strong {
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.5);
+    }
+
+    .banner-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .banner-cta {
+      padding: 10px 24px;
+      background: white;
+      color: #667eea;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .banner-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .banner-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner-close:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+
+      .banner-message {
+        font-size: 14px;
+      }
+
+      .banner-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .banner-cta {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <div class="banner-content">
+    <div class="banner-message">
+      🎁 <strong>NEW:</strong> Refer 3 friends & get 1 month free! Your friends save $10 too.
+    </div>
+
+    <div class="banner-actions">
+      <a href="/referral-dashboard.html" class="banner-cta">
+        Start Earning →
+      </a>
+
+      <button class="banner-close" onclick="closeReferralBanner()" aria-label="Close">
+        ×
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Show banner logic
+  function showReferralBanner() {
+    // Check if user has dismissed the banner
+    const dismissed = localStorage.getItem('referral_banner_dismissed');
+    const dismissedAt = localStorage.getItem('referral_banner_dismissed_at');
+
+    // Show again after 7 days
+    if (dismissed && dismissedAt) {
+      const daysSince = (Date.now() - parseInt(dismissedAt)) / (1000 * 60 * 60 * 24);
+      if (daysSince < 7) {
+        return;
+      }
+    }
+
+    // Check if user is logged in (optional - you might want to show to everyone)
+    // const hasSession = /* check if user has session */;
+
+    // Show the banner
+    const banner = document.getElementById('referral-banner');
+    if (banner) {
+      banner.style.display = 'block';
+    }
+  }
+
+  function closeReferralBanner() {
+    const banner = document.getElementById('referral-banner');
+    if (banner) {
+      banner.style.display = 'none';
+
+      // Remember dismissal
+      localStorage.setItem('referral_banner_dismissed', 'true');
+      localStorage.setItem('referral_banner_dismissed_at', Date.now().toString());
+    }
+  }
+
+  // Auto-show banner on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', showReferralBanner);
+  } else {
+    showReferralBanner();
+  }
+</script>
+
+<!-- Alternative: Floating Action Button (FAB) for Referral -->
+<div id="referral-fab" class="referral-fab" style="display: none;">
+  <style>
+    .referral-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 998;
+    }
+
+    .fab-button {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse-fab 2s infinite;
+    }
+
+    @keyframes pulse-fab {
+      0%, 100% {
+        box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 6px 24px rgba(102, 126, 234, 0.6);
+        transform: scale(1.05);
+      }
+    }
+
+    .fab-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(102, 126, 234, 0.6);
+    }
+
+    .fab-tooltip {
+      position: absolute;
+      right: 72px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #333;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .fab-button:hover .fab-tooltip {
+      opacity: 1;
+    }
+
+    .fab-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid #333;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+    }
+
+    @media (max-width: 768px) {
+      .referral-fab {
+        bottom: 16px;
+        right: 16px;
+      }
+
+      .fab-button {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+      }
+    }
+  </style>
+
+  <a href="/referral-dashboard.html" class="fab-button" aria-label="Referral Program">
+    <span>🎁</span>
+    <span class="fab-tooltip">Earn rewards!</span>
+  </a>
+</div>
+
+<script>
+  // Show FAB after user scrolls down a bit
+  function showReferralFAB() {
+    let hasShown = false;
+
+    window.addEventListener('scroll', function() {
+      if (!hasShown && window.scrollY > 300) {
+        const fab = document.getElementById('referral-fab');
+        if (fab) {
+          fab.style.display = 'block';
+          hasShown = true;
+        }
+      }
+    });
+  }
+
+  // Initialize FAB (alternative to banner - use one or the other)
+  // showReferralFAB();
+</script>

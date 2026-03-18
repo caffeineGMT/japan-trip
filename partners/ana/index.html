@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Your Japan Trip - Exclusive for ANA Passengers | TripCompanion</title>
+  <meta name="description" content="Get 20% off your Japan trip planner - exclusive offer for All Nippon Airways passengers">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    /* ANA Brand Colors */
+    :root {
+      --ana-blue: #003DA5;
+      --ana-light-blue: #0066CC;
+      --ana-dark: #002366;
+      --ana-gray: #f5f7fa;
+    }
+
+    .header {
+      background: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .ana-logo {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--ana-blue);
+      letter-spacing: 2px;
+    }
+
+    .partner-badge {
+      font-size: 12px;
+      color: #666;
+      padding: 4px 12px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+    }
+
+    .tripcompanion-logo {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .cta-header {
+      background: var(--ana-blue);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+
+    .cta-header:hover {
+      transform: translateY(-2px);
+      background: var(--ana-light-blue);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--ana-blue) 0%, var(--ana-dark) 100%);
+      color: white;
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .discount-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      border: 2px solid rgba(255,255,255,0.3);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 32px;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .cta-primary {
+      display: inline-block;
+      background: white;
+      color: var(--ana-blue);
+      padding: 18px 48px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      transition: all 0.3s;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+
+    .trust-stats {
+      max-width: 1200px;
+      margin: -40px auto 0;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--ana-blue);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .features {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 24px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 48px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--ana-light-blue);
+    }
+
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--ana-blue);
+    }
+
+    .feature-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .ana-exclusive {
+      background: linear-gradient(135deg, var(--ana-blue) 0%, var(--ana-light-blue) 100%);
+      color: white;
+      padding: 80px 24px;
+      margin: 80px 0;
+    }
+
+    .ana-exclusive-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pricing {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 24px;
+    }
+
+    .pricing-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border: 3px solid var(--ana-blue);
+      transform: scale(1.05);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: var(--ana-blue);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .original-price {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 24px;
+    }
+
+    .discount-price {
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--ana-blue);
+      margin: 16px 0;
+    }
+
+    .savings {
+      background: #e3f2fd;
+      color: var(--ana-blue);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .testimonials {
+      background: var(--ana-gray);
+      padding: 80px 24px;
+    }
+
+    .testimonials-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: #333;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--ana-blue);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .author-info strong {
+      display: block;
+      font-weight: 600;
+    }
+
+    .author-info small {
+      color: #666;
+    }
+
+    .final-cta {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 64px 48px;
+      background: linear-gradient(135deg, var(--ana-blue) 0%, var(--ana-dark) 100%);
+      border-radius: 16px;
+      text-align: center;
+      color: white;
+    }
+
+    .timer {
+      background: rgba(255,255,255,0.1);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 24px 0;
+      display: inline-block;
+    }
+
+    .footer {
+      background: var(--ana-dark);
+      color: white;
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .pricing-comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-content">
+      <div class="logos">
+        <div class="ana-logo">ANA</div>
+        <div class="partner-badge">Official Partner</div>
+        <div class="tripcompanion-logo">× TripCompanion</div>
+      </div>
+      <a href="#pricing" class="cta-header">Get 20% Off</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-content">
+      <div class="discount-badge">✈️ EXCLUSIVE ANA PASSENGER OFFER</div>
+      <h1>Your Complete Japan Travel Companion</h1>
+      <p>AI-powered itineraries, offline maps, cherry blossom forecasts, and smart routing. Trusted by 10,000+ Japan travelers.</p>
+      <a href="#pricing" class="cta-primary">Claim Your 20% Discount</a>
+    </div>
+  </div>
+
+  <div class="trust-stats">
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-value">10,000+</span>
+        <span class="stat-label">Travelers Helped</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">4.9/5</span>
+        <span class="stat-label">User Rating</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">100%</span>
+        <span class="stat-label">Offline Access</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">5 min</span>
+        <span class="stat-label">Setup Time</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <h2 class="section-title">Everything You Need for Japan</h2>
+    <p class="section-subtitle">Built specifically for cherry blossom season travelers</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3>Interactive Offline Maps</h3>
+        <p>Full offline access with walking routes, transit directions, and estimated travel times. Works perfectly in Japan without data.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌸</div>
+        <h3>Cherry Blossom Tracker</h3>
+        <p>Real-time sakura bloom forecasts integrated into your itinerary. Never miss peak bloom at top viewing spots.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI Route Optimizer</h3>
+        <p>Smart routing that minimizes travel time and maximizes experiences. Adapts to real-time conditions.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🇯🇵</div>
+        <h3>Trilingual Support</h3>
+        <p>Toggle between English, Chinese, and Japanese. Includes essential travel phrases with pronunciation.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🍜</div>
+        <h3>Restaurant Reservations</h3>
+        <p>Pre-saved reservation details and confirmation numbers. Direct links to top-rated restaurants.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Mobile-First PWA</h3>
+        <p>Install on your phone like a native app. Fast, responsive, and optimized for on-the-go use.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ana-exclusive">
+    <div class="ana-exclusive-content">
+      <h2 style="font-size: 40px; margin-bottom: 24px;">Why ANA Chose Us</h2>
+      <p style="font-size: 20px; max-width: 800px; margin: 0 auto; opacity: 0.95;">
+        "As Japan's largest airline, we wanted to provide our passengers with the best tools to explore our country. TripCompanion's technology and attention to detail perfectly matches our commitment to excellence."
+      </p>
+      <p style="margin-top: 16px; font-size: 14px; opacity: 0.8;">— All Nippon Airways Partnership Team</p>
+    </div>
+  </div>
+
+  <div class="pricing" id="pricing">
+    <h2 class="section-title">ANA Exclusive Pricing</h2>
+    <p class="section-subtitle">Limited time offer for All Nippon Airways passengers</p>
+
+    <div class="pricing-comparison">
+      <div class="pricing-card">
+        <h3 style="margin-bottom: 16px;">Regular Price</h3>
+        <div class="original-price">$29</div>
+        <ul style="list-style: none; padding: 24px 0;">
+          <li style="margin: 12px 0;">✓ 14-day itinerary</li>
+          <li style="margin: 12px 0;">✓ Offline maps</li>
+          <li style="margin: 12px 0;">✓ Cherry blossom forecasts</li>
+          <li style="margin: 12px 0;">✓ Trilingual support</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card featured">
+        <span class="featured-badge">ANA EXCLUSIVE</span>
+        <h3 style="margin-bottom: 16px;">Your Price</h3>
+        <div class="discount-price">$23.20</div>
+        <div class="savings">Save $5.80 (20% off)</div>
+        <ul style="list-style: none; padding: 24px 0;">
+          <li style="margin: 12px 0;">✓ 14-day itinerary</li>
+          <li style="margin: 12px 0;">✓ Offline maps</li>
+          <li style="margin: 12px 0;">✓ Cherry blossom forecasts</li>
+          <li style="margin: 12px 0;">✓ Trilingual support</li>
+          <li style="margin: 12px 0; color: var(--ana-blue); font-weight: 600;">✓ Priority support</li>
+          <li style="margin: 12px 0; color: var(--ana-blue); font-weight: 600;">✓ Lifetime updates</li>
+        </ul>
+        <a href="/pricing?partner=ana&discount=ANA20" class="cta-primary" style="display: block; text-align: center;">Claim Discount Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonials">
+    <div class="testimonials-content">
+      <h2 class="section-title">Loved by ANA Passengers</h2>
+
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "Flew ANA from San Francisco to Tokyo and got this discount code. Made my first Japan trip so much easier! The offline maps were essential."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">JT</div>
+            <div class="author-info">
+              <strong>James T.</strong>
+              <small>ANA Passenger, Apr 2025</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "The cherry blossom tracker helped us catch peak bloom in Kyoto. Worth every penny at the discounted price. ANA really takes care of their passengers!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">EM</div>
+            <div class="author-info">
+              <strong>Emily M.</strong>
+              <small>ANA Passenger, Mar 2025</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "As an ANA Mileage Club member, I appreciate the partnership. The app worked flawlessly offline and the trilingual interface helped my family navigate Japan."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">RK</div>
+            <div class="author-info">
+              <strong>Robert K.</strong>
+              <small>ANA Passenger, Apr 2025</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="final-cta">
+    <h2 style="font-size: 36px; margin-bottom: 16px;">Ready to Plan Your Perfect Japan Trip?</h2>
+    <p style="font-size: 18px; margin-bottom: 32px; opacity: 0.95;">Join 10,000+ travelers who've discovered stress-free Japan planning</p>
+    <a href="/pricing?partner=ana&discount=ANA20" class="cta-primary">Get Started - 20% Off</a>
+    <div class="timer">
+      <strong>⏰ Offer expires when cherry blossom season ends</strong>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 TripCompanion × All Nippon Airways Partnership</p>
+      <p style="margin-top: 8px; font-size: 14px; opacity: 0.7;">
+        <a href="/privacy" style="color: white; margin: 0 12px;">Privacy</a>
+        <a href="/terms" style="color: white; margin: 0 12px;">Terms</a>
+        <a href="/contact" style="color: white; margin: 0 12px;">Contact</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Tracking -->
+  <script>
+    // Track ANA partnership visit
+    fetch('/api/partnerships/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        partner: 'ana',
+        event: 'landing_page_view',
+        source: new URLSearchParams(window.location.search).get('source') || 'direct',
+        timestamp: new Date().toISOString()
+      })
+    });
+
+    // Track clicks on CTA
+    document.querySelectorAll('a[href*="pricing"]').forEach(link => {
+      link.addEventListener('click', () => {
+        fetch('/api/partnerships/track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            partner: 'ana',
+            event: 'cta_click',
+            timestamp: new Date().toISOString()
+          })
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+Subject: How {{COMPANY_NAME}} can launch a branded trip app in 24 hours
+
+Hi {{FIRST_NAME}},
+
+I noticed {{COMPANY_NAME}} specializes in Japan travel experiences. I'm reaching out because we've built something that could dramatically increase your bookings while reducing planning time by 80%.
+
+Here's the situation: Your clients are spending hours on Google Maps, TripAdvisor, and scattered blogs trying to plan their Japan trips. Meanwhile, you're fielding endless questions about "what should I see in Tokyo?" and "how do I get from Kyoto to Osaka?"
+
+What if your clients had a branded mobile app that:
+
+• Shows their entire itinerary on interactive maps with walking directions
+• Works offline in Japan (no roaming fees)
+• Includes live cherry blossom forecasts and weather
+• Has trilingual support (English/Chinese/Japanese)
+• Displays your branding and contact info throughout
+• Generates passive affiliate income from JR Pass & hotel bookings
+
+We've built a white-label platform that lets you launch this for {{COMPANY_NAME}} in literally 24 hours. No coding required.
+
+The numbers: Agencies using our platform see an average of 40% increase in repeat bookings and $2,800/month in passive affiliate revenue (avg $28/trip × 100 clients).
+
+Want to see a 5-minute demo customized for {{COMPANY_NAME}}? I can show you exactly how this would look with your branding and one of your existing Japan itineraries.
+
+Book a demo: {{CALENDLY_LINK}}
+
+No pressure - just want to show you what's possible.
+
+Best,
+Michael Guo
+Founder, TripCompanion
+michael@tripcompanion.app
+tripcompanion.app
+
+P.S. We're offering the first month free for annual contracts signed before April 1st. After that, it's ${{TIER_PRICE}}/month based on your trip volume.

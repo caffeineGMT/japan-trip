@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save to Japan Trip</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 320px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .stats {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .stat-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .instructions {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .instructions h2 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .instructions ol {
+      margin-left: 20px;
+      font-size: 12px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .instructions li {
+      margin-bottom: 8px;
+    }
+
+    .cta-button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+      margin-bottom: 12px;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    .links {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .link {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .supported-sites {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 11px;
+      opacity: 0.7;
+    }
+
+    .icon-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .site-icon {
+      width: 24px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🗾 Japan Trip Companion</h1>
+    <p>Save places with one click</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat-row">
+      <span class="stat-label">Places Saved</span>
+      <span class="stat-value" id="savedCount">0</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Last Saved</span>
+      <span class="stat-value" id="lastSaved" style="font-size: 12px;">Never</span>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h2>How to Use</h2>
+    <ol>
+      <li>Browse places on Google Maps, TripAdvisor, or Airbnb</li>
+      <li>Click the "Save to Japan Trip" button</li>
+      <li>Place is instantly added to your itinerary</li>
+      <li>Access your trip plan anytime at japan-trip-companion.vercel.app</li>
+    </ol>
+  </div>
+
+  <button class="cta-button" id="openApp">Open My Trip Planner</button>
+
+  <div class="links">
+    <a href="https://github.com/caffeineGMT/japan-trip" class="link" target="_blank">GitHub</a>
+    <span style="opacity: 0.5;">•</span>
+    <a href="https://japan-trip-companion.vercel.app" class="link" target="_blank">Web App</a>
+    <span style="opacity: 0.5;">•</span>
+    <a href="#" class="link" id="helpLink">Help</a>
+  </div>
+
+  <div class="supported-sites">
+    <p>Works on:</p>
+    <div class="icon-row">
+      <div class="site-icon" title="Google Maps">GM</div>
+      <div class="site-icon" title="TripAdvisor">TA</div>
+      <div class="site-icon" title="Airbnb">AB</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

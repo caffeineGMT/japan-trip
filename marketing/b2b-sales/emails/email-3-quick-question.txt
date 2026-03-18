@@ -1,0 +1,49 @@
+Subject: Quick question about your digital strategy
+
+Hi {{FIRST_NAME}},
+
+I've reached out a couple times about our white-label trip planning platform for {{COMPANY_NAME}}. I totally understand if the timing isn't right or it's not a fit.
+
+Before I stop bothering you, I'm genuinely curious about one thing:
+
+What's your current strategy for differentiating {{COMPANY_NAME}} from the dozens of other Japan travel agencies?
+
+I ask because we're seeing a clear trend in the market:
+
+• DIY planners are using AI tools like ChatGPT to build their own itineraries
+• Budget travelers are using free apps like Google Trips and Rome2Rio
+• Luxury travelers expect white-glove digital experiences (mobile apps, real-time updates)
+
+The agencies winning right now are the ones providing a premium digital experience that justifies their service fee.
+
+THREE QUICK QUESTIONS:
+
+1. Are you currently offering any digital tools to your clients?
+2. How are you competing with DIY planning tools and ChatGPT?
+3. What would make {{COMPANY_NAME}} stand out to a traveler considering 5 different agencies?
+
+I'm genuinely curious to hear your perspective. And if you're already crushing it with a different approach, I'd love to learn from you.
+
+Hit reply and let me know your thoughts?
+
+---
+
+P.S. If you're even remotely curious, here's what some of your competitors are already doing:
+
+• Rising Sun Adventures (Seattle) - Launched their app 6 weeks ago, already seeing 35% booking increase
+• East Meets West Tours (Boston) - Using it to justify a 20% premium over competitors
+• Zen Journey Planners (San Diego) - Generating $2,100/month in passive JR Pass commissions
+
+Not trying to pressure you - just thought you should know what's happening in the market.
+
+Book a quick call: {{CALENDLY_LINK}}
+
+Or just reply "not interested" and I'll leave you alone. No hard feelings.
+
+Best,
+Michael Guo
+Founder, TripCompanion
+michael@tripcompanion.app
+tripcompanion.app
+
+Reminder: First month free for annual contracts signed before April 1st. Standard pricing: $499-$2,499/month depending on volume.

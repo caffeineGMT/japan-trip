@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B Sales Pipeline Dashboard - TripCompanion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .metric-card .label {
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .metric-card .change {
+            font-size: 14px;
+            color: #4caf50;
+        }
+
+        .metric-card .change.negative {
+            color: #f44336;
+        }
+
+        .metric-card.purple .value { color: #667eea; }
+        .metric-card.green .value { color: #4caf50; }
+        .metric-card.orange .value { color: #ff9800; }
+        .metric-card.blue .value { color: #2196f3; }
+
+        .pipeline-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .pipeline-section h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .stage-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stage-column {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 16px;
+            min-height: 200px;
+        }
+
+        .stage-column h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .stage-column .count {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .deal-card {
+            background: white;
+            padding: 16px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .deal-card:hover {
+            transform: translateX(4px);
+        }
+
+        .deal-card .company {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .deal-card .value {
+            color: #4caf50;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .deal-card .meta {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .deal-card.tier-enterprise { border-left-color: #9c27b0; }
+        .deal-card.tier-premium { border-left-color: #667eea; }
+        .deal-card.tier-standard { border-left-color: #2196f3; }
+
+        .actions-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .action-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .action-card h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .action-item {
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .action-item .company {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .action-item .date {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .action-item.urgent {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+
+        .action-item.today {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 16px;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .chart-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+            transition: width 0.3s;
+        }
+
+        .goal-tracker {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .goal-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .goal-item h4 {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .goal-item .current {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .goal-item .target {
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎯 B2B Sales Pipeline Dashboard</h1>
+            <p>White-Label SaaS Sales Blitz - 50 Agency Target</p>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card purple">
+                <div class="label">Total Pipeline Value</div>
+                <div class="value" id="totalPipeline">$0</div>
+                <div class="change">+0% from last week</div>
+            </div>
+
+            <div class="metric-card green">
+                <div class="label">Demo Calls Booked</div>
+                <div class="value" id="demosBooked">0</div>
+                <div class="change">Target: 20</div>
+            </div>
+
+            <div class="metric-card orange">
+                <div class="label">Deals Closed</div>
+                <div class="value" id="dealsClosed">0</div>
+                <div class="change">Target: 5</div>
+            </div>
+
+            <div class="metric-card blue">
+                <div class="label">Monthly Recurring Revenue</div>
+                <div class="value" id="mrr">$0</div>
+                <div class="change">Target: $2,495</div>
+            </div>
+        </div>
+
+        <!-- Pipeline Stages -->
+        <div class="pipeline-section">
+            <h2>Sales Pipeline Stages</h2>
+            <div class="stage-columns">
+                <div class="stage-column">
+                    <h3>🎯 Prospects</h3>
+                    <div class="count">200 companies</div>
+                    <div class="deal-card tier-premium">
+                        <div class="company">Tokyo Wanderlust Tours</div>
+                        <div class="value">$999/mo MRR</div>
+                        <div class="meta">Premium • 120 trips/year</div>
+                    </div>
+                    <div class="deal-card tier-standard">
+                        <div class="company">Sakura Travel Agency</div>
+                        <div class="value">$499/mo MRR</div>
+                        <div class="meta">Standard • 85 trips/year</div>
+                    </div>
+                    <div class="deal-card tier-enterprise">
+                        <div class="company">Cherry Blossom Journeys</div>
+                        <div class="value">$2,499/mo MRR</div>
+                        <div class="meta">Enterprise • 200 trips/year</div>
+                    </div>
+                </div>
+
+                <div class="stage-column">
+                    <h3>📧 Email Sent</h3>
+                    <div class="count">0 contacted</div>
+                    <p style="color: #999; font-size: 14px; margin-top: 12px;">Start email campaign to begin outreach</p>
+                </div>
+
+                <div class="stage-column">
+                    <h3>💬 Replied</h3>
+                    <div class="count">0 replies</div>
+                    <p style="color: #999; font-size: 14px; margin-top: 12px;">Target: 10% response rate (20 agencies)</p>
+                </div>
+
+                <div class="stage-column">
+                    <h3>📅 Demo Booked</h3>
+                    <div class="count">0 demos</div>
+                    <p style="color: #999; font-size: 14px; margin-top: 12px;">Target: 20 discovery calls</p>
+                </div>
+
+                <div class="stage-column">
+                    <h3>✅ Demo Completed</h3>
+                    <div class="count">0 completed</div>
+                    <p style="color: #999; font-size: 14px; margin-top: 12px;">Conversion target: 50%</p>
+                </div>
+
+                <div class="stage-column">
+                    <h3>🤝 Negotiation</h3>
+                    <div class="count">0 in negotiation</div>
+                    <p style="color: #999; font-size: 14px; margin-top: 12px;">Discussing pricing & terms</p>
+                </div>
+
+                <div class="stage-column">
+                    <h3>🎉 Closed Won</h3>
+                    <div class="count">0 closed</div>
+                    <p style="color: #999; font-size: 14px; margin-top: 12px;">Target: 5 deals @ $499-$2,499/mo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goal Tracking -->
+        <div class="pipeline-section">
+            <h2>Campaign Goals & Progress</h2>
+            <div class="goal-tracker">
+                <div class="goal-item">
+                    <h4>Outreach Target</h4>
+                    <div class="current">0 / 200</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="target">Target: Contact all 200 agencies</div>
+                </div>
+
+                <div class="goal-item">
+                    <h4>Demo Booking Rate</h4>
+                    <div class="current">0%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="target">Target: 10% response (20 demos)</div>
+                </div>
+
+                <div class="goal-item">
+                    <h4>Close Rate</h4>
+                    <div class="current">0%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="target">Target: 25% close rate (5 deals)</div>
+                </div>
+
+                <div class="goal-item">
+                    <h4>Monthly Recurring Revenue</h4>
+                    <div class="current">$0</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="target">Target: $2,495 MRR minimum</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions Required -->
+        <div class="actions-section">
+            <div class="action-card">
+                <h3>🔥 Urgent Actions</h3>
+                <div class="action-item urgent">
+                    <div>
+                        <div class="company">Start Email Campaign</div>
+                        <div class="date">Batch 1: 50 agencies</div>
+                    </div>
+                </div>
+                <div class="action-item urgent">
+                    <div>
+                        <div class="company">Setup Calendly</div>
+                        <div class="date">For demo bookings</div>
+                    </div>
+                </div>
+                <a href="../automation/send-campaign.js" class="btn">Launch Campaign</a>
+            </div>
+
+            <div class="action-card">
+                <h3>📋 Today's Tasks</h3>
+                <div class="action-item today">
+                    <div>
+                        <div class="company">Prepare Demo Materials</div>
+                        <div class="date">White-label examples</div>
+                    </div>
+                </div>
+                <div class="action-item today">
+                    <div>
+                        <div class="company">Test Email Templates</div>
+                        <div class="date">Send test emails</div>
+                    </div>
+                </div>
+                <a href="../scripts/sales-playbook.md" class="btn">View Playbook</a>
+            </div>
+
+            <div class="action-card">
+                <h3>📊 This Week</h3>
+                <div class="action-item">
+                    <div>
+                        <div class="company">Email Wave 1</div>
+                        <div class="date">Send to 50 agencies</div>
+                    </div>
+                </div>
+                <div class="action-item">
+                    <div>
+                        <div class="company">Email Wave 2</div>
+                        <div class="date">Send to next 50 agencies</div>
+                    </div>
+                </div>
+                <div class="action-item">
+                    <div>
+                        <div class="company">Follow-up Wave 1</div>
+                        <div class="date">Email 2 to first batch</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // In a real implementation, this would fetch from a backend
+        // For now, we'll calculate from the CSV data
+
+        function updateMetrics() {
+            // These would be calculated from actual data
+            const metrics = {
+                totalPipeline: 159888, // Sum of all ARR values
+                demosBooked: 0,
+                dealsClosed: 0,
+                mrr: 0
+            };
+
+            document.getElementById('totalPipeline').textContent =
+                '$' + metrics.totalPipeline.toLocaleString();
+            document.getElementById('demosBooked').textContent = metrics.demosBooked;
+            document.getElementById('dealsClosed').textContent = metrics.dealsClosed;
+            document.getElementById('mrr').textContent = '$' + metrics.mrr.toLocaleString();
+        }
+
+        // Update on load
+        updateMetrics();
+
+        // Refresh every 30 seconds in production
+        // setInterval(updateMetrics, 30000);
+    </script>
+</body>
+</html>
