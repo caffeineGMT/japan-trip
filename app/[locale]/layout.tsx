@@ -4,8 +4,6 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import '../globals.css';
-import InstallPrompt from '@/components/InstallPrompt';
-import OfflineIndicator from '@/components/OfflineIndicator';
 
 export const metadata: Metadata = {
   title: 'Japan Trip Companion',
@@ -69,7 +67,6 @@ export default async function LocaleLayout({
   }
 
   // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
@@ -82,31 +79,11 @@ export default async function LocaleLayout({
         <meta name="apple-mobile-web-app-title" content="Japan Trip" />
       </head>
       <body className="antialiased">
-        <OfflineIndicator />
         <NextIntlClientProvider messages={messages}>
           <main className="min-h-screen">
             {children}
           </main>
-          <footer style={{
-            marginTop: '4rem',
-            padding: '2rem',
-            borderTop: '1px solid #e0e0e0',
-            textAlign: 'center',
-            background: '#f9f9f9'
-          }}>
-            <p style={{
-              fontSize: '0.875rem',
-              color: '#666',
-              maxWidth: '800px',
-              margin: '0 auto'
-            }}>
-              This site contains affiliate links. We may earn a commission from bookings
-              made through Booking.com, Agoda, Klook, and JR Pass at no extra cost to you.
-              Your support helps us provide free travel planning tools.
-            </p>
-          </footer>
         </NextIntlClientProvider>
-        <InstallPrompt />
       </body>
     </html>
   );
