@@ -411,6 +411,67 @@ function parseDateFromDay(day) {
   return new Date(year, month, dayNum);
 }
 
+// Hamburger menu toggle for mobile
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebar = document.getElementById('sidebar');
+const header = document.getElementById('top-header');
+
+if (sidebarToggle && sidebar) {
+  sidebarToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    sidebar.classList.toggle('collapsed');
+    sidebarToggle.classList.toggle('active');
+  });
+
+  // Close sidebar when clicking on map on mobile
+  const mapContainer = document.querySelector('.map-container');
+  if (mapContainer) {
+    mapContainer.addEventListener('click', () => {
+      if (window.innerWidth < 768 && !sidebar.classList.contains('collapsed')) {
+        sidebar.classList.add('collapsed');
+        sidebarToggle.classList.remove('active');
+      }
+    });
+  }
+}
+
+// Sticky header scroll effect
+let lastScrollY = 0;
+const checkScroll = () => {
+  const sidebarContent = document.querySelector('.sidebar-content');
+  if (sidebarContent && sidebarContent.scrollTop > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+};
+
+const sidebarContent = document.querySelector('.sidebar-content');
+if (sidebarContent) {
+  sidebarContent.addEventListener('scroll', checkScroll, { passive: true });
+}
+
+// Resize handler for responsive layout changes
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile && sidebar) {
+      // On desktop/tablet, ensure sidebar is visible
+      sidebar.classList.remove('collapsed');
+      if (sidebarToggle) {
+        sidebarToggle.classList.remove('active');
+      }
+    }
+    // Invalidate map size on resize
+    if (map) {
+      map.invalidateSize();
+    }
+  }, 250);
+});
+
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
