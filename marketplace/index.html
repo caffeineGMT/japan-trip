@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Template Marketplace | Trip Companion</title>
+  <meta name="description" content="Browse curated travel itineraries from around the world. Expert-crafted templates for your perfect trip.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="marketplace-container">
+    <!-- Header -->
+    <header class="marketplace-header">
+      <div class="header-content">
+        <h1>🌍 Travel Template Marketplace</h1>
+        <p>Curated itineraries from expert travelers worldwide</p>
+      </div>
+      <nav class="header-nav">
+        <a href="/" class="nav-link">← Back to Trip</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="marketplace-main">
+      <!-- Sidebar Filters -->
+      <aside class="filters-sidebar">
+        <div class="filters-header">
+          <h2>Filters</h2>
+          <button id="clear-filters" class="btn-text">Clear All</button>
+        </div>
+
+        <!-- Search -->
+        <div class="filter-section">
+          <label for="search">Search</label>
+          <input
+            type="text"
+            id="search"
+            placeholder="Search destinations, activities..."
+            autocomplete="off"
+          >
+        </div>
+
+        <!-- Destination Filter -->
+        <div class="filter-section">
+          <label for="destination-filter">Destination</label>
+          <select id="destination-filter">
+            <option value="">All Destinations</option>
+            <optgroup label="Asia">
+              <option value="Tokyo">Tokyo, Japan</option>
+              <option value="Kyoto">Kyoto, Japan</option>
+              <option value="Osaka">Osaka, Japan</option>
+              <option value="Hakone">Hakone, Japan</option>
+              <option value="Hiroshima">Hiroshima, Japan</option>
+              <option value="Bangkok">Bangkok, Thailand</option>
+              <option value="Hanoi">Hanoi, Vietnam</option>
+              <option value="Seoul">Seoul, South Korea</option>
+              <option value="Singapore">Singapore</option>
+            </optgroup>
+            <optgroup label="Europe">
+              <option value="Paris">Paris, France</option>
+              <option value="Rome">Rome, Italy</option>
+              <option value="Barcelona">Barcelona, Spain</option>
+              <option value="Amsterdam">Amsterdam, Netherlands</option>
+              <option value="London">London, UK</option>
+              <option value="Prague">Prague, Czech Republic</option>
+              <option value="Interlaken">Swiss Alps</option>
+              <option value="Santorini">Greek Islands</option>
+            </optgroup>
+            <optgroup label="Americas">
+              <option value="New York City">New York City, USA</option>
+              <option value="Arizona">Grand Canyon, USA</option>
+              <option value="Buenos Aires">Buenos Aires, Argentina</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <!-- Duration Filter -->
+        <div class="filter-section">
+          <label for="duration-filter">
+            Duration: <span id="duration-display">1-30 days</span>
+          </label>
+          <div class="duration-inputs">
+            <input
+              type="number"
+              id="duration-min"
+              min="1"
+              max="30"
+              value="1"
+              placeholder="Min"
+            >
+            <span>to</span>
+            <input
+              type="number"
+              id="duration-max"
+              min="1"
+              max="30"
+              value="30"
+              placeholder="Max"
+            >
+          </div>
+        </div>
+
+        <!-- Season Filter -->
+        <div class="filter-section">
+          <label>Season</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" value="spring" class="season-checkbox">
+              <span>🌸 Spring</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="summer" class="season-checkbox">
+              <span>☀️ Summer</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="fall" class="season-checkbox">
+              <span>🍂 Fall</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="winter" class="season-checkbox">
+              <span>❄️ Winter</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="all" class="season-checkbox">
+              <span>🌍 Year-Round</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div class="filter-section">
+          <label>Price Range</label>
+          <div class="price-inputs">
+            <input
+              type="number"
+              id="price-min"
+              min="0"
+              max="1000"
+              placeholder="Min $"
+            >
+            <span>to</span>
+            <input
+              type="number"
+              id="price-max"
+              min="0"
+              max="1000"
+              placeholder="Max $"
+            >
+          </div>
+          <div class="price-presets">
+            <button class="btn-preset" data-min="0" data-max="0">Free</button>
+            <button class="btn-preset" data-min="1" data-max="39">Budget</button>
+            <button class="btn-preset" data-min="40" data-max="69">Mid</button>
+            <button class="btn-preset" data-min="70" data-max="1000">Premium</button>
+          </div>
+        </div>
+
+        <!-- Sort -->
+        <div class="filter-section">
+          <label for="sort-by">Sort By</label>
+          <select id="sort-by">
+            <option value="popular">Most Popular</option>
+            <option value="newest">Newest</option>
+            <option value="rating">Highest Rated</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="duration-asc">Duration: Short to Long</option>
+            <option value="duration-desc">Duration: Long to Short</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Template Grid -->
+      <section class="templates-section">
+        <div class="templates-header">
+          <h2 id="results-count">Loading templates...</h2>
+        </div>
+        <div id="templates-grid" class="templates-grid">
+          <!-- Template cards will be inserted here by JavaScript -->
+        </div>
+        <div id="no-results" class="no-results" style="display: none;">
+          <p>No templates found matching your criteria.</p>
+          <button id="reset-filters" class="btn-primary">Reset Filters</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Template Detail Modal -->
+  <div id="template-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close" id="close-modal">&times;</button>
+      <div id="modal-body">
+        <!-- Modal content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div id="loading" class="loading-overlay" style="display: none;">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script src="filters.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

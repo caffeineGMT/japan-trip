@@ -174,7 +174,55 @@ function renderSidebar(day) {
   }
 
   content.innerHTML = contentHtml;
+
+  // === AFFILIATE WIDGETS INJECTION ===
+  // Inject affiliate widgets after initial content is loaded
+  renderAffiliateWidgets(day, currentDayIndex, content);
+
   content.scrollTop = 0;
+}
+
+// Render affiliate widgets for monetization
+async function renderAffiliateWidgets(day, dayIndex, container) {
+  // Create container for affiliate widgets
+  const affiliateContainer = document.createElement('div');
+  affiliateContainer.className = 'affiliate-widgets-section';
+  affiliateContainer.id = 'affiliate-widgets';
+
+  // Show transport widget (JR Pass) on first few days only
+  if (typeof TransportWidget !== 'undefined' && dayIndex <= 2) {
+    const transportHTML = TransportWidget.render(TRIP_DATA, dayIndex);
+    if (transportHTML) {
+      affiliateContainer.innerHTML += transportHTML;
+    }
+  }
+
+  // Show activities widget for all days
+  if (typeof ActivitiesWidget !== 'undefined') {
+    try {
+      const activitiesHTML = await ActivitiesWidget.render(day, dayIndex);
+      if (activitiesHTML) {
+        affiliateContainer.innerHTML += activitiesHTML;
+      }
+    } catch (error) {
+      console.error('Error rendering activities widget:', error);
+    }
+  }
+
+  // Show hotels widget for all days
+  if (typeof HotelsWidget !== 'undefined') {
+    try {
+      const hotelsHTML = await HotelsWidget.render(day, dayIndex);
+      if (hotelsHTML) {
+        affiliateContainer.innerHTML += hotelsHTML;
+      }
+    } catch (error) {
+      console.error('Error rendering hotels widget:', error);
+    }
+  }
+
+  // Append to sidebar content
+  container.appendChild(affiliateContainer);
 }
 
 // Render map markers and route

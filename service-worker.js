@@ -14,6 +14,7 @@ const STATIC_ASSETS = [
   '/checklist.html',
   '/offline.html',
   '/style.css',
+  '/components/affiliate-widget.css',
   '/script.js',
   '/data.js',
   '/config.js',
@@ -24,6 +25,10 @@ const STATIC_ASSETS = [
   '/sakura-widget.js',
   '/reservations.js',
   '/checklist.js',
+  '/lib/affiliate-tracker.js',
+  '/widgets/hotels.js',
+  '/widgets/activities.js',
+  '/widgets/transport.js',
   '/manifest.json',
   '/icons/icon-192.png',
   '/icons/icon-512.png'

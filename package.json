@@ -1,0 +1,36 @@
+{
+  "name": "japan-trip",
+  "version": "1.0.0",
+  "description": "Multi-destination trip companion template engine with Stripe payments",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "validate": "node lib/validator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caffeineGMT/japan-trip.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caffeineGMT/japan-trip/issues"
+  },
+  "homepage": "https://github.com/caffeineGMT/japan-trip#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.99.2",
+    "ajv": "^8.18.0",
+    "ajv-formats": "^3.0.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "fuse.js": "^7.1.0",
+    "stripe": "^20.4.1"
+  }
+}

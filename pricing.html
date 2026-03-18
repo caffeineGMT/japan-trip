@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Japan Trip Companion</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pricing-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 12px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .pricing-card.featured {
+      border: 2px solid #ff6b9d;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: #ff6b9d;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .pricing-header h3 {
+      margin: 0 0 8px 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .pricing-header p {
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .pricing-price {
+      margin: 24px 0;
+      font-size: 48px;
+      font-weight: 700;
+      color: #ff6b9d;
+    }
+
+    .pricing-price span {
+      font-size: 18px;
+      color: #666;
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+    }
+
+    .pricing-features li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #333;
+    }
+
+    .pricing-features li:before {
+      content: "✓";
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .pricing-button {
+      width: 100%;
+      padding: 14px 24px;
+      background: #ff6b9d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .pricing-button:hover {
+      background: #e55a8a;
+    }
+
+    .pricing-button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .subscription-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 48px 32px;
+      border-radius: 16px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .subscription-section h2 {
+      margin: 0 0 16px 0;
+      font-size: 32px;
+    }
+
+    .subscription-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+      text-align: left;
+    }
+
+    .subscription-feature {
+      background: rgba(255,255,255,0.1);
+      padding: 16px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="pricing-container">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <h1>Choose Your Japan Adventure</h1>
+      <p style="font-size: 18px; color: #666;">One-time purchases or subscribe for unlimited access</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Free Demo -->
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <h3>Demo</h3>
+          <p>Try before you buy</p>
+        </div>
+        <div class="pricing-price">
+          $0
+        </div>
+        <ul class="pricing-features">
+          <li>3 days in Tokyo</li>
+          <li>Basic itinerary</li>
+          <li>Sample recommendations</li>
+          <li>No AI features</li>
+        </ul>
+        <button class="pricing-button" onclick="window.location.href='/'">
+          Start Free
+        </button>
+      </div>
+
+      <!-- Cherry Blossom -->
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <h3>Cherry Blossom</h3>
+          <p>Complete 14-day journey</p>
+        </div>
+        <div class="pricing-price">
+          $29
+        </div>
+        <ul class="pricing-features">
+          <li>14-day itinerary</li>
+          <li>Tokyo, Kyoto, Osaka, Nara</li>
+          <li>Cherry blossom spots</li>
+          <li>Offline maps</li>
+          <li>Restaurant reservations</li>
+        </ul>
+        <button class="pricing-button" onclick="purchaseTemplate('japan-cherry-blossom')">
+          Purchase
+        </button>
+      </div>
+
+      <!-- Kyoto Food Tour -->
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <h3>Kyoto Food Tour</h3>
+          <p>Ultimate food experience</p>
+        </div>
+        <div class="pricing-price">
+          $49
+        </div>
+        <ul class="pricing-features">
+          <li>5 days in Kyoto</li>
+          <li>Best restaurants & cafes</li>
+          <li>Food market tours</li>
+          <li>Cooking experiences</li>
+          <li>Cultural insights</li>
+        </ul>
+        <button class="pricing-button" onclick="purchaseTemplate('kyoto-food-tour')">
+          Purchase
+        </button>
+      </div>
+
+      <!-- Full Japan -->
+      <div class="pricing-card featured">
+        <span class="featured-badge">BEST VALUE</span>
+        <div class="pricing-header">
+          <h3>Full Japan 14-Day</h3>
+          <p>Premium all-inclusive</p>
+        </div>
+        <div class="pricing-price">
+          $99
+        </div>
+        <ul class="pricing-features">
+          <li>14-day premium itinerary</li>
+          <li>6 destinations</li>
+          <li>AI route optimizer</li>
+          <li>Offline maps</li>
+          <li>Priority support</li>
+          <li>Lifetime updates</li>
+        </ul>
+        <button class="pricing-button" onclick="purchaseTemplate('full-japan-14day')">
+          Purchase
+        </button>
+      </div>
+    </div>
+
+    <!-- Premium Subscription -->
+    <div class="subscription-section">
+      <h2>Premium Subscription</h2>
+      <p style="font-size: 20px; margin-bottom: 32px;">Get everything + unlimited access</p>
+
+      <div class="subscription-features">
+        <div class="subscription-feature">
+          <strong style="display: block; margin-bottom: 8px;">🤖 AI Optimizer</strong>
+          Smart route planning and personalized recommendations
+        </div>
+        <div class="subscription-feature">
+          <strong style="display: block; margin-bottom: 8px;">📥 Unlimited Downloads</strong>
+          Download all templates and updates forever
+        </div>
+        <div class="subscription-feature">
+          <strong style="display: block; margin-bottom: 8px;">🗺️ Offline Maps</strong>
+          Full offline access to all destinations
+        </div>
+        <div class="subscription-feature">
+          <strong style="display: block; margin-bottom: 8px;">🎯 Priority Support</strong>
+          Get help from our travel experts
+        </div>
+      </div>
+
+      <div style="margin-top: 32px;">
+        <div style="font-size: 48px; font-weight: 700; margin-bottom: 16px;">
+          $9.99<span style="font-size: 20px; font-weight: 400;">/month</span>
+        </div>
+        <button class="pricing-button" style="max-width: 300px; margin: 0 auto; background: white; color: #667eea;" onclick="subscribeToPremium()">
+          Subscribe Now
+        </button>
+        <p style="margin-top: 16px; font-size: 14px; opacity: 0.9;">Cancel anytime. No long-term commitment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="lib/payment-client.js"></script>
+
+  <script>
+    // Initialize Supabase (replace with your actual credentials)
+    const supabaseUrl = 'YOUR_SUPABASE_URL';
+    const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY';
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
+
+    // Initialize payment client
+    const paymentClient = new PaymentClient();
+    paymentClient.initializeStripe('YOUR_STRIPE_PUBLISHABLE_KEY');
+
+    async function purchaseTemplate(templateId) {
+      try {
+        // Check if user is authenticated
+        const { data: { session } } = await supabaseClient.auth.getSession();
+
+        if (!session) {
+          alert('Please sign in to purchase templates');
+          // Redirect to sign in page or show auth modal
+          return;
+        }
+
+        // Initiate checkout
+        await paymentClient.purchaseTemplate(templateId);
+      } catch (error) {
+        console.error('Purchase failed:', error);
+        alert('Purchase failed: ' + error.message);
+      }
+    }
+
+    async function subscribeToPremium() {
+      try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+
+        if (!session) {
+          alert('Please sign in to subscribe');
+          return;
+        }
+
+        await paymentClient.subscribeToPremium();
+      } catch (error) {
+        console.error('Subscription failed:', error);
+        alert('Subscription failed: ' + error.message);
+      }
+    }
+  </script>
+</body>
+</html>

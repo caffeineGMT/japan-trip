@@ -1,0 +1,440 @@
+{
+  "metadata": {
+    "id": "paris-week",
+    "title": {
+      "en": "A Week in Paris",
+      "zh": "巴黎一周",
+      "ja": "パリの一週間"
+    },
+    "destination": {
+      "en": "Paris, France",
+      "zh": "法国巴黎",
+      "ja": "フランス・パリ"
+    },
+    "country": "FR",
+    "duration_days": 7,
+    "season": "spring",
+    "tags": ["art", "museums", "romance", "food", "architecture"],
+    "last_updated": "2026-03-18"
+  },
+  "geography": {
+    "default_center": [48.8566, 2.3522],
+    "default_zoom": 13
+  },
+  "days": [
+    {
+      "id": "day1",
+      "day": "Day 1",
+      "date": "May 15",
+      "weekday": "Friday",
+      "city": { "en": "Paris", "zh": "巴黎", "ja": "パリ" },
+      "theme": { "en": "Arrival & Latin Quarter", "zh": "抵达与拉丁区", "ja": "到着とカルチェ・ラタン" },
+      "color": "#ef4444",
+      "center": [48.8534, 2.3488],
+      "zoom": 14,
+      "hotel": { "en": "Hotel des Grands Hommes", "zh": "伟人酒店", "ja": "オテル・デ・グラン・オム" },
+      "culturalTips": [
+        { "en": "Greet shopkeepers with 'Bonjour' before asking questions", "zh": "在提问前用'Bonjour'问候店主", "ja": "質問する前に'Bonjour'で挨拶する" },
+        { "en": "Learn basic French phrases - locals appreciate the effort", "zh": "学习基本法语短语 - 当地人会感激你的努力", "ja": "基本的なフランス語を学ぶ - 地元の人は努力を評価する" }
+      ],
+      "stops": [
+        {
+          "name": { "en": "Charles de Gaulle Airport (CDG)", "zh": "戴高乐机场 (CDG)", "ja": "シャルル・ド・ゴール空港 (CDG)" },
+          "time": "10:00 AM",
+          "desc": { "en": "Arrival. Take RER B to Saint-Michel", "zh": "抵达。乘坐RER B线到圣米歇尔", "ja": "到着。RER B線でサン＝ミシェルへ" },
+          "lat": 49.0097,
+          "lng": 2.5479,
+          "icon": "flight",
+          "category": "transport"
+        },
+        {
+          "name": { "en": "Shakespeare and Company", "zh": "莎士比亚书店", "ja": "シェイクスピア・アンド・カンパニー" },
+          "time": "2:00 PM",
+          "desc": { "en": "Historic English-language bookstore by the Seine", "zh": "塞纳河畔历史悠久的英文书店", "ja": "セーヌ川沿いの歴史的英語書店" },
+          "lat": 48.8526,
+          "lng": 2.3470,
+          "icon": "attraction",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Notre-Dame Cathedral", "zh": "巴黎圣母院", "ja": "ノートルダム大聖堂" },
+          "time": "3:00 PM",
+          "desc": { "en": "Gothic masterpiece (exterior view during restoration)", "zh": "哥特式杰作（修复期间外部观赏）", "ja": "ゴシック様式の傑作（修復中、外観見学）" },
+          "lat": 48.8530,
+          "lng": 2.3499,
+          "icon": "attraction",
+          "category": "activity",
+          "highlight": true
+        },
+        {
+          "name": { "en": "Sainte-Chapelle", "zh": "圣礼拜堂", "ja": "サント・シャペル" },
+          "time": "4:30 PM",
+          "desc": { "en": "Stunning stained glass windows", "zh": "令人惊叹的彩色玻璃窗", "ja": "見事なステンドグラス" },
+          "lat": 48.8554,
+          "lng": 2.3451,
+          "icon": "attraction",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Café de Flore", "zh": "花神咖啡馆", "ja": "カフェ・ド・フロール" },
+          "time": "Evening",
+          "desc": { "en": "Classic Parisian brasserie in Saint-Germain", "zh": "圣日耳曼的经典巴黎小酒馆", "ja": "サン＝ジェルマンの伝統的パリのブラッスリー" },
+          "lat": 48.8542,
+          "lng": 2.3327,
+          "icon": "food",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "id": "day2",
+      "day": "Day 2",
+      "date": "May 16",
+      "weekday": "Saturday",
+      "city": { "en": "Paris", "zh": "巴黎", "ja": "パリ" },
+      "theme": { "en": "The Louvre & Tuileries", "zh": "卢浮宫与杜乐丽", "ja": "ルーヴルとテュイルリー" },
+      "color": "#ef4444",
+      "center": [48.8606, 2.3376],
+      "zoom": 14,
+      "stops": [
+        {
+          "name": { "en": "Louvre Museum", "zh": "卢浮宫博物馆", "ja": "ルーヴル美術館" },
+          "time": "9:00 AM",
+          "desc": { "en": "World's largest art museum. Book timed entry! Mona Lisa, Venus de Milo.", "zh": "世界最大艺术博物馆。预订定时入场！蒙娜丽莎、米洛的维纳斯。", "ja": "世界最大の美術館。時間指定予約必須！モナリザ、ミロのヴィーナス。" },
+          "lat": 48.8606,
+          "lng": 2.3376,
+          "icon": "attraction",
+          "category": "activity",
+          "highlight": true
+        },
+        {
+          "name": { "en": "Tuileries Garden", "zh": "杜乐丽花园", "ja": "テュイルリー庭園" },
+          "time": "1:00 PM",
+          "desc": { "en": "Beautiful formal garden between Louvre and Place de la Concorde", "zh": "卢浮宫与协和广场之间的美丽正式花园", "ja": "ルーヴルとコンコルド広場の間の美しい庭園" },
+          "lat": 48.8634,
+          "lng": 2.3275,
+          "icon": "nature",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Place de la Concorde", "zh": "协和广场", "ja": "コンコルド広場" },
+          "time": "2:00 PM",
+          "desc": { "en": "Historic square with Egyptian obelisk", "zh": "有埃及方尖碑的历史广场", "ja": "エジプトのオベリスクがある歴史的広場" },
+          "lat": 48.8656,
+          "lng": 2.3212,
+          "icon": "attraction",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Champs-Élysées", "zh": "香榭丽舍大道", "ja": "シャンゼリゼ通り" },
+          "time": "3:00 PM",
+          "desc": { "en": "Iconic avenue from Concorde to Arc de Triomphe", "zh": "从协和广场到凯旋门的标志性大道", "ja": "コンコルド広場から凱旋門への象徴的な通り" },
+          "lat": 48.8698,
+          "lng": 2.3078,
+          "icon": "shopping",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Arc de Triomphe", "zh": "凯旋门", "ja": "凱旋門" },
+          "time": "5:00 PM",
+          "desc": { "en": "Napoleonic monument with rooftop views", "zh": "拿破仑纪念碑，可登顶观景", "ja": "ナポレオン記念碑、屋上からの眺め" },
+          "lat": 48.8738,
+          "lng": 2.2950,
+          "icon": "attraction",
+          "category": "activity",
+          "highlight": true
+        },
+        {
+          "name": { "en": "Le Relais de l'Entrecôte", "zh": "Le Relais de l'Entrecôte", "ja": "ル・ルレ・ド・ラントルコート" },
+          "time": "7:30 PM",
+          "desc": { "en": "Famous steak-frites restaurant. No reservations - arrive early!", "zh": "著名的牛排薯条餐厅。不接受预订 - 早点到！", "ja": "有名なステーキフリットレストラン。予約不可 - 早めに到着！" },
+          "lat": 48.8562,
+          "lng": 2.3278,
+          "icon": "food",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "id": "day3",
+      "day": "Day 3",
+      "date": "May 17",
+      "weekday": "Sunday",
+      "city": { "en": "Paris", "zh": "巴黎", "ja": "パリ" },
+      "theme": { "en": "Montmartre & Sacré-Cœur", "zh": "蒙马特与圣心堂", "ja": "モンマルトルとサクレ・クール" },
+      "color": "#ef4444",
+      "center": [48.8867, 2.3431],
+      "zoom": 15,
+      "stops": [
+        {
+          "name": { "en": "Sacré-Cœur Basilica", "zh": "圣心大教堂", "ja": "サクレ・クール寺院" },
+          "time": "9:00 AM",
+          "desc": { "en": "White domed basilica with panoramic city views", "zh": "白色圆顶大教堂，全景城市景观", "ja": "白いドーム型寺院、パノラマ都市景観" },
+          "lat": 48.8867,
+          "lng": 2.3431,
+          "icon": "attraction",
+          "category": "activity",
+          "highlight": true
+        },
+        {
+          "name": { "en": "Place du Tertre", "zh": "特尔特尔广场", "ja": "テルトル広場" },
+          "time": "10:30 AM",
+          "desc": { "en": "Artist square - watch painters at work", "zh": "艺术家广场 - 观看画家创作", "ja": "芸術家の広場 - 画家の作業を見学" },
+          "lat": 48.8865,
+          "lng": 2.3407,
+          "icon": "attraction",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Moulin Rouge", "zh": "红磨坊", "ja": "ムーラン・ルージュ" },
+          "time": "12:00 PM",
+          "desc": { "en": "Iconic cabaret (exterior photo)", "zh": "标志性歌舞厅（外部拍照）", "ja": "象徴的なキャバレー（外観撮影）" },
+          "lat": 48.8841,
+          "lng": 2.3322,
+          "icon": "attraction",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Musée de l'Orangerie", "zh": "橘园美术馆", "ja": "オランジュリー美術館" },
+          "time": "2:00 PM",
+          "desc": { "en": "Monet's Water Lilies in oval rooms", "zh": "椭圆形房间里的莫奈睡莲", "ja": "楕円形の部屋のモネの睡蓮" },
+          "lat": 48.8638,
+          "lng": 2.3225,
+          "icon": "attraction",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Berthillon", "zh": "Berthillon冰淇淋", "ja": "ベルティヨン" },
+          "time": "5:00 PM",
+          "desc": { "en": "Legendary ice cream on Île Saint-Louis", "zh": "圣路易岛上的传奇冰淇淋", "ja": "サン＝ルイ島の伝説的アイスクリーム" },
+          "lat": 48.8519,
+          "lng": 2.3565,
+          "icon": "food",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "id": "day4",
+      "day": "Day 4",
+      "date": "May 18",
+      "weekday": "Monday",
+      "city": { "en": "Paris", "zh": "巴黎", "ja": "パリ" },
+      "theme": { "en": "Versailles Day Trip", "zh": "凡尔赛宫一日游", "ja": "ヴェルサイユ日帰り旅行" },
+      "color": "#f59e0b",
+      "center": [48.8049, 2.1204],
+      "zoom": 14,
+      "culturalTips": [
+        { "en": "Palace of Versailles is HUGE - wear comfortable shoes", "zh": "凡尔赛宫非常大 - 穿舒适的鞋", "ja": "ヴェルサイユ宮殿は巨大 - 快適な靴を履く" },
+        { "en": "Book skip-the-line tickets in advance", "zh": "提前预订免排队门票", "ja": "事前に優先入場チケットを予約" }
+      ],
+      "stops": [
+        {
+          "name": { "en": "Gare Montparnasse", "zh": "蒙帕纳斯火车站", "ja": "モンパルナス駅" },
+          "time": "8:00 AM",
+          "desc": { "en": "Take RER C to Versailles (35 min)", "zh": "乘坐RER C线到凡尔赛（35分钟）", "ja": "RER C線でヴェルサイユへ（35分）" },
+          "lat": 48.8404,
+          "lng": 2.3188,
+          "icon": "train",
+          "category": "transport"
+        },
+        {
+          "name": { "en": "Palace of Versailles", "zh": "凡尔赛宫", "ja": "ヴェルサイユ宮殿" },
+          "time": "9:30 AM",
+          "desc": { "en": "Opulent royal palace - Hall of Mirrors, State Apartments", "zh": "华丽的皇家宫殿 - 镜厅、国家公寓", "ja": "豪華な王宮 - 鏡の間、国家公寓" },
+          "lat": 48.8049,
+          "lng": 2.1204,
+          "icon": "attraction",
+          "category": "activity",
+          "highlight": true
+        },
+        {
+          "name": { "en": "Gardens of Versailles", "zh": "凡尔赛花园", "ja": "ヴェルサイユの庭園" },
+          "time": "12:00 PM",
+          "desc": { "en": "Vast formal gardens with fountains and sculptures", "zh": "广阔的正式花园，有喷泉和雕塑", "ja": "噴水と彫刻のある広大な正式庭園" },
+          "lat": 48.8048,
+          "lng": 2.1047,
+          "icon": "nature",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Marie-Antoinette's Estate", "zh": "玛丽·安托瓦内特庄园", "ja": "マリー・アントワネットの離宮" },
+          "time": "2:00 PM",
+          "desc": { "en": "Queen's private retreat with Petit Trianon", "zh": "女王的私人庄园，包括小特里亚农宫", "ja": "プチ・トリアノン宮殿のある王妃の私的別邸" },
+          "lat": 48.8144,
+          "lng": 2.1066,
+          "icon": "attraction",
+          "category": "activity"
+        }
+      ]
+    },
+    {
+      "id": "day5",
+      "day": "Day 5",
+      "date": "May 19",
+      "weekday": "Tuesday",
+      "city": { "en": "Paris", "zh": "巴黎", "ja": "パリ" },
+      "theme": { "en": "Musée d'Orsay & Left Bank", "zh": "奥赛博物馆与左岸", "ja": "オルセー美術館と左岸" },
+      "color": "#ef4444",
+      "center": [48.8599, 2.3266],
+      "zoom": 14,
+      "stops": [
+        {
+          "name": { "en": "Musée d'Orsay", "zh": "奥赛博物馆", "ja": "オルセー美術館" },
+          "time": "9:30 AM",
+          "desc": { "en": "Impressionist masterpieces in former railway station", "zh": "前火车站改建的印象派杰作博物馆", "ja": "旧駅舎の印象派傑作美術館" },
+          "lat": 48.8599,
+          "lng": 2.3266,
+          "icon": "attraction",
+          "category": "activity",
+          "highlight": true
+        },
+        {
+          "name": { "en": "Luxembourg Gardens", "zh": "卢森堡公园", "ja": "リュクサンブール公園" },
+          "time": "1:00 PM",
+          "desc": { "en": "Elegant park with palace, perfect for picnics", "zh": "优雅的公园，有宫殿，非常适合野餐", "ja": "宮殿のある優雅な公園、ピクニックに最適" },
+          "lat": 48.8462,
+          "lng": 2.3372,
+          "icon": "nature",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Panthéon", "zh": "先贤祠", "ja": "パンテオン" },
+          "time": "3:00 PM",
+          "desc": { "en": "Neoclassical mausoleum - Voltaire, Rousseau, Marie Curie", "zh": "新古典主义陵墓 - 伏尔泰、卢梭、居里夫人", "ja": "新古典主義の霊廟 - ヴォルテール、ルソー、キュリー夫人" },
+          "lat": 48.8462,
+          "lng": 2.3460,
+          "icon": "attraction",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Le Comptoir du Relais", "zh": "Le Comptoir du Relais", "ja": "ル・コントワール・デュ・ルレ" },
+          "time": "7:00 PM",
+          "desc": { "en": "Beloved bistro by chef Yves Camdeborde", "zh": "Yves Camdeborde主厨的心爱小酒馆", "ja": "シェフYves Camdebordeの愛されるビストロ" },
+          "lat": 48.8517,
+          "lng": 2.3382,
+          "icon": "food",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "id": "day6",
+      "day": "Day 6",
+      "date": "May 20",
+      "weekday": "Wednesday",
+      "city": { "en": "Paris", "zh": "巴黎", "ja": "パリ" },
+      "theme": { "en": "Marais & Modern Paris", "zh": "玛黑区与现代巴黎", "ja": "マレ地区とモダンパリ" },
+      "color": "#ef4444",
+      "center": [48.8566, 2.3614],
+      "zoom": 14,
+      "stops": [
+        {
+          "name": { "en": "Centre Pompidou", "zh": "蓬皮杜中心", "ja": "ポンピドゥー・センター" },
+          "time": "10:00 AM",
+          "desc": { "en": "Modern art museum with inside-out architecture", "zh": "建筑内外翻转的现代艺术博物馆", "ja": "内外反転建築の現代美術館" },
+          "lat": 48.8606,
+          "lng": 2.3522,
+          "icon": "attraction",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Le Marais", "zh": "玛黑区", "ja": "マレ地区" },
+          "time": "1:00 PM",
+          "desc": { "en": "Trendy neighborhood with boutiques and galleries", "zh": "时尚街区，有精品店和画廊", "ja": "ブティックやギャラリーのあるトレンディな地区" },
+          "lat": 48.8566,
+          "lng": 2.3614,
+          "icon": "shopping",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "L'As du Fallafel", "zh": "L'As du Fallafel", "ja": "ラス・デュ・ファラフェル" },
+          "time": "2:00 PM",
+          "desc": { "en": "Best falafel in Paris - always a line!", "zh": "巴黎最好的炸豆丸子 - 总是要排队！", "ja": "パリ最高のファラフェル - 常に行列！" },
+          "lat": 48.8575,
+          "lng": 2.3595,
+          "icon": "food",
+          "category": "food"
+        },
+        {
+          "name": { "en": "Place des Vosges", "zh": "孚日广场", "ja": "ヴォージュ広場" },
+          "time": "3:30 PM",
+          "desc": { "en": "Oldest planned square in Paris with arcaded walkways", "zh": "巴黎最古老的规划广场，有拱廊步道", "ja": "アーケード歩道のあるパリ最古の計画広場" },
+          "lat": 48.8555,
+          "lng": 2.3656,
+          "icon": "attraction",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Canal Saint-Martin", "zh": "圣马丁运河", "ja": "サン＝マルタン運河" },
+          "time": "5:00 PM",
+          "desc": { "en": "Hip canal-side area for sunset aperitif", "zh": "时尚的运河边区域，适合日落时分享用开胃酒", "ja": "夕日のアペリティフに最適なヒップな運河沿いエリア" },
+          "lat": 48.8718,
+          "lng": 2.3660,
+          "icon": "nature",
+          "category": "activity"
+        }
+      ]
+    },
+    {
+      "id": "day7",
+      "day": "Day 7",
+      "date": "May 21",
+      "weekday": "Thursday",
+      "city": { "en": "Paris", "zh": "巴黎", "ja": "パリ" },
+      "theme": { "en": "Eiffel Tower & Farewell", "zh": "埃菲尔铁塔与告别", "ja": "エッフェル塔と別れ" },
+      "color": "#ef4444",
+      "center": [48.8584, 2.2945],
+      "zoom": 14,
+      "stops": [
+        {
+          "name": { "en": "Trocadéro Gardens", "zh": "特罗卡德罗花园", "ja": "トロカデロ庭園" },
+          "time": "8:00 AM",
+          "desc": { "en": "Best Eiffel Tower photo spot at sunrise", "zh": "日出时埃菲尔铁塔最佳拍照地点", "ja": "日の出時のエッフェル塔撮影ベストスポット" },
+          "lat": 48.8620,
+          "lng": 2.2886,
+          "icon": "nature",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Eiffel Tower", "zh": "埃菲尔铁塔", "ja": "エッフェル塔" },
+          "time": "9:30 AM",
+          "desc": { "en": "Climb to the summit - book in advance!", "zh": "登顶 - 提前预订！", "ja": "頂上まで登る - 事前予約！" },
+          "lat": 48.8584,
+          "lng": 2.2945,
+          "icon": "attraction",
+          "category": "activity",
+          "highlight": true
+        },
+        {
+          "name": { "en": "Champ de Mars", "zh": "战神广场", "ja": "シャン・ド・マルス" },
+          "time": "12:00 PM",
+          "desc": { "en": "Picnic on the grass beneath the Eiffel Tower", "zh": "在埃菲尔铁塔下的草地上野餐", "ja": "エッフェル塔の下の芝生でピクニック" },
+          "lat": 48.8560,
+          "lng": 2.2983,
+          "icon": "nature",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Rue Cler Market", "zh": "克莱尔街市场", "ja": "リュ・クレール市場" },
+          "time": "2:00 PM",
+          "desc": { "en": "Charming market street for cheese, wine, pastries", "zh": "迷人的市场街，有奶酪、葡萄酒、糕点", "ja": "チーズ、ワイン、ペストリーの魅力的な市場通り" },
+          "lat": 48.8570,
+          "lng": 2.3075,
+          "icon": "shopping",
+          "category": "activity"
+        },
+        {
+          "name": { "en": "Seine River Cruise", "zh": "塞纳河游船", "ja": "セーヌ川クルーズ" },
+          "time": "6:00 PM",
+          "desc": { "en": "Sunset cruise - perfect farewell to Paris", "zh": "日落游船 - 完美告别巴黎", "ja": "夕日クルーズ - パリへの完璧な別れ" },
+          "lat": 48.8606,
+          "lng": 2.3159,
+          "icon": "activity",
+          "category": "activity",
+          "highlight": true
+        }
+      ]
+    }
+  ]
+}
