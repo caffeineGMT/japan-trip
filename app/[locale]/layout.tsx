@@ -87,6 +87,24 @@ export default async function LocaleLayout({
           <main className="min-h-screen">
             {children}
           </main>
+          <footer style={{
+            marginTop: '4rem',
+            padding: '2rem',
+            borderTop: '1px solid #e0e0e0',
+            textAlign: 'center',
+            background: '#f9f9f9'
+          }}>
+            <p style={{
+              fontSize: '0.875rem',
+              color: '#666',
+              maxWidth: '800px',
+              margin: '0 auto'
+            }}>
+              This site contains affiliate links. We may earn a commission from bookings
+              made through Booking.com, Agoda, Klook, and JR Pass at no extra cost to you.
+              Your support helps us provide free travel planning tools.
+            </p>
+          </footer>
         </NextIntlClientProvider>
         <InstallPrompt />
       </body>

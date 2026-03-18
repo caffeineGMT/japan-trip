@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
@@ -65,6 +67,45 @@ export default function Home() {
               display: 'block'
             }}>
               {t('nav.savedPlaces')}
+            </Link>
+          </li>
+          <li>
+            <Link href="/locations" style={{
+              textDecoration: 'none',
+              color: '#333',
+              fontWeight: '500',
+              padding: '0.5rem 1rem',
+              borderRadius: '8px',
+              background: '#f5f5f5',
+              display: 'block'
+            }}>
+              Locations
+            </Link>
+          </li>
+          <li>
+            <Link href="/itinerary" style={{
+              textDecoration: 'none',
+              color: '#333',
+              fontWeight: '500',
+              padding: '0.5rem 1rem',
+              borderRadius: '8px',
+              background: '#f5f5f5',
+              display: 'block'
+            }}>
+              Itinerary
+            </Link>
+          </li>
+          <li>
+            <Link href="/dashboard" style={{
+              textDecoration: 'none',
+              color: '#333',
+              fontWeight: '500',
+              padding: '0.5rem 1rem',
+              borderRadius: '8px',
+              background: '#f5f5f5',
+              display: 'block'
+            }}>
+              📊 Dashboard
             </Link>
           </li>
         </ul>

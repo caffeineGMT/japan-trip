@@ -64,7 +64,7 @@ const OfflineTileLayer: React.FC<{ url: string; attribution: string }> = ({ url,
   // Show offline indicator
   useEffect(() => {
     if (offline) {
-      const offlineControl = L.control({ position: 'topright' });
+      const offlineControl = new L.Control({ position: 'topright' });
       offlineControl.onAdd = () => {
         const div = L.DomUtil.create('div', 'offline-indicator');
         div.innerHTML = `

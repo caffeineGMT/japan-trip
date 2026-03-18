@@ -20,6 +20,11 @@ export default function LanguageSwitcher() {
     document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
 
     // Extract the path without the locale prefix
+    if (!pathname) {
+      router.push(`/${newLocale}`);
+      return;
+    }
+
     const segments = pathname.split('/');
     const pathWithoutLocale = segments.slice(2).join('/') || '';
 
