@@ -75,6 +75,7 @@
     "leaflet": "^1.9.4",
     "localforage": "^1.10.0",
     "mailgun.js": "^12.7.1",
+    "minisearch": "^7.2.0",
     "multer": "^2.1.1",
     "nanoid": "^5.1.7",
     "next": "^14.2.35",
@@ -92,7 +93,8 @@
     "simple-statistics": "^7.8.9",
     "stripe": "^20.4.1",
     "terser": "^5.46.1",
-    "workbox-webpack-plugin": "^7.4.0"
+    "workbox-webpack-plugin": "^7.4.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",

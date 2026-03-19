@@ -4,55 +4,52 @@
     {
       "src": "server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "*.{html,css,js,ico,png,jpg,svg}",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "templates/**/*.json",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "lib/**/*.{js,css}",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "icons/**/*.png",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "dest": "/server.js"
     },
     {
-      "src": "/([a-zA-Z0-9]{8})$",
-      "dest": "/share/index.html"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/:shortCode(^[a-zA-Z0-9]{8}$)",
-      "destination": "/share/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/og/:shortCode",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "src": "/templates/(.*)",
+      "dest": "/templates/$1"
     },
     {
-      "source": "/share/:path*",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
-      ]
-    }
-  ],
-  "env": {
-    "BASE_URL": "https://trip.to"
-  },
-  "crons": [
-    {
-      "path": "/api/affiliate/payout/process-monthly",
-      "schedule": "0 0 1 * *"
+      "src": "/lib/(.*)",
+      "dest": "/lib/$1"
     },
     {
-      "path": "/api/cron/refresh-forecasts",
-      "schedule": "0 0 * * 0"
+      "src": "/icons/(.*)",
+      "dest": "/icons/$1"
+    },
+    {
+      "src": "/(.*\\.(css|js|json|ico|png|jpg|svg|woff2?))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*\\.html)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
     }
   ]
 }

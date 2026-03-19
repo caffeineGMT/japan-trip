@@ -72,16 +72,6 @@ async function initializeApp() {
     // Initialize phrases
     loadPhrases();
 
-    // Track app loaded event for conversion funnel
-    if (window.Analytics) {
-      window.Analytics.track('app_loaded', {
-        template_id: tripId,
-        has_utm_source: !!urlParams.get('utm_source'),
-        utm_source: urlParams.get('utm_source'),
-        utm_medium: urlParams.get('utm_medium'),
-        utm_campaign: urlParams.get('utm_campaign'),
-      });
-    }
 
   } catch (error) {
     console.error('[Template] Load error:', error);
@@ -324,14 +314,6 @@ function selectDay(index) {
   currentDayIndex = index;
   const day = TRIP_DATA[index];
 
-  // Track day selection for engagement funnel
-  if (window.Analytics && index !== 0) { // Don't track initial load
-    window.Analytics.track('day_selected', {
-      day_number: index + 1,
-      day_name: day.day,
-      city: day.city,
-    });
-  }
 
   // Update tab active state
   document.querySelectorAll('.day-tab').forEach((tab, i) => {
@@ -450,54 +432,7 @@ function renderSidebar(day) {
 
   content.innerHTML = contentHtml;
 
-  // === AFFILIATE WIDGETS INJECTION ===
-  // Inject affiliate widgets after initial content is loaded
-  renderAffiliateWidgets(day, currentDayIndex, content);
-
   content.scrollTop = 0;
-}
-
-// Render affiliate widgets for monetization
-async function renderAffiliateWidgets(day, dayIndex, container) {
-  // Create container for affiliate widgets
-  const affiliateContainer = document.createElement('div');
-  affiliateContainer.className = 'affiliate-widgets-section';
-  affiliateContainer.id = 'affiliate-widgets';
-
-  // Show transport widget (JR Pass) on first few days only
-  if (typeof TransportWidget !== 'undefined' && dayIndex <= 2) {
-    const transportHTML = TransportWidget.render(TRIP_DATA, dayIndex);
-    if (transportHTML) {
-      affiliateContainer.innerHTML += transportHTML;
-    }
-  }
-
-  // Show activities widget for all days
-  if (typeof ActivitiesWidget !== 'undefined') {
-    try {
-      const activitiesHTML = await ActivitiesWidget.render(day, dayIndex);
-      if (activitiesHTML) {
-        affiliateContainer.innerHTML += activitiesHTML;
-      }
-    } catch (error) {
-      console.error('Error rendering activities widget:', error);
-    }
-  }
-
-  // Show hotels widget for all days
-  if (typeof HotelsWidget !== 'undefined') {
-    try {
-      const hotelsHTML = await HotelsWidget.render(day, dayIndex);
-      if (hotelsHTML) {
-        affiliateContainer.innerHTML += hotelsHTML;
-      }
-    } catch (error) {
-      console.error('Error rendering hotels widget:', error);
-    }
-  }
-
-  // Append to sidebar content
-  container.appendChild(affiliateContainer);
 }
 
 // Render map markers and route
@@ -588,16 +523,6 @@ async function renderMap(day) {
 window.focusStop = function focusStop(index) {
   const day = TRIP_DATA[currentDayIndex];
   const stop = day.stops[index];
-
-  // Track stop click for engagement
-  if (window.Analytics) {
-    window.Analytics.track('stop_clicked', {
-      stop_index: index + 1,
-      stop_name: stop.name?.en || stop.name,
-      stop_category: stop.category,
-      day_number: currentDayIndex + 1,
-    });
-  }
 
   // Safety check - ensure map is initialized
   if (!map) {
@@ -852,14 +777,6 @@ document.querySelectorAll('.lang-switcher button').forEach(btn => {
   btn.addEventListener('click', (e) => {
     const selectedLang = e.target.dataset.lang;
 
-    // Track language switch
-    if (window.Analytics) {
-      window.Analytics.track('language_switched', {
-        from_language: I18N.currentLang,
-        to_language: selectedLang,
-      });
-    }
-
     I18N.setLang(selectedLang);
 
     // Update active button state
@@ -1052,217 +969,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ============================================================================
-// PWA: Install Prompt Handler
-// ============================================================================
-
-let deferredInstallPrompt = null;
-let installButton = null;
-
-// Listen for beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', (e) => {
-  console.log('[PWA] Install prompt available');
-
-  // Prevent the mini-infobar from appearing on mobile
-  e.preventDefault();
-
-  // Store the event for later use
-  deferredInstallPrompt = e;
-
-  // Show custom install button
-  showInstallButton();
-});
-
-// Create and show install button
-function showInstallButton() {
-  // Check if button already exists
-  if (installButton) return;
-
-  // Create install button
-  installButton = document.createElement('button');
-  installButton.id = 'pwa-install-btn';
-  installButton.className = 'pwa-install-btn';
-  installButton.innerHTML = `
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-      <polyline points="7 10 12 15 17 10"></polyline>
-      <line x1="12" y1="15" x2="12" y2="3"></line>
-    </svg>
-    <span>Install App</span>
-  `;
-  installButton.title = 'Install Trip Companion app';
-
-  // Add click handler
-  installButton.addEventListener('click', installApp);
-
-  // Insert into header (after hamburger menu)
-  const header = document.getElementById('top-header');
-  const headerLeft = header.querySelector('.header-left');
-  if (headerLeft) {
-    headerLeft.insertAdjacentElement('afterend', installButton);
-  }
-
-  // Auto-hide after 30 seconds on desktop
-  if (window.innerWidth >= 768) {
-    setTimeout(() => {
-      if (installButton && installButton.parentElement) {
-        installButton.style.opacity = '0';
-        installButton.style.pointerEvents = 'none';
-      }
-    }, 30000);
-  }
-}
-
-// Install app handler
-async function installApp() {
-  if (!deferredInstallPrompt) {
-    console.log('[PWA] No install prompt available');
-    return;
-  }
-
-  // Show the install prompt
-  deferredInstallPrompt.prompt();
-
-  // Wait for the user's response
-  const { outcome } = await deferredInstallPrompt.userChoice;
-  console.log(`[PWA] User ${outcome === 'accepted' ? 'accepted' : 'dismissed'} the install prompt`);
-
-  // Clear the prompt
-  deferredInstallPrompt = null;
-
-  // Hide the install button
-  if (installButton) {
-    installButton.remove();
-    installButton = null;
-  }
-}
-
-// Listen for app installed event
-window.addEventListener('appinstalled', () => {
-  console.log('[PWA] App installed successfully');
-
-  // Hide install button if still visible
-  if (installButton) {
-    installButton.remove();
-    installButton = null;
-  }
-
-  // Clear the deferred prompt
-  deferredInstallPrompt = null;
-
-  // Optional: Track installation
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'pwa_install', {
-      event_category: 'engagement',
-      event_label: 'PWA Installed'
-    });
-  }
-});
-
-// ============================================================================
-// PWA: Offline Indicator
-// ============================================================================
-
-let offlineIndicator = null;
-
-// Create offline indicator
-function createOfflineIndicator() {
-  if (offlineIndicator) return;
-
-  offlineIndicator = document.createElement('div');
-  offlineIndicator.id = 'offline-indicator';
-  offlineIndicator.className = 'offline-indicator';
-  offlineIndicator.innerHTML = `
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <line x1="1" y1="1" x2="23" y2="23"></line>
-      <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
-      <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
-      <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
-      <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
-      <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-      <line x1="12" y1="20" x2="12.01" y2="20"></line>
-    </svg>
-    <span>Offline Mode</span>
-  `;
-
-  // Insert into header
-  const header = document.getElementById('top-header');
-  if (header) {
-    header.appendChild(offlineIndicator);
-  }
-}
-
-// Remove offline indicator
-function removeOfflineIndicator() {
-  if (offlineIndicator && offlineIndicator.parentElement) {
-    offlineIndicator.classList.add('hiding');
-    setTimeout(() => {
-      if (offlineIndicator && offlineIndicator.parentElement) {
-        offlineIndicator.remove();
-        offlineIndicator = null;
-      }
-    }, 300);
-  }
-}
-
-// Update online/offline status
-function updateOnlineStatus() {
-  if (navigator.onLine) {
-    console.log('[PWA] Online');
-    removeOfflineIndicator();
-  } else {
-    console.log('[PWA] Offline');
-    createOfflineIndicator();
-
-    // Track offline mode enabled
-    if (window.Analytics) {
-      window.Analytics.track('offline_mode_enabled', {
-        service_worker_active: navigator.serviceWorker?.controller !== null,
-      });
-    }
-  }
-}
-
-// Listen for online/offline events
-window.addEventListener('online', updateOnlineStatus);
-window.addEventListener('offline', updateOnlineStatus);
-
-// Check initial status
-updateOnlineStatus();
-
-// ============================================================================
-// PWA: Cache Management Helper (for manual tile caching)
-// ============================================================================
-
-// Allow users to manually cache tiles for the current view
-window.cacheCurrentMapTiles = function() {
-  if (!('serviceWorker' in navigator) || !navigator.serviceWorker.controller) {
-    console.log('[PWA] Service worker not active');
-    return;
-  }
-
-  // Get current map bounds
-  const bounds = map.getBounds();
-  const zoom = map.getZoom();
-
-  const boundsArray = [
-    bounds.getSouth(),
-    bounds.getNorth(),
-    bounds.getWest(),
-    bounds.getEast()
-  ];
-
-  // Send message to service worker to cache tiles
-  navigator.serviceWorker.controller.postMessage({
-    type: 'CACHE_TILES',
-    bounds: boundsArray,
-    zoom: Math.floor(zoom)
-  });
-
-  console.log(`[PWA] Caching tiles for current view (zoom ${Math.floor(zoom)})`);
-};
-
-console.log('[PWA] Features initialized');
 
 // ==================== START APP ====================
 // Initialize the app when DOM is ready

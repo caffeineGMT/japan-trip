@@ -4,15 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ef4444">
-  <meta name="description" content="Your complete Japan cherry blossom trip companion - Tokyo, Kyoto, Osaka, Nara">
   <title>Japan Trip - April 2026</title>
-
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="/manifest.json">
 
   <!-- Icons -->
   <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png">
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +16,6 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="components/affiliate-widget.css">
-  <link rel="stylesheet" href="lib/share.css">
 </head>
 <body>
   <!-- Top nav -->
@@ -45,12 +38,11 @@
     <div id="sakura-widget" class="sakura-widget"></div>
     <button id="whatsNextToggle" class="btn-toggle">What's Next</button>
     <nav class="day-tabs" id="day-tabs"></nav>
-    <button id="phrases-btn" class="icon-btn" title="Japanese Phrases">🗣️</button>
-    <button id="share-btn" class="icon-btn" title="Share Trip">🔗</button>
+    <button id="phrases-btn" class="icon-btn" title="Japanese Phrases">&#128483;&#65039;</button>
     <div class="lang-switcher">
       <button data-lang="en" class="active">EN</button>
-      <button data-lang="zh">中文</button>
-      <button data-lang="ja">日本語</button>
+      <button data-lang="zh">&#20013;&#25991;</button>
+      <button data-lang="ja">&#26085;&#26412;&#35486;</button>
     </div>
   </header>
 
@@ -68,31 +60,14 @@
   </div>
 
   <script src="i18n.js"></script>
-  <!-- data.js now loaded dynamically via template loader -->
   <script src="config.js"></script>
   <script src="weather.js"></script>
   <script src="routes.js"></script>
   <script src="sakura-widget.js"></script>
-  <!-- Audio Player for Native Speaker Recordings -->
   <script src="audio-player.js"></script>
-  <!-- Affiliate Monetization -->
-  <script src="lib/affiliate-tracker.js"></script>
-  <script src="widgets/hotels.js"></script>
-  <script src="widgets/activities.js"></script>
-  <script src="widgets/transport.js"></script>
-  <!-- Main App (ES6 Module with dynamic template loading) -->
+  <!-- Main App -->
   <script type="module" src="script.js"></script>
   <script src="whats-next.js"></script>
-
-  <!-- AI Assistant -->
-  <script src="components/ai-assistant.js"></script>
-
-  <!-- Share Functionality -->
-  <script src="lib/share.js"></script>
-
-  <!-- Analytics (PostHog) -->
-  <script src="lib/analytics.js"></script>
-  <script src="lib/analytics-init.js"></script>
 
   <!-- Phrases Modal -->
   <div id="phrases-modal" class="modal">
@@ -104,210 +79,5 @@
       <div id="phrases-list" class="phrases-list"></div>
     </div>
   </div>
-
-  <!-- Share Modal -->
-  <div id="share-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>Share Your Trip</h3>
-        <button class="close-modal" aria-label="Close">&times;</button>
-      </div>
-      <div class="share-modal-body">
-        <p class="share-description">Share your Japan itinerary with friends and earn rewards!</p>
-
-        <div id="share-loading" class="share-loading" style="display: none;">
-          <div class="spinner"></div>
-          <p>Generating share link...</p>
-        </div>
-
-        <div id="share-content" class="share-content">
-          <div class="share-link-container">
-            <input type="text" id="share-link-input" readonly class="share-link-input" placeholder="Your share link will appear here">
-            <button id="copy-link-btn" class="btn-primary">Copy Link</button>
-          </div>
-
-          <div class="share-buttons">
-            <button class="share-btn twitter" data-platform="twitter">
-              <span class="share-icon">🐦</span>
-              <span>Twitter</span>
-            </button>
-            <button class="share-btn facebook" data-platform="facebook">
-              <span class="share-icon">📘</span>
-              <span>Facebook</span>
-            </button>
-            <button class="share-btn whatsapp" data-platform="whatsapp">
-              <span class="share-icon">💬</span>
-              <span>WhatsApp</span>
-            </button>
-            <button class="share-btn email" data-platform="email">
-              <span class="share-icon">✉️</span>
-              <span>Email</span>
-            </button>
-          </div>
-
-          <div class="share-rewards">
-            <div class="rewards-card">
-              <h4>🎁 Referral Rewards</h4>
-              <p>Refer 3 friends to get <strong>1 month of Premium free!</strong></p>
-              <div class="rewards-stats" id="rewards-stats">
-                <div class="stat">
-                  <span class="stat-value" id="referral-count">0</span>
-                  <span class="stat-label">Referrals</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-value" id="rewards-earned">0</span>
-                  <span class="stat-label">Months Earned</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="share-error" class="share-error" style="display: none;">
-          <p>Failed to generate share link. Please try again.</p>
-          <button id="retry-share-btn" class="btn-secondary">Retry</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Paywall Overlay (Free users on Day 4+) -->
-  <div id="paywall-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 9999; backdrop-filter: blur(8px);">
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 48px; border-radius: 16px; max-width: 500px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
-      <div style="font-size: 3rem; margin-bottom: 16px;">🔒</div>
-      <h2 style="font-size: 2rem; margin-bottom: 16px; color: #1a1a1a;">You've reached the free plan limit</h2>
-      <p style="font-size: 1.1rem; color: #6b7280; margin-bottom: 32px; line-height: 1.6;">Upgrade to Premium to unlock unlimited days, AI trip optimizer, and offline maps for your entire Japan adventure.</p>
-      <div style="display: flex; gap: 16px; justify-content: center;">
-        <button onclick="window.location.href='/pricing.html'" style="padding: 16px 32px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; flex: 1;">
-          Upgrade to Premium
-        </button>
-        <button onclick="document.getElementById('paywall-overlay').style.display='none'" style="padding: 16px 32px; background: white; color: #667eea; border: 2px solid #667eea; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer;">
-          Close
-        </button>
-      </div>
-      <p style="margin-top: 24px; font-size: 0.9rem; color: #9ca3af;">Start your 7-day free trial • Cancel anytime</p>
-    </div>
-  </div>
-
-  <!-- Upgrade Banner (Free users on Day 4+) -->
-  <div id="upgrade-banner" style="display: none; position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 0; text-align: center; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-    <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; padding: 0 16px;">
-      <span style="font-weight: 600; font-size: 1rem;">🎉 You're on Day 4 of your trip! Unlock unlimited days with Premium</span>
-      <button onclick="window.location.href='/pricing.html'" style="padding: 8px 24px; background: white; color: #667eea; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.95rem;">
-        Upgrade Now
-      </button>
-      <button onclick="document.getElementById('upgrade-banner').style.display='none'" style="padding: 8px 16px; background: rgba(255,255,255,0.2); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem;">
-        ✕
-      </button>
-    </div>
-  </div>
-
-  <!-- Service Worker Registration -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('✓ Service Worker registered:', registration.scope);
-
-            // Check for updates periodically
-            setInterval(() => {
-              registration.update();
-            }, 60 * 60 * 1000); // Check every hour
-
-            // Listen for updates
-            registration.addEventListener('updatefound', () => {
-              const newWorker = registration.installing;
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // New version available
-                  if (confirm('A new version is available! Reload to update?')) {
-                    newWorker.postMessage({ type: 'SKIP_WAITING' });
-                    window.location.reload();
-                  }
-                }
-              });
-            });
-          })
-          .catch(error => {
-            console.error('✗ Service Worker registration failed:', error);
-          });
-
-        // Reload page when new service worker takes control
-        let refreshing = false;
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
-          if (!refreshing) {
-            refreshing = true;
-            window.location.reload();
-          }
-        });
-      });
-    }
-
-    // Paywall logic: Show upgrade prompts for free users on Day 4+
-    (function() {
-      // Check user subscription status (you'll need to implement this based on your auth system)
-      const userPlan = localStorage.getItem('user_plan') || 'free';
-
-      // Get current day from itinerary (assuming it's stored somewhere)
-      function getCurrentDay() {
-        // This is a simplified example - adjust based on your actual data structure
-        const urlParams = new URLSearchParams(window.location.search);
-        const day = parseInt(urlParams.get('day')) || 1;
-        return day;
-      }
-
-      const currentDay = getCurrentDay();
-
-      // Show upgrade prompts for free users on Day 4+
-      if (userPlan === 'free' && currentDay >= 4) {
-        // Show upgrade banner
-        const banner = document.getElementById('upgrade-banner');
-        if (banner) {
-          banner.style.display = 'block';
-          // Adjust top padding to account for banner
-          document.body.style.paddingTop = '60px';
-
-          // Track paywall hit
-          if (window.Analytics) {
-            Analytics.trackPaywallHit('day_4_limit', 'upgrade_banner');
-          }
-        }
-
-        // Show paywall overlay when trying to access AI features
-        window.showPaywall = function(feature) {
-          const overlay = document.getElementById('paywall-overlay');
-          if (overlay) {
-            overlay.style.display = 'block';
-
-            // Track paywall hit
-            if (window.Analytics) {
-              Analytics.trackPaywallHit(feature, 'feature_access');
-            }
-          }
-        };
-
-        // Intercept AI feature clicks
-        document.addEventListener('click', function(e) {
-          // Check if clicked element or parent has data-premium attribute
-          const target = e.target.closest('[data-premium="true"]');
-          if (target && userPlan === 'free') {
-            e.preventDefault();
-            e.stopPropagation();
-            showPaywall(target.dataset.feature || 'premium_feature');
-          }
-        }, true);
-      }
-
-      // Track page load for free vs premium users
-      if (window.Analytics) {
-        Analytics.track('app_loaded', {
-          user_plan: userPlan,
-          current_day: currentDay,
-          paywall_shown: userPlan === 'free' && currentDay >= 4
-        });
-      }
-    })();
-  </script>
 </body>
 </html>

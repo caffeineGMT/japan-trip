@@ -7,277 +7,34 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware - IMPORTANT: Raw body for Stripe webhooks must come before express.json()
-app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }));
-
-app.use(cors({
-  origin: process.env.APP_URL || 'http://localhost:3000',
-  credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 
-// Multi-tenant middleware (must come before static files)
-const { multiTenantMiddleware, injectTenantBranding } = require('./lib/multi-tenant');
-app.use(multiTenantMiddleware);
-app.use(injectTenantBranding);
-
-// PostHog analytics meta tag injection middleware
-app.use((req, res, next) => {
-  // Only inject for HTML files
-  if (req.path.endsWith('.html') || req.path === '/' || !req.path.includes('.')) {
-    const send = res.send;
-    res.send = function(data) {
-      // Check if response is HTML
-      if (typeof data === 'string' && data.includes('<head>')) {
-        const metaTags = `
-  <!-- PostHog Analytics Config -->
-  <meta name="posthog-api-key" content="${process.env.POSTHOG_API_KEY || ''}">
-  <meta name="posthog-host" content="${process.env.POSTHOG_HOST || 'https://app.posthog.com'}">`;
-
-        data = data.replace('<head>', '<head>' + metaTags);
-      }
-      return send.call(this, data);
-    };
-  }
-  next();
-});
-
+// Serve static files
 app.use(express.static(__dirname));
 
-// ===== STRIPE PAYMENT ROUTES =====
-const checkoutRouter = require('./api/stripe/checkout');
-const webhookRouter = require('./api/stripe/webhook');
-const portalRouter = require('./api/stripe/portal');
-const userAccessRouter = require('./api/user/access');
-
-app.use('/api/stripe', checkoutRouter);
-app.use('/api/stripe', webhookRouter);
-app.use('/api/stripe', portalRouter);
-app.use('/api/user', userAccessRouter);
-
-// ===== WHITE-LABEL ROUTES =====
-const whiteLabelProvisionRouter = require('./api/white-label/provision');
-const whiteLabelConfigRouter = require('./api/white-label/config');
-
-app.use('/api/white-label', whiteLabelProvisionRouter);
-app.use('/api/white-label', whiteLabelConfigRouter);
-
-// ===== AI ASSISTANT ROUTES =====
-const aiOptimizeRouter = require('./api/ai/optimize');
-const aiRecommendRouter = require('./api/ai/recommend');
-const aiEditRouter = require('./api/ai/edit');
-const aiChecklistRouter = require('./api/ai/checklist');
-
-app.use('/api/ai', aiOptimizeRouter);
-app.use('/api/ai', aiRecommendRouter);
-app.use('/api/ai', aiEditRouter);
-app.use('/api/ai', aiChecklistRouter);
-
-// ===== AFFILIATE PARTNER ROUTES =====
-const affiliateTrackRouter = require('./api/affiliate/track');
-const affiliateStatsRouter = require('./api/affiliate/stats');
-const affiliatePayoutRouter = require('./api/affiliate/payout');
-
-app.use('/api/affiliate', affiliateTrackRouter);
-app.use('/api/affiliate', affiliateStatsRouter);
-app.use('/api/affiliate', affiliatePayoutRouter);
-
-// ===== EMAIL NURTURE ROUTES =====
-const emailSubscribeRouter = require('./api/email/subscribe');
-const emailUnsubscribeRouter = require('./api/email/unsubscribe');
-const emailWebhookRouter = require('./api/email/webhook');
-const emailAnalyticsRouter = require('./api/email/analytics');
-const emailCronRouter = require('./api/email/cron');
-
-app.use('/api/email', emailSubscribeRouter);
-app.use('/api/email', emailUnsubscribeRouter);
-app.use('/api/email', emailWebhookRouter);
-app.use('/api/email', emailAnalyticsRouter);
-app.use('/api/email', emailCronRouter);
-
-// ===== OUTREACH ROUTES =====
-const outreachCampaigns = require('./api/outreach/campaigns');
-
-app.get('/api/outreach/campaigns', outreachCampaigns.listCampaigns);
-app.post('/api/outreach/campaigns/start', outreachCampaigns.startCampaign);
-app.get('/api/outreach/bloggers', outreachCampaigns.listBloggers);
-app.post('/api/outreach/bloggers', outreachCampaigns.addBlogger);
-app.get('/api/outreach/follow-ups', outreachCampaigns.listFollowUps);
-app.post('/api/outreach/follow-ups/process', outreachCampaigns.processFollowUps);
-app.post('/api/outreach/webhooks/mailgun', outreachCampaigns.mailgunWebhook);
-
-// ===== REFERRAL PROGRAM ROUTES =====
-const referralRouter = require('./api/referrals/routes');
-app.use('/api/referrals', referralRouter);
-
-// ===== CHROME EXTENSION ROUTES =====
-const extensionSavePOIRouter = require('./api/extension/save-poi');
-app.use('/api/extension', extensionSavePOIRouter);
-
-// ===== PARTNERSHIP ROUTES (JAL/ANA Co-Marketing) =====
-const partnershipTrack = require('./api/partnerships/track');
-
-app.post('/api/partnerships/track', partnershipTrack.trackEvent);
-app.get('/api/partnerships/analytics', partnershipTrack.getAnalytics);
-app.post('/api/partnerships/convert', partnershipTrack.markConversion);
-app.get('/api/partnerships/commissions', partnershipTrack.getCommissions);
-
-// ===== ANALYTICS ROUTES (PostHog Conversion Funnel) =====
-const { analyticsMiddleware, serverAnalytics } = require('./api/analytics');
-
-// Initialize server-side analytics
-if (process.env.POSTHOG_API_KEY) {
-  serverAnalytics.init(process.env.POSTHOG_API_KEY, {
-    host: process.env.POSTHOG_HOST || 'https://app.posthog.com',
-  });
-  console.log('✓ PostHog server-side analytics initialized');
-} else {
-  console.warn('⚠️  POSTHOG_API_KEY not set - analytics disabled');
-}
-
-// ===== PRICING V2 ROUTES (A/B Testing & Conversion Optimization) =====
-const createCheckoutSession = require('./api/stripe/create-checkout-session');
-const analyticsTrack = require('./api/analytics/track');
-const abTestReport = require('./api/analytics/ab-test-report');
-
-app.post('/api/stripe/create-checkout-session', createCheckoutSession);
-app.post('/api/analytics/track', analyticsTrack);
-app.get('/api/analytics/ab-test-report', abTestReport);
-
-app.post('/api/analytics/track', analyticsMiddleware);
-
-// Partnership dashboard
-app.get('/partnerships/dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'marketing', 'partnerships', 'partnership-dashboard.html'));
-});
-
-// Serve individual template details
+// Serve template JSON
 app.get('/api/templates/:id', (req, res) => {
   try {
     const templatePath = path.join(__dirname, 'templates', `${req.params.id}.json`);
-
     if (fs.existsSync(templatePath)) {
       const template = JSON.parse(fs.readFileSync(templatePath, 'utf-8'));
       res.json(template);
     } else {
-      // Generate template from seed data if full template doesn't exist
-      const seedData = JSON.parse(
-        fs.readFileSync(path.join(__dirname, 'marketplace', 'seed-data.json'), 'utf-8')
-      );
-      const template = seedData.find(t => t.id === req.params.id);
-
-      if (template) {
-        // Enhance with full data for detail view
-        const fullTemplate = {
-          ...template,
-          full_description: template.description + '\n\nThis itinerary has been carefully crafted by local experts to give you an authentic experience. All accommodations, key attractions, and transportation are included in the detailed day-by-day plan.',
-          days: generateSampleDays(template),
-          reviews: generateSampleReviews(template)
-        };
-        res.json(fullTemplate);
-      } else {
-        res.status(404).json({ error: 'Template not found' });
-      }
+      res.status(404).json({ error: 'Template not found' });
     }
   } catch (error) {
     console.error('Error loading template:', error);
-    res.status(500).json({ error: 'Failed to load template details' });
+    res.status(500).json({ error: 'Failed to load template' });
   }
 });
 
-// Serve template thumbnails (placeholder endpoint)
-app.get('/api/templates/:id/thumbnail.jpg', (req, res) => {
-  const thumbnailPath = path.join(__dirname, 'marketplace', 'thumbnails', `${req.params.id}.jpg`);
-
-  if (fs.existsSync(thumbnailPath)) {
-    res.sendFile(thumbnailPath);
-  } else {
-    // Send placeholder image
-    res.redirect(`https://api.dicebear.com/7.x/shapes/svg?seed=${req.params.id}&backgroundColor=4f46e5,7c3aed,db2777,dc2626&size=400`);
-  }
-});
-
-// Helper function to generate sample days for template detail
-function generateSampleDays(template) {
-  const days = [];
-  const sampleActivities = {
-    'tokyo-cherry-blossoms': [
-      { name: 'Ueno Park Morning Walk', time: '09:00', duration: '2h', description: 'Start your day at Ueno Park, one of Tokyo\'s most famous cherry blossom spots with over 1,000 trees.' },
-      { name: 'Senso-ji Temple Visit', time: '12:00', duration: '1.5h', description: 'Explore Tokyo\'s oldest temple in Asakusa, walking through the iconic Thunder Gate.' },
-      { name: 'Sumida River Cruise', time: '15:00', duration: '1h', description: 'Enjoy cherry blossoms from the water on a traditional yakatabune boat.' }
-    ],
-    'kyoto-temples': [
-      { name: 'Fushimi Inari Shrine', time: '08:00', duration: '2.5h', description: 'Hike through 10,000 vermillion torii gates up the sacred Mount Inari.' },
-      { name: 'Kinkaku-ji Golden Pavilion', time: '12:00', duration: '1h', description: 'Visit the stunning gold-leaf covered temple reflecting in its pond.' },
-      { name: 'Arashiyama Bamboo Grove', time: '15:00', duration: '1.5h', description: 'Walk through towering bamboo stalks in this otherworldly forest.' }
-    ],
-    'osaka-food-tour': [
-      { name: 'Kuromon Market Breakfast', time: '09:00', duration: '1.5h', description: 'Sample fresh seafood, takoyaki, and local specialties at Osaka\'s kitchen.' },
-      { name: 'Dotonbori Street Food', time: '18:00', duration: '2h', description: 'Iconic neon-lit street food paradise with the famous Glico Running Man sign.' },
-      { name: 'Hozenji Yokocho Alley', time: '20:30', duration: '1.5h', description: 'Hidden alley filled with traditional izakayas and intimate dining spots.' }
-    ]
-  };
-
-  const defaultActivities = [
-    { name: 'Morning Exploration', time: '09:00', duration: '2h', description: 'Start your day exploring the main attractions and getting oriented.' },
-    { name: 'Lunch & Local Culture', time: '12:00', duration: '2h', description: 'Experience authentic local cuisine and immerse in the culture.' },
-    { name: 'Afternoon Adventure', time: '15:00', duration: '2h', description: 'Continue your journey with afternoon highlights and hidden gems.' }
-  ];
-
-  const activities = sampleActivities[template.id] || defaultActivities;
-
-  // Generate 2 days for preview
-  for (let i = 1; i <= 2; i++) {
-    days.push({
-      day: i,
-      title: `Day ${i}: ${template.destination} ${i === 1 ? 'Arrival & Highlights' : 'Deep Dive'}`,
-      activities: activities
-    });
-  }
-
-  return days;
-}
-
-// Helper function to generate sample reviews
-function generateSampleReviews(template) {
-  const reviewTemplates = [
-    { rating: 5, author: 'Sarah M.', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah', text: 'Absolutely incredible trip! Every detail was perfect and the itinerary was well-paced.' },
-    { rating: 5, author: 'James K.', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=James', text: 'Best vacation ever! The local recommendations were spot-on and saved us so much planning time.' },
-    { rating: 4, author: 'Emily R.', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emily', text: 'Great experience overall. Would have loved one more day to really soak it all in.' },
-    { rating: 5, author: 'Michael T.', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Michael', text: 'This template made our trip so easy! Everything was organized and the suggestions were fantastic.' },
-    { rating: 5, author: 'Lisa P.', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Lisa', text: 'Worth every penny! We hit all the must-see spots and discovered amazing hidden gems too.' }
-  ];
-
-  return reviewTemplates;
-}
-
-// Error handling middleware
+// Error handling
 app.use((err, req, res, next) => {
-  console.error('Unhandled error:', err);
-  res.status(500).json({
-    error: 'Internal server error',
-    message: err.message
-  });
-});
-
-// Serve uploads directory for tenant logos
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// Partnership dashboard
-app.get('/partnerships/dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'marketing', 'partnerships', 'partnership-dashboard.html'));
+  console.error('Error:', err);
+  res.status(500).json({ error: 'Internal server error' });
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
-  console.log(`📍 Marketplace: http://localhost:${PORT}/marketplace`);
-  console.log(`🏢 Partners: http://localhost:${PORT}/partners`);
-  console.log(`📊 Analytics Dashboard: http://localhost:${PORT}/analytics-dashboard.html`);
-  console.log(`💳 Stripe configured: ${!!process.env.STRIPE_SECRET_KEY}`);
-  console.log(`🗄️  Supabase configured: ${!!process.env.SUPABASE_URL}`);
-  console.log(`☁️  Cloudflare configured: ${!!process.env.CLOUDFLARE_API_TOKEN}`);
-  console.log(`🔐 Multi-tenant: enabled`);
-  console.log(`📈 PostHog analytics: ${!!process.env.POSTHOG_API_KEY ? 'enabled' : 'disabled'}`);
-  console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
-
