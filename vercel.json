@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "*.{html,css,js,ico,png,jpg,svg}",
+      "src": "*.{html,css,js,json,ico,png,jpg,svg}",
       "use": "@vercel/static"
     },
     {
@@ -20,12 +20,20 @@
     {
       "src": "icons/**/*.png",
       "use": "@vercel/static"
+    },
+    {
+      "src": "audio/**/*.mp3",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "/server.js"
+    },
+    {
+      "src": "/audio/(.*)",
+      "dest": "/audio/$1"
     },
     {
       "src": "/templates/(.*)",
@@ -40,7 +48,7 @@
       "dest": "/icons/$1"
     },
     {
-      "src": "/(.*\\.(css|js|json|ico|png|jpg|svg|woff2?))",
+      "src": "/(.*\\.(css|js|json|ico|png|jpg|svg|mp3|woff2?))",
       "dest": "/$1"
     },
     {

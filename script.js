@@ -977,3 +977,29 @@ if (document.readyState === 'loading') {
 } else {
   initializeApp();
 }
+
+// Mobile bottom nav - phrases button
+const mobilePhrasesBtn = document.getElementById('mobile-phrases-btn');
+if (mobilePhrasesBtn) {
+  mobilePhrasesBtn.addEventListener('click', () => {
+    renderPhrases();
+    const modal = document.getElementById('phrases-modal');
+    if (modal) {
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+}
+
+// Mobile bottom nav - language cycle button
+const mobileLangBtn = document.getElementById('mobile-lang-btn');
+if (mobileLangBtn) {
+  const langs = ['en', 'zh', 'ja'];
+  let currentLangIdx = 0;
+  mobileLangBtn.addEventListener('click', () => {
+    currentLangIdx = (currentLangIdx + 1) % langs.length;
+    const langBtn = document.querySelector(`.lang-switcher button[data-lang="${langs[currentLangIdx]}"]`);
+    if (langBtn) langBtn.click();
+    mobileLangBtn.querySelector('.nav-icon').textContent = langs[currentLangIdx] === 'en' ? '🌐' : langs[currentLangIdx] === 'zh' ? '🇨🇳' : '🇯🇵';
+  });
+}

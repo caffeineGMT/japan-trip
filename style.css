@@ -2070,3 +2070,146 @@ html, body {
   }
 }
 
+
+/* ==================== MOBILE NAV FIX ==================== */
+@media (max-width: 767px) {
+  #top-header {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 6px;
+    padding: 8px 12px;
+  }
+
+  #top-header::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide non-essential items on mobile */
+  .top-nav {
+    display: none !important;
+  }
+
+  .sakura-widget {
+    display: none !important;
+  }
+
+  .lang-switcher {
+    display: none !important;
+  }
+
+  .btn-toggle {
+    display: none !important;
+  }
+
+  /* Compact header left */
+  .header-left h1 {
+    font-size: 14px;
+  }
+
+  .header-dates {
+    font-size: 10px;
+  }
+
+  /* Day tabs take remaining space */
+  .day-tabs {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .day-tab {
+    padding: 4px 8px;
+    font-size: 10px;
+    min-width: 44px;
+  }
+
+  .day-tab .tab-date {
+    font-size: 8px;
+  }
+
+  /* Phrases button stays compact */
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  /* Map takes more space on mobile */
+  .map-container {
+    height: 60vh;
+  }
+
+  .sidebar {
+    max-height: 40vh;
+  }
+
+  /* Bottom nav for hidden items */
+  .hamburger {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+  }
+}
+
+/* ==================== MOBILE BOTTOM NAV ==================== */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(26, 26, 36, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    padding: 6px 0;
+    padding-bottom: max(6px, env(safe-area-inset-bottom));
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .mobile-bottom-nav a,
+  .mobile-bottom-nav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 12px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    min-width: 56px;
+  }
+
+  .mobile-bottom-nav a.active,
+  .mobile-bottom-nav button.active {
+    color: var(--accent);
+  }
+
+  .mobile-bottom-nav .nav-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* Adjust app layout for bottom nav */
+  .app-layout {
+    height: calc(100vh - 52px - 56px);
+  }
+
+  .sidebar {
+    max-height: calc(40vh - 28px);
+  }
+}
