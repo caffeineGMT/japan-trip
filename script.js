@@ -42,6 +42,9 @@ async function initializeApp() {
       const [lat, lng] = template.geography.default_center;
       const zoom = template.geography.default_zoom;
       map.setView([lat, lng], zoom);
+    // Force tile redraw after layout settles
+    setTimeout(() => { if (map) map.invalidateSize(); }, 100);
+    setTimeout(() => { if (map) map.invalidateSize(); }, 500);
       console.log('[Map] Set view to:', lat, lng, 'zoom:', zoom);
     }
 
