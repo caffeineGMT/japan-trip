@@ -30,7 +30,34 @@ This is a **PERSONAL Japan trip planner**. It is for the owner's own use. It is 
 DELETE IT. Do not preserve it. Do not refactor it. Remove it entirely.
 
 ## DEPLOYMENT RULES
-- Do NOT deploy to Vercel. Do NOT run `vercel`, `vercel deploy`, or any Vercel CLI commands.
-- You MAY commit and push to GitHub — that is fine.
-- Do NOT run `npm run build` for deployment purposes.
-- All deployments to hosting platforms are handled manually by the human. Never auto-deploy.
+
+**CRITICAL: NO AUTO-DEPLOYMENT. GitHub is the staging environment ONLY.**
+
+### Engineer Workflow (YOU must follow this):
+
+1. **Write code** — Make your changes locally
+2. **Validate** — Run `npm run build` to check for syntax errors
+3. **Fix errors** — Address any validation failures before proceeding
+4. **Commit** — Commit your changes: `git add -A && git commit -m "description"`
+5. **Push to GitHub** — Push to main branch: `git push origin main`
+
+**STOP HERE.** Do NOT deploy to any hosting platform.
+
+### What GitHub Is:
+- GitHub = **Staging environment** (code repository only)
+- Code is reviewed and tested here
+- NOT the production site
+
+### Production Deployment:
+- **ONLY** Michael deploys to production manually
+- **NEVER** auto-deploy to Vercel, Netlify, GitHub Pages, or any hosting platform
+- **NEVER** run `vercel deploy` or any deployment CLI commands
+- **NEVER** use GitHub Actions, CI/CD, or webhooks for deployment
+
+### Forbidden:
+- ❌ Vercel CLI commands (`vercel`, `vercel deploy`)
+- ❌ GitHub Actions workflows that deploy
+- ❌ Auto-deployment on git push
+- ❌ CI/CD pipelines that trigger deployment
+- ❌ Webhooks to hosting platforms
+

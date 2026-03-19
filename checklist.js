@@ -9,7 +9,7 @@ let customItems = {};
 // Load checklist on page load
 async function loadChecklist() {
   try {
-    const response = await fetch('/data/checklist.json');
+    const response = await fetch('data/checklist.json');
     checklistData = await response.json();
 
     // Load checked state from localStorage

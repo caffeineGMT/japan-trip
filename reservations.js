@@ -1,7 +1,7 @@
 // Fetch and render restaurant reservations
 async function loadReservations() {
   try {
-    const response = await fetch('/data/reservations.json');
+    const response = await fetch('data/reservations.json');
     const reservations = await response.json();
 
     // Sort by date ascending

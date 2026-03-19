@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "start": "python3 -m http.server 8000",
-    "dev": "python3 -m http.server 8000"
+    "dev": "python3 -m http.server 8000",
+    "build": "node scripts/validate-build.js"
   },
   "dependencies": {},
   "devDependencies": {}
