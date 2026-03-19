@@ -364,10 +364,10 @@ html, body {
   overflow: hidden;
 }
 
-/* Map Container - Top on mobile */
+/* Map Container - Takes 75% on mobile (70%+) */
 .map-container {
   order: 1;
-  height: 50vh;
+  height: 75vh;
   position: relative;
   flex-shrink: 0;
   touch-action: pan-x pan-y;
@@ -378,33 +378,75 @@ html, body {
   height: 100%;
 }
 
-/* Sidebar - Bottom on mobile, collapsible */
+/* Sidebar - Swipe-up sheet from bottom */
 .sidebar {
   order: 2;
+  position: fixed;
+  bottom: 56px;
+  left: 0;
+  right: 0;
   width: 100%;
-  max-height: 50vh;
+  max-height: calc(85vh - 56px);
   background: var(--bg);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  position: relative;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 900;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
   will-change: transform;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+  /* Minimized by default - show just handle bar */
+  transform: translateY(calc(100% - 60px));
+  touch-action: pan-y;
 }
 
-/* Collapsed state - slide down off screen */
+/* Swipe handle indicator */
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.sidebar:active::before {
+  background: var(--text-muted);
+}
+
+/* Expanded state - slide up to show content */
+.sidebar.expanded {
+  transform: translateY(0);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.7);
+}
+
+/* Collapsed state - fully hidden */
 .sidebar.collapsed {
   transform: translateY(100%);
 }
 
 .sidebar-header {
-  padding: 16px;
+  padding: 24px 16px 16px;
   border-bottom: 1px solid var(--border);
   background: var(--surface);
   flex-shrink: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.sidebar-header:active {
+  background: var(--surface-hover);
 }
 
 .sidebar-header .day-label {
@@ -1644,57 +1686,70 @@ html, body {
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .modal {
-    padding: 10px;
+    padding: 0;
+    align-items: stretch;
   }
 
   .modal-content {
-    max-height: 90vh;
-    border-radius: 12px;
+    max-height: 100vh;
+    height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+    border: none;
   }
 
   .modal-header {
-    padding: 16px 20px;
+    padding: 20px;
+    padding-top: max(20px, env(safe-area-inset-top));
+    border-bottom: 1px solid var(--border);
   }
 
   .modal-header h3 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .phrases-list {
-    padding: 12px 16px 16px;
+    padding: 16px 20px;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
   }
 
   .phrase-card {
-    padding: 12px 14px;
-    padding-right: 48px;
+    padding: 14px 16px;
+    padding-right: 52px;
   }
 
   .phrase-japanese {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .phrase-romaji {
-    font-size: 12px;
-  }
-
-  .phrase-translation {
     font-size: 13px;
   }
 
+  .phrase-translation {
+    font-size: 14px;
+  }
+
   .phrase-speaker {
-    width: 36px;
-    height: 36px;
-    right: 10px;
+    width: 40px;
+    height: 40px;
+    right: 12px;
   }
 
   .speaker-icon {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .icon-btn {
     width: 40px;
     height: 40px;
     font-size: 18px;
+  }
+
+  .close-modal {
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
   }
 }
 
@@ -2136,13 +2191,19 @@ html, body {
     font-size: 16px;
   }
 
-  /* Map takes more space on mobile */
-  .map-container {
-    height: 60vh;
+  /* Map takes 75% of screen (70%+) */
+  .app-layout {
+    height: calc(100vh - 52px - 56px);
   }
 
+  .map-container {
+    height: calc(100vh - 52px - 56px);
+  }
+
+  /* Sidebar as swipe-up sheet */
   .sidebar {
-    max-height: 40vh;
+    bottom: env(safe-area-inset-bottom, 0px);
+    max-height: calc(90vh - 56px - env(safe-area-inset-bottom, 0px));
   }
 
   /* Bottom nav for hidden items */
@@ -2192,6 +2253,7 @@ html, body {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     min-width: 56px;
+    min-height: 44px;
   }
 
   .mobile-bottom-nav a.active,
@@ -2202,14 +2264,5 @@ html, body {
   .mobile-bottom-nav .nav-icon {
     font-size: 20px;
     line-height: 1;
-  }
-
-  /* Adjust app layout for bottom nav */
-  .app-layout {
-    height: calc(100vh - 52px - 56px);
-  }
-
-  .sidebar {
-    max-height: calc(40vh - 28px);
   }
 }

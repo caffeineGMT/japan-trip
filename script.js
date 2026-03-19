@@ -697,9 +697,11 @@ function parseDateFromDay(day) {
 // Hamburger menu toggle for mobile
 const sidebarToggle = document.getElementById('sidebar-toggle');
 const sidebar = document.getElementById('sidebar');
+const sidebarHeader = document.getElementById('sidebar-header');
 const header = document.getElementById('top-header');
 
 if (sidebarToggle && sidebar) {
+  // Hamburger button toggles collapsed state (fully hidden)
   sidebarToggle.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -707,13 +709,77 @@ if (sidebarToggle && sidebar) {
     sidebarToggle.classList.toggle('active');
   });
 
+  // Sidebar header tap toggles expanded state (on mobile)
+  if (sidebarHeader) {
+    sidebarHeader.addEventListener('click', (e) => {
+      if (window.innerWidth < 768 && !sidebar.classList.contains('collapsed')) {
+        e.preventDefault();
+        e.stopPropagation();
+        sidebar.classList.toggle('expanded');
+      }
+    });
+  }
+
+  // Swipe gesture support for sidebar
+  let touchStartY = 0;
+  let touchEndY = 0;
+  let isDragging = false;
+
+  sidebar.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+    isDragging = true;
+  }, { passive: true });
+
+  sidebar.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    touchEndY = e.touches[0].clientY;
+
+    // Visual feedback during drag
+    const deltaY = touchEndY - touchStartY;
+    if (sidebar.classList.contains('expanded') && deltaY > 0) {
+      // Dragging down when expanded
+      e.preventDefault();
+      const translate = Math.min(deltaY, 200);
+      sidebar.style.transform = `translateY(${translate}px)`;
+    } else if (!sidebar.classList.contains('expanded') && deltaY < 0) {
+      // Dragging up when minimized
+      e.preventDefault();
+      const translate = Math.max(deltaY, -200);
+      sidebar.style.transform = `translateY(calc(100% - 60px + ${translate}px))`;
+    }
+  }, { passive: false });
+
+  sidebar.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const deltaY = touchEndY - touchStartY;
+    const threshold = 50;
+
+    // Reset transform
+    sidebar.style.transform = '';
+
+    if (Math.abs(deltaY) > threshold) {
+      if (deltaY > 0 && sidebar.classList.contains('expanded')) {
+        // Swipe down when expanded → minimize
+        sidebar.classList.remove('expanded');
+      } else if (deltaY < 0 && !sidebar.classList.contains('expanded')) {
+        // Swipe up when minimized → expand
+        sidebar.classList.add('expanded');
+      }
+    }
+
+    touchStartY = 0;
+    touchEndY = 0;
+  }, { passive: true });
+
   // Close sidebar when clicking on map on mobile
   const mapContainer = document.querySelector('.map-container');
   if (mapContainer) {
     mapContainer.addEventListener('click', () => {
-      if (window.innerWidth < 768 && !sidebar.classList.contains('collapsed')) {
-        sidebar.classList.add('collapsed');
-        sidebarToggle.classList.remove('active');
+      if (window.innerWidth < 768) {
+        // Minimize sidebar (not collapse)
+        sidebar.classList.remove('expanded');
       }
     });
   }
