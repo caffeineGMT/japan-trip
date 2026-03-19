@@ -31,33 +31,28 @@ DELETE IT. Do not preserve it. Do not refactor it. Remove it entirely.
 
 ## DEPLOYMENT RULES
 
-**CRITICAL: NO AUTO-DEPLOYMENT. GitHub is the staging environment ONLY.**
+**NEW WORKFLOW: GitHub Pages for Staging, Vercel for Production**
 
 ### Engineer Workflow (YOU must follow this):
 
 1. **Write code** — Make your changes locally
-2. **Validate** — Run `npm run build` to check for syntax errors
-3. **Fix errors** — Address any validation failures before proceeding
-4. **Commit** — Commit your changes: `git add -A && git commit -m "description"`
-5. **Push to GitHub** — Push to main branch: `git push origin main`
+2. **Commit** — Commit your changes: `git add -A && git commit -m "description"`
+3. **Push to GitHub** — Push to main branch: `git push origin main`
+4. **Auto-deploy to staging** — GitHub Actions automatically deploys to GitHub Pages
+5. **Preview** — Review the app at https://caffeinegmt.github.io/japan-trip/
 
-**STOP HERE.** Do NOT deploy to any hosting platform.
+**STOP HERE.** Do NOT deploy to Vercel. Michael handles production deployment manually.
 
-### What GitHub Is:
-- GitHub = **Staging environment** (code repository only)
-- Code is reviewed and tested here
-- NOT the production site
+### Environments:
+- **Staging (GitHub Pages)**: https://caffeinegmt.github.io/japan-trip/ - Auto-deployed on every push
+- **Production (Vercel)**: Manually deployed by Michael only
 
-### Production Deployment:
-- **ONLY** Michael deploys to production manually
-- **NEVER** auto-deploy to Vercel, Netlify, GitHub Pages, or any hosting platform
-- **NEVER** run `vercel deploy` or any deployment CLI commands
-- **NEVER** use GitHub Actions, CI/CD, or webhooks for deployment
+### What IS automated:
+- ✅ GitHub Pages deployment (staging preview only)
+- ✅ GitHub Actions workflow (for GitHub Pages only)
 
-### Forbidden:
-- ❌ Vercel CLI commands (`vercel`, `vercel deploy`)
-- ❌ GitHub Actions workflows that deploy
-- ❌ Auto-deployment on git push
-- ❌ CI/CD pipelines that trigger deployment
-- ❌ Webhooks to hosting platforms
+### What is NOT automated (manual only):
+- ❌ Vercel deployment (production)
+- ❌ **NEVER** run `vercel deploy` or any Vercel CLI commands
+- ❌ **NEVER** auto-deploy to Vercel via webhooks or CI/CD
 
